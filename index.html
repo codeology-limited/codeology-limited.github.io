@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Ensure the viewport meta tag is included only once -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codeology - Expert CSS Services</title>
 
@@ -9,7 +10,6 @@
     <meta name="description" content="Professional CSS expert offering services to optimize your website's design, performance, and user experience. Contact Codeology today!">
     <meta name="keywords" content="CSS expert, CSS services, web design, front-end development, responsive design, technical debt, CSS optimization">
     <meta name="author" content="Your Name">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Open Graph Meta Tags for social media -->
     <meta property="og:title" content="Codeology - Expert CSS Services">
@@ -48,27 +48,20 @@
     <!-- Web Manifest -->
     <link rel="manifest" href="./favicon/site.webmanifest">
 
-
     <!-- Domain Prefetching and Preconnecting -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Single+Day&display=swap" rel="stylesheet">
 
     <!-- Preload important resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" as="style">
     <link rel="preload" href="img/beach.jpg" as="image">
 
     <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Single+Day&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 
     <!-- Other Performance-related Headers -->
@@ -80,8 +73,8 @@
             "@context": "http://schema.org",
             "@type": "Organization",
             "name": "Codeology",
-            "url": "https://codeolgy.co.nz",
-            "logo": "https://codeolgy.co.nz/logo.png",
+            "url": "https://codeology.co.nz",
+            "logo": "https://codeology.co.nz/logo.png",
             "description": "Providing expert CSS services, specializing in reducing technical debt, resolving issues, and optimizing website performance for clients in need of urgent or on-demand support.",
             "areaServed": {
                 "@type": "Place",
@@ -139,11 +132,10 @@
                 }
             ]
         }
-
     </script>
+
     <!-- CSS -->
     <style>
-
         :root {
             /* Base font settings */
             --base-font-size: 16px;
@@ -233,7 +225,6 @@
             --halloween-footer-text-color: #00ff00;
         }
 
-
         * {
             margin: 0;
             padding: 0;
@@ -246,50 +237,39 @@
         }
 
         body {
-            font-family: 'Noto Sans JP', sans-serif;
-            color: #444;
-            line-height: 1.6;
+            font-family: var(--font-family-main);
+            color: var(--text-color);
+            line-height: var(--line-height);
         }
-
-
-
-
-        /* Global styles */
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            color: #444;
-            line-height: 1.6;
-        }
-
 
         p {
-            text-wrap: pretty;
+            overflow-wrap: break-word;
         }
+
         /* Container */
         .container {
-            width: 90%;
-            max-width: 1200px;
+            width: var(--container-width);
+            max-width: var(--container-max-width);
             margin: 0 auto;
         }
 
         /* Header styles */
         header {
-            xbackground-color: #f8f8f8;
-            padding: 1rem 0;
+            background-color: var(--header-bg-color);
+            padding: var(--header-padding);
         }
 
         header h1 {
-
-            font-size: clamp(2rem, 5vw, 3rem);
-            color: #111;
+            font-size: var(--header-title-font-size);
+            color: var(--header-title-color);
         }
 
         header h1 span {
-            color: #555555;
+            color: var(--header-title-span-color);
         }
 
         nav {
-            margin-top: 1rem;
+            margin-top: var(--nav-margin-top);
         }
 
         nav ul {
@@ -300,44 +280,42 @@
         }
 
         nav ul li {
-            margin-right: 1.5rem;
+            margin-right: var(--nav-margin-right);
         }
 
         nav ul li a {
             text-decoration: none;
-            color: #444;
-            font-weight: 500;
+            color: var(--nav-link-color);
+            font-weight: var(--nav-link-font-weight);
         }
 
         nav ul li a:hover,
         nav ul li a:focus {
-            color: #000;
+            color: var(--nav-link-hover-color);
             text-decoration: underline;
         }
 
         /* Hero Section */
         #hero {
-            background: rgba(0,0,0,0.2);
-            color: #fff;
+            background: var(--hero-bg-color);
+            color: var(--hero-text-color);
             text-align: center;
-            padding: 5rem 0;
+            padding: var(--hero-padding);
         }
 
         #hero h2 {
-            font-size: clamp(2rem, 6vw, 4rem);
+            font-size: var(--hero-title-font-size);
             margin-bottom: 1rem;
         }
 
         #hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
+            font-size: var(--hero-paragraph-font-size);
+            margin-bottom: var(--hero-paragraph-margin-bottom);
         }
-
 
         /* Services Section */
         #services {
-            padding: 4rem 0;
-
+            padding: var(--services-padding);
         }
 
         #services h2 {
@@ -358,57 +336,56 @@
             align-items: center;
             justify-content: center;
             aspect-ratio: 2/1;
-
             flex: 1 1 calc(50% - 2rem);
-            background-color: rgba(0,0,0,0.2);
-            padding: 2rem;
-            border-radius: 5px;
+            background-color: var(--service-bg-color);
+            padding: var(--service-padding);
+            border-radius: var(--service-border-radius);
             text-align: center;
-            text-wrap: pretty;
+            overflow-wrap: break-word;
         }
 
         .service h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: var(--service-title-font-size);
+            margin-bottom: var(--service-margin-bottom);
         }
 
         .service p {
-            font-size: 1.2rem;
+            font-size: var(--service-paragraph-font-size);
         }
 
         /* About Me Section */
         #about {
-            padding: 4rem 0;
+            padding: var(--about-padding);
         }
 
         #about h2 {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: var(--about-title-margin-bottom);
         }
 
         #about p {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.2rem;
+            max-width: var(--about-paragraph-max-width);
+            margin: var(--about-paragraph-margin);
+            font-size: var(--about-paragraph-font-size);
             text-align: center;
         }
 
         /* Portfolio Section */
         iframe {
-            border: 4px solid #f0f0f0;
+            border: var(--iframe-border);
         }
 
         /* Footer */
         footer {
-            margin-top: 10vh;
-            background-color: #222;
-            color: #fff;
+            margin-top: var(--footer-margin-top);
+            background-color: var(--footer-bg-color);
+            color: var(--footer-text-color);
             text-align: center;
-            padding: 1rem 0;
+            padding: var(--footer-padding);
         }
 
         footer p {
-            font-size: 1rem;
+            font-size: var(--footer-text-font-size);
         }
 
         /* Responsive Design */
@@ -426,361 +403,370 @@
             }
         }
 
-
-        /*
-            Components
-        */
+        /* Components */
         .button-bar {
             position: fixed;
             top: 10px;
             right: 10px;
-
-            gap: 10px; /* Adds spacing between buttons */
+            gap: var(--button-bar-gap);
         }
 
         .button-bar fieldset {
             border: 0;
-            legend {
-                display:none;
-            }
             display: flex;
             flex-direction: row;
-
-
-            label {
-                display: inline-block;
-                width: 32px;
-                height: 32px;
-                margin-left: 5px;
-                padding: 0;
-                text-indent: -10000px;
-                line-height: 64px;
-                border-radius: 5px;
-                font-size: 14px;
-                font-weight: bold;
-                cursor: pointer;
-                color: white; /* Default button text color */
-                border: 1px solid #ccc; /* Thin border */
-                background: #f4b400; /* Vibrant yellow-orange */
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), /* Light shadow below */
-                0 1px 0 rgba(255, 255, 255, 0.1) inset; /* Subtle inset for flat look */
-
-            }
-            label:nth-of-type(2){
-                background-color: #f0f0f0; /* Soft light grey */
-                color: black; /* Dark text on light button */
-            }
-
-            label:nth-of-type(3){
-                background-color: #2b2b2b; /* Deep charcoal */
-                color: white; /* Dark text on light button */
-            }
-
-            label:nth-of-type(4){
-                background-color: #e6397d; /* Vibrant pink */
-            }
-
-            label:nth-of-type(5){
-                background-color: #5a2d82; /* Burnt orange */
-            }
-
+            position: relative;
         }
 
+        .button-bar legend {
+            position: absolute;
+            left: -9999px;
+            visibility: hidden;
+        }
 
+        .button-bar label {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            margin-left: 5px;
+            padding: 0;
+            text-indent: -10000px;
+            line-height: 64px;
+            border-radius: var(--button-bar-border-radius);
+            font-size: var(--button-bar-font-size);
+            font-weight: var(--button-bar-font-weight);
+            cursor: pointer;
+            color: var(--button-bar-text-color);
+            border: 1px solid #ccc;
+            background: #f4b400;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),
+            0 1px 0 rgba(255, 255, 255, 0.1) inset;
+            position: relative;
+        }
+
+        .button-bar label:nth-of-type(2) {
+            background-color: #f0f0f0;
+            color: black;
+        }
+
+        .button-bar label:nth-of-type(3) {
+            background-color: #2b2b2b;
+            color: white;
+        }
+
+        .button-bar label:nth-of-type(4) {
+            background-color: #e6397d;
+        }
+
+        .button-bar label:nth-of-type(5) {
+            background-color: #5a2d82;
+        }
 
         .button-bar input[type="radio"] {
             display: none;
         }
 
-
         /* Checked button styles */
         .button-bar input[type="radio"]:checked + label {
-            border: 3px solid #007bff; /* Highlight checked button */
+            border: 3px solid #007bff;
         }
 
-        /* THEMES */
-
-
-        body:has(input[name="options"][value="option1"]:checked) {
-            background: #f4b400; /* Vibrant yellow-orange */
-            zoom: 1;
+        .button-bar input[type="radio"]:checked + label::after {
+            content: '✓';
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            color: #007bff;
+            font-size: 16px;
         }
 
-        body:has(input[name="options"][value="option2"]:checked) {
-            background: #f0f0f0; /* Soft light grey */
+        /* Themes */
+
+        body.theme-option1 {
+            background-color: var(--theme-option1-bg-color);
         }
 
-        body:has(input[name="options"][value="option3"]:checked) {
-            background: #2b2b2b; /* Deep charcoal */
+        body.theme-option2 {
+            background-color: var(--theme-option2-bg-color);
+            color: var(--theme-option2-text-color);
         }
 
-        body:has(input[name="options"][value="option4"]:checked) {
-            background: #e6397d; /* Vibrant pink */
+        body.theme-option3 {
+            background-color: var(--theme-option3-bg-color);
         }
 
-        body:has(input[name="options"][value="option5"]:checked) {
-            background: #f05400; /* Burnt orange */
+        body.theme-option4 {
+            background-color: var(--theme-option4-bg-color);
         }
 
-
-        /* Base theme for Option 5 (Halloween Theme) */
-        body:has(input[name="options"][value="option5"]:checked) {
-            xbackground-color: #1c1c1c; /* Dark spooky background */
-            background-color: #5a2d82; /* Deep purple */
-            color: #f8f8f8; /* Light text */
+        body.theme-option5 {
+            background-color: #5a2d82;
+            color: #f8f8f8;
         }
 
-        /* Halloween Header */
-
-        body:has(input[name="options"][value="option5"]:checked) {
-            header {
-                background-color: #5a2d82; /* Deep purple */
-                color: #ff7518; /* Pumpkin orange */
-            }
-
-            h1 {
-                position: relative;
-                z-index: 1;
-                font-family: "Nosifer", sans-serif;
-                font-weight: 400;
-                font-style: normal;
-                font-size: clamp(2rem, 5vw, 3rem);
-                transform: scaleY(3); /* Stretch vertically by 3 times */
-                transform-origin: top; /* Stretch from the bottom upwards */
-
-                display: inline-block; /* Ensure the h1 respects inline-size */
-                max-inline-size: 50%; /* Restrict the width to 30% */
-                overflow-wrap: break-word; /* Ensure long text wraps within the block */
-                color: #ff7518;
-            }
-
-            h1 span {
-                color: #8A0707; /* Color for the span inside h1 */
-            }
-
-            h2 {
-                font-size: clamp(2rem, 6vw, 4rem);
-                font-family: "Creepster", system-ui;
-                font-weight: 400;
-                font-style: normal;
-            }
-
-            ul {
-                padding-top: 60px;
-                position: relative;
-                z-index: 2;
-            }
-
-            p,a {
-                font-family: "Single Day", cursive;
-                font-weight: 400;
-                font-style: normal;
-            }
-            a {
-                color: #00ff00;
-
-                :hover, :focus {
-                    color: #ff7518;
-                }
-            }
+        /* Halloween Theme */
+        body.theme-option5 header {
+            background-color: var(--halloween-header-bg-color);
+            color: var(--halloween-header-text-color);
         }
 
+        body.theme-option5 h1 {
+            position: relative;
+            z-index: 1;
+            font-family: "Nosifer", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: clamp(2rem, 5vw, 3rem);
+            transform: scaleY(3);
+            transform-origin: top;
+            display: inline-block;
+            max-inline-size: 50%;
+            overflow-wrap: break-word;
+            color: var(--halloween-title-color);
+        }
 
+        body.theme-option5 h1 span {
+            color: var(--halloween-span-color);
+        }
+
+        body.theme-option5 h2 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-family: "Creepster", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body.theme-option5 ul {
+            padding-top: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        body.theme-option5 p,
+        body.theme-option5 a {
+            font-family: "Single Day", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body.theme-option5 a {
+            color: #00ff00;
+        }
+
+        body.theme-option5 a:hover,
+        body.theme-option5 a:focus {
+            color: #ff7518;
+        }
 
         /* Halloween Buttons */
-        body:has(input[name="options"][value="option5"]:checked) .btn {
-            background-color: #00ff00; /* Glowing green */
-            color: #1c1c1c; /* Dark contrast */
-            border: 2px solid #ff7518; /* Pumpkin orange border */
+        body.theme-option5 .btn {
+            background-color: var(--halloween-button-bg-color);
+            color: var(--halloween-button-text-color);
+            border: 2px solid var(--halloween-button-border-color);
         }
 
-        body:has(input[name="options"][value="option5"]:checked) .btn:hover,
-        body:has(input[name="options"][value="option5"]:checked) .btn:focus {
-            background-color: #ff7518; /* Pumpkin orange on hover */
-            color: #1c1c1c; /* Dark text */
+        body.theme-option5 .btn:hover,
+        body.theme-option5 .btn:focus {
+            background-color: #ff7518;
+            color: #1c1c1c;
         }
 
         /* Halloween Footer */
-        body:has(input[name="options"][value="option5"]:checked) footer {
-            background-color: #5a2d82; /* Deep purple */
-            color: #00ff00; /* Glowing green text */
+        body.theme-option5 footer {
+            background-color: var(--halloween-footer-bg-color);
+            color: var(--halloween-footer-text-color);
         }
 
-
-
-
-        body:has(input[name="options"][value="option5"]:checked) .service {
-            background: rgba(0,0,0,0.2);
-            color: #ff7518; /* Pumpkin orange text */
-            border: 2px solid #00ff00; /* Glowing green border */
-
-
+        body.theme-option5 .service {
+            background: rgba(0, 0, 0, 0.2);
+            color: #ff7518;
+            border: 2px solid #00ff00;
         }
 
-        body:has(input[name="options"][value="option5"]:checked) #about .halloween {
+        body.theme-option5 #about .halloween {
             text-transform: uppercase;
-            color: #8A0707; /* Blood Red */
+            color: #8A0707;
             font-size: 2rem;
             font-weight: 900;
             text-shadow:
-                    3px 3px 0 #000,    /* Black shadow for depth */
-                    -3px -3px 5px #FF00FF, /* Magenta glow */
-                    4px 4px 10px rgba(0, 0, 0, 0.7), /* Dark, blurry shadow */
-                    0 0 20px #00FF00,  /* Green glow for eerie effect */
-                    0 0 30px #00FF00;  /* More green glow for extra spookiness */
-            background-color: #4B0082; /* Deep Purple Background */
+                    3px 3px 0 #000,
+                    -3px -3px 5px #FF00FF,
+                    4px 4px 10px rgba(0, 0, 0, 0.7),
+                    0 0 20px #00FF00,
+                    0 0 30px #00FF00;
+            background-color: #4B0082;
         }
 
         /* Halloween iframe borders */
-        body:has(input[name="options"][value="option5"]:checked) iframe {
-            border: 4px solid #ff7518; /* Pumpkin orange border */
+        body.theme-option5 iframe {
+            border: 4px solid #ff7518;
         }
 
-
-
-
-
-        /*  PUMPKIN */
-
-
-
-        body:has(input[name="options"][value="option5"]:checked) {
-
-            .pumpkin{
-                height: 11em;
-                width: 15em;
-                background: #f68632;
-                border: 0.4em solid #a14907;
-                border-radius: 70%/110%;
-                position: relative;
-                box-shadow: inset 0 0px 20px #a14907, 0 0 30px -4px red;
-                z-index: 1;
-            }
-
-            .pumpkin .surface{
-                height: 10.8em;
-                width: 6.5em;
-                position: absolute;
-                bottom: -0.4em;
-                left: 4em;
-                border-radius: 70%/110%;
-                border-bottom: 0.5em solid #a14907;
-                border-top: 0.5em solid #a14907;
-            }
-
-            .pumpkin .surface:after{
-                content: "";
-                display: block;
-                height: 10.7em;
-                width: 12em;
-                position: absolute;
-                bottom: -0.4em;
-                left: -2.5em;
-                border-radius: 70%/110%;
-                border-bottom: .05em solid #a14907;
-                border-top: 0.5em solid #a14907;
-            }
-
-            .pumpkin .stem{
-                background: #517f54;
-                height: 2.8em;
-                width: 1.25em;
-                position: absolute;
-                left: calc(7.5em - 0.625em);
-                top: -2.7em;
-                -webkit-transform: rotate(5deg);
-                transform: rotate(5deg);
-                border-radius: 30% 20% 70% 10%;
-                z-index: -1;
-                box-shadow: inset 0 0px 10px #29412b;
-            }
-
-            .pumpkin .eye{
-                position: absolute;
-                width: 0;
-                height: 0;
-                border-top: 0.8em solid transparent;
-                top: 2.8em;
-            }
-
-            .pumpkin .eye.right{
-                right: 3.7em;
-                -webkit-transform: rotate(30deg);
-                transform: rotate(30deg);
-                border-bottom: 2.1em solid transparent;
-                border-left: 2.4em solid #401d03;
-            }
-
-            .pumpkin .eye.left{
-                left: 3.7em;
-                -webkit-transform: rotate(-30deg);
-                transform: rotate(-30deg);
-                border-bottom: 2.1em solid transparent;
-                border-right: 2.4em solid #401d03;
-            }
-
-            .pumpkin .mouth{
-                width: 4em;
-                height: 2em;
-                position: absolute;
-                bottom: 1.5em;
-                border-bottom: 1em solid #401d03;
-            }
-
-            .pumpkin .mouth.right{
-                right: 3.6em;
-                border-radius: 0 0 100% 0;
-            }
-
-            .pumpkin .mouth.left{
-                left: 3.6em;
-                border-radius: 0 0 0 100%;
-            }
-
-            .pumpkin .teeth{
-                width: 0.5em;
-                height: 1em;
-                position: absolute;
-                top: 7.7em;
-                left: 7.25em;
-                border-top: 0.8em solid transparent;
-                border-bottom: 0em solid transparent;
-                border-left: 0.8em solid #401d03;
-            }
-
-            .pumpkin .teeth:before, .pumpkin .teeth:after{
-                content: "";
-                display: block;
-                position: absolute;
-                width: 0;
-                height: 0;
-                border-top: 0.8em solid transparent;
-            }
-
-            .pumpkin .teeth:before{
-                right: 2.2em;
-                top: -0.65em;
-                -webkit-transform: rotate(30deg);
-                transform: rotate(30deg);
-                border-bottom: 0.5em solid transparent;
-                border-left: 1em solid #401d03;
-            }
-
-            .pumpkin .teeth:after{
-                left: 1em;
-                top: -0.85;
-                -webkit-transform: rotate(30deg);
-                transform: rotate(30deg);
-                border-bottom: 0.5em solid transparent;
-                border-left: 1em solid #401d03;
-            }
-
+        /* Pumpkin */
+        body.theme-option5 .pumpkin {
+            height: 11em;
+            width: 15em;
+            background: #f68632;
+            border: 0.4em solid #a14907;
+            border-radius: 70%/110%;
+            position: relative;
+            box-shadow: inset 0 0px 20px #a14907, 0 0 30px -4px red;
+            z-index: 1;
         }
 
+        body.theme-option5 .pumpkin .surface {
+            height: 10.8em;
+            width: 6.5em;
+            position: absolute;
+            bottom: -0.4em;
+            left: 4em;
+            border-radius: 70%/110%;
+            border-bottom: 0.5em solid #a14907;
+            border-top: 0.5em solid #a14907;
+        }
+
+        body.theme-option5 .pumpkin .surface:after {
+            content: "";
+            display: block;
+            height: 10.7em;
+            width: 12em;
+            position: absolute;
+            bottom: -0.4em;
+            left: -2.5em;
+            border-radius: 70%/110%;
+            border-bottom: .05em solid #a14907;
+            border-top: 0.5em solid #a14907;
+        }
+
+        body.theme-option5 .pumpkin .stem {
+            background: #517f54;
+            height: 2.8em;
+            width: 1.25em;
+            position: absolute;
+            left: calc(7.5em - 0.625em);
+            top: -2.7em;
+            transform: rotate(5deg);
+            border-radius: 30% 20% 70% 10%;
+            z-index: -1;
+            box-shadow: inset 0 0px 10px #29412b;
+        }
+
+        body.theme-option5 .pumpkin .eye {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 0.8em solid transparent;
+            top: 2.8em;
+        }
+
+        body.theme-option5 .pumpkin .eye.right {
+            right: 3.7em;
+            transform: rotate(30deg);
+            border-bottom: 2.1em solid transparent;
+            border-left: 2.4em solid #401d03;
+        }
+
+        body.theme-option5 .pumpkin .eye.left {
+            left: 3.7em;
+            transform: rotate(-30deg);
+            border-bottom: 2.1em solid transparent;
+            border-right: 2.4em solid #401d03;
+        }
+
+        body.theme-option5 .pumpkin .mouth {
+            width: 4em;
+            height: 2em;
+            position: absolute;
+            bottom: 1.5em;
+            border-bottom: 1em solid #401d03;
+        }
+
+        body.theme-option5 .pumpkin .mouth.right {
+            right: 3.6em;
+            border-radius: 0 0 100% 0;
+        }
+
+        body.theme-option5 .pumpkin .mouth.left {
+            left: 3.6em;
+            border-radius: 0 0 0 100%;
+        }
+
+        body.theme-option5 .pumpkin .teeth {
+            width: 0.5em;
+            height: 1em;
+            position: absolute;
+            top: 7.7em;
+            left: 7.25em;
+            border-top: 0.8em solid transparent;
+            border-bottom: 0em solid transparent;
+            border-left: 0.8em solid #401d03;
+        }
+
+        body.theme-option5 .pumpkin .teeth:before,
+        body.theme-option5 .pumpkin .teeth:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 0.8em solid transparent;
+        }
+
+        body.theme-option5 .pumpkin .teeth:before {
+            right: 2.2em;
+            top: -0.65em;
+            transform: rotate(30deg);
+            border-bottom: 0.5em solid transparent;
+            border-left: 1em solid #401d03;
+        }
+
+        body.theme-option5 .pumpkin .teeth:after {
+            left: 1em;
+            top: -0.85em;
+            transform: rotate(30deg);
+            border-bottom: 0.5em solid transparent;
+            border-left: 1em solid #401d03;
+        }
+
+        /* Accessibility Enhancements */
+        /* Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Focus Indicators */
+        a:focus,
+        button:focus,
+        input[type="radio"]:focus + label {
+            outline: 2px solid #000;
+        }
+
+        /* Visually Hidden Class */
+        .visually-hidden {
+            position: absolute;
+            left: -10000px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
 
     </style>
 </head>
-<body>
+<body class="theme-option1">
+
+<!-- Skip Link -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- Header Section -->
 <header>
@@ -788,112 +774,108 @@
         <h1>Code<span>ology</span></h1>
         <nav aria-label="Main Navigation">
             <ul>
-                <li><a href="#services">What I do</a></li>
+                <li><a href="#services">Learn About My Services</a></li>
                 <li><a href="#about">About Me</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">Contact Information</a></li>
             </ul>
         </nav>
-
     </div>
 
     <form class="button-bar">
         <fieldset>
-            <legend>Select an option</legend>
-            <label for="option1">
-                <input type="radio" id="option1" name="options" value="option1" aria-checked="true" checked>
-                Option 1
+            <legend>Choose a Theme for the Website</legend>
+            <label>
+                <input type="radio" name="theme" value="option1" checked>
+                <span class="visually-hidden">Default Theme</span>
             </label>
-            <label for="option2">
-                <input type="radio" id="option2" name="options" value="option2" aria-checked="false">
-                Option 2
+            <label>
+                <input type="radio" name="theme" value="option2">
+                <span class="visually-hidden">Light Theme</span>
             </label>
-            <label for="option3">
-                <input type="radio" id="option3" name="options" value="option3" aria-checked="false">
-                Option 3
+            <label>
+                <input type="radio" name="theme" value="option3">
+                <span class="visually-hidden">Dark Theme</span>
             </label>
-            <label for="option4">
-                <input type="radio" id="option4" name="options" value="option4" aria-checked="false">
-                Option 4
+            <label>
+                <input type="radio" name="theme" value="option4">
+                <span class="visually-hidden">Pink Theme</span>
             </label>
-            <label for="option5">
-                <input type="radio" id="option5" name="options" value="option5" aria-checked="false">
-                Option 5
+            <label>
+                <input type="radio" name="theme" value="option5">
+                <span class="visually-hidden">Halloween Theme</span>
             </label>
         </fieldset>
     </form>
 </header>
 
-<!-- Hero Section with Call to Action -->
-<section id="hero">
-    <div class="container">
-        <h2>Your CSS Expert</h2>
-        <p>Transforming websites by eliminating technical debt and optimizing front-end performance.</p>
-        <a href="sms:+6421677460" class="btn" aria-label="Call us at 021-677-460">021-677-460</a>
-        <a href="mailto:tony@codeology.co.nz" class="btn" aria-label="Send an email to tony@codeology.co.nz">tony@codeology.co.nz</a>
+<!-- Main Content -->
+<main id="main-content">
 
-    </div>
-</section>
+    <!-- Hero Section with Call to Action -->
+    <section id="hero">
+        <div class="container">
+            <h2>Your CSS Expert</h2>
+            <p>Transforming websites by eliminating technical debt and optimizing front-end performance.</p>
+            <a href="sms:+6421677460" class="btn" aria-label="Call us at 021-677-460">021-677-460</a>
+            <a href="mailto:tony@codeology.co.nz" class="btn" aria-label="Send an email to tony@codeology.co.nz">tony@codeology.co.nz</a>
+        </div>
+    </section>
 
-<!-- Services Section -->
-<section id="services">
-    <div class="container">
-        <h2>What I do.</h2>
-        <div class="service-list">
-            <div class="service">
-                <h3>Embed</h3>
-                <p>Seamlessly <strong>integrate into your project</strong>, bringing <strong>CSS skills</strong> on <strong>short notice</strong> to fill any gaps or reinforce your team's capabilities.</p>
-
-
-            </div>
-            <div class="service">
-                <h3>Untangle</h3>
-                <p>CSS technical debt.  It  giving your team a <strong>capacity boost</strong> when it is needed.</p>
-            </div>
-            <div class="service">
-                <h3>Collaborate</h3>
-                <p>Work with design to find the balance between pixel perfect and responsive design.</p>
-            </div>
-            <div class="service">
-                <h3>Consulte</h3>
-                <p>Provide technical direction for your project.</p>
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>What I Do</h2>
+            <div class="service-list">
+                <div class="service">
+                    <h3>Embed</h3>
+                    <p>Seamlessly <strong>integrate into your project</strong>, bringing <strong>CSS skills</strong> on <strong>short notice</strong> to fill any gaps or reinforce your team's capabilities.</p>
+                </div>
+                <div class="service">
+                    <h3>Untangle</h3>
+                    <p>CSS technical debt, giving your team a <strong>capacity boost</strong> when it is needed.</p>
+                </div>
+                <div class="service">
+                    <h3>Collaborate</h3>
+                    <p>Work with design to find the balance between pixel-perfect and responsive design.</p>
+                </div>
+                <div class="service">
+                    <h3>Consult</h3>
+                    <p>Provide technical direction for your project.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- About Me Section -->
-<section id="about">
-    <div class="container">
-        <h2>About Me</h2>
-        <p>With <strong>more than a decade</strong> of experience in front-end development  <strong>I can help you out
-            of <span class="halloween">CSS hell</span></strong> and help to <strong>reduce or eliminate CSS technical debt</strong>.</p>
-    </div>
-</section>
+    <!-- About Me Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>With <strong>more than a decade</strong> of experience in front-end development, <strong>I can help you out of <span class="halloween">CSS hell</span></strong> and help to <strong>reduce or eliminate CSS technical debt</strong>.</p>
+        </div>
+    </section>
 
-<!-- Contact Section -->
-
-<section id="portfolio">
-    <div class="container">
-        <h2>What I have done.</h2>
-        <div class="service-list">
-            <div class="service">
-                <iframe src="https://pawprintpetition.co.nz"></iframe>
-            </div>
-            <div class="service">
-                <iframe src="https://bettersaver.co.nz"></iframe>
-            </div>
-            <div class="service">
-                <iframe src="https://getforsite.com"></iframe>
-            </div>
-            <div class="service">
-                <iframe src="https://getforsite.com"></iframe>
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2>What I Have Done</h2>
+            <div class="service-list">
+                <div class="service">
+                    <iframe src="https://pawprintpetition.co.nz" lang="en" title="Pawprint Petition Website"></iframe>
+                </div>
+                <div class="service">
+                    <iframe src="https://bettersaver.co.nz" lang="en" title="BetterSaver Website"></iframe>
+                </div>
+                <div class="service">
+                    <iframe src="https://getforsite.com" lang="en" title="Forsite Website"></iframe>
+                </div>
+                <div class="service">
+                    <iframe src="https://getforsite.com" lang="en" title="Forsite Website"></iframe>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-
+</main>
 
 <!-- Footer -->
 <footer>
@@ -901,7 +883,7 @@
         <p>&copy; 2024 Codeology. All rights reserved.</p>
     </div>
 
-    <div class="pumpkin">
+    <div class="pumpkin" aria-hidden="true">
         <div class="surface"></div>
         <div class="stem"></div>
         <div class="eye left"></div>
@@ -913,5 +895,14 @@
 
 </footer>
 
+<!-- JavaScript for Theme Switching -->
+<script>
+    // JavaScript to handle theme changes
+    document.querySelectorAll('input[name="theme"]').forEach((input) => {
+        input.addEventListener('change', function () {
+            document.body.className = 'theme-' + this.value;
+        });
+    });
+</script>
 </body>
 </html>
