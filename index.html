@@ -202,6 +202,7 @@
             }
         }
 
+        h3 {font-size: clamp(2rem, 6vw, 2.5rem);}
         p {
             text-wrap: pretty;
             line-height: 1.5;
@@ -255,11 +256,13 @@
             a:hover {
                 svg+svg{display:block}
             }
-            span {
+            .tel {
+                aspect-ratio: auto;
+                display: block;
+                width:100%;
                 text-align: right;
                 text-wrap: nowrap;
                 font-size: 1.6rem;
-                flex: 1;
                 color: var(--primary-header-contrast-text);
             }
 
@@ -294,6 +297,9 @@
         .service h3 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
+
+                text-transform: uppercase;
+
         }
 
         .service p {
@@ -314,6 +320,63 @@
             width: 100%;
             height:100%;
         }
+
+        footer p {
+            text-align: center;
+        }
+        @media (max-width: 767px) {
+           h1, h2,h3 {
+               text-align: center;
+           }
+            nav a:not(.tel){
+                display:none;
+            }
+            nav .tel {
+                text-align: center;
+            }
+
+            li {
+                font-size: clamp(1.5rem, 3vw, 2rem);
+                margin: 3vh 3vw;
+                padding: 3vh 3vw;
+                text-align: center;
+                background-color: var(--primary-header-text);
+                list-style: none;
+                line-height: 2;
+            }
+            .cta1,.cta2 {
+                text-align: center;
+                margin: 3vh 3vw;
+                padding: 3vh 3vw;
+                font-size: clamp(1.5rem, 3vw, 2rem);
+                a{
+                    font-size: clamp(1.5rem, 3vw, 2rem);
+                }
+            }
+            .service-list{
+                flex-direction: column;
+                flex-wrap: nowrap;
+                .service {
+                    aspect-ratio: auto;
+
+                    border-radius: 0;
+                    flex: 0;
+
+                }
+            }
+            #css-about p {
+                margin: 3vh 3vw;
+                padding: 1vh 3vw;
+            }
+            #portfolio .service {
+                background-color: transparent;
+            }
+            footer p {
+                padding: 6vw;
+                font-size: clamp(1.5rem, 3vw, 2rem);
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -348,7 +411,7 @@
                 </svg>
 
             </a>
-            <span>+64 (21) 677 460</span>
+            <a class="tel" href="tel:+6421677460" aria-label="Call now 021-677-460">+64 (21) 677 460</a>
 
 
 
@@ -362,23 +425,23 @@
 <section id="hero">
     <div class="container">
         <h2>CSS Specialist</h2>
-        <p>Available immediately.</p>
+        <h3>Available immediately.</h3>
 
         <ul>
-        <li>A small CSS task is growing bigger than you expected? Is it making your project feel overwhelming?</li>
+        <li>Is a small CSS task growing bigger than you expected? Is it making your project feel overwhelming?</li>
         <li>Do you need to get started and want some extra hands right away?</li>
         </ul>
 
-        <p>
-            If you’d like to have a conversation instead of just looking at AI-generated CVs, feel free to give
+        <p class="cta1">
+            If you’d like to have a conversation instead of just looking at AI-generated CVs, feel free to call on
 
-            <strong>021-677-460</strong> or click to
+            <strong><a href="tel:+6421677460" aria-label="Call now 021-677-460">021-677-460</a></strong> or click to
             <a href="sms:+6421677460" class="btn btn-phone" aria-label="Call now 021-677-460">
                 <strong>send an SMS</strong></a>.
 
         </p>
 
-        <p>
+        <p  class="cta2">
             For more details or to share documents, you can reach me at  <a href="mailto:tony@codeology.co.nz" class="btn btn-email" aria-label="Send an email to tony@codeology.co.nz">
             <strong>tony@codeology.co.nz</strong></a>.
         </p>
@@ -429,11 +492,13 @@
 
 <section id="css-about">
     <div class="container" aria-labelledby="css-services-heading">
-        <h2 id="css-services-heading">Expertise that clears the way for faster, smoother projects.</h2>
-        <p>I have over a decade of experience. I step into projects to tackle technical debt, fix legacy CSS issues, and improve the front end. My skills complement today's framework-based approaches.</p>
+        <h2 id="css-services-heading">Expertise that clear the way for faster, smoother projects.</h2>
+        <p>With over a decade of experience, I step into projects to tackle technical debt, fix legacy CSS issues, and improve the front end.
+        </p><p>My skill set complement's today's framework-based approaches.</p>
 
         <p>In addition to my css skills I am also a fullstack developer.  My primary language is node-js.</p>
-        <p>I am experienced in vanilla html/css and JS, Typescript, React, Vue, Next.js, Nuxt.js and Angular.</p>
+        <p>I am experienced in vanilla HTML, CSS, JavaScript and Typescript,</p>
+        <p>I also have experience with modern front end frame works such as React, Vue, Next.js, Nuxt.js and Angular.</p>
         <p>I have a variety of experience in the AWS and GCP ecosystems.</p>
 
     </div>
