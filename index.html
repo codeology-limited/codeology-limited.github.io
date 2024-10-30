@@ -161,6 +161,7 @@
             font-family: 'Noto Sans JP', sans-serif;
             background-color: var(--primary-background);
             color: var(--primary-header-text);
+
         }
 
         section{
@@ -182,6 +183,9 @@
             font-weight: 600;
             line-height: 1.2;
             margin-bottom: 4vw;
+        }
+        #hero h2 {
+            margin-bottom:0;
         }
 
         .container {
@@ -221,6 +225,9 @@
             line-height: 1.5;
             color: var(--primary-background);
             font-size: clamp(2rem, 6vw, 2.5rem);
+        }
+        li::marker {
+            color:var(--primary-header-text)
         }
 
         a {
@@ -264,7 +271,7 @@
                 text-align: right;
                 text-wrap: nowrap;
                 font-size: 1.6rem;
-                color: var(--primary-header-contrast-text);
+                color: var(--primary-header-text);
             }
 
         }
@@ -287,7 +294,7 @@
             aspect-ratio: 1/1;
 
             flex: 1 1 calc(50% - 2rem);
-            background-color: rgba(0,0,0,0.2);
+            background-color: rgba(0,0,0,0.05);
             padding: 2rem;
             border-radius: 10%;
             text-align: center;
