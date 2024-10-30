@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Ensure the viewport meta tag is included only once -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codeology - Expert CSS Services</title>
 
@@ -10,6 +9,7 @@
     <meta name="description" content="Professional CSS expert offering services to optimize your website's design, performance, and user experience. Contact Codeology today!">
     <meta name="keywords" content="CSS expert, CSS services, web design, front-end development, responsive design, technical debt, CSS optimization">
     <meta name="author" content="Your Name">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Open Graph Meta Tags for social media -->
     <meta property="og:title" content="Codeology - Expert CSS Services">
@@ -48,21 +48,16 @@
     <!-- Web Manifest -->
     <link rel="manifest" href="./favicon/site.webmanifest">
 
+
     <!-- Domain Prefetching and Preconnecting -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Preload important resources -->
+    <!-- Preload Noto Sans JP (Primary Font) -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" as="style">
-    <link rel="preload" href="img/beach.jpg" as="image">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Single+Day&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <!--link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"-->
+
 
     <!-- Other Performance-related Headers -->
     <meta http-equiv="cache-control" content="max-age=31536000, must-revalidate">
@@ -73,8 +68,8 @@
             "@context": "http://schema.org",
             "@type": "Organization",
             "name": "Codeology",
-            "url": "https://codeology.co.nz",
-            "logo": "https://codeology.co.nz/logo.png",
+            "url": "https://codeolgy.co.nz",
+            "logo": "https://codeolgy.co.nz/logo.png",
             "description": "Providing expert CSS services, specializing in reducing technical debt, resolving issues, and optimizing website performance for clients in need of urgent or on-demand support.",
             "areaServed": {
                 "@type": "Place",
@@ -132,97 +127,23 @@
                 }
             ]
         }
-    </script>
 
+    </script>
     <!-- CSS -->
     <style>
+
         :root {
-            /* Base font settings */
-            --base-font-size: 16px;
-            --font-family-main: 'Noto Sans JP', sans-serif;
-            --text-color: #444;
-            --line-height: 1.6;
+            --primary-background: #f4b400;
+            --secondary-background: #b58e14;
 
-            /* Container */
-            --container-width: 90%;
-            --container-max-width: 1200px;
+            --primary-header-text: #4d3800;
+            --primary-header-contrast-text: #8f6f1a;
 
-            /* Header */
-            --header-bg-color: #f8f8f8;
-            --header-padding: 1rem 0;
-            --header-title-font-size: clamp(2rem, 5vw, 3rem);
-            --header-title-color: #111;
-            --header-title-span-color: #555555;
+            --header-text: #f4b400;
+            --header-text-dark: #4d3800;
 
-            /* Navigation */
-            --nav-margin-top: 1rem;
-            --nav-link-color: #444;
-            --nav-link-hover-color: #000;
-            --nav-link-font-weight: 500;
-            --nav-margin-right: 1.5rem;
-
-            /* Hero Section */
-            --hero-bg-color: rgba(0, 0, 0, 0.2);
-            --hero-text-color: #fff;
-            --hero-padding: 5rem 0;
-            --hero-title-font-size: clamp(2rem, 6vw, 4rem);
-            --hero-paragraph-font-size: 1.5rem;
-            --hero-paragraph-margin-bottom: 2rem;
-
-            /* Services Section */
-            --services-padding: 4rem 0;
-            --service-bg-color: rgba(0, 0, 0, 0.2);
-            --service-border-radius: 5px;
-            --service-padding: 2rem;
-            --service-title-font-size: 1.8rem;
-            --service-paragraph-font-size: 1.2rem;
-            --service-margin-bottom: 1rem;
-
-            /* About Me Section */
-            --about-padding: 4rem 0;
-            --about-title-margin-bottom: 2rem;
-            --about-paragraph-max-width: 800px;
-            --about-paragraph-font-size: 1.2rem;
-            --about-paragraph-margin: 0 auto;
-
-            /* Portfolio Section */
-            --iframe-border: 4px solid #f0f0f0;
-
-            /* Footer */
-            --footer-bg-color: #222;
-            --footer-text-color: #fff;
-            --footer-padding: 1rem 0;
-            --footer-margin-top: 10vh;
-            --footer-text-font-size: 1rem;
-
-            /* Button Bar */
-            --button-bar-width: 64px;
-            --button-bar-height: 64px;
-            --button-bar-gap: 10px;
-            --button-bar-text-color: white;
-            --button-bar-font-size: 14px;
-            --button-bar-font-weight: bold;
-            --button-bar-border-radius: 5px;
-            --button-bar-border-color-checked: #007bff;
-
-            /* Theme colors */
-            --theme-option1-bg-color: #f4b400;
-            --theme-option2-bg-color: #f0f0f0;
-            --theme-option2-text-color: black;
-            --theme-option3-bg-color: #2b2b2b;
-            --theme-option4-bg-color: #e6397d;
-            --theme-option5-bg-color: #f05400;
-
-            /* Halloween Theme Colors */
-            --halloween-header-bg-color: #5a2d82;
-            --halloween-header-text-color: #ff7518;
-            --halloween-title-color: #ff7518;
-            --halloween-span-color: #8A0707;
-            --halloween-button-bg-color: #00ff00;
-            --halloween-button-text-color: #1c1c1c;
-            --halloween-button-border-color: #ff7518;
-            --halloween-footer-bg-color: #5a2d82;
-            --halloween-footer-text-color: #00ff00;
+            --link-text: #A6550A; /* Burnt orange/amber for better contrast */
+            --link-text-hover: #70430A; /* Darker for hover */
         }
 
         * {
@@ -231,103 +152,127 @@
             box-sizing: border-box;
         }
 
-        /* Base font settings */
         html {
             font-size: 16px;
+            line-height: 1.6;
         }
 
         body {
-            font-family: var(--font-family-main);
-            color: var(--text-color);
-            line-height: var(--line-height);
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--primary-background);
+            color: var(--primary-header-text);
+        }
+
+        section{
+            padding: 4vw 0;
+            h2 {
+                color: var( --header-text-dark);
+            }
+        }
+
+        section:nth-child(even){
+            background-color:  var( --secondary-background);
+            h2 {
+                color: var(--header-text);
+            }
+        }
+
+        h2 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 4vw;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+
+        }
+
+
+        h1 {
+            font-weight: 700;
+            font-size: clamp(4rem, 7vw, 6rem);
+            color: var(--primary-header-text);
+            margin: 4vw 0 1vw 0;
+            span {
+                color: var(--primary-header-contrast-text);
+            }
         }
 
         p {
-            overflow-wrap: break-word;
+            text-wrap: pretty;
+            line-height: 1.5;
+            color: var(--primary-header-text);
+            font-size: clamp(2rem, 6vw, 2.5rem);
+
         }
 
-        /* Container */
-        .container {
-            width: var(--container-width);
-            max-width: var(--container-max-width);
-            margin: 0 auto;
+        ul {
+            list-style: inside;
+            margin: 2vh 0;
+        }
+        li {
+            text-wrap: pretty;
+            line-height: 1.5;
+            color: var(--primary-background);
+            font-size: clamp(2rem, 6vw, 2.5rem);
         }
 
-        /* Header styles */
-        header {
-            background-color: var(--header-bg-color);
-            padding: var(--header-padding);
+        a {
+            font-family: 'Noto Sans JP', sans-serif;
+            text-decoration: none;
+            color: var(--link-text);
+            font-size: clamp(2rem, 6vw, 2.5rem);
         }
+        a:hover {
 
-        header h1 {
-            font-size: var(--header-title-font-size);
-            color: var(--header-title-color);
-        }
-
-        header h1 span {
-            color: var(--header-title-span-color);
+            color: var(--link-text-hover);
         }
 
         nav {
-            margin-top: var(--nav-margin-top);
-        }
-
-        nav ul {
-            list-style: none;
             display: flex;
+            align-items: center;
             justify-content: flex-start;
-            flex-wrap: wrap;
+            padding-bottom: 4vw;
+            a  {
+                position: relative;
+                display: block;
+                width: 64px;
+                aspect-ratio: 1/1;
+
+                svg {
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    width: 100%;
+
+                }
+                svg+svg{display:none}
+            }
+            a:hover {
+                svg+svg{display:block}
+            }
+            span {
+                text-align: right;
+                text-wrap: nowrap;
+                font-size: 1.6rem;
+                flex: 1;
+                color: var(--primary-header-contrast-text);
+            }
+
         }
 
-        nav ul li {
-            margin-right: var(--nav-margin-right);
-        }
 
-        nav ul li a {
-            text-decoration: none;
-            color: var(--nav-link-color);
-            font-weight: var(--nav-link-font-weight);
-        }
-
-        nav ul li a:hover,
-        nav ul li a:focus {
-            color: var(--nav-link-hover-color);
-            text-decoration: underline;
-        }
-
-        /* Hero Section */
-        #hero {
-            background: var(--hero-bg-color);
-            color: var(--hero-text-color);
-            text-align: center;
-            padding: var(--hero-padding);
-        }
-
-        #hero h2 {
-            font-size: var(--hero-title-font-size);
-            margin-bottom: 1rem;
-        }
-
-        #hero p {
-            font-size: var(--hero-paragraph-font-size);
-            margin-bottom: var(--hero-paragraph-margin-bottom);
-        }
-
-        /* Services Section */
-        #services {
-            padding: var(--services-padding);
-        }
-
-        #services h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
 
         .service-list {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
             justify-content: center;
+
         }
 
         .service {
@@ -335,574 +280,200 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            aspect-ratio: 2/1;
+            aspect-ratio: 1/1;
+
             flex: 1 1 calc(50% - 2rem);
-            background-color: var(--service-bg-color);
-            padding: var(--service-padding);
-            border-radius: var(--service-border-radius);
+            background-color: rgba(0,0,0,0.2);
+            padding: 2rem;
+            border-radius: 10%;
             text-align: center;
-            overflow-wrap: break-word;
+            text-wrap: pretty;
+            container-type: inline-size;
         }
 
         .service h3 {
-            font-size: var(--service-title-font-size);
-            margin-bottom: var(--service-margin-bottom);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
         }
 
         .service p {
-            font-size: var(--service-paragraph-font-size);
+            font-size: 1.2rem;
         }
 
-        /* About Me Section */
-        #about {
-            padding: var(--about-padding);
+        #portfolio .service{
+            padding:0;
         }
+        #portfolio img{
+            max-width: 100cqw;
+            border-radius: 10%;
+            aspect-ratio: 1/1;
 
-        #about h2 {
-            text-align: center;
-            margin-bottom: var(--about-title-margin-bottom);
         }
-
-        #about p {
-            max-width: var(--about-paragraph-max-width);
-            margin: var(--about-paragraph-margin);
-            font-size: var(--about-paragraph-font-size);
-            text-align: center;
-        }
-
-        /* Portfolio Section */
-        iframe {
-            border: var(--iframe-border);
-        }
-
-        /* Footer */
-        footer {
-            margin-top: var(--footer-margin-top);
-            background-color: var(--footer-bg-color);
-            color: var(--footer-text-color);
-            text-align: center;
-            padding: var(--footer-padding);
-        }
-
-        footer p {
-            font-size: var(--footer-text-font-size);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .service {
-                flex: 1 1 100%;
-            }
-
-            nav ul {
-                justify-content: center;
-            }
-
-            nav ul li {
-                margin: 0 1rem;
-            }
-        }
-
-        /* Components */
-        .button-bar {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            gap: var(--button-bar-gap);
-        }
-
-        .button-bar fieldset {
-            border: 0;
-            display: flex;
-            flex-direction: row;
-            position: relative;
-        }
-
-        .button-bar legend {
-            position: absolute;
-            left: -9999px;
-            visibility: hidden;
-        }
-
-        .button-bar label {
-            display: inline-block;
-            width: 32px;
-            height: 32px;
-            margin-left: 5px;
-            padding: 0;
-            text-indent: -10000px;
-            line-height: 64px;
-            border-radius: var(--button-bar-border-radius);
-            font-size: var(--button-bar-font-size);
-            font-weight: var(--button-bar-font-weight);
-            cursor: pointer;
-            color: var(--button-bar-text-color);
-            border: 1px solid #ccc;
-            background: #f4b400;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),
-            0 1px 0 rgba(255, 255, 255, 0.1) inset;
-            position: relative;
-        }
-
-        .button-bar label:nth-of-type(2) {
-            background-color: #f0f0f0;
-            color: black;
-        }
-
-        .button-bar label:nth-of-type(3) {
-            background-color: #2b2b2b;
-            color: white;
-        }
-
-        .button-bar label:nth-of-type(4) {
-            background-color: #e6397d;
-        }
-
-        .button-bar label:nth-of-type(5) {
-            background-color: #5a2d82;
-        }
-
-        .button-bar input[type="radio"] {
-            display: none;
-        }
-
-        /* Checked button styles */
-        .button-bar input[type="radio"]:checked + label {
-            border: 3px solid #007bff;
-        }
-
-        .button-bar input[type="radio"]:checked + label::after {
-            content: '✓';
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            color: #007bff;
-            font-size: 16px;
-        }
-
-        /* Themes */
-
-        body.theme-option1 {
-            background-color: var(--theme-option1-bg-color);
-        }
-
-        body.theme-option2 {
-            background-color: var(--theme-option2-bg-color);
-            color: var(--theme-option2-text-color);
-        }
-
-        body.theme-option3 {
-            background-color: var(--theme-option3-bg-color);
-        }
-
-        body.theme-option4 {
-            background-color: var(--theme-option4-bg-color);
-        }
-
-        body.theme-option5 {
-            background-color: #5a2d82;
-            color: #f8f8f8;
-        }
-
-        /* Halloween Theme */
-        body.theme-option5 header {
-            background-color: var(--halloween-header-bg-color);
-            color: var(--halloween-header-text-color);
-        }
-
-        body.theme-option5 h1 {
-            position: relative;
-            z-index: 1;
-            font-family: "Nosifer", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            font-size: clamp(2rem, 5vw, 3rem);
-            transform: scaleY(3);
-            transform-origin: top;
-            display: inline-block;
-            max-inline-size: 50%;
-            overflow-wrap: break-word;
-            color: var(--halloween-title-color);
-        }
-
-        body.theme-option5 h1 span {
-            color: var(--halloween-span-color);
-        }
-
-        body.theme-option5 h2 {
-            font-size: clamp(2rem, 6vw, 4rem);
-            font-family: "Creepster", system-ui;
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        body.theme-option5 ul {
-            padding-top: 60px;
-            position: relative;
-            z-index: 2;
-        }
-
-        body.theme-option5 p,
-        body.theme-option5 a {
-            font-family: "Single Day", cursive;
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        body.theme-option5 a {
-            color: #00ff00;
-        }
-
-        body.theme-option5 a:hover,
-        body.theme-option5 a:focus {
-            color: #ff7518;
-        }
-
-        /* Halloween Buttons */
-        body.theme-option5 .btn {
-            background-color: var(--halloween-button-bg-color);
-            color: var(--halloween-button-text-color);
-            border: 2px solid var(--halloween-button-border-color);
-        }
-
-        body.theme-option5 .btn:hover,
-        body.theme-option5 .btn:focus {
-            background-color: #ff7518;
-            color: #1c1c1c;
-        }
-
-        /* Halloween Footer */
-        body.theme-option5 footer {
-            background-color: var(--halloween-footer-bg-color);
-            color: var(--halloween-footer-text-color);
-        }
-
-        body.theme-option5 .service {
-            background: rgba(0, 0, 0, 0.2);
-            color: #ff7518;
-            border: 2px solid #00ff00;
-        }
-
-        body.theme-option5 #about .halloween {
-            text-transform: uppercase;
-            color: #8A0707;
-            font-size: 2rem;
-            font-weight: 900;
-            text-shadow:
-                    3px 3px 0 #000,
-                    -3px -3px 5px #FF00FF,
-                    4px 4px 10px rgba(0, 0, 0, 0.7),
-                    0 0 20px #00FF00,
-                    0 0 30px #00FF00;
-            background-color: #4B0082;
-        }
-
-        /* Halloween iframe borders */
-        body.theme-option5 iframe {
-            border: 4px solid #ff7518;
-        }
-
-        /* Pumpkin */
-        body.theme-option5 .pumpkin {
-            height: 11em;
-            width: 15em;
-            background: #f68632;
-            border: 0.4em solid #a14907;
-            border-radius: 70%/110%;
-            position: relative;
-            box-shadow: inset 0 0px 20px #a14907, 0 0 30px -4px red;
-            z-index: 1;
-        }
-
-        body.theme-option5 .pumpkin .surface {
-            height: 10.8em;
-            width: 6.5em;
-            position: absolute;
-            bottom: -0.4em;
-            left: 4em;
-            border-radius: 70%/110%;
-            border-bottom: 0.5em solid #a14907;
-            border-top: 0.5em solid #a14907;
-        }
-
-        body.theme-option5 .pumpkin .surface:after {
-            content: "";
+        #portfolio a {
             display: block;
-            height: 10.7em;
-            width: 12em;
-            position: absolute;
-            bottom: -0.4em;
-            left: -2.5em;
-            border-radius: 70%/110%;
-            border-bottom: .05em solid #a14907;
-            border-top: 0.5em solid #a14907;
+            width: 100%;
+            height:100%;
         }
-
-        body.theme-option5 .pumpkin .stem {
-            background: #517f54;
-            height: 2.8em;
-            width: 1.25em;
-            position: absolute;
-            left: calc(7.5em - 0.625em);
-            top: -2.7em;
-            transform: rotate(5deg);
-            border-radius: 30% 20% 70% 10%;
-            z-index: -1;
-            box-shadow: inset 0 0px 10px #29412b;
-        }
-
-        body.theme-option5 .pumpkin .eye {
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-top: 0.8em solid transparent;
-            top: 2.8em;
-        }
-
-        body.theme-option5 .pumpkin .eye.right {
-            right: 3.7em;
-            transform: rotate(30deg);
-            border-bottom: 2.1em solid transparent;
-            border-left: 2.4em solid #401d03;
-        }
-
-        body.theme-option5 .pumpkin .eye.left {
-            left: 3.7em;
-            transform: rotate(-30deg);
-            border-bottom: 2.1em solid transparent;
-            border-right: 2.4em solid #401d03;
-        }
-
-        body.theme-option5 .pumpkin .mouth {
-            width: 4em;
-            height: 2em;
-            position: absolute;
-            bottom: 1.5em;
-            border-bottom: 1em solid #401d03;
-        }
-
-        body.theme-option5 .pumpkin .mouth.right {
-            right: 3.6em;
-            border-radius: 0 0 100% 0;
-        }
-
-        body.theme-option5 .pumpkin .mouth.left {
-            left: 3.6em;
-            border-radius: 0 0 0 100%;
-        }
-
-        body.theme-option5 .pumpkin .teeth {
-            width: 0.5em;
-            height: 1em;
-            position: absolute;
-            top: 7.7em;
-            left: 7.25em;
-            border-top: 0.8em solid transparent;
-            border-bottom: 0em solid transparent;
-            border-left: 0.8em solid #401d03;
-        }
-
-        body.theme-option5 .pumpkin .teeth:before,
-        body.theme-option5 .pumpkin .teeth:after {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-top: 0.8em solid transparent;
-        }
-
-        body.theme-option5 .pumpkin .teeth:before {
-            right: 2.2em;
-            top: -0.65em;
-            transform: rotate(30deg);
-            border-bottom: 0.5em solid transparent;
-            border-left: 1em solid #401d03;
-        }
-
-        body.theme-option5 .pumpkin .teeth:after {
-            left: 1em;
-            top: -0.85em;
-            transform: rotate(30deg);
-            border-bottom: 0.5em solid transparent;
-            border-left: 1em solid #401d03;
-        }
-
-        /* Accessibility Enhancements */
-        /* Skip Link */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: #000;
-            color: #fff;
-            padding: 8px;
-            z-index: 100;
-        }
-
-        .skip-link:focus {
-            top: 0;
-        }
-
-        /* Focus Indicators */
-        a:focus,
-        button:focus,
-        input[type="radio"]:focus + label {
-            outline: 2px solid #000;
-        }
-
-        /* Visually Hidden Class */
-        .visually-hidden {
-            position: absolute;
-            left: -10000px;
-            top: auto;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-        }
-
     </style>
 </head>
-<body class="theme-option1">
-
-<!-- Skip Link -->
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<body>
 
 <!-- Header Section -->
 <header>
     <div class="container">
         <h1>Code<span>ology</span></h1>
-        <nav aria-label="Main Navigation">
-            <ul>
-                <li><a href="#services">Learn About My Services</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#contact">Contact Information</a></li>
-            </ul>
+
+        <nav>
+            <a href="mailto:tony@codeology.co.nz" class="btn btn-email" aria-label="Send an email to tony@codeology.co.nz">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#8f6f1a" stroke="none" fill-rule="evenodd" clip-rule="evenodd" d="M16.9955 10.15C16.9955 9.826 16.829 9.5425 16.5725 9.385L12.5 7L8.4275 9.385C8.171 9.5425 8 9.826 8 10.15V14.65C8 15.145 8.405 15.55 8.9 15.55H16.1C16.595 15.55 17 15.145 17 14.65L16.9955 10.15ZM16.0955 10.15V10.1545L12.5 12.4L8.89999 10.15L12.5 8.04401L16.0955 10.15ZM8.89999 11.203V14.65H16.1L16.0955 11.2165L12.5 13.462L8.89999 11.203Z" />
+                    <path fill="#8f6f1a" stroke="none" fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z"  />
+                </svg>
+
+                <svg viewBox="0 0 24 24" fill="#8f6f1a" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#4d3800" stroke="none" fill-rule="evenodd" clip-rule="evenodd" d="M16.9955 10.15C16.9955 9.826 16.829 9.5425 16.5725 9.385L12.5 7L8.4275 9.385C8.171 9.5425 8 9.826 8 10.15V14.65C8 15.145 8.405 15.55 8.9 15.55H16.1C16.595 15.55 17 15.145 17 14.65L16.9955 10.15ZM16.0955 10.15V10.1545L12.5 12.4L8.89999 10.15L12.5 8.04401L16.0955 10.15ZM8.89999 11.203V14.65H16.1L16.0955 11.2165L12.5 13.462L8.89999 11.203Z" />
+                    <path fill="#4d3800" stroke="none" fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z"  />
+                </svg>
+            </a>
+
+            <a href="sms:+6421677460" class="btn btn-phone" aria-label="Call now 021-677-460">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#8f6f1a" stroke="none" fill-rule="evenodd" clip-rule="evenodd" d="M17.6857 12.3143L16.5858 13.4142C16.4129 13.5871 16.1301 13.5871 15.9572 13.4142C15.5644 13.0214 15.1244 12.7071 14.6562 12.4714C14.5116 12.396 14.4142 12.2483 14.4142 12.0723L14.4142 10.6895C13.0722 10.2527 11.6172 10.2558 10.2721 10.6895L10.2721 12.0723C10.269 12.1948 10.2218 12.3048 10.1401 12.3866C10.1087 12.418 10.071 12.4494 10.027 12.4683C9.5587 12.704 9.11558 13.0214 8.72589 13.4111C8.55304 13.5839 8.2702 13.5839 8.09735 13.4111L7.00055 12.3143C6.8277 12.1414 6.8277 11.8586 7.00055 11.6857C9.95154 8.73474 14.7347 8.73474 17.6857 11.6857C17.8586 11.8586 17.8586 12.1414 17.6857 12.3143ZM16.2589 12.484C15.9604 12.2231 15.6398 11.9969 15.3035 11.8114V11.0572C15.8095 11.3055 16.2903 11.6229 16.7335 12.0094L16.2589 12.484ZM9.38271 11.8052C9.04015 11.9969 8.7196 12.2231 8.42419 12.4808L7.95592 12.0126C8.39904 11.626 8.87988 11.3086 9.38585 11.054L9.38271 11.8052Z" />
+                    <path fill="#8f6f1a" stroke="none" fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z" />
+                </svg>
+
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#4d3800" stroke="none" fill-rule="evenodd" clip-rule="evenodd" d="M17.6857 12.3143L16.5858 13.4142C16.4129 13.5871 16.1301 13.5871 15.9572 13.4142C15.5644 13.0214 15.1244 12.7071 14.6562 12.4714C14.5116 12.396 14.4142 12.2483 14.4142 12.0723L14.4142 10.6895C13.0722 10.2527 11.6172 10.2558 10.2721 10.6895L10.2721 12.0723C10.269 12.1948 10.2218 12.3048 10.1401 12.3866C10.1087 12.418 10.071 12.4494 10.027 12.4683C9.5587 12.704 9.11558 13.0214 8.72589 13.4111C8.55304 13.5839 8.2702 13.5839 8.09735 13.4111L7.00055 12.3143C6.8277 12.1414 6.8277 11.8586 7.00055 11.6857C9.95154 8.73474 14.7347 8.73474 17.6857 11.6857C17.8586 11.8586 17.8586 12.1414 17.6857 12.3143ZM16.2589 12.484C15.9604 12.2231 15.6398 11.9969 15.3035 11.8114V11.0572C15.8095 11.3055 16.2903 11.6229 16.7335 12.0094L16.2589 12.484ZM9.38271 11.8052C9.04015 11.9969 8.7196 12.2231 8.42419 12.4808L7.95592 12.0126C8.39904 11.626 8.87988 11.3086 9.38585 11.054L9.38271 11.8052Z" />
+                    <path fill="#4d3800" stroke="none" fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z" />
+                </svg>
+
+            </a>
+            <span>+64 (21) 677 460</span>
+
+
+
+
         </nav>
     </div>
 
-    <form class="button-bar">
-        <fieldset>
-            <legend>Choose a Theme for the Website</legend>
-            <label>
-                <input type="radio" name="theme" value="option1" checked>
-                <span class="visually-hidden">Default Theme</span>
-            </label>
-            <label>
-                <input type="radio" name="theme" value="option2">
-                <span class="visually-hidden">Light Theme</span>
-            </label>
-            <label>
-                <input type="radio" name="theme" value="option3">
-                <span class="visually-hidden">Dark Theme</span>
-            </label>
-            <label>
-                <input type="radio" name="theme" value="option4">
-                <span class="visually-hidden">Pink Theme</span>
-            </label>
-            <label>
-                <input type="radio" name="theme" value="option5">
-                <span class="visually-hidden">Halloween Theme</span>
-            </label>
-        </fieldset>
-    </form>
 </header>
 
-<!-- Main Content -->
-<main id="main-content">
+<!-- Hero Section with Call to Action -->
+<section id="hero">
+    <div class="container">
+        <h2>CSS Specialist</h2>
+        <p>Available immediately.</p>
 
-    <!-- Hero Section with Call to Action -->
-    <section id="hero">
-        <div class="container">
-            <h2>Your CSS Expert</h2>
-            <p>Transforming websites by eliminating technical debt and optimizing front-end performance.</p>
-            <a href="sms:+6421677460" class="btn" aria-label="Call us at 021-677-460">021-677-460</a>
-            <a href="mailto:tony@codeology.co.nz" class="btn" aria-label="Send an email to tony@codeology.co.nz">tony@codeology.co.nz</a>
-        </div>
-    </section>
+        <ul>
+        <li>Is a small task growing bigger than you expected? Is it making your project feel overwhelming?</li>
+        <li>Do you need to get started and want some extra hands right away?</li>
+        </ul>
 
-    <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <h2>What I Do</h2>
-            <div class="service-list">
-                <div class="service">
-                    <h3>Embed</h3>
-                    <p>Seamlessly <strong>integrate into your project</strong>, bringing <strong>CSS skills</strong> on <strong>short notice</strong> to fill any gaps or reinforce your team's capabilities.</p>
-                </div>
-                <div class="service">
-                    <h3>Untangle</h3>
-                    <p>CSS technical debt, giving your team a <strong>capacity boost</strong> when it is needed.</p>
-                </div>
-                <div class="service">
-                    <h3>Collaborate</h3>
-                    <p>Work with design to find the balance between pixel-perfect and responsive design.</p>
-                </div>
-                <div class="service">
-                    <h3>Consult</h3>
-                    <p>Provide technical direction for your project.</p>
-                </div>
+        <p>
+            If you’d like to have a conversation instead of just looking at AI-generated CVs, feel free to give
+
+            <strong>021-677-460</strong> or click to
+            <a href="sms:+6421677460" class="btn btn-phone" aria-label="Call now 021-677-460">
+                <strong>send an SMS</strong></a>.
+
+        </p>
+
+        <p>
+            For more details or to share documents, you can reach me at  <a href="mailto:tony@codeology.co.nz" class="btn btn-email" aria-label="Send an email to tony@codeology.co.nz">
+            <strong>tony@codeology.co.nz</strong></a>.
+        </p>
+
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="whatido">
+    <div class="container">
+        <h2>How can I assist?</h2>
+        <div class="service-list">
+            <div class="service">
+                <h3>Embed</h3>
+                <p>Jump into your project without interruption, providing high-level CSS expertise at the moment you need it. With little onboarding, I’m ready to bridge any skills gaps, <strong>boost capacity</strong>, and align with your team’s workflow.</p>
+
+
+
+
+            </div>
+            <div class="service">
+                <h3>Untangle</h3>
+                <p>
+                    <strong>Cut through CSS technical debt</strong> to streamline your codebase. I specialise in simplifying complex legacy code. I make it efficient and manageable. This lets your team <strong>focus on building</strong>, not untangling.
+                </p>
+
+
+
+
+            </div>
+            <div class="service">
+                <h3>Collaborate</h3>
+                <p><strong>Collaborate with your design team.</strong>. Find the best balance between pixel-perfect and responsive design on all devices.</p>
+            </div>
+
+
+
+
+            <div class="service">
+                <h3>Consult</h3>
+                <p>Provide guidance to <strong>future-proof your project</strong>. Cover best practices and standards in CSS for modern, scalable front-end development.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- About Me Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>With <strong>more than a decade</strong> of experience in front-end development, <strong>I can help you out of <span class="halloween">CSS hell</span></strong> and help to <strong>reduce or eliminate CSS technical debt</strong>.</p>
-        </div>
-    </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <div class="container">
-            <h2>What I Have Done</h2>
-            <div class="service-list">
-                <div class="service">
-                    <iframe src="https://pawprintpetition.co.nz" lang="en" title="Pawprint Petition Website"></iframe>
-                </div>
-                <div class="service">
-                    <iframe src="https://bettersaver.co.nz" lang="en" title="BetterSaver Website"></iframe>
-                </div>
-                <div class="service">
-                    <iframe src="https://getforsite.com" lang="en" title="Forsite Website"></iframe>
-                </div>
-                <div class="service">
-                    <iframe src="https://getforsite.com" lang="en" title="Forsite Website"></iframe>
-                </div>
+
+<section id="css-about">
+    <div class="container" aria-labelledby="css-services-heading">
+        <h2 id="css-services-heading">Expertise that clears the way for faster, smoother projects.</h2>
+        <p>I have over a decade of experience. I step into projects to tackle technical debt, fix legacy CSS issues, and improve the front end. My skills complement today's framework-based approaches.</p>
+
+        <p>In addition to my css skills I am also a fullstack developer.  My primary language is node-js.</p>
+        <p>I am experienced in vanilla html/css and JS, Typescript, React, Vue, Next.js, Nuxt.js and Angular.</p>
+        <p>I have a variety of experience in the AWS and GCP ecosystems.</p>
+
+    </div>
+</section>
+
+
+<!-- Contact Section -->
+
+<section id="portfolio">
+    <div class="container">
+        <h2>Recent work.</h2>
+        <div class="service-list">
+            <div class="service">
+                <a href="https://pawprintpetition.co.nz/" title="Animates Paw Print Petition">
+                    <img src="ppp.png" alt="Paw print petition">
+                </a>
+
+            </div>
+            <div class="service">
+                <a href="https://bettersaver.co.nz/" title="BetterSaver">
+                <img src="bs.png" alt="BetterSaver">
+                </a>
+            </div>
+            <div class="service">
+                <a href="https://getforsite.com" title="Forsite Health and Saftey">
+                <img src="fs.png" alt="Forsite">
+                </a>
+            </div>
+            <div class="service">
+                TBC
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-</main>
-
-<!-- Footer -->
 <footer>
     <div class="container">
         <p>&copy; 2024 Codeology. All rights reserved.</p>
     </div>
 
-    <div class="pumpkin" aria-hidden="true">
-        <div class="surface"></div>
-        <div class="stem"></div>
-        <div class="eye left"></div>
-        <div class="eye right"></div>
-        <div class="mouth left"></div>
-        <div class="mouth right"></div>
-        <div class="teeth"></div>
-    </div>
-
 </footer>
-
-<!-- JavaScript for Theme Switching -->
-<script>
-    // JavaScript to handle theme changes
-    document.querySelectorAll('input[name="theme"]').forEach((input) => {
-        input.addEventListener('change', function () {
-            document.body.className = 'theme-' + this.value;
-        });
-    });
-</script>
 </body>
 </html>
