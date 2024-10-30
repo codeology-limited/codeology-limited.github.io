@@ -168,6 +168,23 @@
             box-sizing: border-box;
         }
 
+        /* Skip Link Styling */
+        .skip-link {
+            position: absolute;
+            top: -70px;
+            left: 0;
+            background: var(--link-text);
+            color: white;
+            padding: 8px 16px;
+            z-index: 100;
+            transition: top 0.3s ease;
+        }
+
+        .skip-link:focus ,.skip-link:hover {
+            top: 0;
+            color: white;
+        }
+
         html {
             font-size: 16px;
             line-height: 1.6;
@@ -186,7 +203,7 @@
             }
         }
 
-        section:nth-child(even) {
+        section:nth-of-type(odd) {
             background-color: var(--secondary-background);
             h2 {
                 color: var(--header-text);
@@ -403,6 +420,7 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
 <!-- Header Section -->
 <header>
     <div class="container">
@@ -443,88 +461,91 @@
 
 </header>
 
-<!-- Hero Section with Call to Action -->
-<section id="hero">
-    <div class="container">
-        <h2>CSS Specialist</h2>
-        <h3>Available immediately.</h3>
-
-        <ul>
-        <li>Is a small CSS task growing bigger than you expected? Is it making your project feel overwhelming?</li>
-        <li>Do you need to get started and want some extra hands right away?</li>
-        </ul>
-
-        <p class="cta1">
-            If you’d like to have a conversation instead of just looking at AI-generated CVs, feel free to call on
-
-            <a href="tel:+6421677460" aria-label="Call now 021-677-460">021-677-460</a> or
-            <a href="sms:+6421677460" class="btn btn-phone" aria-label="Call now 021-677-460">
-                send&nbsp;an&nbsp;SMS</a>.
-
-        </p>
-
-        <p  class="cta2">
-            For more details or to share documents, you can reach me at  <a href="mailto:tony@codeology.co.nz" class="btn btn-email" aria-label="Send an email to tony@codeology.co.nz">
-            tony@codeology.co.nz</a>.
-        </p>
-
-    </div>
-</section>
-
-<!-- Services Section -->
-<section id="whatido">
-    <div class="container">
-        <h2>How can I assist?</h2>
-        <div class="service-list">
-            <div class="service">
-                <h3>Embed</h3>
-                <p>Jump into your project without interruption, providing high-level CSS expertise at the moment you need it. With little onboarding, I’m ready to bridge any skills gaps, <strong>boost capacity</strong>, and align with your team’s workflow.</p>
 
 
+    <!-- Hero Section with Call to Action -->
+    <section id="hero">
+        <div class="container">
+            <main id="main-content">
+            <h2>CSS Specialist</h2>
+            <h3>Available immediately.</h3>
 
+            <ul>
+            <li>Is a small CSS task growing bigger than you expected? Is it making your project feel overwhelming?</li>
+            <li>Do you need to get started and want some extra hands right away?</li>
+            </ul>
 
-            </div>
-            <div class="service">
-                <h3>Untangle</h3>
-                <p>
-                    <strong>Cut through CSS technical debt</strong> to streamline your codebase. I specialise in simplifying complex legacy code. I make it efficient and manageable. This lets your team <strong>focus on building</strong>, not untangling.
-                </p>
+            <p class="cta1">
+                If you’d like to have a conversation instead of just looking at AI-generated CVs, feel free to call on
+
+                <a href="tel:+6421677460" aria-label="Call now 021-677-460">021-677-460</a> or
+                <a href="sms:+6421677460" class="btn btn-phone" aria-label="Call now 021-677-460">
+                    send&nbsp;an&nbsp;SMS</a>.
+
+            </p>
+
+            <p  class="cta2">
+                For more details or to share documents, you can reach me at  <a href="mailto:tony@codeology.co.nz" class="btn btn-email" aria-label="Send an email to tony@codeology.co.nz">
+                tony@codeology.co.nz</a>.
+            </p>
+            </main>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="whatido">
+        <div class="container">
+            <h2>How can I assist?</h2>
+            <div class="service-list">
+                <div class="service">
+                    <h3>Embed</h3>
+                    <p>Jump into your project without interruption, providing high-level CSS expertise at the moment you need it. With little onboarding, I’m ready to bridge any skills gaps, <strong>boost capacity</strong>, and align with your team’s workflow.</p>
 
 
 
 
-            </div>
-            <div class="service">
-                <h3>Collaborate</h3>
-                <p><strong>Collaborate with your design team</strong>. Find the best balance between pixel-perfect and responsive design across devices.</p>
-            </div>
+                </div>
+                <div class="service">
+                    <h3>Untangle</h3>
+                    <p>
+                        <strong>Cut through CSS technical debt</strong> to streamline your codebase. I specialise in simplifying complex legacy code. I make it efficient and manageable. This lets your team <strong>focus on building</strong>, not untangling.
+                    </p>
 
 
 
 
-            <div class="service">
-                <h3>Consult</h3>
-                <p>Provide guidance to <strong>future-proof your project</strong>. Cover best practices and standards in CSS for modern, scalable front-end development.</p>
+                </div>
+                <div class="service">
+                    <h3>Collaborate</h3>
+                    <p><strong>Collaborate with your design team</strong>. Find the best balance between pixel-perfect and responsive design across devices.</p>
+                </div>
+
+
+
+
+                <div class="service">
+                    <h3>Consult</h3>
+                    <p>Provide guidance to <strong>future-proof your project</strong>. Cover best practices and standards in CSS for modern, scalable front-end development.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 
-<section id="css-about">
-    <div class="container" aria-labelledby="css-services-heading">
-        <h2 id="css-services-heading">Expertise that clear the way for faster, smoother projects.</h2>
-        <p>With over a decade of experience, I step into projects to tackle technical debt, fix legacy CSS issues, and improve the front end.
-        </p><p>My skill set complement's today's framework-based approaches.</p>
+    <section id="css-about">
+        <div class="container" aria-labelledby="css-services-heading">
+            <h2 id="css-services-heading">Expertise that clear the way for faster, smoother projects.</h2>
+            <p>With over a decade of experience, I step into projects to tackle technical debt, fix legacy CSS issues, and improve the front end.
+            </p><p>My skill set complement's today's framework-based approaches.</p>
 
-        <p>In addition to my CSS skills I am also a generalist developer.  My primary language is JavaScript, but I have experience across a range of other languages</p>
-        <p>I am experienced in vanilla HTML, CSS, JavaScript and Typescript.</p>
-        <p>I also have experience with modern front end frame works such as React, Vue, Next.js, Nuxt.js and Angular, Django, and a passing familiarity with languages such as Rust, Go, Python, Dart.</p>
-        <p>I have a variety of experience in the AWS and GCP ecosystems.</p>
+            <p>In addition to my CSS skills I am also a generalist developer.  My primary language is JavaScript, but I have experience across a range of other languages</p>
+            <p>I am experienced in vanilla HTML, CSS, JavaScript and Typescript.</p>
+            <p>I also have experience with modern front end frame works such as React, Vue, Next.js, Nuxt.js and Angular, Django, and a passing familiarity with languages such as Rust, Go, Python, Dart.</p>
+            <p>I have a variety of experience in the AWS and GCP ecosystems.</p>
 
-    </div>
-</section>
+        </div>
+    </section>
 
 
 <!-- Contact Section -->
