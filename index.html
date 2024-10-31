@@ -146,6 +146,7 @@
         /*    --link-text: #A6550A; !* Burnt orange/amber for better contrast *!*/
         /*    --link-text-hover: #70430A; !* Darker for hover *!*/
         /*}*/
+
         :root {
             /* Background Colors */
             --primary-background: #f4a500; /* Slightly darker for better contrast */
@@ -180,7 +181,8 @@
             transition: top 0.3s ease;
         }
 
-        .skip-link:focus ,.skip-link:hover {
+        .skip-link:focus,
+        .skip-link:hover {
             top: 0;
             color: white;
         }
@@ -198,16 +200,20 @@
 
         section {
             padding: 4vw 0;
-            h2 {
-                color: var(--header-text-dark);
-            }
         }
 
-        main section, section:nth-of-type(even) {
+        section h2 {
+            color: var(--header-text-dark);
+        }
+
+        main section,
+        section:nth-of-type(even) {
             background-color: var(--secondary-background);
-            h2 {
-                color: var(--header-text);
-            }
+        }
+
+        main section h2,
+        section:nth-of-type(even) h2 {
+            color: var(--header-text);
         }
 
         h2 {
@@ -232,9 +238,10 @@
             font-size: clamp(4rem, 7vw, 6rem);
             color: var(--primary-header-text);
             margin: 4vw 0 1vw 0;
-            span {
-                color: var(--primary-header-contrast-text);
-            }
+        }
+
+        h1 span {
+            color: var(--primary-header-contrast-text);
         }
 
         h3 {
@@ -282,27 +289,28 @@
             align-items: center;
             justify-content: flex-start;
             padding-bottom: 4vw;
-            a {
-                position: relative;
-                display: block;
-                width: 64px;
-                aspect-ratio: 1/1;
+        }
 
-                svg {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                }
+        nav a {
+            position: relative;
+            display: block;
+            width: 64px;
+            aspect-ratio: 1/1;
+        }
 
-                svg+svg {
-                    display: none;
-                }
-            }
-            a:hover svg+svg {
-                display: block;
-            }
+        nav a svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
 
+        nav a svg + svg {
+            display: none;
+        }
+
+        nav a:hover svg + svg {
+            display: block;
         }
 
         nav .tel {
@@ -314,6 +322,7 @@
             font-size: 1.6rem;
             color: var(--primary-header-text);
         }
+
         .service-list {
             display: flex;
             flex-wrap: wrap;
@@ -328,7 +337,7 @@
             justify-content: center;
             aspect-ratio: 1/1;
             flex: 1 1 calc(50% - 2rem);
-            background-color: rgba(0,0,0,0.05);
+            background-color: rgba(0, 0, 0, 0.05);
             padding: 2rem;
             border-radius: 10%;
             text-align: center;
@@ -351,7 +360,7 @@
         }
 
         #portfolio img {
-            max-width: 100cqw;
+            max-width: 100%;
             border-radius: 10%;
             aspect-ratio: 1/1;
         }
@@ -366,16 +375,21 @@
             text-align: center;
         }
 
+        /* Responsive Styles */
         @media (max-width: 767px) {
             h1, h2, h3 {
                 text-align: center;
             }
-            nav .email, nav .sms {
+
+            nav .email,
+            nav .sms {
                 display: none;
             }
+
             nav .tel {
                 text-align: center;
             }
+
             li {
                 font-size: clamp(1.5rem, 3vw, 2rem);
                 margin: 3vh 3vw;
@@ -385,37 +399,43 @@
                 list-style: none;
                 line-height: 2;
             }
+
             .cta1, .cta2 {
                 text-align: center;
                 margin: 3vh 3vw;
                 padding: 3vh 3vw;
                 font-size: clamp(1.5rem, 3vw, 2rem);
-                a {
-                    font-size: clamp(1.5rem, 3vw, 2rem);
-                }
             }
+
+            .cta1 a, .cta2 a {
+                font-size: clamp(1.5rem, 3vw, 2rem);
+            }
+
             .service-list {
                 flex-direction: column;
                 flex-wrap: nowrap;
-                .service {
-                    aspect-ratio: auto;
-                    border-radius: 0;
-                    flex: 0;
-                }
             }
+
+            .service-list .service {
+                aspect-ratio: auto;
+                border-radius: 0;
+                flex: 0;
+            }
+
             #css-about p {
                 margin: 3vh 3vw;
                 padding: 1vh 3vw;
             }
+
             #portfolio .service {
                 background-color: transparent;
             }
+
             footer p {
                 padding: 6vw;
                 font-size: clamp(1.5rem, 3vw, 2rem);
             }
         }
-
 
     </style>
 </head>
