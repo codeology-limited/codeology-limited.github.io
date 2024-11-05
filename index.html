@@ -137,11 +137,11 @@
         /*    --primary-background: #f4b400;*/
         /*    --secondary-background: #b58e14;*/
 
-        /*    --primary-header-text: #4d3800;*/
+        /*    --primary-text: #4d3800;*/
         /*    --primary-header-contrast-text: #8f6f1a;*/
 
-        /*    --header-text: #f4b400;*/
-        /*    --header-text-dark: #4d3800;*/
+        /*    --secondary-header-text: #f4b400;*/
+        /*    --secondary-header-text-dark: #4d3800;*/
 
         /*    --link-text: #A6550A; !* Burnt orange/amber for better contrast *!*/
         /*    --link-text-hover: #70430A; !* Darker for hover *!*/
@@ -149,18 +149,18 @@
 
         :root {
             /* Background Colors */
-            --primary-background: #f4a500; /* Slightly darker for better contrast */
-            --secondary-background: #a37408; /* Improved contrast for headers */
+            --primary-background: #F4B400;
+            --secondary-background: #C69200;
 
             /* Header Text Colors */
-            --primary-header-text: #3b2a00; /* Darker brown for readability */
-            --primary-header-contrast-text: #705a00; /* More contrasting for lighter elements */
-            --header-text: #f7c600; /* Brightened gold for better readability */
-            --header-text-dark: #3b2a00; /* Consistent with primary header text */
+            --primary-text: #3B2A00; /* Darker brown for readability */
+            --primary-header-contrast-text: #6A4D00; /* More contrasting for lighter elements */
+            --secondary-header-text: #F4B400; /* Brightened gold for better readability */
+            --secondary-header-text-dark: #3b2a00; /* Consistent with primary header text */
 
             /* Link Colors */
-            --link-text: #004e7c; /* Deep blue for high contrast */
-            --link-text-hover: #00314d; /* Darker blue for hover */
+            --link-text: #51545C; /* Deep blue for high contrast */
+            --link-text-hover: #677DB7; /* Darker blue for hover */
         }
 
         * {
@@ -195,7 +195,7 @@
         body {
             font-family: 'Noto Sans JP', sans-serif;
             background-color: var(--primary-background);
-            color: var(--primary-header-text);
+            color: var(--primary-text);
         }
 
         section {
@@ -203,7 +203,7 @@
         }
 
         section h2 {
-            color: var(--header-text-dark);
+            color: var(--secondary-header-text-dark);
         }
 
         main section,
@@ -213,7 +213,7 @@
 
         main section h2,
         section:nth-of-type(even) h2 {
-            color: var(--header-text);
+            color: var(--secondary-header-text);
         }
 
         h2 {
@@ -223,9 +223,10 @@
             margin-bottom: 4vw;
         }
 
-        #hero h2 {
-            margin-bottom: 0;
+        #hero h2 ,#hero h3{
+            margin-bottom: 5vw;
         }
+
 
         .container {
             width: 90%;
@@ -236,7 +237,7 @@
         h1 {
             font-weight: 700;
             font-size: clamp(4rem, 7vw, 6rem);
-            color: var(--primary-header-text);
+            color: var(--primary-text);
             margin: 4vw 0 1vw 0;
         }
 
@@ -252,7 +253,7 @@
         p {
             text-wrap: pretty;
             line-height: 1.3;
-            color: var(--primary-header-text);
+            color: var(--primary-text);
             font-size: clamp(2rem, 6vw, 2.5rem);
             margin-bottom: 1vw;
         }
@@ -270,7 +271,7 @@
         }
 
         li::marker {
-            color: var(--primary-header-text);
+            color: var(--primary-text);
         }
 
         a {
@@ -320,7 +321,7 @@
             text-align: right;
             text-wrap: nowrap;
             font-size: 1.6rem;
-            color: var(--primary-header-text);
+            color: var(--primary-text);
         }
 
         .service-list {
@@ -377,7 +378,7 @@
 
         /* Responsive Styles */
         @media (max-width: 767px) {
-            h1, h2, h3 {
+            h1, h2, h3,p {
                 text-align: center;
             }
 
@@ -395,7 +396,7 @@
                 margin: 3vh 3vw;
                 padding: 3vh 3vw;
                 text-align: center;
-                background-color: var(--primary-header-text);
+                background-color: var(--primary-text);
                 list-style: none;
                 line-height: 2;
             }
@@ -486,9 +487,10 @@
 <section id="hero">
     <div class="container">
 
-            <h2>CSS Specialist</h2>
-            <h3>Available immediately.</h3>
-            <ul>
+        <h2>Challenging project?  Need help?</h2>
+        <h3>I am Ready to start right away</h3>
+
+        <ul>
                 <li>Is a small CSS task growing bigger than you expected? Is it making your project feel overwhelming?</li>
                 <li>Do you need to get started and want some extra hands right away?</li>
             </ul>
@@ -531,6 +533,19 @@
         </div>
     </div>
 </section>
+
+
+<section id="css-personal" aria-labelledby="css-services-heading">
+    <div class="container">
+        <h2 id="css-personal-heading">Who am I?</h2>
+        <p>With over a decade of experience, I step into projects to tackle technical debt, fix legacy CSS issues, and improve the front end.</p>
+        <p>My skill set complements today's framework-based approaches.</p>
+        <p>In addition to my CSS skills, I am also a generalist developer. My primary language is JavaScript, but I have experience across other languages as well.</p>
+        <p>I am experienced in vanilla HTML, CSS, JavaScript, and TypeScript, and have worked with modern front-end frameworks such as React, Vue, Next.js, Nuxt.js, Angular, Django, and more.</p>
+        <p>I also have experience in the AWS and GCP ecosystems.</p>
+    </div>
+</section>
+
 
 <!-- Expertise Section -->
 <section id="css-about" aria-labelledby="css-services-heading">
