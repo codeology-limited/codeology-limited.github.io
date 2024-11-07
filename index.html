@@ -186,15 +186,46 @@
             color: var(--primary-text);
             display: flex;
             flex-direction: column;
-            padding: max(3vw, 3vh ) 0 ;
+            padding: max(3vw, 3vh ) 0 0 ;
         }
 
         body > * {
 
-            padding: 0 max(3vw, 3vh );
+            padding: 0 max(3vw, 3vh ) 0;
         }
 
+        header {
+            order: 1;
+        }
+
+        section{
+            order: 4;
+        }
+        section+section{
+            order: 5;
+            ;
+        }
+        footer{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex:1;
+            order:6;
+            padding: 5vw 0 1vw;
+        }
+
+        footer p {
+            text-align: center;
+            margin:0;
+            font-size: clamp(1rem,2vw,2rem);
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
         main {
+            order:3;
             background-color: var(--secondary-background);
         }
         main h2 {
@@ -203,32 +234,33 @@
             margin-top: max(3vw,3vh);
         }
         main p {
-            font-size: clamp(1.6rem, 2vw, 2rem);
+
         }
-        h1 {
+        h1 {order: 2;
             font-size: clamp(3rem, 6vw, 6rem);
             margin-bottom: max(3vw,3vh);
         }
         h2 {
-            font-size: clamp(2rem, 5vw, 5rem);
-            color: var(--primary-header-contrast-text);
-            margin-bottom: max(3vw,3vh);
+            font-size: clamp(3rem, 5vw, 5rem);
+
+            margin: max(3vw,3vh) 0;
         }
         h3 {
-            font-size: clamp(1rem, 3vw, 3rem);
-            color: var(--primary-header-contrast-text);
+            font-size: clamp(2rem, 3vw, 3rem);
+            color: var(--primary-text);
             margin-bottom: max(3vw,3vh);
+            text-transform: uppercase;
         }
-        p {
+        p, blockquote {
             margin-bottom: max(3vw,3vh);
-            font-size: clamp(1.5rem, 2vw, 2rem);
+            font-size: clamp(2rem, 3vw, 3rem);
             text-wrap: pretty;
         }
         ol {
             padding: 0 0 0 max(3vw,3vh);
         }
         li {
-            font-size: clamp(1.5rem, 2vw, 2rem);
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
             margin-bottom: max(1vw,1vh);
         }
         a{
@@ -256,70 +288,131 @@
         .cta2 a:hover{
             color: var(--link-text-hover-bright);
         }
+
+
+
+
+        /* Container for the services */
         #portfolio .service-list {
             display: flex;
             padding: 0;
+            list-style: none; /* Remove default list styling if applicable */
+            margin: 0; /* Reset default margin */
         }
+
+
+        /* Individual service item */
         #portfolio .service {
             max-width: 25%;
-            flex:1;
+            flex: 1;
+
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
         }
 
+        /* Styling for images within the portfolio */
         #portfolio img {
-            max-width: 100%;
+            width: 100%; /* Ensures images take full width of the container */
+            height: auto; /* Maintains aspect ratio */
             border-radius: 10%;
-            aspect-ratio: 1/1;
-            outline: 1px solid var(--primary-text);
+            aspect-ratio: 1 / 1;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds depth */
+            display: block; /* Removes bottom whitespace */
+            border: 5px solid var(--secondary-background);
         }
 
+        /* Styling for the links wrapping the images */
         #portfolio a {
-            position: relative;
-            padding: 1vw;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
+            border: 1px solid var(--secondary-background);
+            border-radius: 10%;
+            margin: 1vw ;
+            position: relative; /* Establishes a positioning context for pseudo-elements */
+
+            overflow: hidden; /* Hides overflow for smooth transitions */
+            display: block; /* Ensures the link takes up the full space */
             text-decoration: none;
             color: var(--primary-text);
         }
-        #portfolio a:before {
-            content: attr(title);
+
+        /* Overlay for the project title */
+        #portfolio a::before {
+            content: attr(title); /* Retrieves the title attribute from the <a> tag */
             font-weight: 900;
-            display: block;
             width: 100%;
-            line-height: 3;
-
+            height: 100%;
+            line-height: 1;
+            color:   var(--link-text-hover-bright);;
             text-align: center;
-            white-space: nowrap;
+            text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
             overflow: hidden;
-            text-overflow: ellipsis;
-
-            font-size: clamp( .8rem, 2vw, 2rem);
-
-        }
-        #portfolio a:after {
-            padding: 0.5em 1em;
-            border: 2px solid var(--primary-text);
-            color: var(--primary-text);
-            font-weight: 900;
-            font-size: clamp( .8rem, 2vw, 2rem);
-            white-space: nowrap;
-            content: "Click to view";
             position: absolute;
-            background-color:  hsla(43, 100%, 39%, 0.7);
-            border-radius: 8px;
-            bottom: 10%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
-            z-index: 10; /* Ensure it sits above other elements */
-            text-align: center;
+            top: 100%; /* Positions the overlay below the view */
+            left: 0;
+            font-size: clamp(0.8rem, 2vw, 2rem);
+            background-color: rgba(102,179,255,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10; /* Sits above the image */
+            transition: transform 0.5s ease; /* Smooth sliding transition */
+            transform: translateY(0); /* Initial position */
+            padding: 1vw;
+            box-sizing: border-box;
         }
-        #portfolio a:hover:after {
-            opacity: 1; /* Fade in on hover */
-            background-color: hsla(43, 100%, 39%, 0.9); /* Slightly more opaque */
-            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+
+        /* Overlay for the "Click to view" button */
+        #portfolio a::after {
+            content: "view";
+            padding:1vw;
+
+            color: 1px solid var(--link-text);;
+            border: 1px solid var(--link-text);
+            font-weight: 900;
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            letter-spacing: 1px;
+            white-space: nowrap;
+            position: absolute;
+            top: 50%; /* Initial position near the bottom */
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centers the button horizontally */
+            background-color: rgba(102,179,255,0.5); /* Semi-transparent background */
+            border-radius: 50%;
+            aspect-ratio: 1/1;
+display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 20; /* Sits above the image but below the title overlay */
+            text-align: center;
+            transition: transform 0.5s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+            opacity: 1; /* Fully visible initially */
+        }
+
+        /* Hover state for the link */
+        #portfolio a:hover::before {
+            transform: translateY(-100%); /* Slides the title overlay into view */
+        }
+
+        #portfolio a:hover::after {
+           display:none;
+        }
+
+        .tearaway {
+
+            position: relative;
+
+
+            text-align: center;
+            font-size: clamp(2rem, 3vw, 3rem);
+            text-wrap: pretty;
+            overflow-wrap: break-word;
+            line-height: 1.3;
+            padding: 5vw 10vw 5vw;
+        }
+        .tearaway::before {
+            content: "“";
+        }
+
+        .tearaway::after {
+            content: "”";
         }
 
 
@@ -353,11 +446,7 @@
         /*}*/
 
 
-        /*.container {*/
-        /*    width: 90%;*/
-        /*    max-width: 1200px;*/
-        /*    margin: 0 auto;*/
-        /*}*/
+
 
         /*.company-name {*/
         /*    font-weight: 700;*/
@@ -410,44 +499,44 @@
         /*    color: var(--link-text-hover);*/
         /*}*/
 
-        /*nav {*/
-        /*    display: flex;*/
-        /*    align-items: center;*/
-        /*    justify-content: flex-start;*/
-        /*    padding-bottom: 4vw;*/
-        /*}*/
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-bottom: 4vw;
+        }
 
-        /*nav a {*/
-        /*    position: relative;*/
-        /*    display: block;*/
-        /*    width: 64px;*/
-        /*    aspect-ratio: 1/1;*/
-        /*}*/
+        nav a {
+            position: relative;
+            display: block;
+            width: 64px;
+            aspect-ratio: 1/1;
+        }
 
-        /*nav a svg {*/
-        /*    position: absolute;*/
-        /*    top: 0;*/
-        /*    left: 0;*/
-        /*    width: 100%;*/
-        /*}*/
+        nav a svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
 
-        /*nav a svg + svg {*/
-        /*    display: none;*/
-        /*}*/
+        nav a svg + svg {
+            display: none;
+        }
 
-        /*nav a:hover svg + svg {*/
-        /*    display: block;*/
-        /*}*/
+        nav a:hover svg + svg {
+            display: block;
+        }
 
-        /*nav .tel {*/
-        /*    aspect-ratio: auto;*/
-        /*    display: block;*/
-        /*    width: 100%;*/
-        /*    text-align: right;*/
-        /*    text-wrap: nowrap;*/
-        /*    font-size: 1.6rem;*/
-        /*    color: var(--primary-text);*/
-        /*}*/
+        nav .tel {
+            aspect-ratio: auto;
+            display: block;
+            width: 100%;
+            text-align: right;
+            text-wrap: nowrap;
+            font-size: 1.6rem;
+            color: var(--primary-text);
+        }
 
         /*.service-list {*/
         /*    display: flex;*/
@@ -482,9 +571,6 @@
         /*}*/
 
 
-        /*footer p {*/
-        /*    text-align: center;*/
-        /*}*/
 
         /*!* Responsive Styles *!*/
         /*@media (max-width: 767px) {*/
@@ -559,7 +645,7 @@
 
             <h2>Move Your Project Forward with Reliable, Flexible Development Support</h2>
 
-            <p>Whether you’re starting fresh, catching up, or overcoming resource gaps, I’m here to keep things moving smoothly. As a full-stack developer with CSS expertise and a background in front-end and back-end development, I can help manage technical debt, legacy challenges, and build resilient solutions that align with your goals. My approach is straightforward—minimal onboarding, clear communication, and adaptability to fit your needs.</p>
+            <p>Whether you’re <strong>starting fresh, catching up, or overcoming resource gaps</strong>, I’m here to keep things moving smoothly. As a full-stack developer with expertise and a background in front-end and back-end development, I can help manage technical debt, legacy challenges, and build resilient solutions that align with your goals. My approach is straightforward—minimal onboarding, clear communication, and adaptability to fit your needs.</p>
 
 
 
@@ -569,7 +655,7 @@
 
 
             <p class="cta1">
-                Skip the usual hiring hassle and let’s connect directly. Call me at
+                Skip the usual hiring hassle and let’s connect directly. <br>Call me at
                 <a tabindex="1" href="tel:+6421677460" aria-label="Call now 021-677-460">021-677-460</a> or
                 <a tabindex="3" href="sms:+6421677460" class="btn btn-phone" aria-label="Send an SMS to 021-677-460">send an SMS</a>.
             </p>
@@ -590,15 +676,6 @@
             </ol>
 
 
-
-            <p>With a focus on clear communication, trust, and collaboration, I can handle both the front-end and back-end needs of your project, working hard to ensure everything is done right. I’m committed to delivering results — and I’m happy to go the extra mile if that’s what’s needed to make your project succeed.</p>
-
-
-
-
-
-
-
         </div>
     </section>
 </main>
@@ -610,13 +687,13 @@
 
 
         <h2>How I Can Help:</h2>
-        <p>Whether you need someone to join mid-project, help resolve specific challenges, or bring a fresh perspective, I can step in where it makes the most sense for you. My approach is flexible, designed to support your project in the way you need, with as much or as little onboarding as necessary. I bring CSS expertise, front-end problem-solving, and back-end support that fits seamlessly into your workflow.</p>
+        <p>Whether you need someone to join mid-project, help resolve specific challenges, or bring a fresh perspective, I can step in where it makes the most sense for you. My approach is flexible, designed to support your project in the way you need, with as much or as little onboarding as necessary. I bring expertise, front-end problem-solving, and back-end support that fits seamlessly into your workflow.</p>
 
         <div class="service-list">
 
             <div class="service">
                 <h3>Embed</h3>
-                <p>I join your project on demand, filling skill gaps and providing CSS expertise with minimal setup.</p>
+                <p>I join your project on demand, filling skill gaps and providing expertise with minimal setup.</p>
             </div>
 
             <div class="service">
@@ -635,6 +712,9 @@
             </div>
 
         </div>
+
+        <blockquote class="tearaway">With trust and communication, I fulfil the needs of your project, working hard to ensure everything is done right. I’m committed to delivering results — and I’m happy to go the extra mile if that’s what’s needed to make your project succeed.</blockquote>
+
 
         <p class="cta2">
             Let’s talk directly. Call me at 021-677-460, or reach me at
@@ -656,22 +736,24 @@
         <h2>Recent work.</h2>
         <div class="service-list">
             <div class="service">
-                <a tabindex="-1" href="https://pawprintpetition.co.nz/" title="Animates Paw Print Petition">
-                    <img src="ppp.png" alt="Paw print petition">
+                <a  target="_blank" tabindex="-1" href="https://pawprintpetition.co.nz/" title="Pet friendly petition to ban fireworks">
+                    <img src="ppp.png" alt="Paw print petition webpage snapshot">
                 </a>
             </div>
             <div class="service">
-                <a tabindex="-1" href="https://bettersaver.co.nz/" title="BetterSaver">
-                    <img src="bs.png" alt="BetterSaver">
+                <a  target="_blank" tabindex="-1" href="https://bettersaver.co.nz/" title="Choose a Better KiwiSaver">
+                    <img src="bs.png" alt="BetterSaver Logo">
                 </a>
             </div>
             <div class="service">
-                <a tabindex="-1" href="https://getforsite.com" title="Forsite Solutions">
-                    <img src="fs.png" alt="Forsite Solutions">
+                <a  target="_blank" tabindex="-1" href="https://getforsite.com" title="The Ultimate Companion for Effortless Health and Safety">
+                    <img src="fs.png" alt="Forsite Timeline Image">
                 </a>
             </div>
             <div class="service">
-                TBC
+                <a  target="_blank" tabindex="-1" href="https://on-the-go.co.nz" title="Out and about in Tāmaki Makaurau">
+                    <img src="otg.svg" alt="On-the-go Logo">
+                </a>
             </div>
         </div>
     </div>
