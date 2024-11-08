@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS AND Gate</title>
+    <style>
+
+        div{
+            background-color: red;padding: 1rem;margin: 1rem;
+            border-bottom: 1px solid black;
+        }
+        #and:has(:checked+:checked){
+            background-color: green;
+        }
+        #or:has(:checked){
+            background-color: green;
+        }
+        #not:has(:not(:checked)){
+            background-color: green;
+        }
+        #nand:has(:not(:checked), :not(:checked)) {
+            background-color: green;
+        }
+        #nor:not( :has(  :checked ):has(  :checked )) {
+        background-color: green;
+        }
+        #xor:has(:checked):not(:has(:checked+:checked))   {
+            background-color: green;
+        }
+        #xnor:has(:checked+:checked):not(:has(:checked~:not(:checked))),
+        #xnor:has(:not(:checked)+:not(:checked)):not(:has(:checked~:not(:checked)))  {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div id="and">
+        AND Outputs 1 only if all its inputs are 1. Otherwise, the output is 0.
+        <input type="checkbox"  >
+        Input A
+
+        <input type="checkbox"  >
+        Input B
+    </div>
+
+    <div id="or">
+        OR Outputs 1 if any of its inputs are 1. The output is 0 only when all inputs are 0.
+        <input type="checkbox" >
+        Input A
+
+        <input type="checkbox">
+        Input B
+    </div>
+
+    <div id="not">
+        NOT Outputs the opposite of its input. If the input is 1, the output is 0, and vice versa.
+        <input type="checkbox" >
+        Input A
+    </div>
+    <div id="nand">
+        NAND Outputs 0 only when all its inputs are 1. For all other input combinations, the output is 1. It is the inverse of the AND gate.
+
+        <input type="checkbox" >
+        Input A
+
+        <input type="checkbox">
+        Input B
+    </div>
+    <div id="nor">
+        NOR Outputs 0 if any of its inputs are 1. The output is 1 only when all inputs are 0. It is the inverse of the OR gate.
+        <input type="checkbox" >
+        Input A
+
+        <input type="checkbox">
+        Input B
+    </div>
+
+    <div id="xor">
+        XOR Gate (Exclusive OR)
+        Explanation: Outputs 1 only when an odd number of its inputs are 1. If the number of high inputs is even, the output is 0.
+        <input type="checkbox" >
+        Input A
+
+        <input type="checkbox">
+        Input B
+    </div>
+
+    <div id="xnor">
+        XNOR Gate (Exclusive NOR)
+        Explanation: Outputs 1 only when an even number of its inputs are 1. It is the inverse of the XOR gate.
+        <input type="checkbox" >
+        Input A
+
+        <input type="checkbox">
+        Input B
+    </div>
+
+    <div id="Buffer">
+        Buffer Gate
+        Explanation: Outputs the same value as its input. It is used to strengthen signals or isolate different parts of a circuit.
+
+        <input type="checkbox" >
+        Input A
+
+        <input type="checkbox">
+        Input B
+    </div>
+
+    <div id="BUFFER">
+        BUFFER Gate
+        Explanation: Similar to the Buffer Gate, it outputs the input value without any change. Primarily used for signal amplification or conditioning.
+
+        <input type="checkbox" >
+        Input A
+
+        <input type="checkbox">
+        Input B
+    </div>
+
+    <div id="MUX">
+        MULTIPLEXER (MUX)
+        Explanation: Selects one of many input signals and forwards the selected input into a single line based on selector inputs.
+        <input type="checkbox" >
+        Input A
+
+        <input type="checkbox">
+        Input B
+    </div>
+
+    <div id="DEMUX">
+        DEMULTIPLEXER (DEMUX)
+        Explanation: Takes a single input signal and routes it to one of many output lines based on selector inputs.
+        <input type="checkbox" >
+        Input A
+
+        <input type="checkbox">
+        Input B
+    </div>
+
+    <div id="endcoder">
+        ENCODER
+        Explanation: Converts multiple input lines into a smaller number of output lines by encoding the active input into a binary code.
+        <input type="checkbox" >
+        Input A
+
+        <input type="checkbox">
+        Input B
+    </div>
+
+    <div id="decoder">
+        DECODER
+        Explanation: Converts binary information from n input lines to a maximum of 2ⁿ unique output lines, activating only the output line that corresponds to the binary input.
+
+        <input type="checkbox" >
+        Input A
+
+        <input type="checkbox">
+        Input B
+    </div>
+
+    <div id="flipflop">
+        FLIP-FLOP
+        Explanation: A basic memory element that can store one bit of information, used in sequential logic circuits to store state information.
+        <input type="checkbox" >
+        Input A
+
+        <input type="checkbox">
+        Input B
+    </div>
+
+    <div id="latch">
+        LATCH
+        Explanation: Similar to flip-flops but are level-triggered instead of edge-triggered. Used for temporary data storage in circuits.
+        <input type="checkbox" >
+        Input A
+
+        <input type="checkbox">
+        Input B
+    </div>
+
+</body>
+</html>
