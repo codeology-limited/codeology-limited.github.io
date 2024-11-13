@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web skills to move your project from stalled to done.</title>
+    <title>CSS SPECIALIST - AVAILABLE</title>
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Professional CSS expert offering services to optimize your website's design, performance, and user experience. Contact Codeology today!">
@@ -236,7 +236,13 @@
         main p {
 
         }
-        h1 {order: 2;
+        header h2 {
+            text-align: center;
+            margin:0;
+        }
+        h1 {
+            text-align:center;
+            order: 2;
             font-size: clamp(3rem, 6vw, 6rem);
             margin-bottom: max(3vw,3vh);
         }
@@ -248,13 +254,18 @@
         h3 {
             font-size: clamp(2rem, 3vw, 3rem);
             color: var(--primary-text);
-            margin-bottom: max(3vw,3vh);
+            margin: max(1.5vw,1.5vh) 0;
+            padding: max(1.5vw,1.5vh) 0;
             text-transform: uppercase;
+            border-top: 1px dotted var(--primary-text);
         }
         p, blockquote {
             margin-bottom: max(3vw,3vh);
             font-size: clamp(2rem, 3vw, 3rem);
             text-wrap: pretty;
+        }
+        blockquote {
+            border-left: 3px solid var(--primary-text);
         }
         ol {
             padding: 0 0 0 max(3vw,3vh);
@@ -289,9 +300,32 @@
             color: var(--link-text-hover-bright);
         }
 
+        #about img {
+            width: 20vw;
+            height: 20vw;
+            border-radius: 50%; /* Ensures the image is circular */
+            background-color: var(--secondary-background);
+            position: relative;
+            margin: 5vw 2vw 2vw 0;
+            float: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 10px solid var(--primary-text);;
 
-
-
+            box-shadow: 0px 0px 5px 1px #444;
+            transform: rotate(-5deg);
+            shape-outside: circle(50%); /* Defines circular wrapping for text */
+        }
+        #about h2 {
+            margin: 0;
+            line-height: 20vw;
+        }
+        #about p {
+            padding: 0;
+            margin:0;
+            text-wrap: pretty
+        }
         /* Container for the services */
         #portfolio .service-list {
             display: flex;
@@ -448,16 +482,16 @@ display: flex;
 
 
 
-        /*.company-name {*/
-        /*    font-weight: 700;*/
-        /*    font-size: clamp(1rem, 1.5vw, 1.5rem);*/
-        /*    color: var(--primary-text);*/
-        /*    margin: 4vw 0 1vw 0;*/
-        /*}*/
+        .company-name {
+            font-weight: 700;
+            font-size: clamp(1rem, 1.5vw, 1.5rem);
+            color: var(--primary-text);
+            margin: 4vw 0 1vw 0;
+        }
 
-        /*.company-name  span {*/
-        /*    color: var(--primary-header-contrast-text);*/
-        /*}*/
+        .company-name  span {
+            color: var(--primary-header-contrast-text);
+        }
 
         /*h3 {*/
         /*    font-size: clamp(2rem, 6vw, 2.5rem);*/
@@ -502,157 +536,50 @@ display: flex;
         nav {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            padding-bottom: 4vw;
+            justify-content: center;
+
+            height: 8vw;
         }
 
-        nav a {
-            position: relative;
-            display: block;
-            width: 64px;
-            aspect-ratio: 1/1;
-        }
 
-        nav a svg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-        }
-
-        nav a svg + svg {
-            display: none;
-        }
-
-        nav a:hover svg + svg {
-            display: block;
-        }
 
         nav .tel {
             aspect-ratio: auto;
             display: block;
-            width: 100%;
+
             text-align: right;
             text-wrap: nowrap;
-            font-size: 1.6rem;
+            font-size: clamp( 1rem, 3vw, 2rem);
             color: var(--primary-text);
         }
 
-        /*.service-list {*/
-        /*    display: flex;*/
-        /*    flex-wrap: wrap;*/
-        /*    gap: 2rem;*/
-        /*    justify-content: center;*/
-        /*}*/
-
-        /*.service {*/
-        /*    display: flex;*/
-        /*    flex-direction: column;*/
-        /*    align-items: center;*/
-        /*    justify-content: center;*/
-        /*    aspect-ratio: 1/1;*/
-        /*    flex: 1 1 calc(50% - 2rem);*/
-        /*    background-color: rgba(0, 0, 0, 0.05);*/
-        /*    padding: 2rem;*/
-        /*    border-radius: 10%;*/
-        /*    text-align: center;*/
-        /*    text-wrap: pretty;*/
-        /*    container-type: inline-size;*/
-        /*}*/
-
-        /*.service h3 {*/
-        /*    font-size: 1.8rem;*/
-        /*    margin-bottom: 1rem;*/
-        /*    text-transform: uppercase;*/
-        /*}*/
-
-        /*.service p {*/
-        /*    font-size: 1.2rem;*/
-        /*}*/
-
-
-
-        /*!* Responsive Styles *!*/
-        /*@media (max-width: 767px) {*/
-        /*    h1, h2, h3,p {*/
-        /*        text-align: center;*/
-        /*    }*/
-
-        /*    nav .email,*/
-        /*    nav .sms {*/
-        /*        display: none;*/
-        /*    }*/
-
-        /*    nav .tel {*/
-        /*        text-align: center;*/
-        /*    }*/
-
-        /*    li {*/
-        /*        font-size: clamp(1.5rem, 3vw, 2rem);*/
-        /*        margin: 3vh 3vw;*/
-        /*        padding: 3vh 3vw;*/
-        /*        text-align: center;*/
-        /*        background-color: var(--primary-text);*/
-        /*        list-style: none;*/
-        /*        line-height: 2;*/
-        /*    }*/
-
-        /*    .cta1, .cta2 {*/
-        /*        text-align: center;*/
-        /*        margin: 3vh 3vw;*/
-        /*        padding: 3vh 3vw;*/
-        /*        font-size: clamp(1.5rem, 3vw, 2rem);*/
-        /*    }*/
-
-        /*    .cta1 a, .cta2 a {*/
-        /*        font-size: clamp(1.5rem, 3vw, 2rem);*/
-        /*    }*/
-
-        /*    .service-list {*/
-        /*        flex-direction: column;*/
-        /*        flex-wrap: nowrap;*/
-        /*    }*/
-
-        /*    .service-list .service {*/
-        /*        aspect-ratio: auto;*/
-        /*        border-radius: 0;*/
-        /*        flex: 0;*/
-        /*    }*/
-
-        /*    #css-about p {*/
-        /*        margin: 3vh 3vw;*/
-        /*        padding: 1vh 3vw;*/
-        /*    }*/
-
-        /*    #portfolio .service {*/
-        /*        background-color: transparent;*/
-        /*    }*/
-
-        /*    footer p {*/
-        /*        padding: 6vw;*/
-        /*        font-size: clamp(1.5rem, 3vw, 2rem);*/
-        /*    }*/
-        /*}*/
 
     </style>
 </head>
 <body>
-<h1>CSS JAVASCRIPT HTML</h1>
+<h1>CSS SPECIALIST - AVAILABLE</h1>
 
 <main id="main-content">
+
+    <section id="about">
+        <div class="container">
+
+            <img alt="Bust Image of Tony">
+
+
+
+            <h2>Hi I'm Tony</h2>
+            <p>As a CSS specialist and full-stack developer, I bring both precision and versatility to every project. My skill set bridges front-end finesse and back-end robustness, helping projects overcome technical debt, legacy issues, and performance challenges. I focus on crafting scalable, maintainable CSS that’s as clean as it is effective, and my full-stack expertise ensures seamless integration across the entire development process. Whether you need targeted CSS improvements or full-stack support, I’m here to keep things moving smoothly and efficiently.</p>
+
+
+        </div>
+    </section>
     <section id="hero">
         <div class="container">
 
             <h2>Move Your Project Forward with Reliable, Flexible Development Support</h2>
 
             <p>Whether you’re <strong>starting fresh, catching up, or overcoming resource gaps</strong>, I’m here to keep things moving smoothly. As a full-stack developer with expertise and a background in front-end and back-end development, I can help manage technical debt, legacy challenges, and build resilient solutions that align with your goals. My approach is straightforward—minimal onboarding, clear communication, and adaptability to fit your needs.</p>
-
-
-
-
-
-
-
 
             <p class="cta1">
                 Skip the usual hiring hassle and let’s connect directly. <br>Call me at
@@ -686,7 +613,7 @@ display: flex;
 
 
 
-        <h2>How I Can Help:</h2>
+        <h2>How I Can Help?</h2>
         <p>Whether you need someone to join mid-project, help resolve specific challenges, or bring a fresh perspective, I can step in where it makes the most sense for you. My approach is flexible, designed to support your project in the way you need, with as much or as little onboarding as necessary. I bring expertise, front-end problem-solving, and back-end support that fits seamlessly into your workflow.</p>
 
         <div class="service-list">
@@ -761,35 +688,10 @@ display: flex;
 
 <header>
     <div class="container">
-        <h1>Fullstack Web Developer - available</h1>
+        <h2>CSS JAVASCRIPT HTML</h2>
         <nav>
 
-            <span class="company-name">Code<span>ology</span></span>
 
-            <a tabindex="-1" class="email" href="mailto:tony@codeology.co.nz" class="btn btn-email" aria-label="Send an email to tony@codeology.co.nz">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#8f6f1a" stroke="none" fill-rule="evenodd" clip-rule="evenodd" d="M16.9955 10.15C16.9955 9.826 16.829 9.5425 16.5725 9.385L12.5 7L8.4275 9.385C8.171 9.5425 8 9.826 8 10.15V14.65C8 15.145 8.405 15.55 8.9 15.55H16.1C16.595 15.55 17 15.145 17 14.65L16.9955 10.15ZM16.0955 10.15V10.1545L12.5 12.4L8.89999 10.15L12.5 8.04401L16.0955 10.15ZM8.89999 11.203V14.65H16.1L16.0955 11.2165L12.5 13.462L8.89999 11.203Z" />
-                    <path fill="#8f6f1a" stroke="none" fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z"  />
-                </svg>
-
-                <svg viewBox="0 0 24 24" fill="#8f6f1a" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#4d3800" stroke="none" fill-rule="evenodd" clip-rule="evenodd" d="M16.9955 10.15C16.9955 9.826 16.829 9.5425 16.5725 9.385L12.5 7L8.4275 9.385C8.171 9.5425 8 9.826 8 10.15V14.65C8 15.145 8.405 15.55 8.9 15.55H16.1C16.595 15.55 17 15.145 17 14.65L16.9955 10.15ZM16.0955 10.15V10.1545L12.5 12.4L8.89999 10.15L12.5 8.04401L16.0955 10.15ZM8.89999 11.203V14.65H16.1L16.0955 11.2165L12.5 13.462L8.89999 11.203Z" />
-                    <path fill="#4d3800" stroke="none" fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z"  />
-                </svg>
-            </a>
-
-            <a tabindex="-1" class="sms"  href="sms:+6421677460" class="btn btn-phone" aria-label="Call now 021-677-460">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#8f6f1a" stroke="none" fill-rule="evenodd" clip-rule="evenodd" d="M17.6857 12.3143L16.5858 13.4142C16.4129 13.5871 16.1301 13.5871 15.9572 13.4142C15.5644 13.0214 15.1244 12.7071 14.6562 12.4714C14.5116 12.396 14.4142 12.2483 14.4142 12.0723L14.4142 10.6895C13.0722 10.2527 11.6172 10.2558 10.2721 10.6895L10.2721 12.0723C10.269 12.1948 10.2218 12.3048 10.1401 12.3866C10.1087 12.418 10.071 12.4494 10.027 12.4683C9.5587 12.704 9.11558 13.0214 8.72589 13.4111C8.55304 13.5839 8.2702 13.5839 8.09735 13.4111L7.00055 12.3143C6.8277 12.1414 6.8277 11.8586 7.00055 11.6857C9.95154 8.73474 14.7347 8.73474 17.6857 11.6857C17.8586 11.8586 17.8586 12.1414 17.6857 12.3143ZM16.2589 12.484C15.9604 12.2231 15.6398 11.9969 15.3035 11.8114V11.0572C15.8095 11.3055 16.2903 11.6229 16.7335 12.0094L16.2589 12.484ZM9.38271 11.8052C9.04015 11.9969 8.7196 12.2231 8.42419 12.4808L7.95592 12.0126C8.39904 11.626 8.87988 11.3086 9.38585 11.054L9.38271 11.8052Z" />
-                    <path fill="#8f6f1a" stroke="none" fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z" />
-                </svg>
-
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#4d3800" stroke="none" fill-rule="evenodd" clip-rule="evenodd" d="M17.6857 12.3143L16.5858 13.4142C16.4129 13.5871 16.1301 13.5871 15.9572 13.4142C15.5644 13.0214 15.1244 12.7071 14.6562 12.4714C14.5116 12.396 14.4142 12.2483 14.4142 12.0723L14.4142 10.6895C13.0722 10.2527 11.6172 10.2558 10.2721 10.6895L10.2721 12.0723C10.269 12.1948 10.2218 12.3048 10.1401 12.3866C10.1087 12.418 10.071 12.4494 10.027 12.4683C9.5587 12.704 9.11558 13.0214 8.72589 13.4111C8.55304 13.5839 8.2702 13.5839 8.09735 13.4111L7.00055 12.3143C6.8277 12.1414 6.8277 11.8586 7.00055 11.6857C9.95154 8.73474 14.7347 8.73474 17.6857 11.6857C17.8586 11.8586 17.8586 12.1414 17.6857 12.3143ZM16.2589 12.484C15.9604 12.2231 15.6398 11.9969 15.3035 11.8114V11.0572C15.8095 11.3055 16.2903 11.6229 16.7335 12.0094L16.2589 12.484ZM9.38271 11.8052C9.04015 11.9969 8.7196 12.2231 8.42419 12.4808L7.95592 12.0126C8.39904 11.626 8.87988 11.3086 9.38585 11.054L9.38271 11.8052Z" />
-                    <path fill="#4d3800" stroke="none" fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z" />
-                </svg>
-
-            </a>
 
             <a  tabindex="-1" class='tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
 
