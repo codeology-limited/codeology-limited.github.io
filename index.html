@@ -177,7 +177,7 @@
             --primary-text: var(--prussian-blue);
             --secondary-text:  var(--prussian-blue);
             --primary-header-text: var(--raisin-black); /* More contrasting for lighter elements */
-            --secondary-header-text: var(--raisin-black); /* Brightened gold for better readability */
+            --secondary-header-text: var(--prussian-blue); /* Brightened gold for better readability */
 
             --cta-c: var(--old-rose);
             --cta-bg: var(--lavender-blush);
@@ -233,15 +233,15 @@
         }
 
         header {
-            order: 1;
+
         }
 
         section {
-            order: 4;
+
         }
 
         section + section {
-            order: 5;
+
         }
 
         footer {
@@ -249,7 +249,7 @@
             align-items: center;
             justify-content: flex-end;
             flex: 1;
-            order: 6;
+
             padding: 5vw 0 1vw;
         }
 
@@ -265,7 +265,7 @@
         }
 
         main {
-            order: 3;
+
             background-color: var(--secondary-background);
         }
 
@@ -276,26 +276,26 @@
         }
 
         h1 {
-            order: 2;
+
             font-size: clamp(max(3vw, 4vh), min(5vw, 6vh), min(5vw, 6vh));
-            margin-bottom: max(3vw, 3vh);
+            margin-bottom: max(1vw, 1vh);
             color: var(--primary-header-text);
             text-shadow: 0 0.2vw 5vw rgba(60, 40, 20, 0.4),
             0 0.3vw 0.8vw rgba(60, 40, 20, 0.3);
 
 
         }
+
+        /*h2 {*/
+        /*    color: var(--primary-header-text);*/
+        /*    font-size: clamp(max(2vw, 3vh), min(4vw, 5vh), min(4vw, 5vh));*/
+        /*    text-shadow: 0 0.2vw 5vw rgba(60, 40, 20, 0.4),*/
+        /*    0 0.3vw 0.8vw rgba(60, 40, 20, 0.3);*/
+
+
+        /*}*/
 
         h2 {
-            color: var(--primary-header-text);
-            font-size: clamp(max(2vw, 3vh), min(4vw, 5vh), min(4vw, 5vh));
-            text-shadow: 0 0.2vw 5vw rgba(60, 40, 20, 0.4),
-            0 0.3vw 0.8vw rgba(60, 40, 20, 0.3);
-
-
-        }
-
-        h3 {
             font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 4vh));
             text-transform: uppercase;
 
@@ -303,6 +303,15 @@
             color: var(--secondary-header-text);
         }
 
+        h3{
+
+            font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 4vh));
+            text-transform: uppercase;
+
+            padding: max(1.5vw, 1.5vh) 0;
+            color: var(--rust);
+
+        }
         p, blockquote, li {
             font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 5vh));
             line-height: calc(2.5vh + 2vw);
@@ -366,6 +375,13 @@
         #about {
             margin-top: 5vw;
         }
+        #about figure  {
+            float: left;            shape-outside: circle(50%); /* Defines circular wrapping for text */
+        }
+        figcaption{
+            text-align: center;
+            margin: 1vw;
+        }
         #about picture  {
             overflow:hidden;
             width: 20vw;
@@ -376,7 +392,7 @@
             border-radius: 50%; /* Ensures the image is circular */
 
             position: relative;
-            float: left;
+
             margin: 0 max(3vw, 5vh) 0 0 ;
             display: flex;
             align-items: center;
@@ -386,7 +402,7 @@
             box-shadow: 0 0 0.5vw rgba(60, 40, 20, 0.5),
             0 0.5vw 1.5vw rgba(60, 40, 20, 0.4);
             transform: rotate(-5deg);
-            shape-outside: circle(50%); /* Defines circular wrapping for text */
+
 
         }
         picture img { max-width: 100%; max-height: 100%;}
@@ -583,36 +599,33 @@
     </style>
 </head>
 <body>
-<h1>CSS SPECIALIST.  AVAILABLE.</h1>
 
+<header>
+    <div class="container">
+        <h1>Move Your Project Forwards</h1>
+
+    </div>
+</header>
 <main id="main-content">
 
     <section id="about">
         <div class="container">
 
-            <picture >
-
+            <figure>
+                <picture>
                     <img alt="Tony" src="tony.png">
+                </picture>
+                <figcaption>
+                    <a    tabindex="-1" class='tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
+                </figcaption>
+            </figure>
 
-
-            </picture>
-
-            <p>As a CSS specialist and full-stack developer, I bring both precision and versatility to every project.
-            My skill set bridges front-end finesse and back-end robustness, helping projects overcome technical debt, legacy issues, and performance challenges.</p><p>I focus on crafting scalable, maintainable CSS that’s as clean as it is effective, and my full-stack expertise ensures seamless integration across the entire development process. </p><p>Whether you need targeted CSS improvements or full-stack support, I’m here to keep things moving smoothly and efficiently.</p>
-
-
-
-
-        </div>
-    </section>
-    <section id="hero">
-        <div class="container">
-
-            <h2>Move Your Project Forwards</h2>
-            <h3>Reliable, flexible development support designed to keep you in control and deliver results</h3>
-
-            <p>Whether you’re <strong>starting fresh, catching up, or overcoming resource gaps</strong>, I’m here to keep things moving smoothly. </p>
-            <p>As a full-stack developer with expertise and a background in front-end and back-end development, I can help manage technical debt, legacy challenges, and build resilient solutions that align with your goals. </p><p>My approach is straightforward—minimal onboarding, clear communication, and adaptability to fit your needs.</p>
+            <p>I began my journey in London during the Web 2.0 revolution, spending a transformative decade immersed in small agencies to giants like BSkyB and Visa. This experience honed my skills across diverse projects and teams, allowing me to witness the rapid evolution of web technologies firsthand.</p>
+            <p>In 2015, family brought me back to New Zealand. Since then, I've dedicated my expertise to startups of all sizes—from shoestring budgets to billion-dollar ventures—often partnering strategically while tackling technical challenges hands-on.</p>
+            <p>One of my greatest skills and passions is CSS. As a CSS specialist and full-stack developer, I bring precision and versatility to every project, bridging front-end finesse with back-end robustness across user interfaces, APIs, backend systems, databases, and AWS cloud infrastructure. This helps projects overcome technical debt, legacy issues, and performance challenges.</p>
+            <h2>Reliable, flexible development support designed to keep you in control and deliver results</h2>
+            <p>I craft scalable, maintainable CSS that's clean and effective, ensuring seamless integration throughout development. Whether you need targeted CSS improvements or full-stack support, I'm here to keep your projects moving efficiently. My commitment is to deliver solutions that are technically sound and aligned with your strategic goals.</p>
+            <p>Whether you’re <strong>starting fresh, catching up, or overcoming resource gaps</strong>, I offer minimal onboarding, clear communication, and adaptability to fit your needs.</p>
 
             <p class="cta1">
                 Skip the usual hiring hassle and let’s connect directly. <br>
@@ -621,10 +634,10 @@
             </p>
 
 
-            <h3>What I bring to the table are expertise that clear the way for faster, smoother projects.</h3>
+            <h2>What I bring to the table are expertise that clear the way for faster, smoother projects.</h2>
 
             <ol>
-                <li>Being over a decade in the field, I work to address new work, technical debt, legacy issues, and support both front-end and back-end needs.</li>
+                <li>Bringing over a decade of experience, I work to address new work, technical debt, legacy issues, and support both front-end and back-end needs.</li>
 
                 <li>My skill set fits well within modern, framework-based projects, adapting quickly to existing workflows.</li>
 
@@ -646,30 +659,29 @@
 
 
 
-        <h2>How I Can Help?</h2>
+        <h2>How I Can Help!</h2>
         <p>Whether you need someone to join mid-project, help resolve specific challenges, or bring a fresh perspective, I can step in where it makes the most sense for you. My approach is flexible, designed to support your project in the way you need, with as much or as little onboarding as necessary. I bring expertise, front-end problem-solving, and back-end support that fits seamlessly into your workflow.</p>
 
         <div class="service-list">
 
             <div class="service">
-                <h3>Embed</h3>
+                <h3>Embed seamlessly into your project</h3>
                 <p>I join your project as needed, bridging skill gaps in both front-end and back-end development, delivering expertise with minimal onboarding required.</p>
             </div>
-
             <div class="service">
-                <h3>Untangle</h3>
+                <h3>Untangle technical debt</h3>
                 <p>I clear out CSS technical debt, refining your codebase so your team can focus on what truly matters: signal over noise.</p>
             </div>
 
             <div class="service">
-                <h3>Collaborate</h3>
+                <h3>Collaborate Closely</h3>
                 <p>I partner with designers to deliver pixel-perfect, responsive designs that seamlessly adapt.</p>
             </div>
 
 
             <div class="service">
-                <h3>Consult</h3>
-                <p>Looking for a seasoned technical partner to drive your success? With extensive experience in development and leadership, I offer flexible, on-demand support tailored to your unique needs. Whether you need hands-on expertise or strategic guidance, I'm here to provide the support you require to achieve your goals.</p>
+                <h3>Become a technical partner</h3>
+                <p>If you are looking for a seasoned technical partner to drive your success? With extensive experience in development and leadership, I offer flexible, on-demand support tailored to your unique needs. Whether you need hands-on expertise or strategic guidance, I'm here to provide the support you require to achieve your goals.</p>
             </div>
 
 
@@ -723,18 +735,7 @@
     </div>
 </section>
 
-<header>
-    <div class="container">
-        <h2>CSS JAVASCRIPT HTML</h2>
-        <nav>
 
-
-
-            <a    tabindex="-1" class='tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
-
-        </nav>
-    </div>
-</header>
 
 <footer>
     <div class="container">
