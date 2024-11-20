@@ -156,48 +156,53 @@
 
 
         :root {
-            --cafe-noir: #3b2a00;
-            --espresso: #38260F;
-            --cosmic-latte:#FFF6DF;
-            --vanilla-latte:#FFE49F;
-            --walnut-brown: #584D3D;
-            --golden-brown: #9D7100;
 
-            --ecru-1: #9F956C;
-            --ecru-2: #CBBF7A;
-            --straw: #F4E87C;
-            --mindarow:#EBF38B;
+            --lavender-blush:#F1E4E8;
+            --platinum:#e2dcde;
+            --thistle:#ceb1be;
+            --thistle-trans:#ceb1becc;
+            --old-rose: #b97375;
+            --flame:#EF5A2B;
+            --rust:#B8330B;
+            --prussian-blue:#1C3041;
+            --indigo-dye:#0C4767;
+            --raisin-black:#2d2d34;
 
 
             /* Background Colors */
-            --primary-background: var(--cosmic-latte);
-            --secondary-background: var(--vanilla-latte);
+            --primary-background: var(--platinum);
+            --secondary-background:  var(--platinum);;
 
             /* Header Text Colors */
-            --primary-text: var(--cafe-noir);
-            --secondary-text:  var(--walnut-brown);
-            --primary-header-text: var(--espresso); /* More contrasting for lighter elements */
-            --secondary-header-text: var(--golden-brown); /* Brightened gold for better readability */
+            --primary-text: var(--prussian-blue);
+            --secondary-text:  var(--prussian-blue);
+            --primary-header-text: var(--raisin-black); /* More contrasting for lighter elements */
+            --secondary-header-text: var(--raisin-black); /* Brightened gold for better readability */
+
+            --cta-c: var(--old-rose);
+            --cta-bg: var(--lavender-blush);
+            --primary-border: var(--rust);
+            --primary-border-style:solid;
 
             /* Link Colors */
 
 
                 /* Link Colors */
-                --link-text: #9D7100; /* Golden brown to match the palette */
+                --link-text: var(--indigo-dye); /* Golden brown to match the palette */
                 --link-text-hover: #584D3D; /* Walnut brown for a subtle hover effect */
                 --link-text-visited: #38260F; /* Espresso for a rich, darker visited state */
                 --link-text-active: #CBBF7A; /* Ecru-2 for a lighter, highlighted active state */
 
 
-                --portfolio-border: var(--link-text);
-                --portfolio-hover-bg: rgba(157, 113, 0, 0.5);
+                --portfolio-border: var(--thistle);
+                --portfolio-hover-bg: var(--thistle-trans);
 
 
                 --portfolio-padding: 1vw;
                 --portfolio-radius: 10%;
 
 
-         
+
         }
 
 
@@ -293,7 +298,7 @@
         h3 {
             font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 4vh));
             text-transform: uppercase;
-            border-top: 1px dotted var(--secondary-header-text);
+
             padding: max(1.5vw, 1.5vh) 0;
             color: var(--secondary-header-text);
         }
@@ -311,7 +316,7 @@
         }
 
         blockquote {
-            border-left: 3px solid var(--primary-text);
+            border-left: 3px var(--primary-border-style) var(--primary-border);
         }
 
         ol {
@@ -344,24 +349,18 @@
             padding: max(3vw, 3vh);
             text-align: center;
             line-height: 1.8;
+            border-bottom: 1px var(--primary-border-style) var(--primary-border);
+            border-top: 1px var(--primary-border-style) var(--primary-border);
         }
 
         .cta1 {
-            background-color: var(--primary-background);
+             color: var(--cta-c);
         }
 
         .cta2 {
-            background-color: var(--primary-text);
-            color: var(--secondary-header-text);
+            color: var(--cta-c);
         }
 
-        .cta2 a {
-            color: var(--link-text);
-        }
-
-        .cta2 a:hover {
-            color: var(--link-text-hover);
-        }
 
         /* END GLOBAL LAYOUT STYLES */
         #about {
@@ -382,7 +381,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 10px solid  var(--primary-text);
+            border: 10px var(--primary-border-style)  var(--primary-text);
 
             box-shadow: 0 0 0.5vw rgba(60, 40, 20, 0.5),
             0 0.5vw 1.5vw rgba(60, 40, 20, 0.4);
@@ -396,16 +395,16 @@
             top: 10%;left:50%;
             transform: translateX(-50%);
             content:"TONY";
-            color: var(--primary-text);
+            color: var(--primary-text));
             font-weight: 900;
             font-size: clamp(2rem, 3vw, 3rem);
         }
 
         #about  picture:hover::after {
-            color: var(--secondary-text);
+            color:var(--primary-text);
         }
         #about  picture:hover {
-            border: 12px solid  var(--secondary-text);
+            border: 12px var(--primary-border-style)  var(--primary-text));
         }
 
 
@@ -440,7 +439,7 @@
 
         /* Link Styling */
         #portfolio a {
-            border: 1px solid var(--portfolio-border);
+            border: 1px var(--primary-border-style) var(--primary-border);
             border-radius: var(--portfolio-radius);
             margin: var(--portfolio-padding);
             position: relative;
@@ -480,7 +479,7 @@
             content: "view";
             padding: var(--portfolio-padding);
             color: var(--primary-text);
-            border: 1px solid var(--portfolio-border);
+            border: 1px var(--primary-border-style) var(--primary-border);
             font-weight: 900;
             font-size: clamp(1rem, 3vw, 1.3rem);
             letter-spacing: 1px;
@@ -544,7 +543,7 @@
 
 
 
-        nav .tel {
+         .tel {
             display: inline-block;
             transform-origin: top center; /* Pivot point for the swing */
             animation: subtleSwing 30s ease-in-out infinite; /* 800ms animation + 10s pause */
@@ -553,16 +552,16 @@
             text-align: right;
             text-wrap: nowrap;
             font-size: clamp( 1rem, 3vw, 2rem);
-            color: var(--primary-text);
-            background-color: var(--secondary-background);
+            color: var(--cta-c);
+            background-color: var(--cta-bg);
             padding: 1vw;
             border-radius: .5vw;
             text-decoration: none;
             font-weight:900;
         }
-        nav .tel:hover {
-            background-color: var(--primary-text);
-            color: var(--secondary-background);
+         .tel:hover {
+            background-color: var(--cta-c);
+            color: var(--cta-bg);
         }
 
         @media only screen and (max-width: 767px) {
@@ -616,9 +615,9 @@
             <p>As a full-stack developer with expertise and a background in front-end and back-end development, I can help manage technical debt, legacy challenges, and build resilient solutions that align with your goals. </p><p>My approach is straightforward—minimal onboarding, clear communication, and adaptability to fit your needs.</p>
 
             <p class="cta1">
-                Skip the usual hiring hassle and let’s connect directly. <br>Call me at
-                <a tabindex="1" href="tel:+6421677460" aria-label="Call now 021-677-460">021-677-460</a> or
-                <a tabindex="3" href="sms:+6421677460" class="btn btn-phone" aria-label="Send an SMS to 021-677-460">send an SMS</a>.
+                Skip the usual hiring hassle and let’s connect directly. <br>
+                <a tabindex="-1" class='tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
+
             </p>
 
 
@@ -681,8 +680,9 @@
 
 
         <p class="cta2">
-            Let’s talk directly. Call me at 021-677-460, or reach me at
-            <a tabindex="2" href="mailto:tony@codeology.co.nz" class="btn btn-email" aria-label="Send an email to tony@codeology.co.nz">tony@codeology.co.nz</a>  to get started..
+            Let’s talk directly.<br>
+            <a tabindex="-1" class='tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
+
         </p>
 
 
