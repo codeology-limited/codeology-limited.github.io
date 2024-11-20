@@ -277,7 +277,7 @@
 
         h1 {
 
-            font-size: clamp(max(3vw, 4vh), min(5vw, 6vh), min(5vw, 6vh));
+            font-size: clamp(min(2vw, 3vh), min(5vw, 6vh), min(5vw, 6vh));
             margin-bottom: max(1vw, 1vh);
             color: var(--primary-header-text);
             text-shadow: 0 0.2vw 5vw rgba(60, 40, 20, 0.4),
@@ -424,7 +424,12 @@
         }
 
 
-
+        #whatido p {
+            text-align: justify
+        }
+        #whatido p.cta2 {
+            text-align: center
+        }
         /*  MY PORTFOLIO */
 
         /* Portfolio Container */
@@ -581,11 +586,25 @@
         }
 
         @media only screen and (max-width: 767px) {
-            #about picture {
+            main section {
+                margin-top: 0;
+            }
+            h1 {
+                margin:0;
+            }
+            #about figure {
                 float: none;
-                margin: 5vh auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+            }
+            #about picture {
                 width: 50vw;
-                height: 50vw;
+                height: 50vw;  margin: 0;
             }
             h2 {
 
@@ -619,13 +638,17 @@
                     <a    tabindex="-1" class='tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
                 </figcaption>
             </figure>
-
+            <p>I am a full stack developer and C.S.S. Specialist.  I am available to help you now.</p>
             <p>I began my journey in London during the Web 2.0 revolution, spending a transformative decade immersed in small agencies to giants like BSkyB and Visa. This experience honed my skills across diverse projects and teams, allowing me to witness the rapid evolution of web technologies firsthand.</p>
             <p>In 2015, family brought me back to New Zealand. Since then, I've dedicated my expertise to startups of all sizes—from shoestring budgets to billion-dollar ventures—often partnering strategically while tackling technical challenges hands-on.</p>
-            <p>One of my greatest skills and passions is CSS. As a CSS specialist and full-stack developer, I bring precision and versatility to every project, bridging front-end finesse with back-end robustness across user interfaces, APIs, backend systems, databases, and AWS cloud infrastructure. This helps projects overcome technical debt, legacy issues, and performance challenges.</p>
-            <h2>Reliable, flexible development support designed to keep you in control and deliver results</h2>
-            <p>I craft scalable, maintainable CSS that's clean and effective, ensuring seamless integration throughout development. Whether you need targeted CSS improvements or full-stack support, I'm here to keep your projects moving efficiently. My commitment is to deliver solutions that are technically sound and aligned with your strategic goals.</p>
-            <p>Whether you’re <strong>starting fresh, catching up, or overcoming resource gaps</strong>, I offer minimal onboarding, clear communication, and adaptability to fit your needs.</p>
+            <h2>Reliable, Flexible Development Support Designed to Keep You in Control and Deliver Results</h2>
+
+            <p>I’m passionate about CSS and specialize in using it to enhance every project I work on. CSS is more than just styling—it shapes how users interact with your website or application, making their experience both enjoyable and intuitive. As a full-stack developer, I seamlessly blend design with functionality to deliver cohesive and effective solutions.</p>
+
+            <p>With expertise in user interfaces, APIs, backend systems, databases, and AWS cloud services, I bring a well-rounded approach to development. This diverse skill set allows me to quickly identify and resolve any issues, ensuring that your projects not only look great but also perform reliably and efficiently for your users.</p>
+
+
+
 
             <p class="cta1">
                 Skip the usual hiring hassle and let’s connect directly. <br>
@@ -681,7 +704,7 @@
 
             <div class="service">
                 <h3>Become a technical partner</h3>
-                <p>If you are looking for a seasoned technical partner to drive your success? With extensive experience in development and leadership, I offer flexible, on-demand support tailored to your unique needs. Whether you need hands-on expertise or strategic guidance, I'm here to provide the support you require to achieve your goals.</p>
+                <p>If you are looking for a seasoned technical partner to drive your success I have extensive experience in development and leadership, I offer flexible, on-demand support tailored to your unique needs. Whether you need hands-on expertise or strategic guidance, I'm here to provide the support you require to achieve your goals.</p>
             </div>
 
 
