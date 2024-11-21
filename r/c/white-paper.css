@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background-color: #fff;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h1, h2, h3 {
+    color: #2c3e50;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+h2 {
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+h3 {
+    margin-top: 1.5rem;
+    color: #34495e;
+}
+p {
+    margin: 1rem 0;
+}
+ul {
+    list-style-type: disc;
+    margin-left: 2rem;
+}
+.level {
+    margin-bottom: 2rem;
+}
+.advantages {
+    margin-top: 0.5rem;
+}
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid #ecf0f1;
+    color: #7f8c8d;
+}
