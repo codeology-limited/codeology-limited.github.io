@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skitzophrenia</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Rock+Salt&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Reset default margins and paddings */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Rock Salt', cursive;
+      background: linear-gradient(-45deg, #ff0000, #8B0000, #ff4500, #8B0000);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffcccc;
+      text-align: center;
+    }
+
+    /* Gradient Animation */
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Container for Content */
+    .container {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 50px 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
+      max-width: 700px;
+      width: 90%;
+      border: 3px solid #ff0000;
+      position: relative;
+      animation: flicker 3s infinite alternate;
+    }
+
+    /* Flicker Animation for Container */
+    @keyframes flicker {
+      0% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.7); }
+      50% { box-shadow: 0 0 50px rgba(255, 0, 0, 1); }
+      100% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.7); }
+    }
+
+    /* Title Styling */
+    h1 {
+      font-family: 'Creepster', cursive;
+      font-size: 4.5em;
+      margin-bottom: 25px;
+      color: #ff3333;
+      text-shadow: 3px 3px #660000;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+
+    /* Glow Animation for Title */
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff3333, 0 0 20px #ff3333, 0 0 30px #ff3333, 0 0 40px #ff0000;
+      }
+      to {
+        text-shadow: 0 0 20px #ff6666, 0 0 30px #ff6666, 0 0 40px #ff3333, 0 0 50px #ff0000;
+      }
+    }
+
+    /* Instructions Styling */
+    .instructions {
+      font-size: 1.3em;
+      margin-bottom: 40px;
+      line-height: 1.8;
+      color: #ff9999;
+      text-shadow: 1px 1px #660000;
+    }
+
+    /* Play Now Button Styling */
+    .play-button {
+      background-color: #ff0000;
+      border: none;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1.8em;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 5px 20px rgba(255, 0, 0, 0.5);
+      font-family: 'Rock Salt', cursive;
+    }
+
+    .play-button:hover {
+      background-color: #cc0000;
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 3.5em;
+      }
+
+      .instructions {
+        font-size: 1.1em;
+      }
+
+      .play-button {
+        font-size: 1.5em;
+        padding: 15px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Skitzophrenia</h1>
+    <div class="instructions">
+      <p>🧸 <strong>Instructions:</strong></p>
+      <p>🌞 During the day, collect wooden toys scattered around the area.</p>
+      <p>🛡️ Build barriers by pressing the <strong>Space Bar</strong> to protect yourself.</p>
+      <p>🌙 Survive <strong>10 nights</strong> to win the game! And don't forget to stay away from the monster.</p>
+    </div>
+    <button class="play-button" onclick="location.href='play.html'">Play Now 🎮</button>
+  </div>
+</body>
+</html>
