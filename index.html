@@ -240,8 +240,8 @@
         footer {
             display: flex;
             align-items: center;
-            justify-content: center;
-            flex-direction: column;
+            justify-content: flex-end;
+
             flex: 1;
 
             padding: 5vw 0 1vw;
@@ -997,26 +997,26 @@ float:left;
         <img src="share.svg" alt="Share this on X">
     </a>
 
+<form action="https://staticcontact.com/send/26b4507d-d6b8-445e-a8c7-59c2b4669035" method="post">
+
+    <label>Name:
+        <input type="text" name="name" required/>
+    </label>
+
+    <label>Email:
+        <input type="email" name="email" required/>
+    </label>
+
+    <label>Message:
+        <textarea name="message"></textarea>
+    </label>
+
+    <button type="submit">Submit</button>
+</form>
 
 </p>
 <footer>
 
-    <form action="https://staticcontact.com/send/26b4507d-d6b8-445e-a8c7-59c2b4669035" method="post">
-
-        <label>Name:
-            <input type="text" name="name" required/>
-        </label>
-
-        <label>Email:
-            <input type="email" name="email" required/>
-        </label>
-
-        <label>Message:
-            <textarea name="message"></textarea>
-        </label>
-
-        <button type="submit">Submit</button>
-    </form>
     <div class="container">
         <p>&copy; 2024 Codeology Limited. All rights reserved.</p>
     </div>
