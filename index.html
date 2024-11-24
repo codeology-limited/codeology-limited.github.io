@@ -208,6 +208,7 @@
         html {
             font-size: 62.5%;
             line-height: 1.3;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -239,7 +240,8 @@
         footer {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
+            justify-content: center;
+            flex-direction: column;
             flex: 1;
 
             padding: 5vw 0 1vw;
@@ -659,10 +661,10 @@ float:left;
         form textarea {
             width: 100%;
             padding: 10px;
-            margin: 5px 0 20px 0;
-            border: var(--primary-border)
+            margin: min(1vw,1vh) 0 min(3vw,3vh) 0;
+            border: var(--primary-border);
             border-radius: 4px;
-            font-size: 14px;
+            font-size: 1rem;
             box-sizing: border-box;
         }
 
@@ -755,7 +757,7 @@ float:left;
                 </picture>
                 </a>
                 <figcaption>
-                    <a  tabindex="-1" class='tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
+                    <a  tabindex="1" class='tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
                 </figcaption>
             </figure>
             <p>When you need to get a project moving fast, but your team is stretched thin, I provide the expertise to keep things on track without the commitment of a full hire.</p>
@@ -988,7 +990,7 @@ float:left;
 
 
 
-    <a href="https://twitter.com/intent/tweet?screen_name=code_ology&text=Thanks%20for%20all%20your%20help%2C%20Tony.%20Your%20expertise%20made%20a%20huge%20difference%20on%20our%20project!%20Highly%20recommend%20https%3A%2F%2Fcodeology.co.nz%2Ftony"
+    <a tabindex="2" href="https://twitter.com/intent/tweet?screen_name=code_ology&text=Thanks%20for%20all%20your%20help%2C%20Tony.%20Your%20expertise%20made%20a%20huge%20difference%20on%20our%20project!%20Highly%20recommend%20https%3A%2F%2Fcodeology.co.nz%2Ftony"
        class="cta cta-share"
        data-show-count="false"
        title="Share this page on X">
@@ -998,7 +1000,7 @@ float:left;
 
 </p>
 <footer>
-    <h2>Send an email</h2>
+
     <form action="https://staticcontact.com/send/26b4507d-d6b8-445e-a8c7-59c2b4669035" method="post">
 
         <label>Name:
