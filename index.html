@@ -656,20 +656,21 @@ float:left;
             color: var(--primary-text)
         }
 
-        form input[type="text"],
-        form input[type="email"],
-        form textarea {
+          input[type="text"],
+          input[type="email"],
+          textarea {
             width: 100%;
-            padding: 10px;
+            padding:max(2vw,2vh);
             margin: min(1vw,1vh) 0 min(3vw,3vh) 0;
             border: var(--primary-border);
+            background-color: var(--cta-bg);
             border-radius: 4px;
             font-size: 1rem;
             box-sizing: border-box;
         }
 
         form textarea {
-            height: 100px;
+            height:max(4vw,4vh);
             resize: vertical;
         }
 
