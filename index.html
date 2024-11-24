@@ -157,55 +157,45 @@
 
         :root {
 
-            --lavender-blush:#F1E4E8;
-            --platinum:#e2dcde;
-            --thistle:#ceb1be;
-            --thistle-trans:#ceb1becc;
-            --old-rose: #b97375;
-            --flame:#EF5A2B;
-            --rust:#B8330B;
-            --prussian-blue:#1C3041;
-            --indigo-dye:#0C4767;
-            --raisin-black:#2d2d34;
-            --neutral-gray-n2: #DADBDD;
+            --black-olive:#212922;
+            --brunswick-green:#294936;
+            --feldgrau: #3E6259;
+            --viridian: #5B8266;
+            --celadon: #AEF6C7;
+            --celadon-trans: #AEF6C7CC;
 
             /* Background Colors */
-            --primary-background: var(--neutral-gray-n2);
-            --secondary-background:  var(--neutral-gray-n2);
-            --contrast-background: var(--platinum);
+            --primary-background: var(--viridian);
+            --secondary-background: var(--viridian);
+            --contrast-background: var(--viridian);
 
             /* Header Text Colors */
-            --primary-text: var(--prussian-blue);
-            --secondary-text:  var(--prussian-blue);
-            --primary-header-text: var(--raisin-black); /* More contrasting for lighter elements */
-            --secondary-header-text: var(--prussian-blue); /* Brightened gold for better readability */
+            --primary-text: var(--black-olive);
+            --secondary-text:  var(--black-olive);
+            --primary-header-text: var(--brunswick-green); /* More contrasting for lighter elements */
+            --secondary-header-text: var(--celadon); /* Brightened gold for better readability */
+            --tertiary-header-text: var(--celadon); /* Brightened gold for better readability */
 
-            --cta-c: var(--old-rose);
-            --cta-bg: var(--lavender-blush);
-            --primary-border: var(--rust);
+            --cta-c: var(--celadon);
+            --cta-bg: var(--feldgrau);
+            --primary-border: var(--celadon);
             --primary-border-style:solid;
 
             /* Link Colors */
 
 
                 /* Link Colors */
-                --link-text: var(--indigo-dye); /* Golden brown to match the palette */
-                --link-text-hover: #584D3D; /* Walnut brown for a subtle hover effect */
-                --link-text-visited: #38260F; /* Espresso for a rich, darker visited state */
-                --link-text-active: #CBBF7A; /* Ecru-2 for a lighter, highlighted active state */
+                --link-text: var(--brunswick-green);
+                --link-text-hover: var(--feldgrau);
+                --link-text-visited: var(--feldgrau);
+                --link-text-active: var(--feldgrau);
 
-
-                --portfolio-border: var(--thistle);
-                --portfolio-hover-bg: var(--thistle-trans);
-
+                --portfolio-border: var(--celadon);
+                --portfolio-hover-bg: var(--celadon-trans);
 
                 --portfolio-padding: 1vw;
                 --portfolio-radius: 10%;
-
-
-
         }
-
 
         /* GLOBAL LAYOUT STYLES */
 
@@ -227,6 +217,7 @@
             display: flex;
             flex-direction: column;
             padding: max(3vw, 3vh) 0 0;
+            padding-top: 15vh;
         }
 
         body > * {
@@ -255,7 +246,7 @@
         }
 
         footer p {
-            text-align: center;
+            text-align: justify;
             font-size: clamp(1rem, 2vw, 2rem);
         }
 
@@ -271,13 +262,13 @@
         }
 
         h1, h2, h3 {
-            text-align: center;
+            text-align: left;
             line-height: 1.8;
             margin: max(3vw, 3vh) 0;
         }
 
         h1 {
-
+            text-align: center;
             font-size: clamp(min(2vw, 3vh), min(5vw, 6vh), min(5vw, 6vh));
             margin-bottom: max(1vw, 1vh);
             color: var(--primary-header-text);
@@ -304,13 +295,16 @@
             color: var(--secondary-header-text);
         }
 
+        #whatido h2 , #whatido h3 {
+            color: var(--tertiary-header-text);
+        }
         h3{
 
             font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 4vh));
             text-transform: uppercase;
 
             padding: max(1.5vw, 1.5vh) 0;
-            color: var(--rust);
+            color: var(--secondary-header-text);
 
         }
         p, blockquote, li {
@@ -320,7 +314,7 @@
         }
 
         p {
-            text-align: left;
+            text-align: justify;
             padding: 0 0 1rem 0;
             line-height: 1.8;
         }
@@ -329,7 +323,7 @@
             border-left: 3px var(--primary-border-style) var(--primary-border);
         }
 
-        ol {
+        ul,ol {
             padding-left: max(3vw, 3vh);
         }
 
@@ -398,7 +392,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 10px var(--primary-border-style)  var(--primary-text);
+            border: 10px var(--primary-border-style)  var(--link-text);
 
             box-shadow: 0 0 0.5vw rgba(60, 40, 20, 0.5),
             0 0.5vw 1.5vw rgba(60, 40, 20, 0.4);
@@ -412,16 +406,16 @@
             top: 10%;left:50%;
             transform: translateX(-50%);
             content:"TONY";
-            color: var(--primary-text));
+            color:  var(--link-text);
             font-weight: 900;
             font-size: clamp(2rem, 3vw, 3rem);
         }
 
         #about  picture:hover::after {
-            color:var(--primary-text);
+            color:  var(--portfolio-border);
         }
         #about  picture:hover {
-            border: 12px var(--primary-border-style)  var(--primary-text));
+            border: 12px var(--primary-border-style)  var(--portfolio-border);
         }
 
 #whatido {
@@ -561,20 +555,27 @@
             display: flex;
             align-items: center;
             justify-content: center;
-
             height: 8vw;
         }
 
-
-
-         .tel {
+         .cta-tel {
+            position: fixed;
+            top: 15px;
+            right: 15px;
             display: inline-block;
-            transform-origin: top center; /* Pivot point for the swing */
-            animation: subtleSwing 30s ease-in-out infinite; /* 800ms animation + 10s pause */
-
-
+            transform-origin: top center;
+            animation: subtleSwing 30s ease-in-out infinite;
             text-align: right;
             text-wrap: nowrap;
+        }
+        .cta-share {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            display: inline-block;
+        }
+
+        .cta {
             font-size: clamp( 1rem, 3vw, 2rem);
             color: var(--cta-c);
             background-color: var(--cta-bg);
@@ -582,15 +583,64 @@
             border-radius: .5vw;
             text-decoration: none;
             font-weight:900;
+            box-shadow: 0 0 0.5vw rgba(60, 40, 20, 0.5);
         }
-         .tel:hover {
+        .cta:hover {
             background-color: var(--cta-c);
             color: var(--cta-bg);
         }
 
+        #testimonials .testimonial p{
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        #testimonials .testimonial blockquote{
+            font-style: italic;
+            margin: 5vw 14vw;padding:  2vw;
+            clear:left;
+        }
+        #testimonials .testimonial blockquote p{
+            font-style: italic;
+            padding: 0 0 0 2vw;
+            line-height: 1.5;
+        }
+
+        #testimonials .testimonial .title{
+            color: var(--feldgrau)
+        }
+
+
+        #testimonials picture  {
+            overflow:hidden;
+            width: 10vw;
+            height: 10vw;
+            aspect-ratio: 1/1;
+
+            object-fit:contain;
+            border-radius: 50%; /* Ensures the image is circular */
+
+            position: relative;
+
+            margin: 0 max(3vw, 5vh) 0 0 ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px var(--primary-border-style)  var(--link-text);
+float:left;
+            box-shadow: 0 0 0.5vw rgba(60, 40, 20, 0.5),
+            0 0.5vw 1.5vw rgba(60, 40, 20, 0.4);
+            transform: rotate(-5deg);
+
+
+        }
+
         @media only screen and (max-width: 767px) {
+            body {
+                padding-top: 10vh;
+            }
             main section {
-                margin-top: 0;
+                margin-top: 0
             }
             h1 {
                 margin:0;
@@ -624,7 +674,7 @@
 
 <header>
     <div class="container">
-        <h1>Move Your Project Forwards</h1>
+        <h1>Move Your Project Forward Without the Overhead</h1>
 
     </div>
 </header>
@@ -634,24 +684,49 @@
         <div class="container">
 
             <figure>
+
+                <a href="https://www.linkedin.com/in/tonygurnick/">
+
+
+
+
                 <picture>
                     <img alt="Tony" src="tony.png">
                 </picture>
+                </a>
                 <figcaption>
-                    <a    tabindex="-1" class='tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
+                    <a  tabindex="-1" class='tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
                 </figcaption>
             </figure>
-            <p>I am a full stack developer and C.S.S. Specialist.  I am available to help you now.</p>
-            <p>I began my journey in London during the Web 2.0 revolution, spending a transformative decade immersed in small agencies to giants like BSkyB and Visa. This experience honed my skills across diverse projects and teams, allowing me to witness the rapid evolution of web technologies firsthand.</p>
-            <p>In 2015, family brought me back to New Zealand. Since then, I've dedicated my expertise to startups of all sizes—from shoestring budgets to billion-dollar ventures—often partnering strategically while tackling technical challenges hands-on.</p>
-            <h2>Reliable, Flexible Development Support Designed to Keep You in Control and Deliver Results</h2>
+            <p>When you need to get a project moving fast, but your team is stretched thin, I provide the expertise to keep things on track without the commitment of a full hire.</p>
+            <p>I’m Tony, a full-stack developer and CSS specialist with over 20 years’ experience. From legacy systems to cutting-edge frameworks, I help businesses like yours bridge critical gaps and deliver results—quickly and reliably.</p>
+            <p>
 
-            <p>I’m passionate about CSS and specialize in using it to enhance every project I work on. CSS is more than just styling—it shapes how users interact with your website or application, making their experience both enjoyable and intuitive. As a full-stack developer, I seamlessly blend design with functionality to deliver cohesive and effective solutions.</p>
+                After years working with global names like Nokia, BSkyB and Visa during the Web 2.0 revolution, and supporting startups and enterprises in New Zealand, I know how to tackle challenges head-on, manage technical debt, and ensure projects meet tight deadlines.</p>
 
-            <p>With expertise in user interfaces, APIs, backend systems, databases, and AWS cloud services, I bring a well-rounded approach to development. This diverse skill set allows me to quickly identify and resolve any issues, ensuring that your projects not only look great but also perform reliably and efficiently for your users.</p>
+            <h2>Get Results, Not Overhead:</h2>
+
+            <ul>
+                <li>Fill skill gaps seamlessly—minimal onboarding, maximum impact.</li>
+                <li>Deliver fast, flexible solutions for front-end and back-end needs.</li>
+                <li>Untangle CSS and front-end issues, simplifying your codebase.</li>
+                <li>Leverage modern frameworks and cloud services for scalable outcomes.</li>
+            </ul>
+
+
+            <p>You don’t have time to hire and onboard a permanent team—so let’s skip the hassle. Whether you’re reigniting a stalled project or
+                launching something new, I’m here to help you move fast, stay in control, and deliver results.</p>
 
 
 
+            <h2>My Story</h2>
+
+            <p>My career began in London during the transformative Web 2.0 revolution. Over a decade, I collaborated with organisations ranging from boutique agencies to industry leaders like EMC Consulting, Nokia, BSkyB and Visa, mastering diverse technologies and navigating the rapid evolution of the web.
+            </p>
+            <p>In 2015, I returned to New Zealand and shifted my focus to supporting startups and projects with lean and not so lean budgets. I have worked across a spectrum of industries, solving complex challenges and driving projects forward. My hands-on expertise ensures scalable, efficient solutions tailored to your needs.
+        </p>
+            <p>When the pressure is on, I integrate seamlessly into teams, bridging gaps and delivering results without the hassle of a full-time hire.
+            </p>
 
             <p class="cta1">
                 Skip the usual hiring hassle and let’s connect directly. <br>
@@ -659,17 +734,13 @@
 
             </p>
 
-
-            <h2>I bring expertise that paves the way for faster, smoother projects</h2>
+            <h2>What I Bring</h2>
 
             <ol>
-                <li>Over a decade of experience handling new projects, technical debt, and supporting both front-end and back-end needs.</li>
-                <li>Adept at managing both modern, framework-based projects and legacy systems within diverse environments, demonstrating strong adaptability.</li>
-                <li>Specialist in CSS and JavaScript, with proficiency in several other programming languages.</li>
-                <li>Proficient in HTML, CSS, JavaScript, and TypeScript, with experience in frameworks such as React, Vue, Next.js, Angular, and Django.</li>
-                <li>Leverage cloud services to build scalable, resilient solutions tailored to your projects.</li>
+                <li>Decades of experience delivering projects, tackling technical debt, and bridging front-end and back-end needs.</li>
+                <li>Proven ability to work with modern frameworks and legacy systems alike.</li>
+                <li>Expertise in HTML, CSS, JavaScript, and TypeScript, plus frameworks like React, Vue, Next.js, Angular, and Django.</li>
             </ol>
-
 
         </div>
     </section>
@@ -682,7 +753,7 @@
 
 
         <h2>How I Can Help!</h2>
-        <p>Whether you need someone to join mid-project, tackle specific challenges, or offer fresh insights, I can integrate where needed. My flexible approach supports your project with minimal onboarding. I provide front-end problem-solving and back-end expertise tailored to fit your workflow..</p>
+        <p>Whether you need someone to join mid-project, tackle specific challenges, or offer fresh insights, I can integrate where needed. My flexible approach supports your project with minimal onboarding. I provide front-end problem-solving and back-end expertise tailored to fit your workflow.</p>
 
         <div class="service-list">
 
@@ -715,8 +786,9 @@
 
         <p class="cta2">
             Let’s talk directly.<br>
-            <a tabindex="-1" class='tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
+            <a tabindex="-1" class='cta cta-tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
 
+            <a  title="Share this page" class="cta cta-share" href="/share"><img src="share.svg"></a>
         </p>
 
 
@@ -756,6 +828,107 @@
         </div>
     </div>
 </section>
+
+
+<section id="testimonials">
+    <div class="container">
+        <h2>Testimonials</h2>
+
+        <div class="testimonial">
+            <a href="https://www.linkedin.com/in/william-tonkin-howe-1b57843/">
+                <picture>
+                    <img src="https://media.licdn.com/dms/image/v2/C4E03AQF7ey_qekEP4w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516319954930?e=1738195200&v=beta&t=Mynyaa53570F6eAqDsxe_0gFXXWZy2hN_Cnj-gdAjTA"
+                         alt="William Tonkin-Howe">
+                </picture>
+            </a>
+            <div class="testimonial-content">
+                <p class="name">
+                    <a href="https://www.linkedin.com/in/william-tonkin-howe-1b57843/">William Tonkin-Howe</a>
+                </p>
+                <p class="title">Chief Executive Officer @ Sanderson Howe</p>
+                <blockquote>
+                    <p>Tony is awesome sauce.</p>
+                </blockquote>
+            </div>
+        </div>
+
+        <div class="testimonial">
+            <a href="https://www.linkedin.com/in/zachary-culpan/">
+                <picture>
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQFIMO8a5UKYaA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1676255396765?e=1738195200&v=beta&t=THDRUvDXyMdr9gzH6zDSlUaDBxNfmHGwRKlTvKJeSQ4"
+                         alt="Zac Culpan">
+                </picture>
+            </a>
+            <div class="testimonial-content">
+                <p class="name">
+                    <a href="https://www.linkedin.com/in/zachary-culpan/">Zac Culpan</a>
+                </p>
+                <p class="title">Chief Product Officer @ BetterSaver</p>
+                <blockquote>
+                    <p>Tony is like wonder woman and batman combined.</p>
+                </blockquote>
+            </div>
+        </div>
+
+        <div class="testimonial">
+            <a href="https://www.linkedin.com/in/jaradohara/">
+                <picture>
+                    <img src="https://media.licdn.com/dms/image/v2/C5103AQEgUDQ0Gx4NDQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1557824838585?e=1738195200&v=beta&t=b5_zwJu3tS5u3zBL-5Hbyt2pX6uzkckTT5nOZIMvwhE"
+                         alt="Jarad O'Hara">
+                </picture>
+            </a>
+            <div class="testimonial-content">
+                <p class="name">
+                    <a href="https://www.linkedin.com/in/jaradohara/">Jarad O'Hara</a>
+                </p>
+                <p class="title">Chief Business Partner @ Insiders Agency</p>
+                <blockquote>
+                    <p>Tony rode in on a white horse!</p>
+                </blockquote>
+            </div>
+        </div>
+
+        <div class="testimonial">
+            <a href="https://www.linkedin.com/in/carlleducq/">
+                <picture>
+                    <img src="https://media.licdn.com/dms/image/v2/C5603AQEeRHHl7EH4PA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1649234921913?e=1738195200&v=beta&t=_MUlTFEWDTRm8_uYB9ZMtPQZBJi6XhQBpGYDjvHu01M"
+                         alt="Carl LeDucq">
+                </picture>
+            </a>
+            <div class="testimonial-content">
+                <p class="name">
+                    <a href="https://www.linkedin.com/in/carlleducq/">Carl Leducq</a>
+                </p>
+                <p class="title">Chairperson @ NZGDA</p>
+                <blockquote>
+                    <p>Working alongside you has been an absolute pleasure.   Thank you for your hard work, collaborative spirit.  Your positive influence on the team won't be forgotten.
+
+                       </p>
+                </blockquote>
+            </div>
+        </div>
+
+
+        <div class="testimonial">
+            <a href="https://www.linkedin.com/in/james-de-colling-ab73531/">
+                <picture>
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQGPonX3wa5R4w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1709796254304?e=1738195200&v=beta&t=vOXligMekqlUGa2EV5zFQz6CzHNtO3wdJ8D9Gr928jU"
+                         alt="James De Colling">
+                </picture>
+            </a>
+            <div class="testimonial-content">
+                <p class="name">
+                    <a href="https://www.linkedin.com/in/james-de-colling-ab73531/">James De Colling</a>
+                </p>
+                <p class="title">Chief Product Officer @ Readyverse</p>
+                <blockquote>
+                    <p>Heya Tony, really enjoyed working with you mate. I’m personally super grateful for all you’ve done on FIFA and TNL. And absolutely would be more than happy to work together again in the future!</p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 
 
