@@ -171,7 +171,7 @@
             /* Background Colors */
             --primary-background: var(--viridian);
             --secondary-background: var(--viridian);
-            --contrast-background: var(--viridian);
+            --contrast-background: var(--feldgrau);
 
             /* Header Text Colors */
             --primary-text: var(--black-olive);
@@ -434,6 +434,70 @@
         #whatido p.cta2 {
             text-align: center
         }
+
+
+
+
+        #service-list {
+
+
+
+
+            margin: max( 4vh, 4vw) 0;
+        }
+
+
+
+        #service-list summary {
+            cursor: pointer;
+
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+
+            color: var(--primary-text);
+            border-bottom:  1px dotted var(--primary-text);
+
+            font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(2vw, 2.5vh));
+            text-transform: uppercase;
+
+            padding: max(1.5vw, 1.5vh) ;
+
+            justify-content: space-between;
+
+        }
+
+        #service-list summary::after {
+            content: '+';
+
+             margin: 0;
+            color:var(--primary-text);
+            transition: transform 0.2s ease-in-out;
+
+            font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(2vw, 2.5vh));
+            text-transform: uppercase;
+
+            padding: max(1.5vw, 1.5vh) 0;
+
+        }
+
+        #service-list details[open] summary::after {
+            content: '-';
+        }
+
+        #service-list summary:hover {
+            background-color:var(--primary-background);
+
+        }
+        #service-list p {
+            padding: max(1.5vw, 1.5vh) ;
+            font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(2vw, 2.5vh));
+        }
+
+
+
+
+
         /*  MY PORTFOLIO */
 
         /* Portfolio Container */
@@ -812,9 +876,9 @@
             <h2>What I Bring</h2>
 
             <ol>
-                <li>Decades of experience delivering projects, tackling technical debt, and bridging front-end and back-end needs.</li>
-                <li>Proven ability to work with modern frameworks and legacy systems alike.</li>
-                <li>Expertise in HTML, CSS, JavaScript, and TypeScript, plus frameworks like React, Vue, Next.js, Angular, and Django.</li>
+                <li>Decades of experience.</li>
+                <li>Ability to work with modern and legacy systems alike.</li>
+                <li>HTML, CSS, JS, TS, React, Vue, Angular.</li>
             </ol>
 
         </div>
@@ -827,34 +891,33 @@
 
 
 
-        <h2>How I Can Help!</h2>
-        <p>If you need someone to step in mid-project, resolve specific issues, or provide a fresh perspective, I can adapt to your needs. I work efficiently with minimal onboarding, offering both front-end and back-end expertise to fit seamlessly into your workflow.</p>
 
-        <div class="service-list">
+        <h2>How I Can Help you?</h2>
 
-            <div class="service">
-                <h3>Embed seamlessly into your project</h3>
+        <div id="service-list">
+
+            <details class="service">
+                <summary>Embed seamlessly into your project</summary>
                 <p>I join your project as needed, bridging skill gaps in both front-end and back-end development.</p>
-            </div>
-            <div class="service">
-                <h3>Untangle technical debt</h3>
+            </details>
+
+            <details class="service">
+                <summary>Untangle technical debt</summary>
                 <p>I clear out CSS technical debt, refining your codebase so your team can focus on what truly matters: signal over noise.</p>
-            </div>
+            </details>
 
-            <div class="service">
-                <h3>Collaborate Closely</h3>
+            <details class="service">
+                <summary>Collaborate Closely</summary>
                 <p>I partner with designers to deliver pixel-perfect, responsive designs that seamlessly adapt.</p>
-            </div>
+            </details>
 
-
-            <div class="service">
-                <h3>Become a technical partner</h3>
-                <p>If you’re looking for a practical and experienced technical partner, I can help. With a background in development and team leadership, I provide flexible support to tackle challenges, guide teams, or ensure your technology aligns with your goals.</p>
-            </div>
-
-
+            <details class="service">
+                <summary>Become a technical partner</summary>
+                <p>If you’re looking for a strategic thinker and experienced technical partner, I can help.  I provide flexible support to tackle challenges, guide teams, or ensure your technology aligns with your goals.</p>
+            </details>
 
         </div>
+
 
         <blockquote class="tearaway">Committed to delivering results — going the needed extra mile to make your project succeed.</blockquote>
 
@@ -931,7 +994,7 @@
                 </p>
                 <p class="title">Chief Product Officer @ BetterSaver</p>
                 <blockquote>
-                    <p>Tony is like wonder woman and batman combined.</p>
+                    <p>Tony was great to work with on getting BetterSaver launched and helping us to quickly iterate. He was collaborative and communicative throughout the project, ensuring we prioritised the work that was impactful.</p>
                 </blockquote>
             </div>
         </div>
