@@ -328,7 +328,7 @@
 
         p.tp{
             color: var(--celadon);
-            margin: 0;ß
+            margin: 0;
         }
 
         blockquote {
@@ -412,25 +412,28 @@
             box-shadow: 0 0 0.5vw rgba(60, 40, 20, 0.5),
             0 0.5vw 1.5vw rgba(60, 40, 20, 0.4);
             transform: rotate(-5deg);
-
+            filter:  sepia(1);
 
         }
-        picture img { max-width: 100%; max-height: 100%;}
+
+
+        picture img {        transition: transform 0.3s ease, filter 0.3s ease;  object-fit:contain;width:100%;}
         #about  picture::after {
             position: absolute;
             top: 10%;left:50%;
             transform: translateX(-50%);
             content:"TONY";
-            color:  var(--link-text);
+            color:  var(--primary-text);
             font-weight: 900;
             font-size: clamp(2rem, 3vw, 3rem);
         }
 
-        #about  picture:hover::after {
-            color:  var(--portfolio-border);
-        }
+
         #about  picture:hover {
-            border: 12px var(--primary-border-style)  var(--portfolio-border);
+            bxorder: 12px var(--primary-border-style)  var(--portfolio-border);
+        }
+          picture:hover img{
+            filter: invert()
         }
 
 #whatido {
@@ -682,7 +685,7 @@
             font-style: italic;
             margin: 5vw 0;
             padding:  2vw;
-            clear:left;
+            clear:left;border-color:var(--primary-text);
         }
         #testimonials .testimonial blockquote p{
             font-style: italic;
@@ -712,15 +715,21 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 5px var(--primary-border-style)  var(--link-text);
+            border: 5px var(--primary-border-style)  var(--primary-text);
             float:left;
             box-shadow: 0 0 0.5vw rgba(60, 40, 20, 0.5),
             0 0.5vw 1.5vw rgba(60, 40, 20, 0.4);
             transform: rotate(-5deg);
 
 
+            img{
+                filter:  sepia(1);
+            }
         }
 
+        #testimonials picture:hover img {
+            filter: invert()
+        }
 
         form {
             max-width: 90%;
