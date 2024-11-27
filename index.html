@@ -115,8 +115,8 @@
                         "actionPlatform": ["http://schema.org/AndroidPlatform", "http://schema.org/IOSPlatform"],
                         "inLanguage": "en"
                     },
-                    "name": "Call Us",
-                    "description": "Call us for immediate CSS support."
+                    "name": "Call me",
+                    "description": "Call me for immediate CSS support."
                 },
                 {
                     "@type": "CommunicateAction",
@@ -158,7 +158,6 @@
 
 
 
-
         :root {
 
             --black-olive:#212922;
@@ -177,19 +176,20 @@
             --primary-text: var(--black-olive);
             --secondary-text:  var(--black-olive);
             --primary-header-text: var(--black-olive); /* More contrasting for lighter elements */
-            --secondary-header-text: var(--celadon); /* Brightened gold for better readability */
-            --tertiary-header-text: var(--celadon); /* Brightened gold for better readability */
+            --secondary-header-text: var(--brunswick-green); /* Brightened gold for better readability */
+            --tertiary-header-text: var(--brunswick-green); /* Brightened gold for better readability */
 
             --cta-c: var(--celadon);
             --cta-bg: var(--feldgrau);
             --primary-border: var(--celadon);
+            --secondary-border: var(--feldgrau);
             --primary-border-style:solid;
 
             /* Link Colors */
 
 
                 /* Link Colors */
-                --link-text: var(--brunswick-green);
+                --link-text: var(--celadon);
                 --link-text-hover: var(--feldgrau);
                 --link-text-visited: var(--feldgrau);
                 --link-text-active: var(--feldgrau);
@@ -264,7 +264,6 @@
         }
 
         main {
-
             background-color: var(--secondary-background);
         }
 
@@ -281,8 +280,6 @@
             color: var(--primary-header-text);
             text-shadow: 0 0.2vw 5vw rgba(60, 40, 20, 0.4),
             0 0.3vw 0.8vw rgba(60, 40, 20, 0.3);
-
-
         }
 
         /*h2 {*/
@@ -319,6 +316,14 @@
             line-height: calc(2.5vh + 2vw);
             margin-bottom: max(3vw, 3vh);
         }
+        ul {
+
+            margin-bottom: max(3vw, 3vh);}
+        li {
+            font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 5vh));
+            line-height: 1.8;
+            margin-bottom: 0
+        }
 
         p {
             text-align: justify;
@@ -326,10 +331,6 @@
             line-height: 1.7;
         }
 
-        p.tp{
-            color: var(--celadon);
-            margin: 0;
-        }
 
         blockquote {
             border-left: 3px var(--primary-border-style) var(--primary-border);
@@ -382,61 +383,96 @@
 
 
         /* END GLOBAL LAYOUT STYLES */
+
+
+
         #about {
             margin-top: 5vw;
+
+            figure, picture{
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                border-radius: 50%;
+                aspect-ratio: 1 / 1;
+            }
+            figure {
+
+                float: left;
+                width: 30vw;
+
+                a {
+                    display: inline-block;
+                }
+
+                figcaption {
+                    text-align: center;
+                    margin: 1vw;
+                }
+            }
+
+            p.tp {
+                color: var(--celadon);
+                height: 30vw;
+                padding: 2vw;
+                margin: 5vh 0;
+                display: flex;
+                font-style: italic;
+                align-items: center;
+            }
+
+            picture {
+                overflow: hidden;
+                width: 20vw;
+                height: 20vw;
+
+                object-fit: contain;
+
+                position: relative;
+                margin: 0;
+
+
+                border: 10px var(--primary-border-style) var(--primary-text);
+            }
         }
-        #about figure  {
-            float: left;            shape-outside: circle(50%); /* Defines circular wrapping for text */
+
+        .opener {
+            clear: both;
         }
-        figcaption{
-            text-align: center;
-            margin: 1vw;
-        }
-        #about picture  {
-            overflow:hidden;
-            width: 20vw;
-            height: 20vw;
-            aspect-ratio: 1/1;
 
-            object-fit:contain;
-            border-radius: 50%; /* Ensures the image is circular */
 
-            position: relative;
 
-            margin: 0 max(3vw, 5vh) 0 0 ;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 10px var(--primary-border-style)  var(--primary-text);
+        picture {
 
-            box-shadow: 0 0 0.5vw rgba(60, 40, 20, 0.5),
-            0 0.5vw 1.5vw rgba(60, 40, 20, 0.4);
+
+            box-shadow: 0 0 0.5vw rgba(60, 40, 20, 0.5), 0 0.5vw 1.5vw rgba(60, 40, 20, 0.4);
             transform: rotate(-5deg);
-            filter:  sepia(1);
+            filter: sepia(1);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
 
+            &:hover {
+                box-shadow: 0 0 0.2vw rgba(60, 40, 20, 0.3), 0 0.3vw 1vw rgba(60, 40, 20, 0.2);
+                transform: rotate(0) translateY(-0.5vw) scale(1.05);
+                border: 12px var(--primary-border-style) var(--portfolio-border);
+
+                img {
+                    filter: invert();
+                }
+            }
+
+            img {
+                transition: transform 0.3s ease, filter 0.3s ease;
+                object-fit: contain;
+                width: 100%;
+
+            }
         }
 
 
-        picture img {        transition: transform 0.3s ease, filter 0.3s ease;  object-fit:contain;width:100%;}
-        #about  picture::after {
-            position: absolute;
-            top: 10%;left:50%;
-            transform: translateX(-50%);
-            content:"TONY";
-            color:  var(--primary-text);
-            font-weight: 900;
-            font-size: clamp(2rem, 3vw, 3rem);
-        }
-
-
-        #about  picture:hover {
-            bxorder: 12px var(--primary-border-style)  var(--portfolio-border);
-        }
-          picture:hover img{
-            filter: invert()
-        }
-
-#whatido {
+        #whatido {
     background-color: var(--contrast-background);
 }
         #whatido p {
@@ -446,37 +482,22 @@
             text-align: center
         }
 
-
-
-
         #service-list {
-
-
-
-
             margin: max( 4vh, 4vw) 0;
         }
 
-
-
         #service-list summary {
             cursor: pointer;
-
             font-weight: bold;
             display: flex;
             align-items: center;
             text-align:left;
-
             color: var(--primary-text);
             border-bottom:  1px dotted var(--primary-text);
-
             font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(2vw, 2.5vh));
             text-transform: uppercase;
-
             padding: max(1.5vw, 1.5vh) ;
-
             justify-content: space-between;
-
         }
 
         #service-list summary::after {
@@ -693,8 +714,8 @@
             line-height: 1.5;
         }
 
-        #testimonials .testimonial .title{
-            color: var(--feldgrau);
+        #testimonials .testimonial a{
+            color: var(--black-olive);
             text-align:left;
         }
 
@@ -717,29 +738,24 @@
             justify-content: center;
             border: 5px var(--primary-border-style)  var(--primary-text);
             float:left;
-            box-shadow: 0 0 0.5vw rgba(60, 40, 20, 0.5),
-            0 0.5vw 1.5vw rgba(60, 40, 20, 0.4);
-            transform: rotate(-5deg);
 
 
-            img{
-                filter:  sepia(1);
-            }
+
+
         }
 
-        #testimonials picture:hover img {
-            filter: invert()
-        }
+
 
         form {
             max-width: 90%;
             width: max(50vw, 80vh);
             margin: min(4vw,4vh) auto;
             padding:  min(4vw,4vh);
-
+            border: 1px solid var(--secondary-border);
             border-radius: 5px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
             font-family: 'Noto Sans JP', sans-serif;
         }
 
@@ -757,14 +773,33 @@
             width: 100%;
             padding:max(1vw,1vh);
             margin: min(1vw,1vh) 0 min(3vw,3vh) 0;
-            border: var(--primary-border);
-            background-color: var(--cta-bg);
+            border: 1px solid var(--secondary-border);
+            background-color: var(--secondary-background);
               border-radius: 5px;
             font-size: 2rem;
             box-sizing: border-box;
+
+              transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        form:hover {
+            background-color: rgba(255,255,255,0.2);
+            box-shadow:   0 0  10px rgba(0, 0, 0, 0.5)
         }
 
-        form textarea {
+          form:hover input[type="text"],
+          form:hover input[type="email"],
+          form:hover textarea  {
+              background-color: rgba(255,255,255,0.2);
+              box-shadow: inset 0 0  10px rgba(0, 0, 0, 0.5);
+          }
+
+        form:hover button {
+            background-color: var(--celadon-trans);
+            box-shadow:  0 0  10px rgba(0, 0, 0, 0.5), inset   0 0  10px rgba(0, 0, 0, 0.5);
+
+        }
+
+          form textarea {
             height:max(20vw,20vh);
             resize: vertical;
         }
@@ -773,16 +808,17 @@
             width: 100%;
             padding:max(1vw,1vh);
             background-color: var(--primary-background);
+            border: 1px solid var(--secondary-border);
             color: var(--primary-text);
             font-size: 1.4rem;
-            border: none;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+
         }
 
         form button:hover {
-            background-color:var(--secondary-header-text);
+            background-color:var(--celadon);
         }
 
         form button:active {
@@ -812,18 +848,13 @@
                 margin: 0;
                 width: 100%;
                 height: 100%;
+                aspect-ratio: 0;
             }
             #about picture {
                 width: 50vw;
                 height: 50vw;  margin: 0;
             }
-            h2 {
 
-            }
-
-            p{
-                text-align: justify
-            }
         }
 
     </style>
@@ -842,12 +873,7 @@
         <div class="container">
 
             <figure>
-
                 <a href="https://www.linkedin.com/in/tonygurnick/">
-
-
-
-
                 <picture>
                     <img alt="Tony" src="tony.png">
                 </picture>
@@ -856,9 +882,8 @@
                     <a  tabindex="1" class='tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
                 </figcaption>
             </figure>
-            <p class="tp">You need to get a project moving now, but your team is stretched thin.</p>
-            <p class="tp"> I provide the expertise without the commitment of a full hire.</p>
-            <p>I’m Tony, a full-stack developer and CSS specialist with experience ranging from legacy systems to cutting-edge frameworks, I bridge critical gaps and deliver results.</p>
+            <p class="tp">You need to get a project moving now, but your team is stretched thin.  I provide the expertise without the commitment of a full hire.</p>
+            <p class="opener">I’m Tony, a full-stack developer and CSS specialist with experience ranging from legacy systems to cutting-edge frameworks, I bridge critical gaps and deliver results.</p>
 
             <h2>My Story</h2>
 
@@ -881,12 +906,12 @@
             </ul>
 
 
-            <p>When the pressure is on, I will integrate into your team, giving you the extra time you need.
+            <p>When the pressure is on, I will integrate into your team, giving you the space you need.
             </p>
 
 
             <p class="cta1">
-                Press pause the usual hiring hassle and let’s connect directly. <br>
+                Press pause on the usual hiring hassle and let’s connect directly. <br>
             </p>
 
         </div>
@@ -1100,7 +1125,7 @@
         <textarea name="message"></textarea>
     </label>
 
-    <button type="submit">Submit</button>
+    <button type="submit">SUBMIT</button>
 </form>
 <footer>
 
