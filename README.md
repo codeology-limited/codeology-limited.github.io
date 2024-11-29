@@ -1,2 +1,1 @@
-# codeology-limited.github.io
-Codeology CSS only homepage
+WHY ARE YOU READING THIS
