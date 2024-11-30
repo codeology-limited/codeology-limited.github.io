@@ -1,0 +1,46 @@
+img {
+  width: 100%;
+  height: auto;
+}
+
+
+picture {
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+
+  position: relative;
+  overflow: hidden;
+
+
+  width: 100%;
+
+
+
+  margin: 0;
+  border: 10px var(--primary-border-style) var(--primary-text);
+
+  box-shadow: 0 0 0.5vw rgba(60, 40, 20, 0.5), 0 0.5vw 1.5vw rgba(60, 40, 20, 0.4);
+  transform: rotate(-5deg);
+  filter: sepia(1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+
+  img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+picture:hover {
+  box-shadow: 0 0 0.2vw rgba(60, 40, 20, 0.3), 0 0.3vw 1vw rgba(60, 40, 20, 0.2);
+  transform: rotate(0) translateY(-0.5vw) scale(1.05);
+  border: 12px var(--primary-border-style) var(--portfolio-border);
+
+  img {
+    filter: invert()
+  }
+}

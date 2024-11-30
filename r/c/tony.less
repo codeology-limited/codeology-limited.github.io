@@ -1,3 +1,5 @@
+@import "images.less";
+@import "testimonials.less";
 
 @keyframes subtleSwing {
   0% {
@@ -90,14 +92,6 @@ body > * {
   padding: 0 max(3vw, 3vh)
 }
 
-header {
-}
-
-section {
-}
-
-section + section {
-}
 
 footer {
   display: flex;
@@ -225,84 +219,47 @@ a:active {
 }
 
 #about {
-  margin-top: 5vw;
 
-  figure, picture {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    aspect-ratio: 1 / 1
-  }
 
   figure {
-    float: left;
-    width: 30vw;
+    display: flex;
+    margin: 5vw  0;
+    align-items: center;
+    justify-content: space-between;
+
 
     a {
-      display: inline-block
+      display: block;
+      width: 100%;
+      height:100%;
     }
 
-    figcaption {
-      text-align: center;
-      margin: 1vw
+    figcaption p {
+
+      flex-shrink: 1;
+      text-align: justify;
+      margin: 0;
+      padding: 0;
+      color: var(--color-5);
+
+      padding-left: 10%;
+
+      font-style: italic;
+
     }
   }
 
-  p.tp {
-    color: var(--color-5);
-    height: 30vw;
-    padding: 2vw;
-    margin: 5vh 0;
-    display: flex;
-    font-style: italic;
-    align-items: center
-  }
 
-  picture {
-    overflow: hidden;
-    width: 20vw;
-    height: 20vw;
-    object-fit: contain;
-    position: relative;
-    margin: 0;
-    border: 10px var(--primary-border-style) var(--primary-text)
-  }
+
+
 }
 
 .opener {
   clear: both
 }
 
-img {
-  width: 100%;
-  height: auto;
-}
 
 
-picture {
-  box-shadow: 0 0 0.5vw rgba(60, 40, 20, 0.5), 0 0.5vw 1.5vw rgba(60, 40, 20, 0.4);
-  transform: rotate(-5deg);
-  filter: sepia(1);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-
-  &:hover {
-    box-shadow: 0 0 0.2vw rgba(60, 40, 20, 0.3), 0 0.3vw 1vw rgba(60, 40, 20, 0.2);
-    transform: rotate(0) translateY(-0.5vw) scale(1.05);
-    border: 12px var(--primary-border-style) var(--portfolio-border);
-
-    img {
-      filter: invert()
-    }
-  }
-
-  img {
-    transition: transform 0.3s ease, filter 0.3s ease;
-    object-fit: contain;
-    width: 100%
-  }
-}
 
 #what-i-do {
   background-color: var(--color-3-trans)
@@ -506,51 +463,6 @@ nav {
   color: var(--color-1)
 }
 
-#testimonials .testimonial {
-  margin-bottom: min(5vw, 5vh)
-}
-
-#testimonials .testimonial p {
-  margin: 0;
-  line-height: 1.2;
-  text-align: left
-}
-
-#testimonials .testimonial blockquote {
-  font-style: italic;
-  margin: 5vw 0;
-  padding: 2vw;
-  clear: left;
-  border-color: var(--primary-text)
-}
-
-#testimonials .testimonial blockquote p {
-  font-style: italic;
-  padding: 0 0 0 2vw;
-  line-height: 1.5
-}
-
-#testimonials .testimonial a {
-  color: var(--color-1);
-  text-align: left
-}
-
-#testimonials picture {
-  overflow: hidden;
-  width: max(10vw, 10vh);
-  height: auto;
-  max-width: 30%;
-  aspect-ratio: 1/1;
-  object-fit: contain;
-  border-radius: 50%;
-  position: relative;
-  margin: 0 max(3vw, 5vh) 0 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 5px var(--primary-border-style) var(--primary-text);
-  float: left
-}
 
 form {
   max-width: 90%;
@@ -640,21 +552,50 @@ form button:active {
     margin: 0
   }
 
-  #about figure {
-    float: none;
+  blockquote {
+    border: none;
+  }
+  #about figure,  #about figure a, .opener {
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content:center;
     margin: 0;
     width: 100%;
     height: 100%;
     aspect-ratio: 0
   }
-
+  #about figure p.tp {
+    padding: 0 0 2vh;
+  }
   #about picture {
     width: 50vw;
     height: 50vw;
     margin: 0
+  }
+
+  #testimonials .testimonial {
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    .testimonial-content {
+      padding:0;
+    }
+    .name,  .title {
+
+      display: block;
+      width : 100%;
+      text-align: center;padding-top: 1vh;
+    }
+    blockquote {
+      width: 100%;
+    }
+    p {
+      padding: 0;   text-align: center;
+    }
+
   }
 }
