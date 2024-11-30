@@ -188,8 +188,7 @@
             --primary-text: var(--color-1);
             --secondary-text: var(--color-1);
             --primary-header-text: var(--color-1);
-            --secondary-header-text: var(--color-2);
-            --tertiary-header-text: var(--color-2);
+
             --cta-c: var(--color-5);
             --cta-bg: var(--color-3);
             --primary-border: var(--color-5);
@@ -287,18 +286,18 @@
             font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 4vh));
             text-transform: uppercase;
             padding: max(1.5vw, 1.5vh) 0;
-            color: var(--secondary-header-text)
+            color: var(--color-2)
         }
 
         #what-i-do h2, #what-i-do h3 {
-            color: var(--tertiary-header-text)
+            color: var(--color-2)
         }
 
         h3 {
             font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 4vh));
             text-transform: uppercase;
             padding: max(1.5vw, 1.5vh) 0;
-            color: var(--secondary-header-text)
+            color: var(--color-2)
         }
 
         p, blockquote, li {
@@ -744,7 +743,8 @@
 
         form:hover button {
             background-color: var(--color-5-trans);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.5)
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.5);
+            color: var(--color-1);
         }
 
         form textarea {
@@ -757,7 +757,7 @@
             padding: max(1vw, 1vh);
             background-color: var(--primary-background);
             border: 1px solid var(--secondary-border);
-            color: var(--primary-text);
+            color: var(--color-5);
             font-size: 1.4rem;
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
             border-radius: 5px;
@@ -765,11 +765,13 @@
         }
 
         form button:hover {
-            background-color: var(--color-5)
+            background-color: var(--color-5);
+            color: var(--color-1);
+            font-weight: 900;
         }
 
         form button:active {
-            background-color: var(--secondary-header-text)
+            background-color: var(--color-2)
         }
 
         @media only screen and (max-width: 767px) {
