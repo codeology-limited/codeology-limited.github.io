@@ -9,21 +9,49 @@
     flex-direction: column;
     min-width: 25%;
     align-items: center;
-    filter: sepia(1);
+
     transition: filter 1s ease;
     cursor:pointer;
 
-    &:hover{
+    &:hover a{
       filter:sepia(0);
 
+      box-shadow:
+              0 0 0.7vw var(--color-3-trans),
+              0 0.8vw 2vw var(--color-4-trans),
+              0 1.5vw 3vw var(--black-olive);
     }
+
+    a {
+
+      position: relative;
+      display: inline-block;
+
+      transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+      filter: sepia(1);
+      background-color: var(--color-3);
+      border: 5px var(--primary-border-style) var(--color-1);
+      box-shadow:
+              0 0 0.5vw var(--color-1, rgba(33, 41, 34, 0.5)),
+              0 0.5vw 1.5vw var(--color-1, rgba(33, 41, 34, 0.4));
+
+      border-radius: var(--portfolio-radius);
+      margin: var(--portfolio-padding);
+
+      overflow: hidden;
+
+      text-decoration: none;
+      color: var(--primary-text)  ;
+    }
+
+
     figcaption {
       font-style : italic;
       font-size: clamp(max(1.5vw, 1.5vh), min(2vw, 2.5vh), min(2vw, 2.5vh));
-      white-space: nowrap;
     }
   }
 }
+
 
 #portfolio img {
   width: 100%;
@@ -35,24 +63,7 @@
 
 }
 
-#portfolio a {
-  background-color: var(--color-3);
-  border: 3px var(--primary-border-style) var(--color-1);
-  box-shadow:
-          0 0 0.5vw var(--color-1, rgba(33, 41, 34, 0.5)),
-          0 0.5vw 1.5vw var(--color-1, rgba(33, 41, 34, 0.4));
 
-  border-radius: var(--portfolio-radius);
-  margin: var(--portfolio-padding);
-  position: relative;
-  overflow: hidden;
-
-  text-decoration: none;
-  color: var(--primary-text)  ;
-
-
-  display: inline-block;
-}
 
 #portfolio a::before {
   content: attr(title);
@@ -77,20 +88,5 @@
   box-sizing: border-box
 }
 
-#portfolio a:hover::before {
-  xtransform: translateY(-100%)
-}
 
-#portfolio a:hover::after {
-  display: none
-}
 
-#portfolio a:hover {
-  box-shadow:
-          0 0 0.7vw var(--color-3-trans), /* Soft glow using feldgrau (semi-transparent) */
-          0 0.8vw 2vw var(--color-4-trans), /* Outer shadow with viridian (semi-transparent) */
-          0 1.5vw 3vw var(--black-olive); /* Deep shadow for strong elevation */
-
-  filter: sepia(0);
-
-}
