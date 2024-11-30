@@ -8,23 +8,27 @@
 
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Professional CSS expert offering services to optimise website design, resolve technical debt, and deliver fast results for your stalled or new projects.">
+    <meta name="description"
+          content="Professional CSS expert offering services to optimise website design, resolve technical debt, and deliver fast results for your stalled or new projects.">
 
-    <meta name="keywords" content="CSS expert, CSS services, web design, technical debt, responsive design, front-end development, website optimisation">
+    <meta name="keywords"
+          content="CSS expert, CSS services, web design, technical debt, responsive design, front-end development, website optimisation">
 
     <meta name="author" content="Your Name">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Open Graph Meta Tags for social media -->
     <meta property="og:title" content="Expert CSS Services | Codeology">
-    <meta property="og:description" content="Offering expert CSS solutions to resolve issues, reduce technical debt, and optimise your website's performance.">
+    <meta property="og:description"
+          content="Offering expert CSS solutions to resolve issues, reduce technical debt, and optimise your website's performance.">
     <meta property="og:image" content="https://codeology.co.nz/logo.png">
     <meta property="og:url" content="https://codeology.co.nz">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:title" content="Expert CSS Services | Codeology">
-    <meta name="twitter:description" content="Fast, reliable CSS solutions to optimise your website and resolve technical challenges.">
+    <meta name="twitter:description"
+          content="Fast, reliable CSS solutions to optimise your website and resolve technical challenges.">
     <meta name="twitter:image" content="https://codeology.co.nz/logo.png">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -60,13 +64,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Preload Noto Sans JP (Primary Font) -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap"
+          as="style">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 
 
-    <!-- Other Performance-related Headers -->
-    <meta http-equiv="cache-control" content="max-age=31536000, must-revalidate">
-    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
     <script type="application/ld+json">
         {
             "@context": "http://schema.org",
@@ -102,7 +104,10 @@
                     "target": {
                         "@type": "EntryPoint",
                         "urlTemplate": "sms:+6421677460",
-                        "actionPlatform": ["http://schema.org/AndroidPlatform", "http://schema.org/IOSPlatform"],
+                        "actionPlatform": [
+                            "http://schema.org/AndroidPlatform",
+                            "http://schema.org/IOSPlatform"
+                        ],
                         "inLanguage": "en"
                     },
                     "name": "Send SMS",
@@ -113,7 +118,10 @@
                     "target": {
                         "@type": "EntryPoint",
                         "urlTemplate": "tel:+6421677460",
-                        "actionPlatform": ["http://schema.org/AndroidPlatform", "http://schema.org/IOSPlatform"],
+                        "actionPlatform": [
+                            "http://schema.org/AndroidPlatform",
+                            "http://schema.org/IOSPlatform"
+                        ],
                         "inLanguage": "en"
                     },
                     "name": "Call me",
@@ -136,142 +144,132 @@
 
     <!-- CSS -->
     <style>
+
         @keyframes subtleSwing {
             0% {
-                transform: rotate(10deg);
+                transform: rotate(10deg)
             }
             1% {
-                transform: rotate(-10deg);
+                transform: rotate(-10deg)
             }
             2% {
-                transform: rotate(0deg);
+                transform: rotate(0deg)
             }
             3% {
-                transform: rotate(0deg);
+                transform: rotate(0deg)
             }
             4% {
-                transform: rotate(0deg);
+                transform: rotate(0deg)
             }
             100% {
-                transform: rotate(0deg);
+                transform: rotate(0deg)
             }
         }
 
-
-
         :root {
-
-            --black-olive:#212922;
-            --brunswick-green:#294936;
+            --black-olive: #212922;
+            --brunswick-green: #294936;
             --feldgrau: #3E6259;
+            --color-3-trans: rgba(62, 98, 89, 0.5);
             --viridian: #5B8266;
+            --color-4-trans: rgba(91, 130, 102, 0.90);
             --celadon: #AEF6C7;
-            --celadon-trans: #AEF6C7CC;
-
-            /* Background Colors */
-            --primary-background: var(--viridian);
-            --secondary-background: var(--viridian);
-            --contrast-background: var(--feldgrau);
-
-            /* Header Text Colors */
-            --primary-text: var(--black-olive);
-            --secondary-text:  var(--black-olive);
-            --primary-header-text: var(--black-olive); /* More contrasting for lighter elements */
-            --secondary-header-text: var(--brunswick-green); /* Brightened gold for better readability */
-            --tertiary-header-text: var(--brunswick-green); /* Brightened gold for better readability */
-
-            --cta-c: var(--celadon);
-            --cta-bg: var(--feldgrau);
-            --primary-border: var(--celadon);
-            --secondary-border: var(--feldgrau);
-            --primary-border-style:solid;
-
-            /* Link Colors */
-
-
-                /* Link Colors */
-                --link-text: var(--celadon);
-                --link-text-hover: var(--feldgrau);
-                --link-text-visited: var(--feldgrau);
-                --link-text-active: var(--feldgrau);
-
-                --portfolio-border: var(--celadon);
-                --portfolio-hover-bg: var(--celadon-trans);
-
-                --portfolio-padding: 1vw;
-                --portfolio-radius: 10%;
+            --color-5-trans: #AEF6C7CC;
+            --color-1: var(--black-olive);
+            --color-2: var(--brunswick-green);
+            --color-3: var(--feldgrau);
+            --color-4: var(--viridian);
+            --color-5: var(--celadon);
+            --primary-background: var(--color-4);
+            --secondary-background: var(--color-4);
+            --contrast-background: var(--color-3);
+            --primary-text: var(--color-1);
+            --secondary-text: var(--color-1);
+            --primary-header-text: var(--color-1);
+            --secondary-header-text: var(--color-2);
+            --tertiary-header-text: var(--color-2);
+            --cta-c: var(--color-5);
+            --cta-bg: var(--color-3);
+            --primary-border: var(--color-5);
+            --secondary-border: var(--color-3);
+            --primary-border-style: solid;
+            --link-text: var(--color-5);
+            --link-text-hover: var(--color-3);
+            --link-text-visited: var(--color-3);
+            --link-text-active: var(--color-3);
+            --portfolio-border: var(--color-5);
+            --portfolio-hover-bg: var(--color-5-trans);
+            --portfolio-padding: 1vw;
+            --portfolio-radius: 10%
         }
-
-        /* GLOBAL LAYOUT STYLES */
 
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            box-sizing: border-box
         }
 
         html {
             font-size: 62.5%;
             line-height: 1.3;
             scroll-behavior: smooth;
+            --s: 9px;
+            --c1: var(--color-4);
+            --c: #0000, var(--c1) .5deg 119.5deg, #0000 120deg;
+            --g1: conic-gradient(from 60deg at 56.25% calc(425% / 6), var(--c));
+            --g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
+            --g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
+            background: var(--g1), var(--g1) var(--s) calc(1.73 * var(--s)), var(--g2), var(--g2) var(--s) calc(1.73 * var(--s)), var(--g3) var(--s) 0, var(--g3) 0 calc(1.73 * var(--s)), var(--color-3);
+            background-size: calc(2 * var(--s)) calc(3.46 * var(--s))
         }
 
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            background-color: var(--primary-background);
+            background-color: var(--color-4-trans);
             color: var(--primary-text);
             display: flex;
             flex-direction: column;
             padding: max(3vw, 3vh) 0 0;
-            padding-top: 15vh;
+            padding-top: 15vh
         }
 
         body > * {
-            padding: 0 max(3vw, 3vh);
+            padding: 0 max(3vw, 3vh)
         }
 
         header {
-
         }
 
         section {
-
         }
 
         section + section {
-
         }
 
         footer {
             display: flex;
             align-items: center;
             justify-content: flex-end;
-
             flex: 1;
-
-            padding: 5vw 0 1vw;
+            padding: 5vw 0 1vw
         }
 
         footer p {
             text-align: center;
             font-size: clamp(1rem, 2vw, 2rem);
-            text-transform: uppercase;
+            text-transform: uppercase
         }
 
         .container {
             width: 90%;
             max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        main {
-            background-color: var(--secondary-background);
+            margin: 0 auto
         }
 
         h1, h2, h3 {
             text-align: left;
             line-height: 1.7;
-            margin: max(3vw, 3vh) 0;
+            margin: max(3vw, 3vh) 0
         }
 
         h1 {
@@ -279,47 +277,37 @@
             font-size: clamp(min(2vw, 3vh), min(5vw, 6vh), min(5vw, 6vh));
             margin-bottom: max(1vw, 1vh);
             color: var(--primary-header-text);
-            text-shadow: 0 0.2vw 5vw rgba(60, 40, 20, 0.4),
-            0 0.3vw 0.8vw rgba(60, 40, 20, 0.3);
+            text-shadow: 0 0.2vw 5vw rgba(60, 40, 20, 0.4), 0 0.3vw 0.8vw rgba(60, 40, 20, 0.3)
         }
-
-        /*h2 {*/
-        /*    color: var(--primary-header-text);*/
-        /*    font-size: clamp(max(2vw, 3vh), min(4vw, 5vh), min(4vw, 5vh));*/
-        /*    text-shadow: 0 0.2vw 5vw rgba(60, 40, 20, 0.4),*/
-        /*    0 0.3vw 0.8vw rgba(60, 40, 20, 0.3);*/
-
-
-        /*}*/
 
         h2 {
             font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 4vh));
             text-transform: uppercase;
-
             padding: max(1.5vw, 1.5vh) 0;
-            color: var(--secondary-header-text);
+            color: var(--secondary-header-text)
         }
 
-        #whatido h2 , #whatido h3 {
-            color: var(--tertiary-header-text);
+        #what-i-do h2, #what-i-do h3 {
+            color: var(--tertiary-header-text)
         }
-        h3{
 
+        h3 {
             font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 4vh));
             text-transform: uppercase;
-
             padding: max(1.5vw, 1.5vh) 0;
-            color: var(--secondary-header-text);
-
+            color: var(--secondary-header-text)
         }
+
         p, blockquote, li {
             font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 5vh));
             line-height: calc(2.5vh + 2vw);
-            margin-bottom: max(3vw, 3vh);
+            margin-bottom: max(3vw, 3vh)
         }
-        ul {
 
-            margin-bottom: max(3vw, 3vh);}
+        ul {
+            margin-bottom: max(3vw, 3vh)
+        }
+
         li {
             font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 5vh));
             line-height: 1.8;
@@ -329,126 +317,110 @@
         p {
             text-align: justify;
             padding: 0 0 1rem 0;
-            line-height: 1.7;
+            line-height: 1.7
         }
-
 
         blockquote {
-            border-left: 3px var(--primary-border-style) var(--primary-border);
+            border-left: 3px var(--primary-border-style) var(--primary-border)
         }
 
-        #whatido blockquote {
-            border-left: 3px var(--primary-border-style)  var(--primary-text);
+        #what-i-do blockquote {
+            border-left: 3px var(--primary-border-style) var(--primary-text)
         }
-        ul,ol {
-            padding-left: max(3vw, 3vh);
+
+        ul, ol {
+            padding-left: max(3vw, 3vh)
         }
 
         li:nth-child(even) {
-            color: var(--secondary-text);
+            color: var(--secondary-text)
         }
 
         a {
             color: var(--link-text);
-            text-decoration: none;
+            text-decoration: none
         }
 
         a:hover {
-            color: var(--link-text-hover);
+            color: var(--link-text-hover)
         }
 
         a:visited {
-            color: var(--link-text-visited);
+            color: var(--link-text-visited)
         }
 
         a:active {
-            color: var(--link-text-active);
+            color: var(--link-text-active)
         }
-
 
         .cta1, .cta2 {
             padding: max(3vw, 3vh);
             text-align: center;
             line-height: 1.7;
             border-bottom: 1px var(--primary-border-style) var(--primary-border);
-            border-top: 1px var(--primary-border-style) var(--primary-border);
+            border-top: 1px var(--primary-border-style) var(--primary-border)
         }
 
         .cta1 {
-             color: var(--primary-text);
+            color: var(--primary-text)
         }
 
         .cta2 {
-            color: var(--primary-text);
+            color: var(--primary-text)
         }
-
-
-        /* END GLOBAL LAYOUT STYLES */
-
-
 
         #about {
             margin-top: 5vw;
 
-            figure, picture{
-
+            figure, picture {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-
                 border-radius: 50%;
-                aspect-ratio: 1 / 1;
+                aspect-ratio: 1 / 1
             }
-            figure {
 
+            figure {
                 float: left;
                 width: 30vw;
 
                 a {
-                    display: inline-block;
+                    display: inline-block
                 }
 
                 figcaption {
                     text-align: center;
-                    margin: 1vw;
+                    margin: 1vw
                 }
             }
 
             p.tp {
-                color: var(--celadon);
+                color: var(--color-5);
                 height: 30vw;
                 padding: 2vw;
                 margin: 5vh 0;
                 display: flex;
                 font-style: italic;
-                align-items: center;
+                align-items: center
             }
 
             picture {
                 overflow: hidden;
                 width: 20vw;
                 height: 20vw;
-
                 object-fit: contain;
-
                 position: relative;
                 margin: 0;
-
-
-                border: 10px var(--primary-border-style) var(--primary-text);
+                border: 10px var(--primary-border-style) var(--primary-text)
             }
         }
 
         .opener {
-            clear: both;
+            clear: both
         }
 
-
-
         picture {
-
-
             box-shadow: 0 0 0.5vw rgba(60, 40, 20, 0.5), 0 0.5vw 1.5vw rgba(60, 40, 20, 0.4);
             transform: rotate(-5deg);
             filter: sepia(1);
@@ -460,107 +432,92 @@
                 border: 12px var(--primary-border-style) var(--portfolio-border);
 
                 img {
-                    filter: invert();
+                    filter: invert()
                 }
             }
 
             img {
                 transition: transform 0.3s ease, filter 0.3s ease;
                 object-fit: contain;
-                width: 100%;
-
+                width: 100%
             }
         }
 
+        #what-i-do {
+            background-color: var(--color-3-trans)
+        }
 
-        #whatido {
-    background-color: var(--contrast-background);
-}
-        #whatido p {
+        #what-i-do p {
             text-align: justify
         }
-        #whatido p.cta2 {
+
+        #what-i-do p.cta2 {
             text-align: center
         }
 
         #service-list {
-            margin: max( 4vh, 4vw) 0;
+            margin: max(4vh, 4vw) 0
         }
 
         #service-list summary {
             cursor: pointer;
-            font-weight: bold;
+            font-weight: 700;
             display: flex;
             align-items: center;
-            text-align:left;
+            text-align: left;
             color: var(--primary-text);
-            border-bottom:  1px dotted var(--primary-text);
+            border-bottom: 1px dotted var(--primary-text);
             font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(2vw, 2.5vh));
             text-transform: uppercase;
-            padding: max(1.5vw, 1.5vh) ;
-            justify-content: space-between;
+            padding: max(1.5vw, 1.5vh);
+            justify-content: space-between
         }
 
         #service-list summary::after {
             content: '+';
-
-             margin: 0;
-            color:var(--primary-text);
+            margin: 0;
+            color: var(--primary-text);
             transition: transform 0.2s ease-in-out;
-
             font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(2vw, 2.5vh));
             text-transform: uppercase;
-
-            padding: max(1.5vw, 1.5vh) 0;
-
+            padding: max(1.5vw, 1.5vh) 0
         }
 
         #service-list details[open] summary::after {
-            content: '-';
+            content: '-'
         }
 
         #service-list summary:hover {
-            background-color:var(--primary-background);
-
+            background-color: var(--primary-background)
         }
+
         #service-list p {
-            padding: max(1.5vw, 1.5vh) ;
-            font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(2vw, 2.5vh));
+            padding: max(1.5vw, 1.5vh);
+            font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(2vw, 2.5vh))
         }
 
-
-
-
-
-        /*  MY PORTFOLIO */
-
-        /* Portfolio Container */
         #portfolio .service-list {
             display: flex;
             padding: 0;
             list-style: none;
-            margin: 0;
+            margin: 0
         }
 
-        /* Individual Service */
         #portfolio .service {
             max-width: 25%;
             flex: 1;
-            box-sizing: border-box;
+            box-sizing: border-box
         }
 
-        /* Image Styling */
         #portfolio img {
             width: 100%;
             height: auto;
             border-radius: var(--portfolio-radius);
             aspect-ratio: 1 / 1;
-
             display: block;
-            border: 5px solid var(--secondary-background);
+            border: 5px solid var(--primary-background)
         }
 
-        /* Link Styling */
         #portfolio a {
             border: 1px var(--primary-border-style) var(--primary-border);
             border-radius: var(--portfolio-radius);
@@ -569,10 +526,9 @@
             overflow: hidden;
             display: block;
             text-decoration: none;
-            color: var(--primary-text);
+            color: var(--primary-text)
         }
 
-        /* Project Title Overlay */
         #portfolio a::before {
             content: attr(title);
             font-weight: 900;
@@ -580,8 +536,7 @@
             height: 100%;
             line-height: 1;
             color: var(--primary-text);
-            text-align: center;
-          ;
+            text-align: center;;
             background-color: var(--portfolio-hover-bg);
             position: absolute;
             top: 100%;
@@ -594,10 +549,9 @@
             transition: transform 0.5s ease;
             transform: translateY(0);
             padding: var(--portfolio-padding);
-            box-sizing: border-box;
+            box-sizing: border-box
         }
 
-        /* View Button Overlay */
         #portfolio a::after {
             content: "view";
             padding: var(--portfolio-padding);
@@ -620,50 +574,43 @@
             z-index: 20;
             text-align: center;
             transition: transform 0.5s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-            opacity: 1;
+            opacity: 1
         }
 
-        /* Hover Effects */
         #portfolio a:hover::before {
-            transform: translateY(-100%);
+            transform: translateY(-100%)
         }
 
         #portfolio a:hover::after {
-            display: none;
+            display: none
         }
 
-
-        /*  END MY PORTFOLIO */
-
         .tearaway {
-
             position: relative;
-
-
             text-align: center;
             font-size: clamp(2rem, 3vw, 3rem);
             text-wrap: pretty;
             overflow-wrap: break-word;
             line-height: 1.3;
-            padding: 5vw 10vw 5vw;
+            padding: 5vw 10vw 5vw
         }
+
         .tearaway::before {
-            content: "“";
+            content: "“"
         }
 
         .tearaway::after {
-            content: "”";
+            content: "”"
         }
-
 
         nav {
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 8vw;
+            height: 8vw
         }
 
-         .cta-tel {
+        .cta-tel {
             position: fixed;
             top: 15px;
             right: 15px;
@@ -671,175 +618,162 @@
             transform-origin: top center;
             animation: subtleSwing 30s ease-in-out infinite;
             text-align: right;
-            text-wrap: nowrap;
+            text-wrap: nowrap
         }
+
         .cta-share {
             position: fixed;
             top: 15px;
             left: 15px;
-            display: inline-block;
+            display: inline-block
         }
 
         .cta {
-            font-size: clamp( 1rem, 3vw, 2rem);
+            font-size: clamp(1rem, 3vw, 2rem);
             color: var(--primary-text);
             background-color: var(--cta-bg);
             padding: 1vw;
             border-radius: .5vw;
             text-decoration: none;
-            font-weight:900;
-            box-shadow: 0 0 0.5vw rgba(60, 40, 20, 0.5);
+            font-weight: 900;
+            box-shadow: 0 0 0.5vw rgba(60, 40, 20, 0.5)
         }
+
         .cta:hover {
             background-color: var(--cta-c);
-            color: var(--cta-bg);
+            color: var(--cta-bg)
         }
-        #testimonials .testimonial{
-        margin-bottom:min(5vw, 5vh);
+
+        #testimonials .testimonial {
+            margin-bottom: min(5vw, 5vh)
         }
-        #testimonials .testimonial p{
+
+        #testimonials .testimonial p {
             margin: 0;
             line-height: 1.2;
-            text-align:left;
+            text-align: left
         }
 
-        #testimonials .testimonial blockquote{
+        #testimonials .testimonial blockquote {
             font-style: italic;
             margin: 5vw 0;
-            padding:  2vw;
-            clear:left;border-color:var(--primary-text);
+            padding: 2vw;
+            clear: left;
+            border-color: var(--primary-text)
         }
-        #testimonials .testimonial blockquote p{
+
+        #testimonials .testimonial blockquote p {
             font-style: italic;
             padding: 0 0 0 2vw;
-            line-height: 1.5;
+            line-height: 1.5
         }
 
-        #testimonials .testimonial a{
-            color: var(--black-olive);
-            text-align:left;
+        #testimonials .testimonial a {
+            color: var(--color-1);
+            text-align: left
         }
 
-
-        #testimonials picture  {
-            overflow:hidden;
+        #testimonials picture {
+            overflow: hidden;
             width: max(10vw, 10vh);
             height: auto;
             max-width: 30%;
             aspect-ratio: 1/1;
-
-            object-fit:contain;
-            border-radius: 50%; /* Ensures the image is circular */
-
+            object-fit: contain;
+            border-radius: 50%;
             position: relative;
-
-            margin: 0 max(3vw, 5vh) 0 0 ;
+            margin: 0 max(3vw, 5vh) 0 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 5px var(--primary-border-style)  var(--primary-text);
-            float:left;
-
-
-
-
+            border: 5px var(--primary-border-style) var(--primary-text);
+            float: left
         }
-
-
 
         form {
             max-width: 90%;
             width: max(50vw, 80vh);
-            margin: min(4vw,4vh) auto;
-            padding:  min(4vw,4vh);
+            margin: min(4vw, 4vh) auto;
+            padding: min(4vw, 4vh);
             border: 1px solid var(--secondary-border);
             border-radius: 5px;
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
-
-
-            font-family: 'Noto Sans JP', sans-serif;
+            font-family: 'Noto Sans JP', sans-serif
         }
 
         form label {
             display: block;
-            margin-bottom: min(4vw,4vh);
-            font-weight: bold;
+            margin-bottom: min(4vw, 4vh);
+            font-weight: 700;
             color: var(--primary-text);
-            font-size:1.5rem;
+            font-size: 1.5rem
         }
 
-          input[type="text"],
-          input[type="email"],
-          textarea {
+        input[type="text"], input[type="email"], textarea {
             width: 100%;
-            padding:max(1vw,1vh);
-            margin: min(1vw,1vh) 0 min(3vw,3vh) 0;
+            padding: max(1vw, 1vh);
+            margin: min(1vw, 1vh) 0 min(3vw, 3vh) 0;
             border: 1px solid var(--secondary-border);
-            background-color: var(--secondary-background);
-              border-radius: 5px;
+            background-color: transparent;
+            border-radius: 5px;
             font-size: 2rem;
             box-sizing: border-box;
-
-              transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease
         }
+
         form:hover {
-            background-color: rgba(255,255,255,0.2);
-            box-shadow:   0 0  10px rgba(0, 0, 0, 0.5)
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
         }
 
-          form:hover input[type="text"],
-          form:hover input[type="email"],
-          form:hover textarea  {
-              background-color: rgba(255,255,255,0.2);
-              box-shadow: inset 0 0  10px rgba(0, 0, 0, 0.5);
-          }
+        form:hover input[type="text"], form:hover input[type="email"], form:hover textarea {
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5)
+        }
 
         form:hover button {
-            background-color: var(--celadon-trans);
-            box-shadow:  0 0  10px rgba(0, 0, 0, 0.5), inset   0 0  10px rgba(0, 0, 0, 0.5);
-
+            background-color: var(--color-5-trans);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.5)
         }
 
-          form textarea {
-            height:max(20vw,20vh);
-            resize: vertical;
+        form textarea {
+            height: max(20vw, 20vh);
+            resize: vertical
         }
 
         form button {
             width: 100%;
-            padding:max(1vw,1vh);
+            padding: max(1vw, 1vh);
             background-color: var(--primary-background);
             border: 1px solid var(--secondary-border);
             color: var(--primary-text);
             font-size: 1.4rem;
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
             border-radius: 5px;
-            cursor: pointer;
-
+            cursor: pointer
         }
 
         form button:hover {
-            background-color:var(--celadon);
+            background-color: var(--color-5)
         }
 
         form button:active {
-            background-color: var(--secondary-header-text);
+            background-color: var(--secondary-header-text)
         }
-
-
-
-
 
         @media only screen and (max-width: 767px) {
             body {
-                padding-top: 10vh;
+                padding-top: 10vh
             }
+
             main section {
                 margin-top: 0
             }
+
             h1 {
-                margin:0;
+                margin: 0
             }
+
             #about figure {
                 float: none;
                 display: flex;
@@ -849,15 +783,15 @@
                 margin: 0;
                 width: 100%;
                 height: 100%;
-                aspect-ratio: 0;
+                aspect-ratio: 0
             }
+
             #about picture {
                 width: 50vw;
-                height: 50vw;  margin: 0;
+                height: 50vw;
+                margin: 0
             }
-
         }
-
     </style>
 </head>
 <body>
@@ -875,28 +809,34 @@
 
             <figure>
                 <a href="https://www.linkedin.com/in/tonygurnick/">
-                <picture>
-                    <img alt="Tony" src="r/i/tony.png">
-                </picture>
+                    <picture>
+                        <img alt="Tony" src="r/i/tony.png">
+                    </picture>
                 </a>
                 <figcaption>
-                    <a  tabindex="1" class='tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
+                    <a tabindex="1" class='tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now
+                        +64 (21) 677 460</a>
                 </figcaption>
             </figure>
-            <p class="tp">You need to get a project moving now, but your team is stretched thin.  I provide the expertise without the commitment of a full hire.</p>
-            <p class="opener">I’m Tony, a full-stack developer and CSS specialist with experience ranging from legacy systems to cutting-edge frameworks, I bridge critical gaps and deliver results.</p>
+            <p class="tp">You need to get a project moving now, but your team is stretched thin. I provide the expertise
+                without the commitment of a full hire.</p>
+            <p class="opener">I’m Tony, a full-stack developer and CSS specialist with experience ranging from legacy
+                concepts to latest frameworks. </p>
+            <p>I bridge critical gaps.</p>
 
             <h2>My Story</h2>
 
-            <p>I spent over a decade in London and Europe during the Web 2.0 boom, working with agencies and big names like EMC Consulting, Nokia, BSkyB, and Visa as the web evolved.</p>
-            <p>In 2015, family brought me home. </p><p> I began focusing on startups and projects of all sizes. I've worked across industries, solving challenges and delivering smart solutions.</p>
-
+            <p>I spent over a decade in London and Europe during the Web 2.0 boom, working with agencies and big names
+                like EMC Consulting, Nokia, BSkyB, and Visa as the web evolved.</p>
+            <p>In 2015, family brought me home. </p>
+            <p> I began focusing on startups and projects of all sizes. I've worked across industries, solving
+                challenges and delivering smart solutions.</p>
 
 
             <h2>Get Results, Not Overhead:</h2>
 
-            <p>Hiring takes time.  You need to get things done. Whether you're kick-starting a new project or getting a stalled one back on track.</p>
-
+            <p>Hiring takes time. You need to get things done. Whether you're kick-starting a new project or getting a
+                stalled one back on track.</p>
 
 
             <ul>
@@ -917,13 +857,11 @@
 
         </div>
     </section>
-</main>ƒ
+</main>
+ƒ
 
-<section id="whatido">
+<section id="what-i-do">
     <div class="container">
-
-
-
 
 
         <h2>How I Can Help you?</h2>
@@ -932,36 +870,45 @@
 
             <details class="service">
                 <summary>Embed seamlessly into your project</summary>
-                <p>Whatever your project needs, I step in to get it done. I bridge skill gaps in front-end and back-end development, tackling tasks ranging from design implementation to complex technical challenges. Whether refining code, enhancing performance, or bringing ideas to life, I collaborate with your team to create practical, reliable solutions that work across platforms.</p>
+                <p>Whatever your project needs, I step in to get it done. I bridge skill gaps in front-end and back-end
+                    development, tackling tasks ranging from design implementation to complex technical challenges.
+                    Whether refining code, enhancing performance, or bringing ideas to life, I collaborate with your
+                    team to create practical, reliable solutions that work across platforms.</p>
             </details>
 
             <details class="service">
                 <summary>Untangle technical debt</summary>
-                <p>I clear CSS technical debt, turning your codebase into a clean, efficient foundation. CSS, often underestimated, requires precision to ensure performance and maintainability. By modernising styles and removing complexities, I enable smoother workflows and effective collaboration, letting your team focus on what matters without distractions from legacy code issues.</p>
+                <p>I clear CSS technical debt, turning your codebase into a clean, efficient foundation. CSS, often
+                    underestimated, requires precision to ensure performance and maintainability. By modernising styles
+                    and removing complexities, I enable smoother workflows and effective collaboration, letting your
+                    team focus on what matters without distractions from legacy code issues.</p>
             </details>
 
             <details class="service">
                 <summary>Collaborate Closely</summary>
                 <p>
-                    I work with designers to create responsive, pixel-perfect designs that adapt seamlessly. My consultation on accessibility and progressive enhancement is pragmatic, focusing on practical, inclusive, and effective solutions.</p>
+                    I work with designers to create responsive, pixel-perfect designs that adapt seamlessly. My
+                    consultation on accessibility and progressive enhancement is pragmatic, focusing on practical,
+                    inclusive, and effective solutions.</p>
             </details>
 
             <details class="service">
                 <summary>Become a technical partner</summary>
-                <p>If you’re looking for an experienced technical partner with a strategic mindset. I offer flexible support to tackle complex challenges, guide teams, and align technology with your business goals—providing expertise and leadership as needed, without the commitment of a full-time CTO.</p>
+                <p>If you’re looking for an experienced technical partner with a strategic mindset. I offer flexible
+                    support to tackle complex challenges, guide teams, and align technology with your business
+                    goals—providing expertise and leadership as needed, without the commitment of a full-time CTO.</p>
             </details>
 
         </div>
 
 
-        <blockquote class="tearaway">Committed to delivering results — going the extra mile to make your project succeed.</blockquote>
+        <blockquote class="tearaway">Committed to delivering results — going the extra mile to make your project
+            succeed.
+        </blockquote>
 
 
     </div>
 </section>
-
-
-
 
 
 <!-- Portfolio Section -->
@@ -970,22 +917,26 @@
         <h2>Recent work</h2>
         <div class="service-list">
             <div class="service">
-                <a  target="_blank" tabindex="-1" href="https://pawprintpetition.co.nz/" title="Animates: Pet friendly petition to ban fireworks">
+                <a target="_blank" tabindex="-1" href="https://pawprintpetition.co.nz/"
+                   title="Animates: Pet friendly petition to ban fireworks">
                     <img src="r/i/ppp.png" alt="Paw print petition webpage snapshot">
                 </a>
             </div>
             <div class="service">
-                <a  target="_blank" tabindex="-1" href="https://bettersaver.co.nz/" title="BetterSver: Choose a Better KiwiSaver">
+                <a target="_blank" tabindex="-1" href="https://bettersaver.co.nz/"
+                   title="BetterSver: Choose a Better KiwiSaver">
                     <img src="r/i/bs.png" alt="BetterSaver Logo">
                 </a>
             </div>
             <div class="service">
-                <a  target="_blank" tabindex="-1" href="https://getforsite.com" title="Forsite Limited: The Ultimate Companion for Effortless Health and Safety">
+                <a target="_blank" tabindex="-1" href="https://getforsite.com"
+                   title="Forsite Limited: The Ultimate Companion for Effortless Health and Safety">
                     <img src="r/i/fs.png" alt="Forsite Timeline Image">
                 </a>
             </div>
             <div class="service">
-                <a  target="_blank" tabindex="-1" href="https://on-the-go.co.nz" title="NZ Schools Partnership: Out and about in Tāmaki Makaurau">
+                <a target="_blank" tabindex="-1" href="https://on-the-go.co.nz"
+                   title="NZ Schools Partnership: Out and about in Tāmaki Makaurau">
                     <img src="r/i/otg.svg" alt="On-the-go Logo">
                 </a>
             </div>
@@ -1029,7 +980,9 @@
                 </p>
                 <p class="title">Chief Product Officer @ BetterSaver</p>
                 <blockquote>
-                    <p>Tony was great to work with on getting BetterSaver launched and helping us to quickly iterate. He was collaborative and communicative throughout the project, ensuring we prioritised the work that was impactful.</p>
+                    <p>Tony was great to work with on getting BetterSaver launched and helping us to quickly iterate. He
+                        was collaborative and communicative throughout the project, ensuring we prioritised the work
+                        that was impactful.</p>
                 </blockquote>
             </div>
         </div>
@@ -1047,7 +1000,9 @@
                 </p>
                 <p class="title">Chief Business Partner @ Insiders Agency</p>
                 <blockquote>
-                    <p>We urgently needed help on a critical project with tight deadlines, and Tony stepped in and got the job done. His CSS expertise and quick problem-solving made the difference, helping us nail the project on time and to a very high standard.</p>
+                    <p>We urgently needed help on a critical project with tight deadlines, and Tony stepped in and got
+                        the job done. His CSS expertise and quick problem-solving made the difference, helping us nail
+                        the project on time and to a very high standard.</p>
                 </blockquote>
             </div>
         </div>
@@ -1065,9 +1020,10 @@
                 </p>
                 <p class="title">Chairperson @ NZGDA</p>
                 <blockquote>
-                    <p>Working alongside you has been an absolute pleasure.   Thank you for your hard work, collaborative spirit.  Your positive influence on the team won't be forgotten.
+                    <p>Working alongside you has been an absolute pleasure. Thank you for your hard work, collaborative
+                        spirit. Your positive influence on the team won't be forgotten.
 
-                       </p>
+                    </p>
                 </blockquote>
             </div>
         </div>
@@ -1086,7 +1042,9 @@
                 </p>
                 <p class="title">Chief Product Officer @ Readyverse</p>
                 <blockquote>
-                    <p>Heya Tony, really enjoyed working with you mate. I’m personally super grateful for all you’ve done on FIFA and TNL. And absolutely would be more than happy to work together again in the future!</p>
+                    <p>Heya Tony, really enjoyed working with you mate. I’m personally super grateful for all you’ve
+                        done on FIFA and TNL. And absolutely would be more than happy to work together again in the
+                        future!</p>
                 </blockquote>
             </div>
         </div>
@@ -1094,16 +1052,16 @@
 </section>
 
 
-
 <p class="cta2">
     Let’s talk.
 
 
-    <a tabindex="-1" class='cta cta-tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
+    <a tabindex="-1" class='cta cta-tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21)
+        677 460</a>
 
 
-
-    <a tabindex="2" href="https://twitter.com/intent/tweet?screen_name=code_ology&text=Thanks%20for%20all%20your%20help%2C%20Tony.%20Your%20expertise%20made%20a%20huge%20difference%20on%20our%20project!%20Highly%20recommend%20https%3A%2F%2Fcodeology.co.nz%2Ftony"
+    <a tabindex="2"
+       href="https://twitter.com/intent/tweet?screen_name=code_ology&text=Thanks%20for%20all%20your%20help%2C%20Tony.%20Your%20expertise%20made%20a%20huge%20difference%20on%20our%20project!%20Highly%20recommend%20https%3A%2F%2Fcodeology.co.nz%2Ftony"
        class="cta cta-share"
        data-show-count="false"
        title="Share this page on X">
@@ -1115,11 +1073,11 @@
 <form action="https://staticcontact.com/send/26b4507d-d6b8-445e-a8c7-59c2b4669035" method="post">
 
     <label>Name:
-        <input type="text" name="name" required/>
+        <input type="text" name="name" required>
     </label>
 
     <label>Email:
-        <input type="email" name="email" required/>
+        <input type="email" name="email" required>
     </label>
 
     <label>Message:
