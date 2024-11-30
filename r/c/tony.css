@@ -11,7 +11,7 @@ picture {
   width: 100%;
   margin: 0;
   border: 10px var(--primary-border-style) var(--primary-text);
-  box-shadow: 0 0 0.5vw rgba(60, 40, 20, 0.5), 0 0.5vw 1.5vw rgba(60, 40, 20, 0.4);
+  box-shadow: 0 0 0.5vw var(--color-1, rgba(33, 41, 34, 0.5)), 0 0.5vw 1.5vw var(--color-1, rgba(33, 41, 34, 0.4));
   transform: rotate(-5deg);
   filter: sepia(1);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -25,7 +25,8 @@ picture img {
   max-height: 100%;
 }
 picture:hover {
-  box-shadow: 0 0 0.2vw rgba(60, 40, 20, 0.3), 0 0.3vw 1vw rgba(60, 40, 20, 0.2);
+  box-shadow: 0 0 0.7vw var(--color-3-trans), /* Soft glow using feldgrau (semi-transparent) */ 0 0.8vw 2vw var(--color-4-trans), /* Outer shadow with viridian (semi-transparent) */ 0 1.5vw 3vw var(--black-olive);
+  /* Deep shadow for strong elevation */
   transform: rotate(0) translateY(-0.5vw) scale(1.05);
   border: 12px var(--primary-border-style) var(--portfolio-border);
 }
@@ -90,6 +91,78 @@ picture:hover img {
 }
 #testimonials .testimonial blockquote {
   border-color: var(--primary-text);
+}
+#portfolio .service-list {
+  flex-wrap: wrap;
+}
+#portfolio .service {
+  display: flex;
+  flex-direction: column;
+  min-width: 25%;
+  align-items: center;
+  filter: sepia(1);
+  transition: filter 1s ease;
+  cursor: pointer;
+}
+#portfolio .service:hover {
+  filter: sepia(0);
+}
+#portfolio .service figcaption {
+  font-style: italic;
+  font-size: clamp(max(1.5vw, 1.5vh), min(2vw, 2.5vh), min(2vw, 2.5vh));
+}
+#portfolio img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--portfolio-radius);
+  aspect-ratio: 1 / 1;
+  display: block;
+  border: 5px solid var(--color-3);
+}
+#portfolio a {
+  background-color: var(--color-3);
+  border: 3px var(--primary-border-style) var(--color-1);
+  box-shadow: 0 0 0.5vw var(--color-1, rgba(33, 41, 34, 0.5)), 0 0.5vw 1.5vw var(--color-1, rgba(33, 41, 34, 0.4));
+  border-radius: var(--portfolio-radius);
+  margin: var(--portfolio-padding);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--primary-text);
+  display: inline-block;
+}
+#portfolio a::before {
+  content: attr(title);
+  font-weight: 900;
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+  color: var(--primary-text);
+  text-align: center;
+  background-color: var(--portfolio-hover-bg);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: clamp(0.8rem, 2vw, 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: transform 0.5s ease;
+  transform: translateY(0);
+  padding: var(--portfolio-padding);
+  box-sizing: border-box;
+}
+#portfolio a:hover::before {
+  xtransform: translateY(-100%);
+}
+#portfolio a:hover::after {
+  display: none;
+}
+#portfolio a:hover {
+  box-shadow: 0 0 0.7vw var(--color-3-trans), /* Soft glow using feldgrau (semi-transparent) */ 0 0.8vw 2vw var(--color-4-trans), /* Outer shadow with viridian (semi-transparent) */ 0 1.5vw 3vw var(--black-olive);
+  /* Deep shadow for strong elevation */
+  filter: sepia(0);
 }
 @keyframes subtleSwing {
   0% {
@@ -361,76 +434,6 @@ a:active {
   flex: 1;
   box-sizing: border-box;
 }
-#portfolio img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--portfolio-radius);
-  aspect-ratio: 1 / 1;
-  display: block;
-  border: 5px solid var(--primary-background);
-}
-#portfolio a {
-  border: 1px var(--primary-border-style) var(--primary-border);
-  border-radius: var(--portfolio-radius);
-  margin: var(--portfolio-padding);
-  position: relative;
-  overflow: hidden;
-  display: block;
-  text-decoration: none;
-  color: var(--primary-text);
-}
-#portfolio a::before {
-  content: attr(title);
-  font-weight: 900;
-  width: 100%;
-  height: 100%;
-  line-height: 1;
-  color: var(--primary-text);
-  text-align: center;
-  background-color: var(--portfolio-hover-bg);
-  position: absolute;
-  top: 100%;
-  left: 0;
-  font-size: clamp(0.8rem, 2vw, 2rem);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-  transition: transform 0.5s ease;
-  transform: translateY(0);
-  padding: var(--portfolio-padding);
-  box-sizing: border-box;
-}
-#portfolio a::after {
-  content: "view";
-  padding: var(--portfolio-padding);
-  color: var(--primary-text);
-  border: 1px var(--primary-border-style) var(--primary-border);
-  font-weight: 900;
-  font-size: clamp(1rem, 3vw, 1.3rem);
-  letter-spacing: 1px;
-  white-space: nowrap;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--portfolio-hover-bg);
-  border-radius: 50%;
-  aspect-ratio: 1 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 20;
-  text-align: center;
-  transition: transform 0.5s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-  opacity: 1;
-}
-#portfolio a:hover::before {
-  transform: translateY(-100%);
-}
-#portfolio a:hover::after {
-  display: none;
-}
 .tearaway {
   position: relative;
   text-align: center;
@@ -515,7 +518,8 @@ textarea {
 }
 form:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0.7vw var(--color-3-trans), /* Soft glow using feldgrau (semi-transparent) */ 0 0.8vw 2vw var(--color-4-trans), /* Outer shadow with viridian (semi-transparent) */ 0 1.5vw 3vw var(--black-olive);
+  /* Deep shadow for strong elevation */
 }
 form:hover input[type="text"],
 form:hover input[type="email"],

@@ -20,7 +20,9 @@ picture {
   margin: 0;
   border: 10px var(--primary-border-style) var(--primary-text);
 
-  box-shadow: 0 0 0.5vw rgba(60, 40, 20, 0.5), 0 0.5vw 1.5vw rgba(60, 40, 20, 0.4);
+  box-shadow:
+          0 0 0.5vw var(--color-1, rgba(33, 41, 34, 0.5)),
+          0 0.5vw 1.5vw var(--color-1, rgba(33, 41, 34, 0.4));
   transform: rotate(-5deg);
   filter: sepia(1);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -36,7 +38,12 @@ picture {
 }
 
 picture:hover {
-  box-shadow: 0 0 0.2vw rgba(60, 40, 20, 0.3), 0 0.3vw 1vw rgba(60, 40, 20, 0.2);
+  box-shadow:
+          0 0 0.7vw var(--color-3-trans), /* Soft glow using feldgrau (semi-transparent) */
+          0 0.8vw 2vw var(--color-4-trans), /* Outer shadow with viridian (semi-transparent) */
+          0 1.5vw 3vw var(--black-olive); /* Deep shadow for strong elevation */
+
+
   transform: rotate(0) translateY(-0.5vw) scale(1.05);
   border: 12px var(--primary-border-style) var(--portfolio-border);
 

@@ -1,5 +1,6 @@
 @import "images.less";
 @import "testimonials.less";
+@import "portfolio.less";
 
 @keyframes subtleSwing {
   0% {
@@ -313,7 +314,6 @@ a:active {
   padding: max(1.5vw, 1.5vh);
   font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(2vw, 2.5vh))
 }
-
 #portfolio .service-list {
   display: flex;
   padding: 0;
@@ -325,82 +325,6 @@ a:active {
   max-width: 25%;
   flex: 1;
   box-sizing: border-box
-}
-
-#portfolio img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--portfolio-radius);
-  aspect-ratio: 1 / 1;
-  display: block;
-  border: 5px solid var(--primary-background)
-}
-
-#portfolio a {
-  border: 1px var(--primary-border-style) var(--primary-border);
-  border-radius: var(--portfolio-radius);
-  margin: var(--portfolio-padding);
-  position: relative;
-  overflow: hidden;
-  display: block;
-  text-decoration: none;
-  color: var(--primary-text)
-}
-
-#portfolio a::before {
-  content: attr(title);
-  font-weight: 900;
-  width: 100%;
-  height: 100%;
-  line-height: 1;
-  color: var(--primary-text);
-  text-align: center;;
-  background-color: var(--portfolio-hover-bg);
-  position: absolute;
-  top: 100%;
-  left: 0;
-  font-size: clamp(0.8rem, 2vw, 2rem);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-  transition: transform 0.5s ease;
-  transform: translateY(0);
-  padding: var(--portfolio-padding);
-  box-sizing: border-box
-}
-
-#portfolio a::after {
-  content: "view";
-  padding: var(--portfolio-padding);
-  color: var(--primary-text);
-  border: 1px var(--primary-border-style) var(--primary-border);
-  font-weight: 900;
-  font-size: clamp(1rem, 3vw, 1.3rem);
-  letter-spacing: 1px;
-  white-space: nowrap;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--portfolio-hover-bg);
-  border-radius: 50%;
-  aspect-ratio: 1 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 20;
-  text-align: center;
-  transition: transform 0.5s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-  opacity: 1
-}
-
-#portfolio a:hover::before {
-  transform: translateY(-100%)
-}
-
-#portfolio a:hover::after {
-  display: none
 }
 
 .tearaway {
@@ -497,7 +421,12 @@ input[type="text"], input[type="email"], textarea {
 
 form:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+  box-shadow:
+          0 0 0.7vw var(--color-3-trans), /* Soft glow using feldgrau (semi-transparent) */
+          0 0.8vw 2vw var(--color-4-trans), /* Outer shadow with viridian (semi-transparent) */
+          0 1.5vw 3vw var(--black-olive); /* Deep shadow for strong elevation */
+
+
 }
 
 form:hover input[type="text"], form:hover input[type="email"], form:hover textarea {
