@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Random Number Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Prime Numbers as CSS Variables */
+        :root {
+            --p2: 1;
+            --p3: 1;
+            --p5: 1;
+            --p7: 1;
+            --p11: 1;
+            --p13: 1;
+            --p17: 1;
+            --p19: 1;
+            --p23: 1;
+            --p29: 1;
+            --p31: 1;
+            --p37: 1;
+            --p41: 1;
+            --p43: 1;
+            --p47: 1;
+            --p53: 1;
+            --p59: 1;
+
+            --n: calc(var(--p2) * var(--p3) * var(--p5) * var(--p7)); /* Example */
+        }
+
+        /* Define the prime multiples using nth-child selectors */
+        div.element:nth-child(2n) {
+            --p2: 2;
+        }
+        div.element:nth-child(3n) {
+            --p3: 3;
+        }
+        div.element:nth-child(5n) {
+            --p5: 5;
+        }
+        div.element:nth-child(7n) {
+            --p7: 7;
+        }
+        div.element:nth-child(11n) {
+            --p11: 11;
+        }
+        div.element:nth-child(13n) {
+            --p13: 13;
+        }
+        div.element:nth-child(17n) {
+            --p17: 17;
+        }
+        div.element:nth-child(19n) {
+            --p19: 19;
+        }
+
+        /* Styling the container */
+        div.container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background: #f0f0f0;
+            overflow: hidden;
+        }
+
+        /* Styling the elements */
+        div.element {
+            --size: 20px;
+            --x0: calc(var(--n) * 1.5 + var(--n) * var(--n) * 0.5 + 0.25);
+            --floor: calc(var(--x0) - 0.5);
+            --x: calc(var(--x0) - var(--floor));
+
+            width: var(--size);
+            height: var(--size);
+            background: hsl(calc(var(--n) * 10), 70%, 50%);
+            position: absolute;
+            bottom: calc(90vh * var(--x));
+            left: calc(var(--n) / 100 * 90vw);
+            border-radius: 50%;
+        }
+
+        /* Optional Animation */
+        @property --change {
+            syntax: '<number>';
+            initial-value: 1;
+            inherits: true;
+        }
+
+        @keyframes changeNum {
+            0% {
+                --change: 0;
+            }
+            50% {
+                --change: 5;
+            }
+            100% {
+                --change: 0;
+            }
+        }
+
+        :root {
+            animation: changeNum 20s linear infinite;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+</div>
+</body>
+</html>
