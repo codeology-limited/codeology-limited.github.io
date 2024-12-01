@@ -389,6 +389,12 @@ a:active {
 #service-list {
   margin: max(4vh, 4vw) 0;
 }
+summary::-webkit-details-marker {
+  display: none;
+}
+slot {
+  display: none;
+}
 #service-list summary {
   cursor: pointer;
   font-weight: 700;

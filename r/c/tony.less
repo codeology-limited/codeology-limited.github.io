@@ -291,6 +291,13 @@ a:active {
   margin: max(4vh, 4vw) 0
 }
 
+summary::-webkit-details-marker {
+  display: none;
+}
+slot {
+  display: none;
+}
+
 #service-list summary {
   cursor: pointer;
   font-weight: 700;
@@ -302,7 +309,8 @@ a:active {
   font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(2vw, 2.5vh));
   text-transform: uppercase;
   padding: max(1.5vw, 1.5vh);
-  justify-content: space-between
+  justify-content: space-between;
+
 }
 
 #service-list summary::after {
