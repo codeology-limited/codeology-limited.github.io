@@ -242,6 +242,7 @@ section {
   margin-top: 0;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  scroll-margin-top: 0;
 }
 body > * {
   padding: 0 max(3vw, 3vh);
@@ -473,8 +474,17 @@ nav {
   position: fixed;
   top: 15px;
   left: 15px;
-  display: inline-block;
   color: var(--color-5);
+  height: 60px;
+  width: 50px;
+}
+.cta-contact {
+  position: fixed;
+  top: 15px;
+  left: 75px;
+  color: var(--color-5);
+  height: 60px;
+  width: 50px;
 }
 .cta {
   font-size: clamp(1rem, 3vw, 2rem);
@@ -485,6 +495,9 @@ nav {
   text-decoration: none;
   font-weight: 900;
   box-shadow: 0 0 0.5vw rgba(60, 40, 20, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .cta:hover {
   background-color: var(--cta-c);
@@ -520,7 +533,7 @@ textarea {
   box-sizing: border-box;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-form:hover {
+form {
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 0.7vw var(--color-3-trans), /* Soft glow using feldgrau (semi-transparent) */ 0 0.8vw 2vw var(--color-4-trans), /* Outer shadow with viridian (semi-transparent) */ 0 1.5vw 3vw var(--black-olive);
   /* Deep shadow for strong elevation */
