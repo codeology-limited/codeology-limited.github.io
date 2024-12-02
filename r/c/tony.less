@@ -1,3 +1,4 @@
+
 @import "images.less";
 @import "testimonials.less";
 @import "portfolio.less";
@@ -24,7 +25,8 @@
   }
 }
 
-:root {
+
+  :root {
   --black-olive: #212922;
   --brunswick-green: #294936;
   --feldgrau: #3E6259;
@@ -38,12 +40,7 @@
   --color-3: var(--feldgrau);
   --color-4: var(--viridian);
   --color-5: var(--celadon);
-  --primary-background: var(--color-4);
-  --secondary-background: var(--color-4);
-  --contrast-background: var(--color-3);
-  --primary-text: var(--color-1);
-  --secondary-text: var(--color-1);
-  --primary-header-text: var(--color-1);
+
 
   --cta-c: var(--color-5);
   --cta-bg: var(--color-3);
@@ -98,8 +95,9 @@ No overflow issue. The height will grow to fit the content.
 
 body {
   font-family: 'Noto Sans JP', sans-serif;
-  background-color: var(--color-4-trans);
-  color: var(--primary-text);
+  background: linear-gradient(to bottom, rgba(91, 130, 102, 0.95), rgba(91, 130, 102, 0.9));
+
+  color: var(--color-1);
   display: flex;
   flex-direction: column;
 
@@ -108,6 +106,8 @@ body {
   scroll-snap-type: y proximity;
   height: 100%;
 }
+
+
 section {
   margin-top: 0;
   scroll-snap-align: start;
@@ -167,7 +167,7 @@ h1 {
   font-size: clamp(min(2vw, 3vh), min(5vw, 6vh), min(5vw, 6vh));
   margin-bottom: max(1vw, 1vh);
   color: var(--color-1);
-  text-shadow: 0 0.2vw 5vw rgba(60, 40, 20, 0.4), 0 0.3vw 0.8vw rgba(60, 40, 20, 0.3)
+  text-shadow: 0 0 100px orange;
 }
 
 h2 {
@@ -216,7 +216,7 @@ blockquote {
 }
 
 #what-i-do blockquote {
-  border-left: 3px var(--primary-border-style) var(--primary-text)
+  border-left: 3px var(--primary-border-style) var(--color-1)
 }
 
 ul, ol {
@@ -224,7 +224,7 @@ ul, ol {
 }
 
 li:nth-child(even) {
-  color: var(--secondary-text)
+  color: var(--color-1)
 }
 
 a {
@@ -315,8 +315,8 @@ slot {
   display: flex;
   align-items: center;
   text-align: left;
-  color: var(--primary-text);
-  border-bottom: 1px dotted var(--primary-text);
+  color: var(--color-1);
+  border-bottom: 1px dotted var(--color-1);
   font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(2vw, 2.5vh));
   text-transform: uppercase;
   padding: max(1.5vw, 1.5vh);
@@ -327,7 +327,7 @@ slot {
 #service-list summary::after {
   content: '+';
   margin: 0;
-  color: var(--primary-text);
+  color: var(--color-1);
   transition: transform 0.2s ease-in-out;
   font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(2vw, 2.5vh));
   text-transform: uppercase;
@@ -339,7 +339,7 @@ slot {
 }
 
 #service-list summary:hover {
-  background-color: var(--primary-background)
+  background-color: var(--color-4)
 }
 
 #service-list p {
@@ -407,7 +407,7 @@ form label {
   display: block;
   margin-bottom: min(4vw, 4vh);
   font-weight: 700;
-  color: var(--primary-text);
+  color: var(--color-1);
   font-size: 1.5rem
 }
 
@@ -451,7 +451,7 @@ form textarea {
 form button {
   width: 100%;
   padding: max(1vw, 1vh);
-  background-color: var(--primary-background);
+  background-color: var(--color-4);
   border: 1px solid var(--secondary-border);
   color: var(--color-5);
   font-size: 1.4rem;
