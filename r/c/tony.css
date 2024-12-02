@@ -226,6 +226,18 @@ html {
   --g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
   background: var(--g1), var(--g1) var(--s) calc(1.73 * var(--s)), var(--g2), var(--g2) var(--s) calc(1.73 * var(--s)), var(--g3) var(--s) 0, var(--g3) 0 calc(1.73 * var(--s)), var(--color-3);
   background-size: calc(2 * var(--s)) calc(3.46 * var(--s));
+  /*
+
+  BELOW:
+  Make your container fill all the screen height
+
+No cascading height:100%
+No side effects of the 100vh
+Works with the default margin of <body>
+No overflow issue. The height will grow to fit the content.
+  */
+  display: grid;
+  min-height: 100%;
 }
 body {
   font-family: 'Noto Sans JP', sans-serif;
@@ -525,6 +537,10 @@ form {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   font-family: 'Noto Sans JP', sans-serif;
 }
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-1);
+}
 form label {
   display: block;
   margin-bottom: min(4vw, 4vh);
@@ -587,9 +603,6 @@ form button:active {
 @media only screen and (max-width: 767px) {
   body {
     padding-top: 10vh;
-  }
-  main section {
-    margin-top: 0;
   }
   h1 {
     margin: 0 0 1vh;
