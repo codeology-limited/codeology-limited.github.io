@@ -270,30 +270,42 @@ h3 {
   text-align: left;
   line-height: 1.7;
   margin: max(3vw, 3vh) 0;
-  text-shadow: 0 0 1px var(--color-5);
+  font-weight: 900;
+}
+/* Optional: Gradient animation for dynamic background */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 h1 {
   text-align: center;
   font-size: clamp(min(2vw, 3vh), min(5vw, 6vh), min(5vw, 6vh));
   margin-bottom: max(1vw, 1vh);
-  color: var(--primary-header-text);
+  color: var(--color-1);
   text-shadow: 0 0.2vw 5vw rgba(60, 40, 20, 0.4), 0 0.3vw 0.8vw rgba(60, 40, 20, 0.3);
 }
 h2 {
   font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 4vh));
   text-transform: uppercase;
   padding: max(1.5vw, 1.5vh) 0;
-  color: var(--color-2);
+  color: var(--color-1);
 }
 #what-i-do h2,
 #what-i-do h3 {
-  color: var(--color-2);
+  color: var(--color-1);
 }
 h3 {
   font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 4vh));
   text-transform: uppercase;
   padding: max(1.5vw, 1.5vh) 0;
-  color: var(--color-2);
+  color: var(--color-1);
 }
 p,
 blockquote,
