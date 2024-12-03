@@ -193,16 +193,48 @@
                 transform: rotate(0deg)
             }
         }
+        @keyframes rotatingGlow {
+            0% {
+                text-shadow:
+                        0 0 100px #D2691E, /* Sepia-inspired orange */
+                        0 0 300px #B7410E, /* Deep reddish-brown */
+                        0 0 500px #E48400; /* Golden yellow */
+            }
+            25% {
+                text-shadow:
+                        0 0 100px #B7410E, /* Reddish-brown */
+                        0 0 300px #E48400, /* Golden yellow */
+                        0 0 500px #704214; /* Warm, earthy brown */
+            }
+            50% {
+                text-shadow:
+                        0 0 100px #5B8266, /* Muted green */
+                        0 0 300px #4682B4, /* Steely blue */
+                        0 0 500px #E48400; /* Golden yellow */
+            }
+            75% {
+                text-shadow:
+                        0 0 100px #4682B4, /* Steely blue */
+                        0 0 300px #5B8266, /* Muted green */
+                        0 0 500px #D2691E; /* Sepia-inspired orange */
+            }
+            100% {
+                text-shadow:
+                        0 0 100px #B87333, /* Coppery tone */
+                        0 0 200px #704214, /* Warm brown */
+                        0 0 500px #D2691E; /* Sepia-inspired orange */
+            }
+        }
 
 
         & {
-            /*
-                & is a shortcut to :root.
-
-                It is used here to isolate experiments.
-
-                It also holds the color palette for a fail fast way to test cross browser issues.
-            */
+            --iamroot:1234;
+            --w: tan(atan2(var(--_w),1px)); /* screen width */
+            --h: tan(atan2(var(--_h),1px)); /* screen height*/ /* The result is an integer without unit  */
+            animation: scroll 1s linear;
+            animation-timeline: scroll();
+        }
+        :scope {
             --black-olive: #212922;
             --brunswick-green: #294936;
             --feldgrau: #3E6259;
@@ -211,14 +243,6 @@
             --color-4-trans: rgba(91, 130, 102, 0.90);
             --celadon: #AEF6C7;
             --color-5-trans: #AEF6C7CC;
-
-            /* Experiments */
-            --iamroot:1234;
-            --w: tan(atan2(var(--_w),1px)); /* screen width */
-            --h: tan(atan2(var(--_h),1px)); /* screen height*/ /* The result is an integer without unit  */
-
-            animation: scroll 1s linear;
-            animation-timeline: scroll();
         }
         :root {
 
@@ -229,26 +253,13 @@
             --color-5: var(--celadon);
 
 
-            --cta-c: var(--color-5);
-            --cta-bg: var(--color-3);
-            --primary-border: var(--color-5);
-            --secondary-border: var(--color-3);
-            --primary-border-style: solid;
-            --link-text: var(--color-5);
-            --link-text-hover: var(--color-3);
-            --link-text-visited: var(--color-3);
-            --link-text-active: var(--color-3);
-            --portfolio-border: var(--color-5);
+
+            --color-5-style: solid;
+
             --portfolio-hover-bg: var(--color-5-trans);
             --portfolio-padding: 1vw;
             --portfolio-radius: 10%
         }
-
-
-
-
-
-
 
 
         * {
@@ -296,18 +307,15 @@
             color: var(--color-1);
             display: flex;
             flex-direction: column;
-
             padding: 15vh 0 0;
-            overflow-y: scroll;
 
+            overflow-y: scroll;
             overflow-x: hidden;
-            scrollbar-color: var(--color-1) var(--color-2); /* Firefox */
-            scrollbar-width: thin; /* Firefox */
 
             scroll-snap-type: y proximity;
             height: 100%;
 
-            --scrollbar: calc(100vw - 100cqw);
+
             /*
                100cqw is the html width
                100vw  is the viewport width
@@ -315,33 +323,8 @@
             */
         }
 
-        ::-webkit-scrollbar {
-            width: 12px; /* Width of vertical scrollbar */
-            height: 12px; /* Height of horizontal scrollbar */
-        }
 
-        ::-webkit-scrollbar-thumb {
-            background-color: var(--black-olive); /* Thumb color */
-            border-radius: 6px; /* Rounded corners */
-            border: 3px solid var(--brunswick-green); /* Creates padding effect */
-        }
 
-        ::-webkit-scrollbar-track {
-            background-color: var(--brunswick-green); /* Track background color */
-            border-radius: 6px;
-        }
-
-        ::-webkit-scrollbar-corner {
-            background-color: var(--brunswick-green); /* For the corner of the scrollbar */
-        }
-
-        body:before {
-            content: counter(val) "px";
-            counter-reset: val tan(atan2(var(--scrollbar),1px));
-            position: fixed;
-            bottom: 10px;
-            right: 50%;
-        }
 
         body:after, html:after {
             position: fixed;
@@ -640,14 +623,8 @@
 </section>
 
 <section id="contact">
-    <p class="cta2">
-        Let’s talk.
-
-
-        <a   class='cta cta-tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21)
-            677 460</a>
-
-
+    <h2>Let’s talk about next.</h2>
+    <nav>
         <a
                 href="https://twitter.com/intent/tweet?screen_name=code_ology&text=Thanks%20for%20all%20your%20help%2C%20Tony.%20Your%20expertise%20made%20a%20huge%20difference%20on%20our%20project!%20Highly%20recommend%20https%3A%2F%2Fcodeology.co.nz%2Ftony"
                 class="cta cta-share"
@@ -655,15 +632,17 @@
                 title="Share this page on X">
             <img width="24" height="24" src="r/i/share.svg" alt="Share this on X">
         </a>
-
-    </p>
-
-    <form action="https://staticcontact.com/send/26b4507d-d6b8-445e-a8c7-59c2b4669035" method="post">
-
         <a   class="cta cta-contact"    href="#contact" >
             <img width="24" height="24" src="r/i/send.svg"  alt="Contact envelope image">
 
         </a>
+
+        <a   class='cta cta-tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
+
+    </nav>
+
+    <form action="https://staticcontact.com/send/26b4507d-d6b8-445e-a8c7-59c2b4669035" method="post">
+
         <label>Name:
             <input type="text" name="name" required placeholder="Your Name Here.">
         </label>

@@ -13,7 +13,7 @@ picture {
   overflow: hidden;
   width: 100%;
   margin: 0;
-  border: 10px var(--primary-border-style) var(--color-1);
+  border: 10px solid var(--color-1);
   box-shadow: 0 0 0.5vw var(--color-1, rgba(33, 41, 34, 0.5)), 0 0.5vw 1.5vw var(--color-1, rgba(33, 41, 34, 0.4));
   transform: rotate(-5deg);
   filter: sepia(1);
@@ -30,7 +30,7 @@ picture:hover {
   box-shadow: 0 1.5vw 3vw var(--color-1);
   /* Deep shadow for strong elevation */
   transform: rotate(0) translateY(-0.5vw) scale(1.05);
-  border: 12px var(--primary-border-style) var(--color-1);
+  border: 12px solid var(--color-1);
   filter: sepia(0);
 }
 #testimonials .testimonial {
@@ -155,10 +155,29 @@ picture:hover {
   padding: var(--portfolio-padding);
   box-sizing: border-box;
 }
+nav {
+  background-color: rgba(91, 130, 102, 0.1);
+  /* Semi-transparent background */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-1);
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+nav > * {
+  margin-right: 1rem;
+}
 .cta {
   font-size: clamp(1rem, 3vw, 2rem);
   color: var(--color-5);
-  background-color: var(--cta-bg);
+  background-color: var(--color-3);
   padding: 1vw;
   border-radius: 5px;
   text-decoration: none;
@@ -171,16 +190,15 @@ picture:hover {
   /* Added smooth transitions for hover effects */
 }
 .cta:hover {
-  background-color: var(--cta-c);
+  background-color: var(--color-5);
   color: var(--color-1);
 }
-.cta1,
-.cta2 {
+.cta1 {
   padding: max(3vw, 3vh);
   text-align: center;
   line-height: 1.7;
-  border-top: 1px var(--primary-border-style) var(--primary-border);
-  border-bottom: 1px var(--primary-border-style) var(--primary-border);
+  border-top: 1px solid var(--color-5);
+  border-bottom: 1px solid var(--color-5);
   color: var(--color-1);
   /* Consolidated repeated color declarations */
 }
@@ -188,10 +206,13 @@ picture:hover {
   text-align: center;
   /* Specific override for `p.cta2` */
 }
+.cta-tel {
+  margin-left: auto;
+}
 .cta-tel,
 .cta-share,
 .cta-contact {
-  position: fixed;
+  xposition: fixed;
   top: 15px;
   height: 60px;
   width: 50px;
@@ -229,10 +250,17 @@ section {
   scroll-snap-align: start;
   scroll-snap-stop: always;
   scroll-margin-top: 0;
+  border-bottom: 1px dotted var(--color-1);
 }
 section,
 header {
-  padding: 0 max(3vw, 3vh);
+  padding: max(3vw, 3vh);
+}
+section#testimonials {
+  background-color: rgba(41, 73, 54, 0.1);
+}
+section#contact {
+  background-color: rgba(41, 73, 54, 0.2);
 }
 footer {
   display: flex;
@@ -258,28 +286,6 @@ h3 {
   line-height: 1.7;
   margin: max(3vw, 3vh) 0;
   font-weight: 900;
-}
-@keyframes rotatingGlow {
-  0% {
-    text-shadow: 0 0 100px #D2691E, /* Sepia-inspired orange */ 0 0 300px #B7410E, /* Deep reddish-brown */ 0 0 500px #E48400;
-    /* Golden yellow */
-  }
-  25% {
-    text-shadow: 0 0 100px #B7410E, /* Reddish-brown */ 0 0 300px #E48400, /* Golden yellow */ 0 0 500px #704214;
-    /* Warm, earthy brown */
-  }
-  50% {
-    text-shadow: 0 0 100px #5B8266, /* Muted green */ 0 0 300px #4682B4, /* Steely blue */ 0 0 500px #E48400;
-    /* Golden yellow */
-  }
-  75% {
-    text-shadow: 0 0 100px #4682B4, /* Steely blue */ 0 0 300px #5B8266, /* Muted green */ 0 0 500px #D2691E;
-    /* Sepia-inspired orange */
-  }
-  100% {
-    text-shadow: 0 0 100px #B87333, /* Coppery tone */ 0 0 200px #704214, /* Warm brown */ 0 0 500px #D2691E;
-    /* Sepia-inspired orange */
-  }
 }
 h1 {
   text-align: center;
@@ -326,10 +332,10 @@ p {
   line-height: 1.7;
 }
 blockquote {
-  border-left: 3px var(--primary-border-style) var(--primary-border);
+  border-left: 3px solid var(--color-1);
 }
 #what-i-do blockquote {
-  border-left: 3px var(--primary-border-style) var(--color-1);
+  border-left: 3px solid var(--color-1);
 }
 ul,
 ol {
@@ -337,19 +343,6 @@ ol {
 }
 li:nth-child(even) {
   color: var(--color-1);
-}
-a {
-  color: var(--link-text);
-  text-decoration: none;
-}
-a:hover {
-  color: var(--link-text-hover);
-}
-a:visited {
-  color: var(--link-text-visited);
-}
-a:active {
-  color: var(--link-text-active);
 }
 #about figure {
   display: flex;
@@ -447,18 +440,12 @@ slot {
 .tearaway::after {
   content: "”";
 }
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 8vw;
-}
 form {
   max-width: 90%;
   width: max(50vw, 80vh);
   margin: min(4vw, 4vh) auto;
   padding: min(4vw, 4vh);
-  border: 1px solid var(--secondary-border);
+  border: 1px solid var(--color-1);
   border-radius: 5px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   font-family: 'Noto Sans JP', sans-serif;
@@ -480,7 +467,7 @@ textarea {
   width: 100%;
   padding: max(1vw, 1vh);
   margin: min(1vw, 1vh) 0 min(3vw, 3vh) 0;
-  border: 1px solid var(--secondary-border);
+  border: 1px solid var(--color-1);
   background-color: transparent;
   border-radius: 5px;
   font-size: 2rem;

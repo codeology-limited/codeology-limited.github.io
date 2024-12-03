@@ -1,7 +1,27 @@
+nav {
+  background-color: rgba(91, 130, 102, 0.10); /* Semi-transparent background */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+
+  border-bottom: 1px solid var(--color-1);
+  overflow:hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  > *{
+    margin-right: 1rem;
+  }
+}
+
 .cta {
   font-size: clamp(1rem, 3vw, 2rem);
   color: var(--color-5);
-  background-color: var(--cta-bg);
+  background-color: var(--color-3);
   padding: 1vw;
   border-radius: 5px;
   text-decoration: none;
@@ -15,18 +35,17 @@
 }
 
 .cta:hover {
-  background-color: var(--cta-c);
+  background-color: var(--color-5);
   color: var(--color-1);
 }
 
 
-.cta1,
-.cta2 {
+.cta1 {
   padding: max(3vw, 3vh);
   text-align: center;
   line-height: 1.7;
-  border-top: 1px var(--primary-border-style) var(--primary-border);
-  border-bottom: 1px var(--primary-border-style) var(--primary-border);
+  border-top: 1px solid var(--color-5);
+  border-bottom: 1px solid var(--color-5);
 
   color: var(--color-1); /* Consolidated repeated color declarations */
 }
@@ -34,11 +53,13 @@
 #what-i-do p.cta2 {
   text-align: center; /* Specific override for `p.cta2` */
 }
-
+.cta-tel{
+  margin-left:auto;
+}
 .cta-tel,
 .cta-share,
 .cta-contact {
-  position: fixed;
+  xposition: fixed;
   top: 15px;
   height: 60px;
   width: 50px;

@@ -13,12 +13,19 @@ section {
   scroll-snap-align: start;
   scroll-snap-stop:always;
   scroll-margin-top: 0;
+  border-bottom:1px dotted var(--color-1);
 }
 
 section,header {
-  padding: 0 max(3vw, 3vh);
+  padding:max(3vw, 3vh);
 }
 
+section#testimonials {
+  background-color: rgba(41, 73, 54, 0.1);
+}
+section#contact {
+  background-color: rgba(41, 73, 54, 0.2);
+}
 
 
 footer {
@@ -50,38 +57,6 @@ h1, h2, h3 {
 }
 
 
-@keyframes rotatingGlow {
-  0% {
-    text-shadow:
-            0 0 100px #D2691E, /* Sepia-inspired orange */
-            0 0 300px #B7410E, /* Deep reddish-brown */
-            0 0 500px #E48400; /* Golden yellow */
-  }
-  25% {
-    text-shadow:
-            0 0 100px #B7410E, /* Reddish-brown */
-            0 0 300px #E48400, /* Golden yellow */
-            0 0 500px #704214; /* Warm, earthy brown */
-  }
-  50% {
-    text-shadow:
-            0 0 100px #5B8266, /* Muted green */
-            0 0 300px #4682B4, /* Steely blue */
-            0 0 500px #E48400; /* Golden yellow */
-  }
-  75% {
-    text-shadow:
-            0 0 100px #4682B4, /* Steely blue */
-            0 0 300px #5B8266, /* Muted green */
-            0 0 500px #D2691E; /* Sepia-inspired orange */
-  }
-  100% {
-    text-shadow:
-            0 0 100px #B87333, /* Coppery tone */
-            0 0 200px #704214, /* Warm brown */
-            0 0 500px #D2691E; /* Sepia-inspired orange */
-  }
-}
 
 
 h1 {
@@ -135,11 +110,11 @@ p {
 }
 
 blockquote {
-  border-left: 3px var(--primary-border-style) var(--primary-border)
+  border-left: 3px solid var(--color-1)
 }
 
 #what-i-do blockquote {
-  border-left: 3px var(--primary-border-style) var(--color-1)
+  border-left: 3px solid var(--color-1)
 }
 
 ul, ol {
@@ -150,22 +125,7 @@ li:nth-child(even) {
   color: var(--color-1)
 }
 
-a {
-  color: var(--link-text);
-  text-decoration: none
-}
 
-a:hover {
-  color: var(--link-text-hover)
-}
-
-a:visited {
-  color: var(--link-text-visited)
-}
-
-a:active {
-  color: var(--link-text-active)
-}
 
 
 
@@ -299,15 +259,7 @@ slot {
 .tearaway::after {
   content: "”"
 }
-
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 8vw
-}
-
-
+ 
 
 
 form {
@@ -315,7 +267,7 @@ form {
   width: max(50vw, 80vh);
   margin: min(4vw, 4vh) auto;
   padding: min(4vw, 4vh);
-  border: 1px solid var(--secondary-border);
+  border: 1px solid var(--color-1);
   border-radius: 5px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   font-family: 'Noto Sans JP', sans-serif;
@@ -338,7 +290,7 @@ input[type="text"], input[type="email"], textarea {
   width: 100%;
   padding: max(1vw, 1vh);
   margin: min(1vw, 1vh) 0 min(3vw, 3vh) 0;
-  border: 1px solid var(--secondary-border);
+  border: 1px solid var(--color-1);
   background-color: transparent;
   border-radius: 5px;
   font-size: 2rem;
