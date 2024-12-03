@@ -41,11 +41,38 @@
             justify-content: center;
             color: white;
         }
+
+        /*
+
+            BELOW:
+            Make your container fill all the screen height
+
+            No cascading height:100%
+            No side effects of the 100vh
+            Works with the default margin of <body>
+            No overflow issue. The height will grow to fit the content.
+        */
+        html:has(:checked) {
+            display: grid;
+            min-height: 100%;
+        }
+
+        .content:has(:checked) {
+            display: grid;
+            min-height: 100%;
+            background-color: blue;
+        }
+
+
     </style>
 </head>
 <body>
 <div class="header">Header (5vh)</div>
-<div class="content">Content (95vh)</div>
+<div class="content">Content (95vh)
+
+    <input type="checkbox">
+
+</div>
 <div class="footer">Footer (5vh)</div>
 </body>
 </html>
