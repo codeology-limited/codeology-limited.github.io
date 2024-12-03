@@ -193,38 +193,40 @@
                 transform: rotate(0deg)
             }
         }
+
         @keyframes rotatingGlow {
             0% {
                 text-shadow:
-                        0 0 100px #D2691E, /* Sepia-inspired orange */
-                        0 0 300px #B7410E, /* Deep reddish-brown */
-                        0 0 500px #E48400; /* Golden yellow */
+                        0 0 100px rgba(210, 105, 30, 0.56), /* Sepia-inspired orange */
+                        0 0 300px rgba(183, 65, 14, 0.42), /* Deep reddish-brown */
+                        0 0 500px rgba(228, 132, 0, 0.28); /* Golden yellow */
             }
             25% {
                 text-shadow:
-                        0 0 100px #B7410E, /* Reddish-brown */
-                        0 0 300px #E48400, /* Golden yellow */
-                        0 0 500px #704214; /* Warm, earthy brown */
+                        0 0 100px rgba(183, 65, 14, 0.49), /* Reddish-brown */
+                        0 0 300px rgba(228, 132, 0, 0.35), /* Golden yellow */
+                        0 0 500px rgba(112, 66, 20, 0.28); /* Warm, earthy brown */
             }
             50% {
                 text-shadow:
-                        0 0 100px #5B8266, /* Muted green */
-                        0 0 300px #4682B4, /* Steely blue */
-                        0 0 500px #E48400; /* Golden yellow */
+                        0 0 100px rgba(210, 105, 30, 0.42), /* Sepia-inspired orange */
+                        0 0 300px rgba(183, 65, 14, 0.49), /* Deep reddish-brown */
+                        0 0 500px rgba(228, 132, 0, 0.35); /* Golden yellow */
             }
             75% {
                 text-shadow:
-                        0 0 100px #4682B4, /* Steely blue */
-                        0 0 300px #5B8266, /* Muted green */
-                        0 0 500px #D2691E; /* Sepia-inspired orange */
+                        0 0 100px rgba(228, 132, 0, 0.56), /* Golden yellow */
+                        0 0 300px rgba(183, 65, 14, 0.42), /* Deep reddish-brown */
+                        0 0 500px rgba(210, 105, 30, 0.28); /* Sepia-inspired orange */
             }
             100% {
                 text-shadow:
-                        0 0 100px #B87333, /* Coppery tone */
-                        0 0 200px #704214, /* Warm brown */
-                        0 0 500px #D2691E; /* Sepia-inspired orange */
+                        0 0 100px rgba(183, 65, 14, 0.56), /* Deep reddish-brown */
+                        0 0 200px rgba(112, 66, 20, 0.42), /* Warm brown */
+                        0 0 500px rgba(210, 105, 30, 0.28); /* Sepia-inspired orange */
             }
         }
+
 
 
         & {
@@ -624,22 +626,7 @@
 
 <section id="contact">
     <h2>Arrange a casual chat.</h2>
-    <nav>
-        <a
-                href="https://twitter.com/intent/tweet?screen_name=code_ology&text=Thanks%20for%20all%20your%20help%2C%20Tony.%20Your%20expertise%20made%20a%20huge%20difference%20on%20our%20project!%20Highly%20recommend%20https%3A%2F%2Fcodeology.co.nz%2Ftony"
-                class="cta cta-share"
-                data-show-count="false"
-                title="Share this page on X">
-            <img width="24" height="24" src="r/i/share.svg" alt="Share this on X">
-        </a>
-        <a   class="cta cta-contact"    href="#contact" >
-            <img width="24" height="24" src="r/i/send.svg"  alt="Contact envelope image">
 
-        </a>
-
-        <a   class='cta cta-tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
-
-    </nav>
 
     <form action="https://staticcontact.com/send/26b4507d-d6b8-445e-a8c7-59c2b4669035" method="post">
 
@@ -670,6 +657,22 @@ Olivia Taylor"></textarea>
     </form>
 </section>
 
+<nav>
+    <a
+            href="https://twitter.com/intent/tweet?screen_name=code_ology&text=Thanks%20for%20all%20your%20help%2C%20Tony.%20Your%20expertise%20made%20a%20huge%20difference%20on%20our%20project!%20Highly%20recommend%20https%3A%2F%2Fcodeology.co.nz%2Ftony"
+            class="cta cta-share"
+            data-show-count="false"
+            title="Share this page on X">
+        <img width="24" height="24" src="r/i/share.svg" alt="Share this on X">
+    </a>
+    <a   class="cta cta-contact"    href="#contact" >
+        <img width="24" height="24" src="r/i/send.svg"  alt="Contact envelope image">
+
+    </a>
+
+    <a   class='cta cta-tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
+
+</nav>
 <footer>
 
     <div class="container">

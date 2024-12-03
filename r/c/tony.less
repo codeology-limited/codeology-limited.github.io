@@ -16,7 +16,8 @@ section {
   border-bottom:1px dotted var(--color-1);
 }
 
-section,header {
+section,header, footer{
+  content-visibility: auto;
   padding:max(3vw, 3vh);
 }
 
@@ -59,14 +60,17 @@ h1, h2, h3 {
 
 
 
+
+
 h1 {
   text-align: center;
   font-size: clamp(min(2vw, 3vh), min(5vw, 6vh), min(5vw, 6vh));
   margin-bottom: max(1vw, 1vh);
   color: var(--color-1);
-  text-shadow: 0 0 100px orange;
-  animation: rotatingGlow 60s linear infinite;
+  animation: rotatingGlow 5s infinite;
+  text-shadow: 0 0 100px rgba(210, 105, 30, 0.8); /* Fallback static shadow */
 }
+
 
 h2 {
   font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 4vh));
