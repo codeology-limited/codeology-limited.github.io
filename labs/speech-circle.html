@@ -9,16 +9,23 @@
         }
 
         & {
-            --min-bubble-width: 430px;
+            height: 100%;
+            --min-bubble-width: 230px;
             --max-bubble-width: 800px;
             --max-scaling-factor: max( 50vw, 50vh );
             --bleed: 3em;
-            --smallest-acceptable-font: 1rem;
+            --smallest-acceptable-font: 0.1rem;
             --font-scaling-width: 4.2cqw;
             --font-scaling-height: 5cqh;
             --margin-indent-direction: -1;
             --inner-baseline: 90%;
             --baseline-adjustent: clamp( 2rem, 10cqw, 10cqh );
+        }
+        body {
+            height: 100%;
+            display:flex;
+            align-items: center;
+            justify-content: center;
         }
         .speech-bubble {
             position: relative;
