@@ -259,16 +259,26 @@ h3 {
   margin: max(3vw, 3vh) 0;
   font-weight: 900;
 }
-/* Optional: Gradient animation for dynamic background */
-@keyframes gradientShift {
+@keyframes rotatingGlow {
   0% {
-    background-position: 0% 50%;
+    text-shadow: 0 0 100px #D2691E, /* Sepia-inspired orange */ 0 0 300px #B7410E, /* Deep reddish-brown */ 0 0 500px #E48400;
+    /* Golden yellow */
+  }
+  25% {
+    text-shadow: 0 0 100px #B7410E, /* Reddish-brown */ 0 0 300px #E48400, /* Golden yellow */ 0 0 500px #704214;
+    /* Warm, earthy brown */
   }
   50% {
-    background-position: 100% 50%;
+    text-shadow: 0 0 100px #5B8266, /* Muted green */ 0 0 300px #4682B4, /* Steely blue */ 0 0 500px #E48400;
+    /* Golden yellow */
+  }
+  75% {
+    text-shadow: 0 0 100px #4682B4, /* Steely blue */ 0 0 300px #5B8266, /* Muted green */ 0 0 500px #D2691E;
+    /* Sepia-inspired orange */
   }
   100% {
-    background-position: 0% 50%;
+    text-shadow: 0 0 100px #B87333, /* Coppery tone */ 0 0 200px #704214, /* Warm brown */ 0 0 500px #D2691E;
+    /* Sepia-inspired orange */
   }
 }
 h1 {
@@ -277,6 +287,7 @@ h1 {
   margin-bottom: max(1vw, 1vh);
   color: var(--color-1);
   text-shadow: 0 0 100px orange;
+  animation: rotatingGlow 60s linear infinite;
 }
 h2 {
   font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 4vh));
