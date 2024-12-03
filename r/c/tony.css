@@ -197,8 +197,8 @@ nav > * {
   padding: max(3vw, 3vh);
   text-align: center;
   line-height: 1.7;
-  border-top: 1px solid var(--color-5);
-  border-bottom: 1px solid var(--color-5);
+  border-top: 1px solid var(--color-1);
+  border-bottom: 1px solid var(--color-1);
   color: var(--color-1);
   /* Consolidated repeated color declarations */
 }
@@ -380,6 +380,7 @@ li:nth-child(even) {
 }
 #what-i-do p {
   text-align: justify;
+  margin-bottom: 0;
 }
 #service-list {
   margin: max(4vh, 4vw) 0;
