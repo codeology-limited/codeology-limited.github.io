@@ -242,7 +242,8 @@ nav > * {
 }
 .cta-tel,
 .cta-share,
-.cta-contact {
+.cta-contact,
+.cta-home {
   xposition: fixed;
   top: 15px;
   height: 60px;
@@ -255,7 +256,8 @@ nav > * {
 }
 .cta-tel img,
 .cta-share img,
-.cta-contact img {
+.cta-contact img,
+.cta-home img {
   min-width: 24px;
   max-width: 24px;
   min-height: 24px;
@@ -326,6 +328,18 @@ h3 {
   line-height: 1.7;
   margin: max(3vw, 3vh) 0;
   font-weight: 900;
+}
+menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: max(1.5vw, 1.5vh) 0;
+}
+menu a {
+  padding: 1rem;
+  color: var(--color-1);
+  font-size: clamp(1rem, 2vw, 2vh);
 }
 h1 {
   text-align: center;

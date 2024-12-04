@@ -353,7 +353,6 @@
             scroll-snap-type: y proximity;
             height: 100%;
 
-
             /*
                100cqw is the html width
                100vw  is the viewport width
@@ -380,15 +379,27 @@
         }
 
 
-
+        a {
+            color: var(--color-1);
+        }
+        a:hover{
+            color: var(--color-5);
+        }
 
 
     </style>
 </head>
-<body>
+<body id="home">
 
 <header>
     <div class="container">
+        <menu>
+            <li><a href="#portfolio">Work</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#what-i-do">Features</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+        </menu>
+
         <h1>Move Your Project Forward.</h1>
 
     </div>
@@ -420,10 +431,10 @@
             <p>I spent over a decade in London and Europe during the Web 2.0 boom, working with agencies and big names
                 like EMC Consulting, Nokia, BSkyB, and Visa as the web evolved.</p>
             <p>In 2015, family brought me home. </p>
-            <p>I began tackling challenges in startups of all sizes.  I’ve worked across many industries, figuring out problems and coming up with practical, real-world solutions.</p>
+            <p id="benefits">I began tackling challenges in startups of all sizes.  I’ve worked across many industries, figuring out problems and coming up with practical, real-world solutions.</p>
 
 
-            <h2>Support When You Need It</h2>
+            <h2 >Support When You Need It</h2>
 
             <p>When time is short, I step in to bridge the gap—whether starting something new or reviving stalled progress.</p>
             <ul>
@@ -579,7 +590,7 @@
                 </p>
                 <p class="title">Product Owner @ Altered State Machine</p>
                 <blockquote>
-                    <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people.</p>
+                    <p>Tony brings deep technical expertise and a genuine willingness to support and uplift those around him. His ability to solve complex problems with clarity and precision is remarkable, but what stands out most is his commitment to doing the right thing for the team and project.</p>
                 </blockquote>
             </div>
         </div>
@@ -696,6 +707,10 @@
 </section>
 
 <nav>
+    <a   class="cta cta-home"    href="#home" >
+        <img width="24" height="24" src="r/i/house.svg"  alt="Home">
+
+    </a>
     <a
             href="https://twitter.com/intent/tweet?screen_name=code_ology&text=Thanks%20for%20all%20your%20help%2C%20Tony.%20Your%20expertise%20made%20a%20huge%20difference%20on%20our%20project!%20Highly%20recommend%20https%3A%2F%2Fcodeology.co.nz%2Ftony"
             class="cta cta-share"
@@ -704,7 +719,7 @@
         <img width="24" height="24" src="r/i/share.svg" alt="Share this on X">
     </a>
     <a   class="cta cta-contact"    href="#contact" >
-        <img width="24" height="24" src="r/i/mail.svg"  alt="Contact envelope image">
+        <img width="24" height="24" src="r/i/mail.svg"  alt="Contact">
 
     </a>
 
