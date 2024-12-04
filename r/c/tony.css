@@ -49,6 +49,9 @@ picture:hover {
 #testimonials .testimonial a picture {
   max-width: 200px;
 }
+#testimonials .testimonial a picture img {
+  object-fit: cover;
+}
 #testimonials .testimonial .testimonial-content {
   display: flex;
   flex-direction: column;
