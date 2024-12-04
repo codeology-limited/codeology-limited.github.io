@@ -27,8 +27,9 @@ picture img {
   max-height: 100%;
 }
 picture:hover {
-  box-shadow: 0 1.5vw 3vw var(--color-1);
+  box-shadow: 0 0 100px rgba(174, 246, 199, 0.8), /* Celadon */ 0 0 200px rgba(102, 205, 170, 0.6), /* Medium Aquamarine */ 0 0 300px rgba(60, 179, 113, 0.4), /* Medium Sea Green */ 0 1.5vw 3vw var(--color-1);
   /* Deep shadow for strong elevation */
+  animation: rotatingGlow2 5s infinite;
   transform: rotate(0) translateY(-0.5vw) scale(1.05);
   border: 12px solid var(--color-1);
   filter: sepia(0);
@@ -59,7 +60,7 @@ picture:hover {
 #testimonials .testimonial .name {
   white-space: nowrap;
   margin: 0;
-  font-size: clamp(max(2vw, 3vh), min(3vw, 4vh), min(3vw, 5vh));
+  font-size: clamp(2rem, 2.5vw, 3vh);
   line-height: 1;
 }
 #testimonials .testimonial .name a {
@@ -81,6 +82,9 @@ picture:hover {
 }
 #testimonials .testimonial blockquote p {
   margin: 0;
+  font-size: clamp(1.5rem, 1.5vw, 2vh);
+  line-height: 1.8;
+  font-style: italic;
 }
 #testimonials .testimonial .title {
   font-style: italic;
@@ -91,6 +95,31 @@ picture:hover {
 }
 #testimonials .testimonial blockquote {
   border-color: var(--primary-text);
+}
+@media only screen and (max-width: 767px) {
+  #testimonials .testimonial {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  #testimonials .testimonial .testimonial-content {
+    padding: 0;
+  }
+  #testimonials .testimonial .name,
+  #testimonials .testimonial .title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-top: 1vh;
+  }
+  #testimonials .testimonial blockquote {
+    width: 100%;
+  }
+  #testimonials .testimonial p {
+    padding: 0;
+    text-align: center;
+  }
 }
 #portfolio .service-list {
   flex-wrap: wrap;
@@ -105,7 +134,9 @@ picture:hover {
 }
 #portfolio .service:hover a {
   filter: sepia(0);
-  box-shadow: 0 1.5vw 3vw var(--black-olive);
+  box-shadow: 0 0 100px rgba(174, 246, 199, 0.8), /* Celadon */ 0 0 200px rgba(102, 205, 170, 0.6), /* Medium Aquamarine */ 0 0 300px rgba(60, 179, 113, 0.4), /* Medium Sea Green */ 0 1.5vw 3vw var(--color-1);
+  /* Deep shadow for strong elevation */
+  animation: rotatingGlow2 5s infinite;
 }
 #portfolio .service a {
   position: relative;
@@ -273,8 +304,15 @@ footer {
 }
 footer p {
   text-align: center;
-  font-size: clamp(1rem, 2vw, 2rem);
+  font-size: clamp(1rem, 2vw, 2vh);
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer p img {
+  width: 64px;
+  height: 64px;
 }
 .container {
   width: 90%;
@@ -291,7 +329,7 @@ h3 {
 }
 h1 {
   text-align: center;
-  font-size: clamp(min(2vw, 3vh), min(5vw, 6vh), min(5vw, 6vh));
+  font-size: clamp(1rem, 5vw, 6vh);
   margin-bottom: max(1vw, 1vh);
   color: var(--color-1);
   animation: rotatingGlow 5s infinite;
@@ -299,7 +337,7 @@ h1 {
   /* Fallback static shadow */
 }
 h2 {
-  font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 4vh));
+  font-size: clamp(1rem, 3vw, 5vh);
   text-transform: uppercase;
   padding: max(1.5vw, 1.5vh) 0;
   color: var(--color-1);
@@ -314,7 +352,7 @@ h2 {
   color: var(--color-1);
 }
 h3 {
-  font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 4vh));
+  font-size: clamp(1rem, 3vw, 4vh);
   text-transform: uppercase;
   padding: max(1.5vw, 1.5vh) 0;
   color: var(--color-1);
@@ -322,7 +360,7 @@ h3 {
 p,
 blockquote,
 li {
-  font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 5vh));
+  font-size: clamp(1rem, 3vw, 3.5vh);
   line-height: calc(2.5vh + 2vw);
   margin-bottom: max(3vw, 3vh);
 }
@@ -330,7 +368,7 @@ ul {
   margin-bottom: max(3vw, 3vh);
 }
 li {
-  font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(3vw, 5vh));
+  font-size: clamp(1rem, 3vw, 3.5vh);
   line-height: 1.8;
   margin-bottom: 0;
 }
@@ -357,6 +395,7 @@ li:nth-child(even) {
   margin: 5vw  0;
   align-items: center;
   justify-content: space-between;
+  width: 90%;
 }
 #about figure a {
   display: block;
@@ -364,10 +403,9 @@ li:nth-child(even) {
   height: 100%;
 }
 #about figure figcaption p {
-  flex-shrink: 1;
+  flex: 1;
   text-align: justify;
   margin: 0;
-  padding: 0;
   color: var(--color-5);
   padding-left: 10%;
   font-style: italic;
@@ -381,6 +419,7 @@ li:nth-child(even) {
 #what-i-do p {
   text-align: justify;
   margin-bottom: 0;
+  font-size: clamp(6rem, 8vw, 50vh);
 }
 #service-list {
   margin: max(4vh, 4vw) 0;
@@ -421,7 +460,7 @@ slot {
 }
 #service-list p {
   padding: max(1.5vw, 1.5vh);
-  font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(2vw, 2.5vh));
+  font-size: clamp(max(1vw, 2vh), min(2vw, 2vh), min(2vw, 2.5vh));
 }
 #portfolio .service-list {
   display: flex;
@@ -553,29 +592,6 @@ form button:active {
     width: 50vw;
     height: 50vw;
     margin: 0;
-  }
-  #testimonials .testimonial {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-  }
-  #testimonials .testimonial .testimonial-content {
-    padding: 0;
-  }
-  #testimonials .testimonial .name,
-  #testimonials .testimonial .title {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding-top: 1vh;
-  }
-  #testimonials .testimonial blockquote {
-    width: 100%;
-  }
-  #testimonials .testimonial p {
-    padding: 0;
-    text-align: center;
   }
 }
 /*# sourceMappingURL=tony.css.map */

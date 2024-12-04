@@ -227,6 +227,38 @@
             }
         }
 
+        @keyframes rotatingGlow2 {
+            0% {
+                box-shadow:
+                        0 0 100px rgba(174, 246, 199, 0.8), /* Celadon */
+                        0 0 200px rgba(102, 205, 170, 0.6), /* Medium Aquamarine */
+                        0 0 300px rgba(60, 179, 113, 0.4); /* Medium Sea Green */
+            }
+            25% {
+                box-shadow:
+                        0 0 100px rgba(102, 205, 170, 0.8), /* Medium Aquamarine */
+                        0 0 200px rgba(60, 179, 113, 0.6), /* Medium Sea Green */
+                        0 0 300px rgba(173, 255, 47, 0.4); /* Green Yellow */
+            }
+            50% {
+                box-shadow:
+                        0 0 100px rgba(60, 179, 113, 0.8), /* Medium Sea Green */
+                        0 0 200px rgba(173, 255, 47, 0.6), /* Green Yellow */
+                        0 0 300px rgba(174, 246, 199, 0.4); /* Celadon */
+            }
+            75% {
+                box-shadow:
+                        0 0 100px rgba(173, 255, 47, 0.8), /* Green Yellow */
+                        0 0 200px rgba(174, 246, 199, 0.6), /* Celadon */
+                        0 0 300px rgba(102, 205, 170, 0.4); /* Medium Aquamarine */
+            }
+            100% {
+                box-shadow:
+                        0 0 100px rgba(174, 246, 199, 0.8), /* Celadon */
+                        0 0 200px rgba(102, 205, 170, 0.6), /* Medium Aquamarine */
+                        0 0 300px rgba(60, 179, 113, 0.4); /* Medium Sea Green */
+            }
+        }
 
 
         & {
@@ -300,6 +332,10 @@
             font-size: 62.5%;
             line-height: 1.3;
             scroll-behavior: smooth;
+
+            overflow: auto;
+
+
         }
 
         body {
@@ -343,6 +379,10 @@
             left: 10px;
         }
 
+
+
+
+
     </style>
 </head>
 <body>
@@ -380,18 +420,23 @@
             <p>I spent over a decade in London and Europe during the Web 2.0 boom, working with agencies and big names
                 like EMC Consulting, Nokia, BSkyB, and Visa as the web evolved.</p>
             <p>In 2015, family brought me home. </p>
-            <p>I began tackling challenges in startups of all sizes.  I’ve worked across industries, figuring out problems and coming up with practical, real-world solutions.</p>
+            <p>I began tackling challenges in startups of all sizes.  I’ve worked across many industries, figuring out problems and coming up with practical, real-world solutions.</p>
 
 
-            <h2>Support When You Need It Most:</h2>
+            <h2>Support When You Need It</h2>
 
-            <p>When time is short, I step in to bridge the gap—whether starting something new or reviving stalled progress.</p> <ul> <li>Quickly fill skill gaps with proven expertise.</li> <li>Deliver clear visual and technical results.</li> <li>Simplify and clean up CSS.</li>  </ul>
+            <p>When time is short, I step in to bridge the gap—whether starting something new or reviving stalled progress.</p>
+            <ul>
+                <li>Quickly fill gaps to keep momentum.</li>
+                <li>Deliver clear visual and technical results.</li>
+                <li>Simplify and clean up CSS.</li>
+            </ul>
 
             <p>Under pressure, I work with you and your team, allowing you to focus on what matters most.</p>
 
 
             <p class="cta1">
-                Press pause on the usual hiring hassle and let’s connect directly. <br>
+                Press pause on the usual hiring hassle and let’s&nbsp;connect&nbsp;directly. <br>
             </p>
 
         </div>
@@ -401,29 +446,24 @@
     <div class="container">
 
 
-        <h2>How I Can Help you?</h2>
+        <h2>How I Can Help you</h2>
 
         <div id="service-list">
 
             <details class="service">
                 <summary>An Experienced Pair of Hands for Your Project</summary>
                 <p>
-                    I bring hands-on experience to help your team get things done. Whether it's addressing skill gaps in front-end or back-end development, I handle tasks ranging from implementing designs to solving complex technical challenges.
+                    I bring a depth of experience in solving development challenges, focusing on CSS and JavaScript. I collaborate closely with teams, following direction as needed, to address skill gaps, implement designs, resolve technical issues, and improve code performance, ensuring practical and reliable outcomes.
                 </p>
-                <p>
-                    From refining code and improving performance to bringing new ideas to life, I collaborate with your team to deliver practical, dependable solutions that work.
-                </p>
+
             </details>
 
 
             <details class="service">
                 <summary>Untangle your codebase, keep momentum.</summary>
                 <p>
-                    Codebases can become tangled, especially when the pressure is on and speed takes priority. While this approach often helps you meet immediate goals, it can lead to long-term challenges. Over time, unresolved complexities and quick fixes can slow progress, making every step forward feel harder than it should.
-                </p>
-                <p>
-                    For small teams, addressing this technical debt often takes a backseat to immediate delivery pressures. But letting it linger can lead to bigger issues, from slowed innovation to team frustration. That’s where I come in.
-                </p>
+                    Codebases often become complex under the pressure of meeting immediate goals. While this can be effective short-term, it can create long-term challenges, making progress increasingly difficult. For small teams, resolving these issues can take a backseat to delivery demands, but addressing them early helps avoid bigger problems down the line. I can help navigate and untangle these complexities.
+               </p>
 
 
             </details>
@@ -431,14 +471,7 @@
             <details class="service">
                 <summary>Collaborate with the design team</summary>
                 <p>
-                     I bridge the gap between design and development, focusing on responsiveness, accessibility and progressive enhancement to ensure your project is robust and adaptable to future needs.
-                </p>
-                <p>
-                    For small teams, balancing immediate priorities with long-term considerations can be challenging. I help integrate these aspects into your workflow, ensuring alignment between creative vision and technical execution while avoiding potential roadblocks.
-                </p>
-                <p>
-                    If collaboration between design and development is key to your project, I can support your team in achieving practical, cohesive solutions that work.
-                </p>
+                    I bridge design and development, ensuring responsiveness, accessibility, and progressive enhancement for adaptable, future-ready projects. For small teams, balancing short-term priorities with long-term needs is challenging. By aligning creative vision with technical execution, workflows can integrate these priorities to deliver cohesive, practical solutions.  </p>
             </details>
 
             <details class="service">
@@ -481,7 +514,7 @@
                 <figcaption>Forsite</figcaption>
                 <a target="_blank"  rel="noopener noreferrer"    href="https://getforsite.com"
                    title="Forsite Limited: The Ultimate Companion for Effortless Health and Safety">
-                    <img  width="1872" height="1458"  loading="lazy" src="r/i/fs.webp" alt="Forsite Timeline Image">
+                    <img  width="1360" height="1216"  loading="lazy" src="r/i/fs.webp" alt="Forsite Solutions limited">
                 </a>
             </figure>
             <figure class="service">
@@ -653,18 +686,8 @@
             <input type="email" name="email" required placeholder="Your best contact email here.">
         </label>
 
-        <label>Message: (The message below is EXAMPLE ONLY.  Type your own.  Go Wild.)
-            <textarea  name="message" placeholder="Hi Tony,
-
-Reaching out because we need some help with a project we’re working on.
-
-We’re facing a few challenges, and your expertise seems like a great fit.
-
-I’d love to discuss how you could assist us in getting moving forward.
-
-Let me know when you’re available for a quick chat.
-Best regards,
-Olivia Taylor"></textarea>
+        <label>Send me a message. Go Wild.
+            <textarea  name="message" ></textarea>
 
         </label>
 
@@ -681,17 +704,20 @@ Olivia Taylor"></textarea>
         <img width="24" height="24" src="r/i/share.svg" alt="Share this on X">
     </a>
     <a   class="cta cta-contact"    href="#contact" >
-        <img width="24" height="24" src="r/i/send.svg"  alt="Contact envelope image">
+        <img width="24" height="24" src="r/i/mail.svg"  alt="Contact envelope image">
 
     </a>
 
     <a   class='cta cta-tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
 
 </nav>
+
+
+
 <footer>
 
     <div class="container">
-        <p>&copy; 2024 Codeology Limited. All rights reserved.</p>
+        <p>&copy; 2024 Codeology Limited.    <img src="r/i/nz.svg"  width="64" height="64" > All rights reserved.</p>
     </div>
 </footer>
 
