@@ -154,7 +154,8 @@ picture:hover {
 }
 #portfolio .service figcaption {
   font-style: italic;
-  font-size: clamp(max(1.5vw, 1.5vh), min(2vw, 2.5vh), min(2vw, 2.5vh));
+  font-size: clamp(1.5rem, 2vw, 2.5vh);
+  white-space: nowrap;
 }
 #portfolio img {
   width: 100%;
@@ -339,7 +340,7 @@ menu {
 menu a {
   padding: 1rem;
   color: var(--color-1);
-  font-size: clamp(1rem, 2vw, 2vh);
+  font-size: clamp(1.5rem, 2vw, 2vh);
 }
 h1 {
   text-align: center;
