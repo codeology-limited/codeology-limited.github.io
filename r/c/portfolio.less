@@ -22,21 +22,19 @@
               0 0 300px rgba(60, 179, 113, 0.4), /* Medium Sea Green */
               0 1.5vw 3vw var(--color-1); /* Deep shadow for strong elevation */
       animation: rotatingGlow2 5s infinite;
-
+      z-index:9;
     }
 
     a {
 
       position: relative;
       display: inline-block;
-
+z-index:10;
       transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
       filter: sepia(1);
-      background-color: var(--color-3);
-      border: 5px var(--primary-border-style) var(--color-1);
-      box-shadow:
-              0 0 0.5vw var(--color-1, rgba(33, 41, 34, 0.5)),
-              0 0.5vw 1.5vw var(--color-1, rgba(33, 41, 34, 0.4));
+      background-color: var(--color-1);
+     
+
 
       border-radius: var(--portfolio-radius);
       margin: var(--portfolio-padding);
@@ -44,6 +42,7 @@
       overflow: hidden;
 
       text-decoration: none;
+      padding: 0;
       color: var(--primary-text)  ;
     }
 
@@ -51,7 +50,8 @@
     figcaption {
       font-style : italic;
       font-size: clamp(1.5rem,  2vw ,   2.5vh);
-      white-space: nowrap;
+      white-space: nowrap; z-index:10;
+    position: relative;
     }
   }
 }
@@ -63,7 +63,7 @@
   border-radius: var(--portfolio-radius);
   aspect-ratio: 1 / 1;
   display: block;
-  border: 5px solid var(--color-3);
+  xborder: 5px solid var(--color-3);
 
 }
 
