@@ -1,1 +1,99 @@
-#testimonials .testimonial{margin-bottom: min(5vw, 5vh);display: flex;align-items: flex-start;justify-content: flex-start;a {display: block;width: 100%;flex-shrink: 1;max-width: 200px;picture {max-width: 200px;img {object-fit: cover}}}.testimonial-content {display: flex;flex-direction: column;align-items: flex-start;justify-content: flex-start;width: 100%;padding-left: min(3vw, 2vh)}.name {white-space: nowrap;margin: 0;font-size: clamp( 2rem, 2.5vw, 3vh );line-height: 1;a {color: var(--color-1)}a:hover{color: var(--color-5)}}.name a {display: inline-block;width: 100%;text-align: center;max-width: none}blockquote {p {margin: 0;font-size: clamp( 1.5rem, 1.5vw, 2vh );line-height: 1.8;font-style: italic}display: flex;align-items: center;justify-content: center}.title {font-style : italic;font-size: clamp(max(1.5vw, 1.5vh), min(2vw, 2.5vh), min(2vw, 2.5vh))}blockquote {padding-left: min(3vw, 2vh)}}#testimonials .testimonial blockquote {border-color: var(--primary-text)}@media only screen and (max-width: 767px) {#testimonials .testimonial {flex-direction: column;align-items: center;justify-content: center;margin: 0;.testimonial-content {padding: 0}.name, .title {display: block;width : 100%;text-align: center;padding-top: 1vh}blockquote {width: 100%}p {padding: 0;text-align: center}}}
+#testimonials .testimonial {
+  margin-bottom: min(5vw, 5vh);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  a {
+    display: block;
+    width: 100%;
+    flex-shrink: 1;
+    max-width: 200px;
+
+    picture {
+      max-width: 200px;
+
+      img {
+        object-fit: cover
+      }
+    }
+  }
+
+  .testimonial-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: min(3vw, 2vh)
+  }
+
+  .name {
+    white-space: nowrap;
+    margin: 0;
+    font-size: clamp(2rem, 2.5vw, 3vh);
+    line-height: 1;
+
+
+  }
+
+  .name a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    max-width: none
+  }
+
+  blockquote {
+    p {
+      margin: 0;
+      font-size: clamp(1.5rem, 1.5vw, 2vh);
+      line-height: 1.8;
+      font-style: italic
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+
+  .title {
+    font-style: italic;
+    font-size: clamp(max(1.5vw, 1.5vh), min(2vw, 2.5vh), min(2vw, 2.5vh))
+  }
+
+  blockquote {
+    padding-left: min(3vw, 2vh)
+  }
+}
+
+
+
+@media only screen and (max-width: 767px) {
+  #testimonials .testimonial {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+
+    .testimonial-content {
+      padding: 0
+    }
+
+    .name, .title {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding-top: 1vh
+    }
+
+    blockquote {
+      width: 100%
+    }
+
+    p {
+      padding: 0;
+      text-align: center
+    }
+  }
+}

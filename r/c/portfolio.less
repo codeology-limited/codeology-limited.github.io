@@ -1,1 +1,70 @@
-#portfolio {.service-list {flex-wrap: wrap}.service{display: flex;flex-direction: column;min-width: 25%;align-items: center;cursor: pointer;&:hover a{filter: sepia(0);box-shadow:0 0 100px rgba(174, 246, 199, 0.8), /* Celadon */0 0 200px rgba(102, 205, 170, 0.6), /* Medium Aquamarine */0 0 300px rgba(60, 179, 113, 0.4), /* Medium Sea Green */0 1.5vw 3vw var(--color-1);/* Deep shadow for strong elevation */animation: rotatingGlow2 5s infinite;z-index: 9}a {position: relative;display: inline-block;z-index: 10;transition: transform 0.3s ease, filter 0.3s ease ;filter: sepia(1);background-color: var(--color-1);border-radius: var(--portfolio-radius);margin: var(--portfolio-padding);overflow: hidden;text-decoration: none;padding: 0;color: var(--primary-text)}figcaption {font-style : italic;font-size: clamp(1.5rem, 2vw , 2.5vh);white-space: nowrap;z-index: 10;position: relative}}}#portfolio img {width: 100%;height: auto;border-radius: var(--portfolio-radius);aspect-ratio: 1 / 1;display: block}#portfolio a::before {content: attr(title);font-weight: 900;width: 100%;height: 100%;line-height: 1;color: var(--primary-text);text-align: center;;background-color: var(--portfolio-hover-bg);position: absolute;top: 100%;left: 0;font-size: clamp(0.8rem, 2vw, 2rem);display: flex;align-items: center;justify-content: center;z-index: 10;transform: translateY(0);padding: var(--portfolio-padding);box-sizing: border-box}
+#portfolio {
+  .service-list {
+    flex-wrap: wrap
+  }
+
+  .service {
+    display: flex;
+    flex-direction: column;
+    min-width: 25%;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover a {
+
+      z-index: 9
+    }
+
+    a {
+      position: relative;
+      display: inline-block;
+      z-index: 10;
+
+
+      border-radius: var(--portfolio-radius);
+      margin: var(--portfolio-padding);
+      overflow: hidden;
+      text-decoration: none;
+      padding: 0;
+
+    }
+
+    figcaption {
+      font-style: italic;
+      font-size: clamp(1.5rem, 2vw, 2.5vh);
+      white-space: nowrap;
+      z-index: 10;
+      position: relative
+    }
+  }
+}
+
+#portfolio img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--portfolio-radius);
+  aspect-ratio: 1 / 1;
+  display: block
+}
+
+#portfolio a::before {
+  content: attr(title);
+  font-weight: 900;
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+
+  text-align: center;;
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: clamp(0.8rem, 2vw, 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transform: translateY(0);
+  padding: var(--portfolio-padding);
+  box-sizing: border-box
+}

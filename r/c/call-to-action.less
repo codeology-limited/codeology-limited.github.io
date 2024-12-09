@@ -1,5 +1,5 @@
 nav {
-  background-color: rgba(91, 130, 102, 0.10); /* Semi-transparent background */
+
   position: fixed;
   top: 0;
   left: 0;
@@ -8,35 +8,39 @@ nav {
   align-items: flex-start;
   padding: 1rem;
 
-  border-bottom: 1px solid var(--color-1);
-  overflow:hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  > *{
+
+  overflow: hidden;
+
+
+  > * {
     margin-right: 1rem;
   }
 }
 
 .cta {
   font-size: clamp(1rem, 3vw, 2rem);
-  color: var(--color-5);
-  background-color: var(--color-3);
+
   padding: 1vw;
   border-radius: 5px;
   text-decoration: none;
 
   font-weight: 600;
-  box-shadow: 0 0 10px var(--color-1);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Added smooth transitions for hover effects */
-}
 
-.cta:hover {
-  background-color: var(--color-5);
-  color: var(--color-1);
+  height: 50px;
+  width: 50px;
+
+  img {
+    width: 24px;
+    height: 24px;
+    max-height: 24px;
+    max-width: 24px;
+    min-width: 24px;
+    min-height: 24px;
+  }
 }
 
 
@@ -44,44 +48,24 @@ nav {
   padding: max(3vw, 3vh);
   text-align: center;
   line-height: 1.7;
-  border-top: 1px solid var(--color-1);
-  border-bottom: 1px solid var(--color-1);
 
-  color: var(--color-1); /* Consolidated repeated color declarations */
+
 }
 
 #what-i-do p.cta2 {
   text-align: center; /* Specific override for `p.cta2` */
 }
-.cta-tel{
-  margin-left:auto;
+
+.cta-tel {
+  margin-left: auto;
 }
-.cta-tel,
-.cta-share,
-.cta-contact,
-.cta-home {
-  xposition: fixed;
-  top: 15px;
-  height: 60px;
-  width: 50px;
-  color: var(--color-1);
-  border: 1px solid var(--color-1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  img {
-    min-width: 24px;
-    max-width: 24px;
-    min-height: 24px;
-    max-height: 24px;
-  }
-}
+
 
 .cta-tel {
   right: 15px;
 
   transform-origin: top center;
-  animation: subtleSwing 30s ease-in-out infinite;
+
   text-align: right;
   text-wrap: nowrap; /* Ensures proper text wrapping */
   width: auto;
@@ -95,3 +79,74 @@ nav {
   left: 75px;
 }
 
+.cta-color {
+  padding: 0;
+  display: inline-block; /* Ensure the radio button containers are visible */
+
+  label {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input[type="radio"] {
+    width: 24px;
+    height: 24px;
+    appearance: none; /* Remove default styling for custom styles */
+    background-color: transparent; /* Default unchecked background color */
+    border: 1px dotted black; /* Border for unchecked state */
+    border-radius: 50%; /* Make it a circle */
+    position: relative; /* Position for ::after pseudo-element */
+    cursor: pointer; /* Pointer cursor for better UX */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+  input[type="radio"]:checked {
+    background-color: transparent;
+    border-color: #000; /* Optional: Change border color when selected */
+  }
+
+  input[type="radio"]:checked::after {
+    content: "✔"; /* Unicode checkmark */
+    color: black; /* Color of the checkmark */
+    font-size: 18px; /* Adjust font size */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the checkmark */
+  }
+
+
+  input[type="radio"]:focus {
+    outline: 2px dashed black; /* Accessibility focus outline */
+  }
+
+}
+
+.cta-color-white {
+  background-color: var(--color-read-me);
+}
+
+.cta-color-green {
+  background-color: var(--color-green-machine);
+}
+
+.cta-color-black {
+  background-color: var(--color-back-in-black);
+  color: white;
+
+  input[type="radio"] {
+
+    border: 1px dotted white; /* Border for unchecked state */
+  }
+
+  input[type="radio"]:checked::after {
+    color: white;
+  }
+
+  input[type="radio"]:focus {
+    outline: 2px dashed white; /* Accessibility focus outline */
+  }
+}

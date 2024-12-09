@@ -1,9 +1,348 @@
+:root {
+  --color-read-me: white;
+  --color-green-machine: #5B8266;
+  --color-back-in-black: black;
+}
+:has(.cta-color-white :checked) {
+  --color-1: #black;
+  --color-2: #F0EAD6;
+  --color-3: #5D8AA8;
+  --color-5: #444;
+  --image-filter-on: grayscale(1);
+  --image-fiter-off: grayscale(0);
+}
+:root:has(.cta-color-black :checked) {
+  /* Define Named Variables */
+  --colour-white: #FFFFFF;
+  /* Primary text and highlights */
+  --colour-light-grey: #CCCCCC;
+  /* Secondary text */
+  --colour-mid-grey: #888888;
+  /* Borders and inactive elements */
+  --colour-dark-grey: #333333;
+  /* Secondary backgrounds */
+  --colour-black: #000000;
+  /* Main background */
+  --colour-accent-blue: #007ACC;
+  /* Accessible blue for actionable elements */
+  --colour-accent-yellow: #FFD700;
+  /* High-contrast yellow for warnings */
+  --colour-error-red: #FF4D4D;
+  /* Red for errors */
+  --colour-success-green: #32CD32;
+  /* Green for success */
+  --colour-highlight-purple: #8A2BE2;
+  /* Purple for highlights */
+  --colour-neutral-cyan: #00CED1;
+  /* Cyan for neutral accents */
+  --colour-transparent: #0000;
+  /* Fully transparent */
+  /* Map Named Variables to --color-* */
+  --color-1: var(--colour-white);
+  /* Primary text */
+  --color-2: var(--colour-light-grey);
+  /* Secondary text */
+  --color-3: var(--colour-mid-grey);
+  /* Divider and subtle elements */
+  --color-4: var(--colour-black);
+  /* Main background */
+  --color-5: orange;
+  /* Secondary background */
+  --color-6: var(--colour-accent-blue);
+  /* Accent color for links/buttons */
+  --color-7: var(--colour-accent-yellow);
+  /* Warning elements */
+  --color-8: var(--colour-error-red);
+  /* Error elements */
+  --color-9: var(--colour-success-green);
+  /* Success elements */
+  --color-10: var(--colour-highlight-purple);
+  /* Highlight elements */
+  --color-11: var(--colour-neutral-cyan);
+  /* Neutral accent */
+  --color-12: var(--colour-light-grey);
+  /* Placeholder or tertiary text */
+  --color-13: var(--colour-mid-grey);
+  /* Disabled elements */
+  --color-14: var(--colour-dark-grey);
+  /* Border emphasis */
+  --color-15: var(--colour-black);
+  /* Secondary background */
+  --color-transparent: var(--colour-transparent);
+  /* Fully transparent */
+  /* Special Colors */
+  --portfolio-hover-bg: color-mix(in srgb, var(--color-5) 80%, transparent);
+  --nav-bg-color: color-mix(in srgb, var(--color-4) 10%, transparent);
+  --cta-box-shadow: transparent;
+  --image-shadow: red;
+  --image-filter-on: grayscale(1);
+  --image-fiter-off: grayscale(0);
+}
+:root:has(.cta-color-green :checked) {
+  /* Define Named Variables */
+  --colour-black-olive: #212922;
+  --colour-brunswick-green: #294936;
+  --colour-feldgrau: #3E6259;
+  --colour-viridian: #5B8266;
+  --colour-celadon: #AEF6C7;
+  --colour-burnt-sienna: #D2691E;
+  --colour-orange-brown: #B7410E;
+  --colour-gold: #E48400;
+  --colour-warm-brown: #704214;
+  --colour-mediumaquamarine: #66CDAA;
+  --colour-mediumseagreen: #3CB371;
+  --colour-greenyellow: #ADFF2F;
+  --colour-orange: #FFA500;
+  --colour-white: #FFFFFF;
+  --colour-black: #000000;
+  --colour-transparent: #0000;
+  /* Map Named Variables to --color-* */
+  --color-1: var(--colour-black-olive);
+  --color-2: var(--colour-brunswick-green);
+  --color-3: var(--colour-feldgrau);
+  --color-4: var(--colour-viridian);
+  --color-5: var(--colour-celadon);
+  --color-6: var(--colour-burnt-sienna);
+  --color-7: var(--colour-orange-brown);
+  --color-8: var(--colour-gold);
+  --color-9: var(--colour-warm-brown);
+  --color-10: var(--colour-mediumaquamarine);
+  --color-11: var(--colour-mediumseagreen);
+  --color-12: var(--colour-greenyellow);
+  --color-13: var(--colour-orange);
+  --color-14: var(--colour-white);
+  --color-15: var(--colour-black);
+  --color-transparent: var(--colour-transparent);
+  /* Derived Transparency Variants */
+  --portfolio-hover-bg: color-mix(in srgb, var(--color-5) 80%, transparent);
+  --nav-bg-color: color-mix(in srgb, var(--color-4) 10%, transparent);
+  --cta-box-shadow: var(--color-1);
+  --image-shadow: var(--color-1);
+  --image-filter-on: sepia(1);
+  --image-fiter-off: sepia(0);
+}
+@keyframes rotatingGlow {
+  0% {
+    text-shadow: 0 0 100px color-mix(in srgb, var(--color-6) 56%, var(--color-transparent)), /* Burnt Sienna */ 0 0 300px color-mix(in srgb, var(--color-7) 42%, var(--color-transparent)), /* Orange Brown */ 0 0 500px color-mix(in srgb, var(--color-8) 28%, var(--color-transparent));
+    /* Gold */
+  }
+  25% {
+    text-shadow: 0 0 100px color-mix(in srgb, var(--color-7) 49%, var(--color-transparent)), /* Orange Brown */ 0 0 300px color-mix(in srgb, var(--color-8) 35%, var(--color-transparent)), /* Gold */ 0 0 500px color-mix(in srgb, var(--color-9) 28%, var(--color-transparent));
+    /* Warm Brown */
+  }
+  50% {
+    text-shadow: 0 0 100px color-mix(in srgb, var(--color-6) 42%, var(--color-transparent)), /* Burnt Sienna */ 0 0 300px color-mix(in srgb, var(--color-7) 49%, var(--color-transparent)), /* Orange Brown */ 0 0 500px color-mix(in srgb, var(--color-8) 35%, var(--color-transparent));
+    /* Gold */
+  }
+  75% {
+    text-shadow: 0 0 100px color-mix(in srgb, var(--color-8) 56%, var(--color-transparent)), /* Gold */ 0 0 300px color-mix(in srgb, var(--color-7) 42%, var(--color-transparent)), /* Orange Brown */ 0 0 500px color-mix(in srgb, var(--color-6) 28%, var(--color-transparent));
+    /* Burnt Sienna */
+  }
+  100% {
+    text-shadow: 0 0 100px color-mix(in srgb, var(--color-7) 56%, var(--color-transparent)), /* Orange Brown */ 0 0 200px color-mix(in srgb, var(--color-9) 42%, var(--color-transparent)), /* Warm Brown */ 0 0 500px color-mix(in srgb, var(--color-6) 28%, var(--color-transparent));
+    /* Burnt Sienna */
+  }
+}
+@keyframes rotatingGlow2 {
+  0% {
+    box-shadow: 0 0 100px color-mix(in srgb, var(--color-5) 80%, var(--color-transparent)), /* Celadon */ 0 0 200px color-mix(in srgb, var(--color-10) 60%, var(--color-transparent)), /* Medium Aquamarine */ 0 0 300px color-mix(in srgb, var(--color-11) 40%, var(--color-transparent));
+    /* Medium Sea Green */
+  }
+  25% {
+    box-shadow: 0 0 100px color-mix(in srgb, var(--color-10) 80%, var(--color-transparent)), /* Medium Aquamarine */ 0 0 200px color-mix(in srgb, var(--color-11) 60%, var(--color-transparent)), /* Medium Sea Green */ 0 0 300px color-mix(in srgb, var(--color-12) 40%, var(--color-transparent));
+    /* Green Yellow */
+  }
+  50% {
+    box-shadow: 0 0 100px color-mix(in srgb, var(--color-11) 80%, var(--color-transparent)), /* Medium Sea Green */ 0 0 200px color-mix(in srgb, var(--color-12) 60%, var(--color-transparent)), /* Green Yellow */ 0 0 300px color-mix(in srgb, var(--color-5) 40%, var(--color-transparent));
+    /* Celadon */
+  }
+  75% {
+    box-shadow: 0 0 100px color-mix(in srgb, var(--color-12) 80%, var(--color-transparent)), /* Green Yellow */ 0 0 200px color-mix(in srgb, var(--color-5) 60%, var(--color-transparent)), /* Celadon */ 0 0 300px color-mix(in srgb, var(--color-10) 40%, var(--color-transparent));
+    /* Medium Aquamarine */
+  }
+  100% {
+    box-shadow: 0 0 100px color-mix(in srgb, var(--color-5) 80%, var(--color-transparent)), /* Celadon */ 0 0 200px color-mix(in srgb, var(--color-10) 60%, var(--color-transparent)), /* Medium Aquamarine */ 0 0 300px color-mix(in srgb, var(--color-11) 40%, var(--color-transparent));
+    /* Medium Sea Green */
+  }
+}
+html {
+  --s: 9px;
+  --c1: var(--color-4);
+  /* #0000 replaced by var(--color-transparent) */
+  --c: var(--color-transparent), var(--c1) 0.5deg 119.5deg, var(--color-transparent) 120deg;
+  --g1: conic-gradient(from 60deg at 56.25% calc(425% / 6), var(--c));
+  --g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
+  --g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
+  background: var(--g1), var(--g1) var(--s) calc(1.73 * var(--s)), var(--g2), var(--g2) var(--s) calc(1.73 * var(--s)), var(--g3) var(--s) 0, var(--g3) 0 calc(1.73 * var(--s)), var(--color-3);
+  background-size: calc(2 * var(--s)) calc(3.46 * var(--s));
+}
+body {
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--color-4) 95%, var(--color-14) 0%), color-mix(in srgb, var(--color-4) 90%, var(--color-14) 0%));
+}
+a:hover {
+  color: var(--color-5);
+}
+#about figure figcaption p,
+form button {
+  color: var(--color-5);
+}
+body,
+a,
+form:hover button,
+form button:hover,
+.cta:hover,
+#service-list summary,
+.cta1,
+h1,
+h2,
+h3,
+li:nth-child(even),
+form label,
+#testimonials .testimonial .name a,
+.cta-tel,
+.cta-share,
+.cta-contact,
+.cta-home {
+  color: var(--color-1);
+}
+.cta1,
+.cta-tel,
+.cta-share,
+.cta-contact,
+.cta-home,
+form,
+input[type="text"],
+input[type="email"],
+textarea,
+form button {
+  border-top: 1px solid var(--color-1);
+}
+section,
+#service-list summary,
+nav,
+.cta1 {
+  border-bottom: 1px dotted var(--color-1);
+}
+#what-i-do blockquote {
+  border-left: 3px solid var(--color-1);
+}
+.cta {
+  color: var(--color-1);
+  border: 1px solid var(--color-1);
+}
+h1,
+#contact h2 {
+  xanimation: rotatingGlow 5s infinite;
+  text-shadow: 0 0 100px color-mix(in srgb, var(--color-burnt-sienna) 80%, transparent);
+}
+form {
+  /* rgba(255,255,255,0.2) = white 20% */
+  background-color: color-mix(in srgb, var(--color-white) 20%, transparent);
+  /* rgba(0,0,0,0.2) = black 20% */
+  box-shadow: 0 1.5vw 3vw color-mix(in srgb, var(--color-black) 20%, transparent);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  background-color: var(--color-transparent);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+form button {
+  background-color: var(--color-4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+form button:active {
+  background-color: var(--color-2);
+}
+#testimonials .testimonial blockquote {
+  border-color: var(--color-1);
+}
+#portfolio .service a {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: var(--image-filter-on);
+  background-color: var(--color-1);
+  color: var(--color-1);
+}
+#portfolio a::before {
+  color: var(--color-1);
+  background-color: var(--portfolio-hover-bg);
+}
+img {
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+picture {
+  border: 10px solid var(--color-1);
+  box-shadow: 0 0 0.5vw var(--image-shadow), 0 0.5vw 1.5vw var(--image-shadow);
+  transform: rotate(-5deg);
+  filter: var(--image-filter-on);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+nav {
+  background-color: var(--nav-bg-color);
+  /* rgba(0,0,0,0.2) => black 20% */
+  box-shadow: 0 4px 10px color-mix(in srgb, var(--color-black) 20%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.cta {
+  font-size: clamp(1rem, 3vw, 2rem);
+  color: var(--color-5);
+  background-color: var(--color-3);
+  box-shadow: 0 0 10px var(--cta-box-shadow);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.cta-tel {
+  animation: subtleSwing 30s ease-in-out infinite;
+}
+#hero {
+  background-color: var(--color-2);
+  color: var(--color-5);
+}
+/* Similar states can be grouped logically */
+#service-list summary:hover,
+form:hover button,
+form button:hover,
+.cta:hover {
+  background-color: var(--color-5);
+}
+/* Form hover for inputs and textareas is already combined logically */
+form:hover input[type="text"],
+form:hover input[type="email"],
+form:hover textarea {
+  background-color: color-mix(in srgb, var(--color-white) 20%, transparent);
+}
+/* Form hover for button and button hover states are distinct, so keep them separate */
+form:hover button {
+  box-shadow: 0 0 10px var(--color-1);
+}
+/* #testimonials .testimonial .name a:hover removed as it's identical to a:hover */
+/* #portfolio .service:hover a and picture:hover share box-shadow & animation
+   Combine those shared properties, then specify unique properties separately */
+:is(#portfolio .service:hover a, picture:hover) {
+  box-shadow: 0 0 100px color-mix(in srgb, var(--colour-5) 80%, transparent), 0 0 200px color-mix(in srgb, var(--color-10) 60%, transparent), 0 0 300px color-mix(in srgb, var(--color-11) 40%, transparent), 0 1.5vw 3vw var(--color-1);
+  xanimation: rotatingGlow2 5s infinite;
+}
+#portfolio .service:hover a,
+picture:hover {
+  filter: var(--image-filter-off);
+}
+picture:hover {
+  transform: rotate(0) scale(1.05);
+  border: 12px solid var(--color-1);
+}
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+form button:hover {
+  font-weight: 900;
+}
 img {
   width: 100%;
   height: auto;
   max-width: 100%;
   max-height: 100%;
-  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
 picture {
   max-width: 100%;
@@ -13,11 +352,6 @@ picture {
   overflow: hidden;
   width: 100%;
   margin: 0;
-  border: 10px solid var(--color-1);
-  box-shadow: 0 0 0.5vw var(--color-1, rgba(33, 41, 34, 0.5)), 0 0.5vw 1.5vw var(--color-1, rgba(33, 41, 34, 0.4));
-  transform: rotate(-5deg);
-  filter: sepia(1);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
   aspect-ratio: 1/1;
   border-radius: 50%;
 }
@@ -25,13 +359,6 @@ picture img {
   object-fit: cover;
   max-width: 100%;
   max-height: 100%;
-}
-picture:hover {
-  box-shadow: 0 0 100px rgba(174, 246, 199, 0.8), 0 0 200px rgba(102, 205, 170, 0.6), 0 0 300px rgba(60, 179, 113, 0.4), 0 1.5vw 3vw var(--color-1);
-  animation: rotatingGlow2 5s infinite;
-  transform: rotate(0) scale(1.05);
-  border: 12px solid var(--color-1);
-  filter: sepia(0);
 }
 #testimonials .testimonial {
   margin-bottom: min(5vw, 5vh);
@@ -66,12 +393,6 @@ picture:hover {
   line-height: 1;
 }
 #testimonials .testimonial .name a {
-  color: var(--color-1);
-}
-#testimonials .testimonial .name a:hover {
-  color: var(--color-5);
-}
-#testimonials .testimonial .name a {
   display: inline-block;
   width: 100%;
   text-align: center;
@@ -94,9 +415,6 @@ picture:hover {
 }
 #testimonials .testimonial blockquote {
   padding-left: min(3vw, 2vh);
-}
-#testimonials .testimonial blockquote {
-  border-color: var(--primary-text);
 }
 @media only screen and (max-width: 767px) {
   #testimonials .testimonial {
@@ -134,25 +452,17 @@ picture:hover {
   cursor: pointer;
 }
 #portfolio .service:hover a {
-  filter: sepia(0);
-  box-shadow: 0 0 100px rgba(174, 246, 199, 0.8), /* Celadon */ 0 0 200px rgba(102, 205, 170, 0.6), /* Medium Aquamarine */ 0 0 300px rgba(60, 179, 113, 0.4), /* Medium Sea Green */ 0 1.5vw 3vw var(--color-1);
-  /* Deep shadow for strong elevation */
-  animation: rotatingGlow2 5s infinite;
   z-index: 9;
 }
 #portfolio .service a {
   position: relative;
   display: inline-block;
   z-index: 10;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  filter: sepia(1);
-  background-color: var(--color-1);
   border-radius: var(--portfolio-radius);
   margin: var(--portfolio-padding);
   overflow: hidden;
   text-decoration: none;
   padding: 0;
-  color: var(--primary-text);
 }
 #portfolio .service figcaption {
   font-style: italic;
@@ -174,9 +484,7 @@ picture:hover {
   width: 100%;
   height: 100%;
   line-height: 1;
-  color: var(--primary-text);
   text-align: center;
-  background-color: var(--portfolio-hover-bg);
   position: absolute;
   top: 100%;
   left: 0;
@@ -190,8 +498,6 @@ picture:hover {
   box-sizing: border-box;
 }
 nav {
-  background-color: rgba(91, 130, 102, 0.1);
-  /* Semi-transparent background */
   position: fixed;
   top: 0;
   left: 0;
@@ -199,42 +505,35 @@ nav {
   display: flex;
   align-items: flex-start;
   padding: 1rem;
-  border-bottom: 1px solid var(--color-1);
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 nav > * {
   margin-right: 1rem;
 }
 .cta {
   font-size: clamp(1rem, 3vw, 2rem);
-  color: var(--color-5);
-  background-color: var(--color-3);
   padding: 1vw;
   border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
-  box-shadow: 0 0 10px var(--color-1);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  /* Added smooth transitions for hover effects */
+  height: 50px;
+  width: 50px;
 }
-.cta:hover {
-  background-color: var(--color-5);
-  color: var(--color-1);
+.cta img {
+  width: 24px;
+  height: 24px;
+  max-height: 24px;
+  max-width: 24px;
+  min-width: 24px;
+  min-height: 24px;
 }
 .cta1 {
   padding: max(3vw, 3vh);
   text-align: center;
   line-height: 1.7;
-  border-top: 1px solid var(--color-1);
-  border-bottom: 1px solid var(--color-1);
-  color: var(--color-1);
-  /* Consolidated repeated color declarations */
 }
 #what-i-do p.cta2 {
   text-align: center;
@@ -243,33 +542,9 @@ nav > * {
 .cta-tel {
   margin-left: auto;
 }
-.cta-tel,
-.cta-share,
-.cta-contact,
-.cta-home {
-  xposition: fixed;
-  top: 15px;
-  height: 60px;
-  width: 50px;
-  color: var(--color-1);
-  border: 1px solid var(--color-1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.cta-tel img,
-.cta-share img,
-.cta-contact img,
-.cta-home img {
-  min-width: 24px;
-  max-width: 24px;
-  min-height: 24px;
-  max-height: 24px;
-}
 .cta-tel {
   right: 15px;
   transform-origin: top center;
-  animation: subtleSwing 30s ease-in-out infinite;
   text-align: right;
   text-wrap: nowrap;
   /* Ensures proper text wrapping */
@@ -281,21 +556,86 @@ nav > * {
 .cta-contact {
   left: 75px;
 }
+.cta-color {
+  padding: 0;
+  display: inline-block;
+  /* Ensure the radio button containers are visible */
+}
+.cta-color label {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cta-color input[type="radio"] {
+  width: 24px;
+  height: 24px;
+  appearance: none;
+  /* Remove default styling for custom styles */
+  background-color: transparent;
+  /* Default unchecked background color */
+  border: 1px dotted black;
+  /* Border for unchecked state */
+  border-radius: 50%;
+  /* Make it a circle */
+  position: relative;
+  /* Position for ::after pseudo-element */
+  cursor: pointer;
+  /* Pointer cursor for better UX */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.cta-color input[type="radio"]:checked {
+  background-color: transparent;
+  border-color: #000;
+  /* Optional: Change border color when selected */
+}
+.cta-color input[type="radio"]:checked::after {
+  content: "✔";
+  /* Unicode checkmark */
+  color: black;
+  /* Color of the checkmark */
+  font-size: 18px;
+  /* Adjust font size */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Center the checkmark */
+}
+.cta-color input[type="radio"]:focus {
+  outline: 2px dashed black;
+  /* Accessibility focus outline */
+}
+.cta-color-white {
+  background-color: var(--color-read-me);
+}
+.cta-color-green {
+  background-color: var(--color-green-machine);
+}
+.cta-color-black {
+  background-color: var(--color-back-in-black);
+  color: white;
+}
+.cta-color-black input[type="radio"] {
+  border: 1px dotted white;
+  /* Border for unchecked state */
+}
+.cta-color-black input[type="radio"]:checked::after {
+  color: white;
+}
+.cta-color-black input[type="radio"]:focus {
+  outline: 2px dashed white;
+  /* Accessibility focus outline */
+}
 section {
   margin-top: 0;
-  border-bottom: 1px dotted var(--color-1);
 }
 section,
 header,
 footer {
   content-visibility: auto;
   padding: max(3vw, 3vh);
-}
-section#testimonials {
-  background-color: rgba(41, 73, 54, 0.1);
-}
-section#contact {
-  background-color: rgba(41, 73, 54, 0.2);
 }
 footer {
   display: flex;
@@ -338,37 +678,25 @@ menu {
 }
 menu a {
   padding: 1rem;
-  color: var(--color-1);
   font-size: clamp(1.5rem, 2vw, 2vh);
 }
 h1 {
   text-align: center;
   font-size: clamp(1rem, 5vw, 6vh);
   margin-bottom: max(1vw, 1vh);
-  color: var(--color-1);
-  animation: rotatingGlow 5s infinite;
-  text-shadow: 0 0 100px rgba(210, 105, 30, 0.8);
 }
 h2 {
   font-size: clamp(1rem, 3vw, 5vh);
   text-transform: uppercase;
   padding: max(1.5vw, 1.5vh) 0;
-  color: var(--color-1);
 }
 #contact h2 {
   text-align: center;
-  text-shadow: 0 0 100px orange;
-  animation: rotatingGlow 60s linear infinite;
-}
-#what-i-do h2,
-#what-i-do h3 {
-  color: var(--color-1);
 }
 h3 {
   font-size: clamp(1rem, 3vw, 4vh);
   text-transform: uppercase;
   padding: max(1.5vw, 1.5vh) 0;
-  color: var(--color-1);
 }
 p,
 blockquote,
@@ -390,44 +718,42 @@ p {
   padding: 0 0 1rem 0;
   line-height: 1.7;
 }
-blockquote {
-  border-left: 3px solid var(--color-1);
-}
-#what-i-do blockquote {
-  border-left: 3px solid var(--color-1);
-}
 ul,
 ol {
   padding-left: max(3vw, 3vh);
 }
-li:nth-child(even) {
-  color: var(--color-1);
+#hero {
+  margin: 0;
+  padding: 0;
 }
-#about figure {
+#hero .container {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#hero figure {
   display: flex;
   margin: 5vw 0;
   align-items: center;
   justify-content: space-between;
   width: 90%;
 }
-#about figure a {
+#hero figure a {
   display: block;
   width: 100%;
   height: 100%;
 }
-#about figure figcaption p {
+#hero figure figcaption p {
   flex: 1;
   text-align: justify;
   margin: 0;
-  color: var(--color-5);
   padding-left: 10%;
   font-style: italic;
 }
 .opener {
   clear: both;
-}
-#what-i-do {
-  background-color: var(--color-3-trans);
 }
 #what-i-do p {
   text-align: justify;
@@ -449,8 +775,6 @@ slot {
   display: flex;
   align-items: center;
   text-align: left;
-  color: var(--color-1);
-  border-bottom: 1px dotted var(--color-1);
   font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(2vw, 2.5vh));
   text-transform: uppercase;
   padding: max(1.5vw, 1.5vh);
@@ -467,9 +791,6 @@ slot {
 }
 #service-list details[open] summary::after {
   content: '-';
-}
-#service-list summary:hover {
-  background-color: var(--color-4);
 }
 #service-list p {
   padding: max(1.5vw, 1.5vh);
@@ -506,10 +827,7 @@ form {
   width: max(50vw, 80vh);
   margin: min(4vw, 4vh) auto;
   padding: min(4vw, 4vh);
-  border: 1px solid var(--color-1);
   border-radius: 5px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  font-family: 'Noto Sans JP', sans-serif;
 }
 input::placeholder,
 textarea::placeholder {
@@ -519,7 +837,6 @@ form label {
   display: block;
   margin-bottom: min(4vw, 4vh);
   font-weight: 700;
-  color: var(--color-1);
   font-size: 1.5rem;
 }
 input[type="text"],
@@ -528,26 +845,9 @@ textarea {
   width: 100%;
   padding: max(1vw, 1vh);
   margin: min(1vw, 1vh) 0 min(3vw, 3vh) 0;
-  border: 1px solid var(--color-1);
-  background-color: transparent;
   border-radius: 5px;
   font-size: 2rem;
   box-sizing: border-box;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-form {
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 1.5vw 3vw var(--color-1);
-}
-form:hover input[type="text"],
-form:hover input[type="email"],
-form:hover textarea {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-form:hover button {
-  background-color: var(--color-5-trans);
-  box-shadow: 0 0 10px var(--color-1);
-  color: var(--color-1);
 }
 form textarea {
   height: max(20vw, 20vh);
@@ -556,21 +856,9 @@ form textarea {
 form button {
   width: 100%;
   padding: max(1vw, 1vh);
-  background-color: var(--color-4);
-  border: 1px solid var(--secondary-border);
-  color: var(--color-5);
   font-size: 1.4rem;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   border-radius: 5px;
   cursor: pointer;
-}
-form button:hover {
-  background-color: var(--color-5);
-  color: var(--color-1);
-  font-weight: 900;
-}
-form button:active {
-  background-color: var(--color-2);
 }
 @media only screen and (max-width: 767px) {
   body {

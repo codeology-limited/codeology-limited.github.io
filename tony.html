@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Expert CSS Services for Fast, Reliable Solutions | Codeology</title>
 
-    <link rel="stylesheet"  href="/r/c/tony.css">
+    <link rel="stylesheet" href="/r/c/tony.css">
 
     <!-- SEO Meta Tags -->
     <meta name="description"
@@ -147,31 +147,25 @@
 
     <!-- CSS -->
     <style>
-        @property --page-scroll-percentage {
-            syntax: '<integer>';
-            inherits: true;
-            initial-value: 0;
-        }
 
         @property --_w {
             syntax: '<length>';
             inherits: true;
             initial-value: 100vw;
         }
+
         @property --_h {
             syntax: '<length>';
             inherits: true;
             initial-value: 100vh;
         }
+
         @property --scrollbar {
             syntax: "<length>";
             inherits: true;
             initial-value: 0px;
         }
 
-        @keyframes scroll {
-            to {--page-scroll-percentage: 100}
-        }
 
         @keyframes subtleSwing {
             0% {
@@ -194,126 +188,24 @@
             }
         }
 
-        @keyframes rotatingGlow {
-            0% {
-                text-shadow:
-                        0 0 100px rgba(210, 105, 30, 0.56), /* Sepia-inspired orange */
-                        0 0 300px rgba(183, 65, 14, 0.42), /* Deep reddish-brown */
-                        0 0 500px rgba(228, 132, 0, 0.28); /* Golden yellow */
-            }
-            25% {
-                text-shadow:
-                        0 0 100px rgba(183, 65, 14, 0.49), /* Reddish-brown */
-                        0 0 300px rgba(228, 132, 0, 0.35), /* Golden yellow */
-                        0 0 500px rgba(112, 66, 20, 0.28); /* Warm, earthy brown */
-            }
-            50% {
-                text-shadow:
-                        0 0 100px rgba(210, 105, 30, 0.42), /* Sepia-inspired orange */
-                        0 0 300px rgba(183, 65, 14, 0.49), /* Deep reddish-brown */
-                        0 0 500px rgba(228, 132, 0, 0.35); /* Golden yellow */
-            }
-            75% {
-                text-shadow:
-                        0 0 100px rgba(228, 132, 0, 0.56), /* Golden yellow */
-                        0 0 300px rgba(183, 65, 14, 0.42), /* Deep reddish-brown */
-                        0 0 500px rgba(210, 105, 30, 0.28); /* Sepia-inspired orange */
-            }
-            100% {
-                text-shadow:
-                        0 0 100px rgba(183, 65, 14, 0.56), /* Deep reddish-brown */
-                        0 0 200px rgba(112, 66, 20, 0.42), /* Warm brown */
-                        0 0 500px rgba(210, 105, 30, 0.28); /* Sepia-inspired orange */
-            }
-        }
-
-        @keyframes rotatingGlow2 {
-            0% {
-                box-shadow:
-                        0 0 100px rgba(174, 246, 199, 0.8), /* Celadon */
-                        0 0 200px rgba(102, 205, 170, 0.6), /* Medium Aquamarine */
-                        0 0 300px rgba(60, 179, 113, 0.4); /* Medium Sea Green */
-            }
-            25% {
-                box-shadow:
-                        0 0 100px rgba(102, 205, 170, 0.8), /* Medium Aquamarine */
-                        0 0 200px rgba(60, 179, 113, 0.6), /* Medium Sea Green */
-                        0 0 300px rgba(173, 255, 47, 0.4); /* Green Yellow */
-            }
-            50% {
-                box-shadow:
-                        0 0 100px rgba(60, 179, 113, 0.8), /* Medium Sea Green */
-                        0 0 200px rgba(173, 255, 47, 0.6), /* Green Yellow */
-                        0 0 300px rgba(174, 246, 199, 0.4); /* Celadon */
-            }
-            75% {
-                box-shadow:
-                        0 0 100px rgba(173, 255, 47, 0.8), /* Green Yellow */
-                        0 0 200px rgba(174, 246, 199, 0.6), /* Celadon */
-                        0 0 300px rgba(102, 205, 170, 0.4); /* Medium Aquamarine */
-            }
-            100% {
-                box-shadow:
-                        0 0 100px rgba(174, 246, 199, 0.8), /* Celadon */
-                        0 0 200px rgba(102, 205, 170, 0.6), /* Medium Aquamarine */
-                        0 0 300px rgba(60, 179, 113, 0.4); /* Medium Sea Green */
-            }
-        }
-
-        @supports (animation-timeline: scroll()) {
-            animation-timeline: scroll();
-        }
 
         & {
-            --iamroot:1234;
-            --w: tan(atan2(var(--_w),1px)); /* screen width */
-            --h: tan(atan2(var(--_h),1px)); /* screen height*/ /* The result is an integer without unit  */
-            animation: scroll 1s linear;
+            --iamroot: 1234;
+            --w: tan(atan2(var(--_w), 1px)); /* screen width */
+            --h: tan(atan2(var(--_h), 1px)); /* screen height*/ /* The result is an integer without unit  */
+
         }
-        :scope {
-            --black-olive: #212922;
-            --brunswick-green: #294936;
-            --feldgrau: #3E6259;
-            --color-3-trans: rgba(62, 98, 89, 0.5);
-            --viridian: #5B8266;
-            --color-4-trans: rgba(91, 130, 102, 0.90);
-            --celadon: #AEF6C7;
-            --color-5-trans: #AEF6C7CC;
-        }
+
         :root {
-
-            --color-1: var(--black-olive);
-            --color-2: var(--brunswick-green);
-            --color-3: var(--feldgrau);
-            --color-4: var(--viridian);
-            --color-5: var(--celadon);
-
-
-
             --color-5-style: solid;
-
-            --portfolio-hover-bg: var(--color-5-trans);
             --portfolio-padding: 1vw;
             --portfolio-radius: 10%
         }
-
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box
-        }
-
-        html {
-            --s: 9px;
-            --c1: var(--color-4);
-            --c: #0000, var(--c1) .5deg 119.5deg, #0000 120deg;
-            --g1: conic-gradient(from 60deg at 56.25% calc(425% / 6), var(--c));
-            --g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
-            --g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
-            background: var(--g1), var(--g1) var(--s) calc(1.73 * var(--s)), var(--g2), var(--g2) var(--s) calc(1.73 * var(--s)), var(--g3) var(--s) 0, var(--g3) 0 calc(1.73 * var(--s)), var(--color-3);
-            background-size: calc(2 * var(--s)) calc(3.46 * var(--s));
-
         }
 
         html {
@@ -324,10 +216,9 @@
         }
 
         body {
-            font-family: 'Noto Sans JP', sans-serif;
-            background: linear-gradient(to bottom, rgba(91, 130, 102, 0.95), rgba(91, 130, 102, 0.9));
 
-            color: var(--color-1);
+            container-type: inline-size;
+
             display: flex;
             flex-direction: column;
             padding: 15vh 0 0;
@@ -340,31 +231,46 @@
 
         }
 
-        body:after, html:after {
+        body:after {
             position: fixed;
             bottom: 10px;
-            right: 10px;
-            content: counter(s) "%";
-            counter-reset: s var(--page-scroll-percentage);
-            font-family: system-ui,sans-serif;
-        }
-        body:after {
+            font-family: system-ui, sans-serif;
             content: counter(w) "x" counter(h);
             counter-reset: h var(--h) w var(--w);
-            right: auto;
             left: 10px;
         }
+
         section {
             scroll-snap-align: start;
             scroll-snap-stop: always;
             scroll-margin-top: 0
         }
-        a {
-            color: var(--color-1);
+
+
+        @property --page-scroll-percentage {
+            syntax: '<integer>';
+            inherits: true;
+            initial-value: 0;
         }
-            a:hover{
-                color: var(--color-5);
+
+        @keyframes scroll {
+            to {
+                --page-scroll-percentage: 100
             }
+        }
+
+        :root {
+            animation-timeline: scroll();
+            animation: scroll 1s linear;
+        }
+
+        html:after {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            content: counter(s) "%";
+            counter-reset: s var(--page-scroll-percentage);
+            font-family: system-ui, sans-serif;
         }
 
 
@@ -374,7 +280,11 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TLBBJ5V1ZW"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
 
     gtag('config', 'G-TLBBJ5V1ZW');
@@ -390,58 +300,67 @@
             <li><a href="#testimonials">Testimonials</a></li>
         </menu>
 
-        <h1>Move Your Project Forward.</h1>
+        <h1>Move Your Project Forward.<br><span>(021) 677 460</span></h1>
 
     </div>
 </header>
 
-
-    <section id="about">
-        <div class="container">
-
-            <figure>
-                <a href="https://www.linkedin.com/in/tonygurnick/">
-                    <picture>
-                        <img width="300" height="400" loading="lazy" alt="Tony" src="r/i/tony.webp">
-                    </picture>
-                </a>
-                <figcaption>
-                    <p class="tp">If you need to get a project moving now, but your team is stretched. I provide the expertise
-                        without the commitment of a full hire.</p>
-
-                </figcaption>
-            </figure>
-
-            <p class="opener">I’m Tony, a full-stack developer and CSS specialist with experience ranging from legacy
-                concepts to latest frameworks. </p>
-            <p>I bridge critical gaps.</p>
-
-            <h2>My Story</h2>
-
-            <p>I spent over a decade in London and Europe during the Web 2.0 boom, working with agencies and big names
-                like EMC Consulting, Nokia, BSkyB, and Visa as the web evolved.</p>
-            <p>In 2015, family brought me home. </p>
-            <p id="benefits">I began tackling challenges in startups of all sizes.  I’ve worked across many industries, figuring out problems and coming up with practical, real-world solutions.</p>
+<section id="hero">
+    <div class="container">
 
 
-            <h2 >Support When You Need It</h2>
+        <figure>
+            <a href="https://www.linkedin.com/in/tonygurnick/">
+                <picture>
+                    <img width="300" height="400" loading="lazy" alt="Tony" src="r/i/tony.webp">
+                </picture>
+            </a>
+            <figcaption>
+                <p class="tp">If you need to get a project moving now, but your team is stretched. I provide the
+                    expertise
+                    without the commitment of a full hire.</p>
 
-            <p>When time is short, I step in to bridge the gap—whether starting something new or reviving stalled progress.</p>
-            <ul>
-                <li>Quickly fill gaps to keep momentum.</li>
-                <li>Deliver clear visual and technical results.</li>
+            </figcaption>
+        </figure>
+    </div>
+</section>
 
-            </ul>
+<section id="about">
+    <div class="container">
 
-            <p>Under pressure, I work with you and your team, allowing you to focus on what matters most.</p>
+ 
+        <p class="opener">I’m Tony, a full-stack developer and CSS specialist with experience ranging from legacy
+            concepts to latest frameworks. </p>
+        <p>I bridge critical gaps.</p>
+
+        <h2>My Story</h2>
+
+        <p>I spent over a decade in London and Europe during the Web 2.0 boom, working with agencies and big names
+            like EMC Consulting, Nokia, BSkyB, and Visa as the web evolved.</p>
+        <p>In 2015, family brought me home. </p>
+        <p id="benefits">I began tackling challenges in startups of all sizes. I’ve worked across many industries,
+            figuring out problems and coming up with practical, real-world solutions.</p>
 
 
-            <p class="cta1">
-                I'm committed to your project succeeding.
-            </p>
+        <h2>Support When You Need It</h2>
 
-        </div>
-    </section>
+        <p>When time is short, I step in to bridge the gap—whether starting something new or reviving stalled
+            progress.</p>
+        <ul>
+            <li>Quickly fill gaps to keep momentum.</li>
+            <li>Deliver clear visual and technical results.</li>
+
+        </ul>
+
+        <p>Under pressure, I work with you and your team, allowing you to focus on what matters most.</p>
+
+
+        <p class="cta1">
+            I'm committed to your project succeeding.
+        </p>
+
+    </div>
+</section>
 
 <section id="what-i-do">
     <div class="container">
@@ -454,7 +373,10 @@
             <details class="service">
                 <summary>An Experienced Pair of Hands for Your Project</summary>
                 <p>
-                    I bring a depth of experience in solving development challenges, focusing on CSS and JavaScript. I collaborate closely with teams, following direction as needed, to address skill gaps, implement designs, resolve technical issues, and improve code performance, ensuring practical and reliable outcomes.
+                    I bring a depth of experience in solving development challenges, focusing on CSS and JavaScript. I
+                    collaborate closely with teams, following direction as needed, to address skill gaps, implement
+                    designs, resolve technical issues, and improve code performance, ensuring practical and reliable
+                    outcomes.
                 </p>
 
             </details>
@@ -463,8 +385,12 @@
             <details class="service">
                 <summary>Untangle your codebase, keep momentum.</summary>
                 <p>
-                    Codebases often become complex under the pressure of meeting immediate goals. While this can be effective short-term, it can create long-term challenges, making progress increasingly difficult. For small teams, resolving these issues can take a backseat to delivery demands, but addressing them early helps avoid bigger problems down the line. I can help navigate and untangle these complexities.
-               </p>
+                    Codebases often become complex under the pressure of meeting immediate goals. While this can be
+                    effective short-term, it can create long-term challenges, making progress increasingly difficult.
+                    For small teams, resolving these issues can take a backseat to delivery demands, but addressing them
+                    early helps avoid bigger problems down the line. I can help navigate and untangle these
+                    complexities.
+                </p>
 
 
             </details>
@@ -472,7 +398,10 @@
             <details class="service">
                 <summary>Collaborate with your design team</summary>
                 <p>
-                    I bridge design and development, ensuring responsiveness, accessibility, and progressive enhancement for adaptable, future-ready projects. For small teams, balancing short-term priorities with long-term needs is challenging. By aligning creative vision with technical execution, workflows can integrate these priorities to deliver cohesive, practical solutions.  </p>
+                    I bridge design and development, ensuring responsiveness, accessibility, and progressive enhancement
+                    for adaptable, future-ready projects. For small teams, balancing short-term priorities with
+                    long-term needs is challenging. By aligning creative vision with technical execution, workflows can
+                    integrate these priorities to deliver cohesive, practical solutions. </p>
             </details>
 
             <details class="service">
@@ -485,7 +414,8 @@
         </div>
 
 
-        <blockquote class="tearaway">Press pause on the usual hiring hassle and let’s&nbsp;connect&nbsp;directly.</blockquote>
+        <blockquote class="tearaway">Press pause on the usual hiring hassle and let’s&nbsp;connect&nbsp;directly.
+        </blockquote>
 
 
     </div>
@@ -499,45 +429,48 @@
         <div class="service-list">
             <figure class="service">
                 <figcaption>Animates</figcaption>
-                <a target="_blank"  rel="noopener noreferrer"   href="https://pawprintpetition.co.nz/"
+                <a target="_blank" rel="noopener noreferrer" href="https://pawprintpetition.co.nz/"
                    title="Animates: Pet friendly petition to ban fireworks">
-                    <img  width="1050" height="1072"  loading="lazy" src="r/i/ppp.webp" alt="Paw print petition webpage snapshot">
+                    <img width="1050" height="1072" loading="lazy" src="r/i/ppp.webp"
+                         alt="Paw print petition webpage snapshot">
                 </a>
             </figure>
             <figure class="service">
                 <figcaption>BetterSaver</figcaption>
-                <a target="_blank"  rel="noopener noreferrer"  href="https://bettersaver.co.nz/"
+                <a target="_blank" rel="noopener noreferrer" href="https://bettersaver.co.nz/"
                    title="BetterSaver: Choose a Better KiwiSaver">
                     <img width="1148" height="1090" loading="lazy" src="r/i/bs.webp" alt="BetterSaver Logo">
                 </a>
             </figure>
             <figure class="service">
                 <figcaption>Forsite</figcaption>
-                <a target="_blank"  rel="noopener noreferrer"    href="https://getforsite.com"
+                <a target="_blank" rel="noopener noreferrer" href="https://getforsite.com"
                    title="Forsite Limited: The Ultimate Companion for Effortless Health and Safety">
-                    <img  width="1360" height="1216"  loading="lazy" src="r/i/fs.webp" alt="Forsite Solutions limited">
+                    <img width="1360" height="1216" loading="lazy" src="r/i/fs.webp" alt="Forsite Solutions limited">
                 </a>
             </figure>
             <figure class="service">
                 <figcaption>NZSP</figcaption>
-                <a target="_blank"  rel="noopener noreferrer"   href="https://on-the-go.co.nz"
+                <a target="_blank" rel="noopener noreferrer" href="https://on-the-go.co.nz"
                    title="NZ Schools Partnership: Out and about in Tāmaki Makaurau">
-                    <img width="769" height="528"  loading="lazy" src="r/i/otg.svg" alt="On-the-go Logo">
+                    <img width="769" height="528" loading="lazy" src="r/i/otg.svg" alt="On-the-go Logo">
                 </a>
             </figure>
             <figure class="service">
                 <figcaption>TNL</figcaption>
-                <a target="_blank"  rel="noopener noreferrer"   href="https://thenextlegends.xyz"
+                <a target="_blank" rel="noopener noreferrer" href="https://thenextlegends.xyz"
                    title="Futureverse: The Next Legends.">
-                    <img width="144" height="144"  loading="lazy" src="r/i/tnl.png" alt="The Next Legends Locker Room Screenshot">
+                    <img width="144" height="144" loading="lazy" src="r/i/tnl.png"
+                         alt="The Next Legends Locker Room Screenshot">
                 </a>
             </figure>
 
             <figure class="service">
                 <figcaption>Fifa AI League</figcaption>
-                <a target="_blank"  rel="noopener noreferrer"   href="https://fifaworldcupaileague.com/"
+                <a target="_blank" rel="noopener noreferrer" href="https://fifaworldcupaileague.com/"
                    title="Futureverse: Fifa Ai League.">
-                    <img width="1020" height="768"  loading="lazy" src="r/i/fifa-ai-league.jpg" alt="Fifa AI League Pack-shot">
+                    <img width="1020" height="768" loading="lazy" src="r/i/fifa-ai-league.jpg"
+                         alt="Fifa AI League Pack-shot">
                 </a>
             </figure>
         </div>
@@ -552,7 +485,8 @@
         <div class="testimonial">
             <a href="https://www.linkedin.com/in/william-tonkin-howe-1b57843/">
                 <picture>
-                    <img loading="lazy" src="https://media.licdn.com/dms/image/v2/C4E03AQF7ey_qekEP4w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516319954930?e=1738195200&v=beta&t=Mynyaa53570F6eAqDsxe_0gFXXWZy2hN_Cnj-gdAjTA"
+                    <img loading="lazy"
+                         src="https://media.licdn.com/dms/image/v2/C4E03AQF7ey_qekEP4w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516319954930?e=1738195200&v=beta&t=Mynyaa53570F6eAqDsxe_0gFXXWZy2hN_Cnj-gdAjTA"
                          alt="William Tonkin-Howe">
                 </picture>
             </a>
@@ -562,7 +496,10 @@
                 </p>
                 <p class="title">Chief Executive Officer @ Sanderson Howe</p>
                 <blockquote>
-                    <p>Tony persistently bulldozes through any work we give him. He brings extensive experience, inquisitive communication, deep thought and much dry wit to the table on any project we collaborate on - which is always most enjoyable to us at SH. In short, he's awesome sauce (and he knows more about JS than I ever will) and we love working with him.</p>
+                    <p>Tony persistently bulldozes through any work we give him. He brings extensive experience,
+                        inquisitive communication, deep thought and much dry wit to the table on any project we
+                        collaborate on - which is always most enjoyable to us at SH. In short, he's awesome sauce (and
+                        he knows more about JS than I ever will) and we love working with him.</p>
                 </blockquote>
             </div>
         </div>
@@ -580,7 +517,11 @@
                 </p>
                 <p class="title">Product Owner @ Altered State Machine</p>
                 <blockquote>
-                    <p>Tony brings deep technical expertise and a genuine willingness to support and uplift those around him. He has the tenacity to dig deep and find the right solutions for complex problems and projects. Working with Tony feels like being in good hands—he’s insightful, dependable, and brings a grounded positivity to every challenge. I’m grateful for the opportunity to have worked with him.</p>
+                    <p>Tony brings deep technical expertise and a genuine willingness to support and uplift those around
+                        him. He has the tenacity to dig deep and find the right solutions for complex problems and
+                        projects. Working with Tony feels like being in good hands—he’s insightful, dependable, and
+                        brings a grounded positivity to every challenge. I’m grateful for the opportunity to have worked
+                        with him.</p>
                 </blockquote>
             </div>
         </div>
@@ -588,7 +529,8 @@
         <div class="testimonial">
             <a href="https://www.linkedin.com/in/zachary-culpan/">
                 <picture>
-                    <img loading="lazy" src="https://media.licdn.com/dms/image/v2/D5603AQFIMO8a5UKYaA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1676255396765?e=1738195200&v=beta&t=THDRUvDXyMdr9gzH6zDSlUaDBxNfmHGwRKlTvKJeSQ4"
+                    <img loading="lazy"
+                         src="https://media.licdn.com/dms/image/v2/D5603AQFIMO8a5UKYaA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1676255396765?e=1738195200&v=beta&t=THDRUvDXyMdr9gzH6zDSlUaDBxNfmHGwRKlTvKJeSQ4"
                          alt="Zac Culpan">
                 </picture>
             </a>
@@ -608,7 +550,8 @@
         <div class="testimonial">
             <a href="https://www.linkedin.com/in/jaradohara/">
                 <picture>
-                    <img loading="lazy" src="https://media.licdn.com/dms/image/v2/C5103AQEgUDQ0Gx4NDQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1557824838585?e=1738195200&v=beta&t=b5_zwJu3tS5u3zBL-5Hbyt2pX6uzkckTT5nOZIMvwhE"
+                    <img loading="lazy"
+                         src="https://media.licdn.com/dms/image/v2/C5103AQEgUDQ0Gx4NDQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1557824838585?e=1738195200&v=beta&t=b5_zwJu3tS5u3zBL-5Hbyt2pX6uzkckTT5nOZIMvwhE"
                          alt="Jarad O'Hara">
                 </picture>
             </a>
@@ -628,7 +571,8 @@
         <div class="testimonial">
             <a href="https://www.linkedin.com/in/carlleducq/">
                 <picture>
-                    <img loading="lazy" src="https://media.licdn.com/dms/image/v2/C5603AQEeRHHl7EH4PA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1649234921913?e=1738195200&v=beta&t=_MUlTFEWDTRm8_uYB9ZMtPQZBJi6XhQBpGYDjvHu01M"
+                    <img loading="lazy"
+                         src="https://media.licdn.com/dms/image/v2/C5603AQEeRHHl7EH4PA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1649234921913?e=1738195200&v=beta&t=_MUlTFEWDTRm8_uYB9ZMtPQZBJi6XhQBpGYDjvHu01M"
                          alt="Carl LeDucq">
                 </picture>
             </a>
@@ -650,7 +594,8 @@
         <div class="testimonial">
             <a href="https://www.linkedin.com/in/james-de-colling-ab73531/">
                 <picture>
-                    <img loading="lazy" src="https://media.licdn.com/dms/image/v2/D5603AQGPonX3wa5R4w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1709796254304?e=1738195200&v=beta&t=vOXligMekqlUGa2EV5zFQz6CzHNtO3wdJ8D9Gr928jU"
+                    <img loading="lazy"
+                         src="https://media.licdn.com/dms/image/v2/D5603AQGPonX3wa5R4w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1709796254304?e=1738195200&v=beta&t=vOXligMekqlUGa2EV5zFQz6CzHNtO3wdJ8D9Gr928jU"
                          alt="James De Colling">
                 </picture>
             </a>
@@ -666,8 +611,6 @@
                 </blockquote>
             </div>
         </div>
-
-
 
 
     </div>
@@ -688,7 +631,7 @@
         </label>
 
         <label>Send me a message. Go Wild.
-            <textarea  name="message" ></textarea>
+            <textarea name="message"></textarea>
 
         </label>
 
@@ -697,8 +640,8 @@
 </section>
 
 <nav>
-    <a   class="cta cta-home"    href="#home" >
-        <img width="24" height="24" src="r/i/house.svg"  alt="Home">
+    <a class="cta cta-home" href="#home">
+        <img width="24" height="24" src="r/i/house.svg" alt="Home">
 
     </a>
     <a
@@ -708,21 +651,35 @@
             title="Share this page on X">
         <img width="24" height="24" src="r/i/share.svg" alt="Share this on X">
     </a>
-    <a   class="cta cta-contact"    href="#contact" >
-        <img width="24" height="24" src="r/i/mail.svg"  alt="Contact">
+    <a class="cta cta-contact" href="#contact">
+        <img width="24" height="24" src="r/i/mail.svg" alt="Contact">
 
     </a>
 
-    <a   class='cta cta-tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
+    <a class="cta cta-color cta-color-white" href="#" title="Read me Seymour!">
+        <label>
+            <input type="radio" name="colors">
+        </label>
+    </a>
+    <a class="cta cta-color cta-color-green" href="#" title="Green Machine!">
+        <label>
+            <input type="radio" name="colors" checked="true">
+        </label>
+    </a>
+    <a class="cta cta-color cta-color-black" href="#" title="Back in black!">
+        <label>
+            <input type="radio" name="colors">
+        </label>
+    </a>
+    <a class='cta cta-tel' href='tel:+6421677460' aria-label='Call Now +64 (21) 677 460'>Call Now +64 (21) 677 460</a>
 
 </nav>
-
 
 
 <footer>
 
     <div class="container">
-        <p>&copy; 2024 Codeology Limited.    <img src="r/i/nz.svg"  width="64" height="64" > All rights reserved.</p>
+        <p>&copy; 2024 Codeology Limited. <img src="r/i/nz.svg" width="64" height="64"> All rights reserved.</p>
     </div>
 </footer>
 
