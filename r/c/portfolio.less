@@ -4,11 +4,17 @@
   }
 
   .service {
+
     display: flex;
     flex-direction: column;
-    min-width: 25%;
+    min-width: 50%;
     align-items: center;
     cursor: pointer;
+    padding: 1rem;
+
+    a {
+      width: 100%;
+    }
 
     &:hover a {
 
@@ -30,9 +36,7 @@
     }
 
     figcaption {
-      font-style: italic;
-      font-size: clamp(1.5rem, 2vw, 2.5vh);
-      white-space: nowrap;
+
       z-index: 10;
       position: relative
     }
@@ -49,17 +53,15 @@
 
 #portfolio a::before {
   content: attr(title);
-  font-weight: 900;
+
   width: 100%;
   height: 100%;
-  line-height: 1;
 
-  text-align: center;;
 
   position: absolute;
   top: 100%;
   left: 0;
-  font-size: clamp(0.8rem, 2vw, 2rem);
+
   display: flex;
   align-items: center;
   justify-content: center;

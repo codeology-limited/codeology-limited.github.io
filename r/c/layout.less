@@ -25,9 +25,7 @@ footer {
 }
 
 footer p {
-  text-align: center;
-  font-size: clamp(1rem, 2vw, 2vh);
-  text-transform: uppercase;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,7 +43,7 @@ footer p {
 }
 
 h1, h2, h3 {
-  text-align: left;
+
   line-height: 1.7;
   margin: max(3vw, 3vh) 0;
   font-weight: 900
@@ -59,43 +57,30 @@ menu {
 
   a {
     padding: 1rem;
-
-    font-size: clamp(1.5rem, 2vw, 2vh)
   }
 
   padding: max(1.5vw, 1.5vh) 0
 }
 
 h1 {
-  text-align: center;
-  font-size: clamp(1rem, 5vw, 6vh);
+
   margin-bottom: max(1vw, 1vh);
 
 }
 
 h2 {
-  font-size: clamp(1rem, 3vw, 5vh);
-  text-transform: uppercase;
   padding: max(1.5vw, 1.5vh) 0;
 
 }
 
-#contact h2 {
-  text-align: center;
-
-}
 
 
 h3 {
-  font-size: clamp(1rem, 3vw, 4vh);
-  text-transform: uppercase;
   padding: max(1.5vw, 1.5vh) 0;
 
 }
 
 p, blockquote, li {
-  font-size: clamp(1rem, 3vw, 3.5vh);
-  line-height: calc(2.5vh + 2vw);
   margin-bottom: max(3vw, 3vh)
 }
 
@@ -104,15 +89,13 @@ ul {
 }
 
 li {
-  font-size: clamp(1rem, 3vw, 3.5vh);
-  line-height: 1.8;
   margin-bottom: 0
 }
 
 p {
-  text-align: justify;
+
   padding: 0 0 1rem 0;
-  line-height: 1.7
+
 }
 
 
@@ -150,11 +133,11 @@ ul, ol {
 
     figcaption p {
       flex: 1;
-      text-align: justify;
+
       margin: 0;
 
       padding-left: 10%;
-      font-style: italic
+
     }
   }
 }
@@ -170,9 +153,9 @@ ul, ol {
 
 
 #what-i-do p {
-  text-align: justify;
+
   margin-bottom: 0;
-  font-size: clamp(6rem, 8vw, 50vh)
+
 }
 
 #service-list {
@@ -189,10 +172,10 @@ slot {
 
 #service-list summary {
   cursor: pointer;
-  font-weight: 700;
+
   display: flex;
   align-items: center;
-  text-align: left;
+
 
   font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(2vw, 2.5vh));
   text-transform: uppercase;
@@ -205,8 +188,7 @@ slot {
   margin: 0;
   color: var(--color-1);
   transition: transform 0.2s ease-in-out;
-  font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(2vw, 2.5vh));
-  text-transform: uppercase;
+
   padding: max(1.5vw, 1.5vh) 0
 }
 
@@ -235,11 +217,7 @@ slot {
 
 .tearaway {
   position: relative;
-  text-align: center;
-  font-size: clamp(2rem, 3vw, 3rem);
-  text-wrap: pretty;
-  overflow-wrap: break-word;
-  line-height: 1.3;
+
   padding: 5vw 10vw 5vw
 }
 
@@ -261,16 +239,11 @@ form {
 
 }
 
-input::placeholder, textarea::placeholder {
-  color: var(--color-1)
-}
 
 form label {
   display: block;
   margin-bottom: min(4vw, 4vh);
-  font-weight: 700;
 
-  font-size: 1.5rem
 }
 
 input[type="text"], input[type="email"], textarea {
@@ -279,7 +252,7 @@ input[type="text"], input[type="email"], textarea {
   margin: min(1vw, 1vh) 0 min(3vw, 3vh) 0;
 
   border-radius: 5px;
-  font-size: 2rem;
+
   box-sizing: border-box;
 
 }
@@ -294,7 +267,7 @@ form button {
   width: 100%;
   padding: max(1vw, 1vh);
 
-  font-size: 1.4rem;
+
 
   border-radius: 5px;
   cursor: pointer

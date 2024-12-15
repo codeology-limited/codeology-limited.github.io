@@ -1,82 +1,18 @@
 :root {
   --color-read-me: white;
   --color-green-machine: #5B8266;
-  --color-back-in-black: black;
 }
 :has(.cta-color-white :checked) {
-  --color-1: #black;
-  --color-2: #F0EAD6;
+  --color-1: black;
+  --color-2: black;
   --color-3: #5D8AA8;
-  --color-5: #444;
+  --color-5: blue;
   --image-filter-on: grayscale(1);
   --image-fiter-off: grayscale(0);
-}
-:root:has(.cta-color-black :checked) {
-  /* Define Named Variables */
-  --colour-white: #FFFFFF;
-  /* Primary text and highlights */
-  --colour-light-grey: #CCCCCC;
-  /* Secondary text */
-  --colour-mid-grey: #888888;
-  /* Borders and inactive elements */
-  --colour-dark-grey: #333333;
-  /* Secondary backgrounds */
-  --colour-black: #000000;
-  /* Main background */
-  --colour-accent-blue: #007ACC;
-  /* Accessible blue for actionable elements */
-  --colour-accent-yellow: #FFD700;
-  /* High-contrast yellow for warnings */
-  --colour-error-red: #FF4D4D;
-  /* Red for errors */
-  --colour-success-green: #32CD32;
-  /* Green for success */
-  --colour-highlight-purple: #8A2BE2;
-  /* Purple for highlights */
-  --colour-neutral-cyan: #00CED1;
-  /* Cyan for neutral accents */
-  --colour-transparent: #0000;
-  /* Fully transparent */
-  /* Map Named Variables to --color-* */
-  --color-1: var(--colour-white);
-  /* Primary text */
-  --color-2: var(--colour-light-grey);
-  /* Secondary text */
-  --color-3: var(--colour-mid-grey);
-  /* Divider and subtle elements */
-  --color-4: var(--colour-black);
-  /* Main background */
-  --color-5: orange;
-  /* Secondary background */
-  --color-6: var(--colour-accent-blue);
-  /* Accent color for links/buttons */
-  --color-7: var(--colour-accent-yellow);
-  /* Warning elements */
-  --color-8: var(--colour-error-red);
-  /* Error elements */
-  --color-9: var(--colour-success-green);
-  /* Success elements */
-  --color-10: var(--colour-highlight-purple);
-  /* Highlight elements */
-  --color-11: var(--colour-neutral-cyan);
-  /* Neutral accent */
-  --color-12: var(--colour-light-grey);
-  /* Placeholder or tertiary text */
-  --color-13: var(--colour-mid-grey);
-  /* Disabled elements */
-  --color-14: var(--colour-dark-grey);
-  /* Border emphasis */
-  --color-15: var(--colour-black);
-  /* Secondary background */
-  --color-transparent: var(--colour-transparent);
-  /* Fully transparent */
-  /* Special Colors */
-  --portfolio-hover-bg: color-mix(in srgb, var(--color-5) 80%, transparent);
-  --nav-bg-color: color-mix(in srgb, var(--color-4) 10%, transparent);
-  --cta-box-shadow: transparent;
-  --image-shadow: red;
-  --image-filter-on: grayscale(1);
-  --image-fiter-off: grayscale(0);
+  --color-4-0: white;
+  /* Fully opaque start color */
+  --color-2-90: white;
+  /* 90% opacity at the bottom (E6 in hex is ~90%) */
 }
 :root:has(.cta-color-green :checked) {
   /* Define Named Variables */
@@ -85,14 +21,6 @@
   --colour-feldgrau: #3E6259;
   --colour-viridian: #5B8266;
   --colour-celadon: #AEF6C7;
-  --colour-burnt-sienna: #D2691E;
-  --colour-orange-brown: #B7410E;
-  --colour-gold: #E48400;
-  --colour-warm-brown: #704214;
-  --colour-mediumaquamarine: #66CDAA;
-  --colour-mediumseagreen: #3CB371;
-  --colour-greenyellow: #ADFF2F;
-  --colour-orange: #FFA500;
   --colour-white: #FFFFFF;
   --colour-black: #000000;
   --colour-transparent: #0000;
@@ -102,73 +30,24 @@
   --color-3: var(--colour-feldgrau);
   --color-4: var(--colour-viridian);
   --color-5: var(--colour-celadon);
-  --color-6: var(--colour-burnt-sienna);
-  --color-7: var(--colour-orange-brown);
-  --color-8: var(--colour-gold);
-  --color-9: var(--colour-warm-brown);
-  --color-10: var(--colour-mediumaquamarine);
-  --color-11: var(--colour-mediumseagreen);
-  --color-12: var(--colour-greenyellow);
-  --color-13: var(--colour-orange);
   --color-14: var(--colour-white);
   --color-15: var(--colour-black);
   --color-transparent: var(--colour-transparent);
   /* Derived Transparency Variants */
-  --portfolio-hover-bg: color-mix(in srgb, var(--color-5) 80%, transparent);
-  --nav-bg-color: color-mix(in srgb, var(--color-4) 10%, transparent);
+  --color-4-0: #5B8266;
+  /* Fully opaque start color */
+  --color-2-90: #5B8266E6;
+  /* 90% opacity at the bottom (E6 in hex is ~90%) */
+  --portfolio-hover-bg: var(--color-5);
+  --nav-bg-color: var(--color-4-50);
   --cta-box-shadow: var(--color-1);
   --image-shadow: var(--color-1);
   --image-filter-on: sepia(1);
   --image-fiter-off: sepia(0);
 }
-@keyframes rotatingGlow {
-  0% {
-    text-shadow: 0 0 100px color-mix(in srgb, var(--color-6) 56%, var(--color-transparent)), /* Burnt Sienna */ 0 0 300px color-mix(in srgb, var(--color-7) 42%, var(--color-transparent)), /* Orange Brown */ 0 0 500px color-mix(in srgb, var(--color-8) 28%, var(--color-transparent));
-    /* Gold */
-  }
-  25% {
-    text-shadow: 0 0 100px color-mix(in srgb, var(--color-7) 49%, var(--color-transparent)), /* Orange Brown */ 0 0 300px color-mix(in srgb, var(--color-8) 35%, var(--color-transparent)), /* Gold */ 0 0 500px color-mix(in srgb, var(--color-9) 28%, var(--color-transparent));
-    /* Warm Brown */
-  }
-  50% {
-    text-shadow: 0 0 100px color-mix(in srgb, var(--color-6) 42%, var(--color-transparent)), /* Burnt Sienna */ 0 0 300px color-mix(in srgb, var(--color-7) 49%, var(--color-transparent)), /* Orange Brown */ 0 0 500px color-mix(in srgb, var(--color-8) 35%, var(--color-transparent));
-    /* Gold */
-  }
-  75% {
-    text-shadow: 0 0 100px color-mix(in srgb, var(--color-8) 56%, var(--color-transparent)), /* Gold */ 0 0 300px color-mix(in srgb, var(--color-7) 42%, var(--color-transparent)), /* Orange Brown */ 0 0 500px color-mix(in srgb, var(--color-6) 28%, var(--color-transparent));
-    /* Burnt Sienna */
-  }
-  100% {
-    text-shadow: 0 0 100px color-mix(in srgb, var(--color-7) 56%, var(--color-transparent)), /* Orange Brown */ 0 0 200px color-mix(in srgb, var(--color-9) 42%, var(--color-transparent)), /* Warm Brown */ 0 0 500px color-mix(in srgb, var(--color-6) 28%, var(--color-transparent));
-    /* Burnt Sienna */
-  }
-}
-@keyframes rotatingGlow2 {
-  0% {
-    box-shadow: 0 0 100px color-mix(in srgb, var(--color-5) 80%, var(--color-transparent)), /* Celadon */ 0 0 200px color-mix(in srgb, var(--color-10) 60%, var(--color-transparent)), /* Medium Aquamarine */ 0 0 300px color-mix(in srgb, var(--color-11) 40%, var(--color-transparent));
-    /* Medium Sea Green */
-  }
-  25% {
-    box-shadow: 0 0 100px color-mix(in srgb, var(--color-10) 80%, var(--color-transparent)), /* Medium Aquamarine */ 0 0 200px color-mix(in srgb, var(--color-11) 60%, var(--color-transparent)), /* Medium Sea Green */ 0 0 300px color-mix(in srgb, var(--color-12) 40%, var(--color-transparent));
-    /* Green Yellow */
-  }
-  50% {
-    box-shadow: 0 0 100px color-mix(in srgb, var(--color-11) 80%, var(--color-transparent)), /* Medium Sea Green */ 0 0 200px color-mix(in srgb, var(--color-12) 60%, var(--color-transparent)), /* Green Yellow */ 0 0 300px color-mix(in srgb, var(--color-5) 40%, var(--color-transparent));
-    /* Celadon */
-  }
-  75% {
-    box-shadow: 0 0 100px color-mix(in srgb, var(--color-12) 80%, var(--color-transparent)), /* Green Yellow */ 0 0 200px color-mix(in srgb, var(--color-5) 60%, var(--color-transparent)), /* Celadon */ 0 0 300px color-mix(in srgb, var(--color-10) 40%, var(--color-transparent));
-    /* Medium Aquamarine */
-  }
-  100% {
-    box-shadow: 0 0 100px color-mix(in srgb, var(--color-5) 80%, var(--color-transparent)), /* Celadon */ 0 0 200px color-mix(in srgb, var(--color-10) 60%, var(--color-transparent)), /* Medium Aquamarine */ 0 0 300px color-mix(in srgb, var(--color-11) 40%, var(--color-transparent));
-    /* Medium Sea Green */
-  }
-}
 html {
   --s: 9px;
   --c1: var(--color-4);
-  /* #0000 replaced by var(--color-transparent) */
   --c: var(--color-transparent), var(--c1) 0.5deg 119.5deg, var(--color-transparent) 120deg;
   --g1: conic-gradient(from 60deg at 56.25% calc(425% / 6), var(--c));
   --g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
@@ -177,7 +56,11 @@ html {
   background-size: calc(2 * var(--s)) calc(3.46 * var(--s));
 }
 body {
-  background: linear-gradient(to bottom, color-mix(in srgb, var(--color-4) 95%, var(--color-14) 0%), color-mix(in srgb, var(--color-4) 90%, var(--color-14) 0%));
+  background: linear-gradient(to bottom, var(--color-4-0) 0%, /* Fully opaque at the top */ var(--color-2-90) 100% /* 90% opacity at the bottom */);
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-1);
 }
 a:hover {
   color: var(--color-5);
@@ -198,12 +81,14 @@ h2,
 h3,
 li:nth-child(even),
 form label,
-#testimonials .testimonial .name a,
 .cta-tel,
 .cta-share,
 .cta-contact,
 .cta-home {
   color: var(--color-1);
+}
+#testimonials .testimonial .name a {
+  color: var(--color-2);
 }
 .cta1,
 .cta-tel,
@@ -217,10 +102,19 @@ textarea,
 form button {
   border-top: 1px solid var(--color-1);
 }
+form,
+input[type="text"],
+input[type="email"],
+textarea,
+form button {
+  border: 1px solid var(--color-1);
+}
+.cta1 {
+  border-bottom: 1px solid var(--color-1);
+}
 section,
 #service-list summary,
-nav,
-.cta1 {
+nav {
   border-bottom: 1px dotted var(--color-1);
 }
 #what-i-do blockquote {
@@ -230,16 +124,9 @@ nav,
   color: var(--color-1);
   border: 1px solid var(--color-1);
 }
-h1,
-#contact h2 {
-  xanimation: rotatingGlow 5s infinite;
-  text-shadow: 0 0 100px color-mix(in srgb, var(--color-burnt-sienna) 80%, transparent);
-}
 form {
-  /* rgba(255,255,255,0.2) = white 20% */
-  background-color: color-mix(in srgb, var(--color-white) 20%, transparent);
-  /* rgba(0,0,0,0.2) = black 20% */
-  box-shadow: 0 1.5vw 3vw color-mix(in srgb, var(--color-black) 20%, transparent);
+  background-color: var(--color-4);
+  box-shadow: 0 0 40px var(--color-15);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   font-family: 'Noto Sans JP', sans-serif;
 }
@@ -281,8 +168,7 @@ picture {
 }
 nav {
   background-color: var(--nav-bg-color);
-  /* rgba(0,0,0,0.2) => black 20% */
-  box-shadow: 0 4px 10px color-mix(in srgb, var(--color-black) 20%, transparent);
+  box-shadow: 0 4px 10px var(--color-black);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -300,29 +186,19 @@ nav {
   background-color: var(--color-2);
   color: var(--color-5);
 }
-/* Similar states can be grouped logically */
 #service-list summary:hover,
 form:hover button,
 form button:hover,
 .cta:hover {
   background-color: var(--color-5);
 }
-/* Form hover for inputs and textareas is already combined logically */
 form:hover input[type="text"],
 form:hover input[type="email"],
 form:hover textarea {
-  background-color: color-mix(in srgb, var(--color-white) 20%, transparent);
+  background-color: var(--color-14);
 }
-/* Form hover for button and button hover states are distinct, so keep them separate */
 form:hover button {
   box-shadow: 0 0 10px var(--color-1);
-}
-/* #testimonials .testimonial .name a:hover removed as it's identical to a:hover */
-/* #portfolio .service:hover a and picture:hover share box-shadow & animation
-   Combine those shared properties, then specify unique properties separately */
-:is(#portfolio .service:hover a, picture:hover) {
-  box-shadow: 0 0 100px color-mix(in srgb, var(--colour-5) 80%, transparent), 0 0 200px color-mix(in srgb, var(--color-10) 60%, transparent), 0 0 300px color-mix(in srgb, var(--color-11) 40%, transparent), 0 1.5vw 3vw var(--color-1);
-  xanimation: rotatingGlow2 5s infinite;
 }
 #portfolio .service:hover a,
 picture:hover {
@@ -334,9 +210,127 @@ picture:hover {
 }
 body {
   font-family: 'Noto Sans JP', sans-serif;
+  font-size: clamp(1rem, 3vw, 3vh);
 }
-form button:hover {
+form button,
+#service-list summary::after,
+#portfolio a::before {
+  font-size: 1.4rem;
+}
+form button:hover,
+#service-list summary {
   font-weight: 900;
+}
+menu a {
+  xfont-size: clamp(1.5rem, 2vw, 2vh);
+}
+h1 {
+  text-align: center;
+  xfont-size: clamp(1rem, 5vw, 6vh);
+}
+h2,
+h3 {
+  xfont-size: clamp(1rem, 3vw, 5vh);
+  text-transform: uppercase;
+}
+h3 {
+  xfont-size: clamp(1rem, 3vw, 4vh);
+}
+#contact h2 {
+  text-align: center;
+}
+li {
+  line-height: 1.8;
+}
+p {
+  text-align: justify;
+  line-height: 1.7;
+}
+#hero figure figcaption p,
+#what-i-do p {
+  text-align: justify;
+}
+#hero figure figcaption p,
+.title,
+.cta-tel {
+  font-style: italic;
+}
+#service-list summary {
+  font-weight: 700;
+  text-align: left;
+  xfont-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(2vw, 2.5vh));
+  text-transform: uppercase;
+}
+#service-list p {
+  xfont-size: clamp(max(1vw, 2vh), min(2vw, 2vh), min(2vw, 2.5vh));
+}
+.tearaway {
+  text-align: center;
+  xfont-size: clamp(2rem, 3vw, 3rem);
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+  line-height: 1.3;
+}
+form label {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  font-size: 2rem;
+}
+#testimonials .testimonial .name {
+  white-space: nowrap;
+  xfont-size: clamp(2rem, 2.5vw, 3vh);
+  line-height: 1;
+}
+#testimonials .testimonial .name a {
+  text-align: center;
+}
+#testimonials .testimonial blockquote {
+  padding: 0;
+}
+#testimonials .testimonial blockquote p {
+  font-size: clamp(1.5rem, 2vw, 2vh);
+  line-height: 1.8;
+  font-style: italic;
+}
+#testimonials .testimonial .title {
+  font-style: italic;
+  font-size: clamp(1.5rem, 2vw, 2vh);
+}
+#portfolio figcaption {
+  xfont-size: clamp(1.5rem, 2vw, 2.5vh);
+  white-space: nowrap;
+}
+#portfolio a::before {
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  xfont-size: clamp(0.8rem, 2vw, 2rem);
+}
+.cta,
+.cta1 {
+  xfont-size: clamp(1rem, 3vw, 2rem);
+  font-weight: 600;
+}
+.cta1 {
+  text-align: center;
+  line-height: 1.7;
+}
+#what-i-do p.cta2,
+.cta-tel {
+  text-align: center;
+}
+.cta-tel {
+  text-align: right;
+  text-wrap: nowrap;
+}
+footer p {
+  text-align: center;
+  font-size: clamp(1rem, 2vw, 2vh);
+  text-transform: uppercase;
 }
 img {
   width: 100%;
@@ -387,15 +381,11 @@ picture img {
   padding-left: min(3vw, 2vh);
 }
 #testimonials .testimonial .name {
-  white-space: nowrap;
   margin: 0;
-  font-size: clamp(2rem, 2.5vw, 3vh);
-  line-height: 1;
 }
 #testimonials .testimonial .name a {
   display: inline-block;
   width: 100%;
-  text-align: center;
   max-width: none;
 }
 #testimonials .testimonial blockquote {
@@ -405,16 +395,9 @@ picture img {
 }
 #testimonials .testimonial blockquote p {
   margin: 0;
-  font-size: clamp(1.5rem, 1.5vw, 2vh);
-  line-height: 1.8;
-  font-style: italic;
-}
-#testimonials .testimonial .title {
-  font-style: italic;
-  font-size: clamp(max(1.5vw, 1.5vh), min(2vw, 2.5vh), min(2vw, 2.5vh));
 }
 #testimonials .testimonial blockquote {
-  padding-left: min(3vw, 2vh);
+  padding: 0;
 }
 @media only screen and (max-width: 767px) {
   #testimonials .testimonial {
@@ -430,7 +413,6 @@ picture img {
   #testimonials .testimonial .title {
     display: block;
     width: 100%;
-    text-align: center;
     padding-top: 1vh;
   }
   #testimonials .testimonial blockquote {
@@ -438,7 +420,6 @@ picture img {
   }
   #testimonials .testimonial p {
     padding: 0;
-    text-align: center;
   }
 }
 #portfolio .service-list {
@@ -447,9 +428,13 @@ picture img {
 #portfolio .service {
   display: flex;
   flex-direction: column;
-  min-width: 25%;
+  min-width: 50%;
   align-items: center;
   cursor: pointer;
+  padding: 1rem;
+}
+#portfolio .service a {
+  width: 100%;
 }
 #portfolio .service:hover a {
   z-index: 9;
@@ -465,9 +450,6 @@ picture img {
   padding: 0;
 }
 #portfolio .service figcaption {
-  font-style: italic;
-  font-size: clamp(1.5rem, 2vw, 2.5vh);
-  white-space: nowrap;
   z-index: 10;
   position: relative;
 }
@@ -480,15 +462,11 @@ picture img {
 }
 #portfolio a::before {
   content: attr(title);
-  font-weight: 900;
   width: 100%;
   height: 100%;
-  line-height: 1;
-  text-align: center;
   position: absolute;
   top: 100%;
   left: 0;
-  font-size: clamp(0.8rem, 2vw, 2rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -511,11 +489,8 @@ nav > * {
   margin-right: 1rem;
 }
 .cta {
-  font-size: clamp(1rem, 3vw, 2rem);
   padding: 1vw;
   border-radius: 5px;
-  text-decoration: none;
-  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -532,22 +507,11 @@ nav > * {
 }
 .cta1 {
   padding: max(3vw, 3vh);
-  text-align: center;
-  line-height: 1.7;
-}
-#what-i-do p.cta2 {
-  text-align: center;
-  /* Specific override for `p.cta2` */
 }
 .cta-tel {
   margin-left: auto;
-}
-.cta-tel {
   right: 15px;
   transform-origin: top center;
-  text-align: right;
-  text-wrap: nowrap;
-  /* Ensures proper text wrapping */
   width: auto;
 }
 .cta-share {
@@ -645,9 +609,6 @@ footer {
   padding: 5vw 0 1vw;
 }
 footer p {
-  text-align: center;
-  font-size: clamp(1rem, 2vw, 2vh);
-  text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -664,7 +625,6 @@ footer p img {
 h1,
 h2,
 h3 {
-  text-align: left;
   line-height: 1.7;
   margin: max(3vw, 3vh) 0;
   font-weight: 900;
@@ -678,45 +638,29 @@ menu {
 }
 menu a {
   padding: 1rem;
-  font-size: clamp(1.5rem, 2vw, 2vh);
 }
 h1 {
-  text-align: center;
-  font-size: clamp(1rem, 5vw, 6vh);
   margin-bottom: max(1vw, 1vh);
 }
 h2 {
-  font-size: clamp(1rem, 3vw, 5vh);
-  text-transform: uppercase;
   padding: max(1.5vw, 1.5vh) 0;
 }
-#contact h2 {
-  text-align: center;
-}
 h3 {
-  font-size: clamp(1rem, 3vw, 4vh);
-  text-transform: uppercase;
   padding: max(1.5vw, 1.5vh) 0;
 }
 p,
 blockquote,
 li {
-  font-size: clamp(1rem, 3vw, 3.5vh);
-  line-height: calc(2.5vh + 2vw);
   margin-bottom: max(3vw, 3vh);
 }
 ul {
   margin-bottom: max(3vw, 3vh);
 }
 li {
-  font-size: clamp(1rem, 3vw, 3.5vh);
-  line-height: 1.8;
   margin-bottom: 0;
 }
 p {
-  text-align: justify;
   padding: 0 0 1rem 0;
-  line-height: 1.7;
 }
 ul,
 ol {
@@ -747,18 +691,14 @@ ol {
 }
 #hero figure figcaption p {
   flex: 1;
-  text-align: justify;
   margin: 0;
   padding-left: 10%;
-  font-style: italic;
 }
 .opener {
   clear: both;
 }
 #what-i-do p {
-  text-align: justify;
   margin-bottom: 0;
-  font-size: clamp(6rem, 8vw, 50vh);
 }
 #service-list {
   margin: max(4vh, 4vw) 0;
@@ -771,10 +711,8 @@ slot {
 }
 #service-list summary {
   cursor: pointer;
-  font-weight: 700;
   display: flex;
   align-items: center;
-  text-align: left;
   font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(2vw, 2.5vh));
   text-transform: uppercase;
   padding: max(1.5vw, 1.5vh);
@@ -785,8 +723,6 @@ slot {
   margin: 0;
   color: var(--color-1);
   transition: transform 0.2s ease-in-out;
-  font-size: clamp(max(1vw, 2vh), min(3vw, 4vh), min(2vw, 2.5vh));
-  text-transform: uppercase;
   padding: max(1.5vw, 1.5vh) 0;
 }
 #service-list details[open] summary::after {
@@ -809,11 +745,6 @@ slot {
 }
 .tearaway {
   position: relative;
-  text-align: center;
-  font-size: clamp(2rem, 3vw, 3rem);
-  text-wrap: pretty;
-  overflow-wrap: break-word;
-  line-height: 1.3;
   padding: 5vw 10vw 5vw;
 }
 .tearaway::before {
@@ -829,15 +760,9 @@ form {
   padding: min(4vw, 4vh);
   border-radius: 5px;
 }
-input::placeholder,
-textarea::placeholder {
-  color: var(--color-1);
-}
 form label {
   display: block;
   margin-bottom: min(4vw, 4vh);
-  font-weight: 700;
-  font-size: 1.5rem;
 }
 input[type="text"],
 input[type="email"],
@@ -846,7 +771,6 @@ textarea {
   padding: max(1vw, 1vh);
   margin: min(1vw, 1vh) 0 min(3vw, 3vh) 0;
   border-radius: 5px;
-  font-size: 2rem;
   box-sizing: border-box;
 }
 form textarea {
@@ -856,7 +780,6 @@ form textarea {
 form button {
   width: 100%;
   padding: max(1vw, 1vh);
-  font-size: 1.4rem;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -894,4 +817,4 @@ form button {
     margin: 0;
   }
 }
-/*# sourceMappingURL=tony.css.map */
+/*# sourceMappingURL=layout.css.map */
