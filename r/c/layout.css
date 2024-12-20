@@ -3,10 +3,10 @@
   --color-green-machine: #5B8266;
 }
 :has(.cta-color-white :checked) {
-  --color-1: black;
-  --color-2: black;
-  --color-3: #5D8AA8;
-  --color-5: blue;
+  --color-1: #2F2D2E;
+  --color-2: #f1f1f1;
+  --color-3: #f1f1f1;
+  --color-5: #2E4057;
   --image-filter-on: grayscale(1);
   --image-fiter-off: grayscale(0);
   --color-4-0: white;
@@ -16,10 +16,10 @@
 }
 :root:has(.cta-color-green :checked) {
   /* Define Named Variables */
-  --colour-black-olive: #212922;
+  --colour-black-olive: #101410;
   --colour-brunswick-green: #294936;
   --colour-feldgrau: #3E6259;
-  --colour-viridian: #5B8266;
+  --colour-viridian: #7BAF8C;
   --colour-celadon: #AEF6C7;
   --colour-white: #FFFFFF;
   --colour-black: #000000;
@@ -88,7 +88,7 @@ form label,
   color: var(--color-1);
 }
 #testimonials .testimonial .name a {
-  color: var(--color-2);
+  color: var(--color-1);
 }
 .cta1,
 .cta-tel,
