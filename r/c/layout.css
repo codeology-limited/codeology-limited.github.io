@@ -14,6 +14,12 @@
   --color-2-90: white;
   /* 90% opacity at the bottom (E6 in hex is ~90%) */
 }
+:root:has(.cta-color-green :checked) .readability-toolbar label + label {
+  display: none;
+}
+:root:has(.cta-color-white :checked) .readability-toolbar label:first-child {
+  display: none;
+}
 :root:has(.cta-color-green :checked) {
   /* Define Named Variables */
   --colour-black-olive: #101410;
@@ -114,7 +120,7 @@ form button {
 }
 section,
 #service-list summary,
-nav {
+nav.toolbar-1 {
   border-bottom: 1px dotted var(--color-1);
 }
 #what-i-do blockquote {
@@ -166,7 +172,7 @@ picture {
   filter: var(--image-filter-on);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
-nav {
+nav.toolbar-1 {
   background-color: var(--nav-bg-color);
   box-shadow: 0 4px 10px var(--color-black);
   backdrop-filter: blur(10px);
@@ -475,7 +481,7 @@ picture img {
   padding: var(--portfolio-padding);
   box-sizing: border-box;
 }
-nav {
+nav.toolbar-1 {
   position: fixed;
   top: 0;
   left: 0;
@@ -483,10 +489,21 @@ nav {
   display: flex;
   align-items: flex-start;
   padding: 1rem;
+  z-index: 100;
   overflow: hidden;
 }
-nav > * {
+nav.toolbar-1 > * {
   margin-right: 1rem;
+}
+nav.readability-toolbar {
+  position: absolute;
+  top: 80px;
+  left: 10px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
 }
 .cta {
   padding: 1vw;
@@ -573,9 +590,30 @@ nav > * {
 }
 .cta-color-white {
   background-color: var(--color-read-me);
+  border-radius: 12px;
+  font-size: 2.5rem;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+.cta-color-white input {
+  margin-right: 1rem;
+  display: none;
 }
 .cta-color-green {
-  background-color: var(--color-green-machine);
+  background-color: var(--color-1);
+  color: var(--color-green-machine);
+  border-radius: 12px;
+  font-size: 2.5rem;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+.cta-color-green input {
+  margin-right: 1rem;
+  display: none;
 }
 .cta-color-black {
   background-color: var(--color-back-in-black);
@@ -795,6 +833,12 @@ form button {
   }
   blockquote {
     border: none;
+  }
+  nav.readability-toolbar {
+    right: 10px;
+  }
+  header {
+    padding-top: 7rem;
   }
   #about figure,
   #about figure a,

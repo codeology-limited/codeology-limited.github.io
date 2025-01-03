@@ -20,6 +20,18 @@
 }
 
 :root:has(.cta-color-green :checked) {
+  .readability-toolbar label+label {
+    display:none;
+  }
+}
+
+:root:has(.cta-color-white :checked) {
+  .readability-toolbar label:first-child {
+    display:none;
+  }
+}
+
+:root:has(.cta-color-green :checked) {
   /* Define Named Variables */
   --colour-black-olive: #101410;
   --colour-brunswick-green: #294936;
@@ -116,7 +128,7 @@ form, input[type="text"], input[type="email"], textarea, form button {
   border-bottom: 1px solid var(--color-1);
 }
 
-section, #service-list summary, nav {
+section, #service-list summary, nav.toolbar-1 {
   border-bottom: 1px dotted var(--color-1);
 }
 
@@ -187,7 +199,7 @@ picture {
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-nav {
+nav.toolbar-1 {
   background-color: var(--nav-bg-color);
 
 
