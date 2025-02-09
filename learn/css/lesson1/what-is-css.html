@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>What is C.S.S?</title>
+    <!-- Provide a concise, descriptive meta description for SEO -->
+    <meta name="description"
+          content="CSS (Cascading Style Sheets) is all about giving your webpage a bit of flare so it’s not plain as. Learn how it changes the appearance of text and layout.">
+    <!-- Ensure mobile responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <style>
+        /* Base styling carried over from original code */
+        html {
+            font-size: 62.5%;
+            color: #444;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 2rem;
+            line-height: 1.4;
+
+            /* Enable vertical scroll snapping */
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+        }
+
+        /* Make each major pane (hero, main, and each <section>)
+           take up the full width and height of the viewport.
+        */
+        .pane {
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            scroll-snap-align: start;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 2rem;
+        }
+
+        .demo {
+            padding: 2rem;
+
+        }
+
+        /* Navbar at the bottom */
+        nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            padding: 1rem;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #444;
+            font-weight: bold;
+        }
+
+        /* Small accessibility improvement for focus states */
+        nav a:focus, button:focus, input:focus, label:focus {
+            outline: 2px solid #007BFF;
+            outline-offset: 2px;
+        }
+
+        /* Highlight style for the submit button when an answer is chosen */
+        .highlight {
+            background-color: #ffec99;
+            border: 2px solid #f6c344;
+        }
+    </style>
+    <script>
+        // We'll keep a global reference to the sections/panes
+        let panes = [];
+        let currentIndex = 0;
+
+        // On page load, retrieve how many times the answer has been correctly chosen and set up panes
+        document.addEventListener('DOMContentLoaded', () => {
+            const correctCount = localStorage.getItem('correctCount') || 0;
+            document.getElementById('correctCount').textContent = correctCount;
+
+            // Gather all the "full-screen" panes in the order they appear
+            panes = [
+                document.querySelector('.hero'),
+                document.querySelector('.intro'),
+                document.querySelector('.explainer'),
+                document.querySelector('.more-help'),
+                document.querySelector('.test')
+            ];
+
+            // Listen for keyboard presses for answering the form
+            // and for arrow keys (or 1/2 to select answers)
+            document.addEventListener('keydown', handleKeydown);
+
+            // Attach change event listeners to radio buttons
+            // to highlight the submit button when an answer is chosen
+            const radioButtons = document.querySelectorAll('input[name="css-question"]');
+            radioButtons.forEach(rb => {
+                rb.addEventListener('change', updateButtonState);
+            });
+        });
+
+        function submitAnswer() {
+            // Check which answer was selected
+            const selectedOption = document.querySelector('input[name="css-question"]:checked');
+            if (!selectedOption) {
+                alert('Please select an answer first!');
+                return;
+            }
+
+            // If the user picked option B, increment the correctCount
+            if (selectedOption.value === 'B') {
+                let correctCount = localStorage.getItem('correctCount') || 0;
+                correctCount = parseInt(correctCount) + 1;
+                localStorage.setItem('correctCount', correctCount);
+                alert('Correct!');
+            } else {
+                alert('Incorrect!');
+            }
+
+            // Update the displayed count (with aria-live for screen readers)
+            document.getElementById('correctCount').textContent = localStorage.getItem('correctCount');
+        }
+
+        function handleKeydown(e) {
+            // If user presses 1 or 2, select the corresponding answer
+            // Press Enter to submit
+            switch (e.key) {
+                case '1':
+                    // Check the first radio
+                    const answerA = document.getElementById('answerA');
+                    if (answerA) {
+                        answerA.checked = true;
+                        updateButtonState();
+                    }
+                    break;
+                case '2':
+                    // Check the second radio
+                    const answerB = document.getElementById('answerB');
+                    if (answerB) {
+                        answerB.checked = true;
+                        updateButtonState();
+                    }
+                    break;
+                case 'Enter':
+                    // Attempt to submit the form (in case user is on the test pane)
+                    submitAnswer();
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    scrollUp();
+                    break;
+                case 'ArrowDown':
+                    e.preventDefault();
+                    scrollDown();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        function updateButtonState() {
+            const selectedOption = document.querySelector('input[name="css-question"]:checked');
+            const submitBtn = document.getElementById('submit-button');
+            if (selectedOption) {
+                submitBtn.classList.add('highlight');
+            } else {
+                submitBtn.classList.remove('highlight');
+            }
+        }
+
+        // Scroll to the previous pane if available
+        function scrollUp() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                panes[currentIndex].scrollIntoView({behavior: 'smooth'});
+            }
+        }
+
+        // Scroll to the next pane if available
+        function scrollDown() {
+            if (currentIndex < panes.length - 1) {
+                currentIndex++;
+                panes[currentIndex].scrollIntoView({behavior: 'smooth'});
+            }
+        }
+
+        // Go back in browser history
+        function goPrev() {
+            window.history.back();
+        }
+
+        // Go forward in browser history
+        function goNext() {
+            window.history.forward();
+        }
+    </script>
+</head>
+<body>
+<!-- Hero pane (previously the <h1> alone) -->
+<section class="hero pane" role="region" aria-label="Intro Pane">
+    <h1 id="page-title">What is C.S.S?</h1>
+</section>
+
+<!-- Intro content as a separate pane (previously <main>) -->
+<section class="intro pane" role="main" aria-labelledby="intro-heading">
+    <h2 id="intro-heading">What can it do?</h2>
+    <p>CSS (Cascading Style Sheets) is all about giving your webpage a bit of flare so it’s not plain as.</p>
+
+    <p>It can take text that looks like this:</p>
+    <h1 class="demo">Now that we know who you are, I know who I am.</h1>
+    <p>and make it look like this:</p>
+    <h1 class="demo" style="color: red;">Now that we know who you are, I know who I am.</h1>
+</section>
+
+<section class="explainer pane" aria-labelledby="explainer-heading" role="region">
+    <h2 id="explainer-heading">How does it work?</h2>
+
+    <p>
+        The important bit of the code below is <strong>style="color: red;"</strong>. It is what is known as an inline
+        style, but the really important bit is <strong>color:red</strong> as it sets the color of the text to red.
+    </p>
+    <pre><code class="language-html">
+&lt;h1 style="color: red;"&gt;Now that we know who you are, I know who I am.&lt;/h1&gt;
+</code></pre>
+</section>
+
+<section class="more-help pane" aria-labelledby="more-help-heading" role="region">
+    <h2 id="more-help-heading">Learn more faster with this handy LLM Prompt</h2>
+    <p>
+        “Could you explain what CSS is all about from three perspectives: how rules work (Cascade & Selectors), how
+        elements are arranged (Box Model & Layout), and how styles are applied (Properties & Units)?”
+    </p>
+</section>
+
+<section class="test pane" aria-labelledby="test-heading" role="region">
+    <h2 id="test-heading">Challenge yourself.</h2>
+    <p>What is CSS?</p>
+
+    <form aria-labelledby="test-heading">
+        <p>
+            <input type="radio" name="css-question" value="A" id="answerA"/>
+            <label for="answerA">A. Just a word</label>
+        </p>
+        <p>
+            <input type="radio" name="css-question" value="B" id="answerB"/>
+            <label for="answerB">B. A language for making your webpage fancy</label>
+        </p>
+        <button id="submit-button" type="button" onclick="submitAnswer()">Submit Answer</button>
+    </form>
+
+    <!-- aria-live ensures updates are announced to screen readers -->
+    <p>Times answered correctly:
+        <span id="correctCount" aria-live="polite">0</span>
+    </p>
+</section>
+
+<!-- Fixed navbar at the bottom for navigation -->
+<nav role="navigation" aria-label="Page Navigation">
+    <a href="#" onclick="scrollUp()">Up</a>
+    <a href="#" onclick="scrollDown()">Down</a>
+    <a href="#" onclick="goPrev()">Prev</a>
+    <a href="#" onclick="goNext()">Next</a>
+</nav>
+
+</body>
+</html>
