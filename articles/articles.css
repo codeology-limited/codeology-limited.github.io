@@ -52,7 +52,7 @@ a:hover {
     text-decoration: underline;
 }
 
-section, h1, h2, footer .container {
+section, h1, h2, footer .container, #social-share-bar {
 
     max-width: 1000px;
     margin: 0 auto 2rem;
