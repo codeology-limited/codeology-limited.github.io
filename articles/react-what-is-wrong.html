@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>What Is Wrong with React? | Codeology</title>
+    <link rel="stylesheet" href="./articles.css">
+    <meta name="description"
+          content="Uncover what is wrong with React—understand its challenges, from performance quirks to developer complexity—and explore practical strategies to fix them.">
+    <meta name="keywords"
+          content="React, JavaScript frameworks, UI library, performance issues, virtual DOM, component-based, React alternatives">
+    <meta name="author" content="Tony Gurnick">
+    <meta property="og:title" content="What Is Wrong with React? | Codeology">
+    <meta property="og:description"
+          content="Uncover what is wrong with React—understand its challenges, from performance quirks to developer complexity—and explore practical strategies to fix them.">
+    <meta property="og:url" content="https://codeology.co.nz/articles/react-what-is-wrong">
+    <meta property="og:type" content="article">
+    <meta name="twitter:title" content="What Is Wrong with React? | Codeology">
+    <meta name="twitter:description"
+          content="Uncover what is wrong with React—understand its challenges, from performance quirks to developer complexity—and explore practical strategies to fix them.">
+    <meta name="twitter:card" content="summary">
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Article",
+            "headline": "What Is Wrong with React?",
+            "author": {
+                "@type": "Person",
+                "name": "Tony Gurnick",
+                "url": "https://www.linkedin.com/in/tony.gurnick"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Codeology",
+                "url": "https://codeology.co.nz"
+            },
+            "datePublished": "2025-02-25",
+            "description": "Uncover what is wrong with React—understand its challenges, from performance quirks to developer complexity—and explore practical strategies to fix them."
+        }
+    </script>
+</head>
+<body>
+<h1>What Is Wrong with React?</h1>
+<h2>Explore React’s underlying issues, from performance bottlenecks to complex state management, and discover ways to
+    address them effectively</h2>
+
+<!-- INTRODUCTION (300–400 words) -->
+<section id="introduction">
+    <h2>Introduction</h2>
+    <p>
+        React is a JavaScript library for building user interfaces, developed by Facebook.
+        For many teams, it serves as the foundation for modern web applications, and it
+        offers component-based architecture, state management through hooks, and a virtual
+        DOM (Document Object Model) for faster updates. However, as widely adopted as React
+        is, it has also drawn critique. From performance overhead to complex state handling,
+        there are aspects that make developers question whether React is always the best
+        solution.
+    </p>
+    <p>
+        The purpose of this article is to examine exactly what is wrong with React.
+        While the library continues to dominate the frontend scene, it’s crucial to
+        acknowledge its flaws, so that developers and organisations can make informed
+        choices or identify potential workarounds. By taking a closer look at React’s
+        performance profile, learning curve, and dependence on an expanding ecosystem,
+        it becomes easier to see where bottlenecks or friction points can emerge.
+    </p>
+    <p>
+        In the paragraphs to follow, we’ll delve into three main areas that can be
+        problematic. First, we’ll consider how React’s architecture might weigh down
+        performance under certain circumstances. Second, we’ll investigate the developer
+        complexity that arises from its constant evolution and shifting best practices.
+        Finally, we’ll examine community criticisms regarding React’s state management
+        patterns, including hooks, and how these approaches may be both an asset and a
+        liability.
+    </p>
+    <p>
+        By the end, the intention is to paint a well-rounded picture of the issues that
+        might arise when using React. Armed with data and insights from external sources,
+        we’ll explore practical strategies to address these concerns—whether that means
+        applying performance optimisations, adopting alternative frameworks, or
+        rethinking how state is handled altogether. React is not inherently flawed, but
+        like any technology, it carries limitations that should be recognised and managed.
+    </p>
+</section>
+
+<!-- SECTION 1 (600–800 words): Performance Overhead and Architecture -->
+<section id="section-1">
+    <h2>Understanding React’s Performance Overhead</h2>
+    <p>
+        Many developers are drawn to React because of its virtual DOM system. This concept
+        is intended to speed up the re-rendering of user interfaces by keeping a lightweight
+        copy of the real DOM in memory. React compares the new virtual DOM with the old one
+        and selectively updates only the parts of the actual DOM that have changed. At first
+        glance, this method seems elegant and efficient, but critics argue that the overhead
+        of constantly diffing virtual representations can become a bottleneck in some
+        applications.
+    </p>
+    <p>
+        According to <a href="https://www.smashingmagazine.com/2018/04/react-next-10-years/" target="_blank"
+                        rel="noopener noreferrer">Smashing Magazine (2018)</a>,
+        performance issues can manifest in large-scale React apps where multiple layers
+        of nested components each trigger updates. When every component re-checks its props
+        and state, the application’s runtime performance may degrade. For data-intensive
+        dashboards with frequent updates, the overhead of the reconciliation process can
+        balloon, leading to sluggish user experiences.
+    </p>
+    <p>
+        Another factor is how React encourages frequent re-rendering through hooks like
+        <code>useEffect</code> and <code>useMemo</code>. While these hooks offer a
+        declarative way to manage side effects, a poorly optimised approach can result
+        in unnecessary computations. In theory, the virtual DOM diff engine minimises the
+        cost of these repeated renders, but in practice, the overhead can accumulate.
+        If developers are not meticulous about memoisation, prop drilling, and
+        dependency arrays, the application can incur a significant performance tax.
+    </p>
+    <p>
+        Moreover, React’s component-based structure necessitates repeated instantiations
+        and lifecycle calls. Each time a component re-renders, React checks for changes
+        and potentially updates the DOM. While this approach suits many scenarios,
+        certain other libraries or frameworks, such as Svelte or Solid, rely on more
+        direct reactivity. These alternatives bypass the concept of a virtual DOM,
+        potentially delivering snappier performance for some use cases
+        (<a href="https://svelte.dev/blog/virtual-dom-is-pure-overhead" target="_blank" rel="noopener noreferrer">Harris,
+        2019</a>).
+    </p>
+    <p>
+        Another performance point of contention is bundle size. Although React itself
+        is not excessively large, the dependency on additional libraries—React DOM,
+        state management solutions, routing, etc.—can inflate the total download.
+        For high-traffic, consumer-facing sites, every kilobyte can affect time to
+        interactive and ultimately user engagement. This is particularly true for
+        mobile or bandwidth-constrained environments, where large JavaScript bundles
+        can hamper the loading experience.
+    </p>
+    <p>
+        To mitigate these issues, developers can adopt performance optimisation techniques
+        specific to React. Examples include code splitting with <code>React.lazy</code>,
+        leveraging <code>Suspense</code> to handle lazy-loaded components gracefully,
+        and using memoisation hooks judiciously. Structuring components so that
+        parent-to-child re-renders are minimised also helps. However, these strategies
+        add a layer of complexity. React does not automatically optimise everything out
+        of the box; it requires a fair amount of diligence and knowledge of its internals.
+    </p>
+    <p>
+        From a broader perspective, the performance debate raises an important question:
+        is React the most efficient solution for every scenario? In many cases, it is
+        sufficiently performant—especially for applications with moderately sized data
+        sets and well-structured component trees. But in domains where microseconds
+        matter or where user interfaces must update at extreme speeds (e.g., real-time
+        data visualisations), React’s overhead may prove challenging to wrangle.
+    </p>
+    <p>
+        It is worth highlighting that performance concerns are not unique to React.
+        Angular, Vue, and other frameworks have their own overhead, though they each
+        tackle reactivity and rendering in slightly different ways. The critical point
+        is that React, once touted as the ultimate performance solution, is not
+        guaranteed to outpace every alternative. In fact, the more that an application
+        depends on deeply nested components, complex state, or intricate re-render
+        patterns, the more likely it is that the virtual DOM diffing process can become
+        a constraint.
+    </p>
+    <p>
+        Overall, React’s performance overhead is not necessarily fatal.
+        Skilled developers, aided by a thorough understanding of how the library
+        handles re-rendering, can mitigate many issues. Yet the fact remains that
+        React’s architecture, in all its abstraction, can introduce inefficiencies
+        if not carefully managed. This brings us to a larger conversation about
+        development complexity, which extends well beyond performance alone.
+    </p>
+    <a href="https://stackoverflow.blog/2022/06/10/exploring-the-most-loved-and-dreaded-web-frameworks/" target="_blank"
+       rel="noopener noreferrer">Stack Overflow Blog (2022)</a>
+</section>
+
+<!-- SECTION 2 (600–800 words): Development Complexity and Ecosystem Challenges -->
+<section id="section-2">
+    <h2>Development Complexity and Constant Evolution</h2>
+    <p>
+        One of React’s defining traits is its minimal “core.” By design, it focuses on
+        rendering UI components and leaves routing, data fetching, and state management
+        to external libraries. While this modular approach is praised by many, it can
+        also breed confusion. Newcomers to React must navigate an extensive ecosystem
+        that might include libraries such as Redux, React Router, and Next.js, all with
+        their own versions, documentation, and best practices.
+    </p>
+    <p>
+        The learning curve can be steep. Developers often discover that to build a
+        production-ready React application, they must piece together several tools
+        and approaches—tools for bundling (Webpack, Vite, or Parcel), a router,
+        a state management library, and possibly a server-side rendering solution.
+        Each of these adds layers of configuration that can overwhelm those who expect
+        a straightforward, single-framework experience. According to
+        <a href="https://2022.stateofjs.com/en-us/technologies/front-end-frameworks/" target="_blank"
+           rel="noopener noreferrer">State of JavaScript (2022)</a>,
+        this ecosystem complexity is frequently cited as a barrier to entry.
+    </p>
+    <p>
+        Another point of contention is React’s rapid iteration. Over the years, the
+        library has introduced significant feature additions—such as hooks—while also
+        deprecating older patterns like class-based lifecycle methods. Many developers
+        appreciate the new capabilities, but there is a sense of instability. Code
+        written a few years ago using class components may feel outdated compared to
+        modern function components with hooks. In an industry that moves quickly,
+        React’s own velocity can exacerbate the challenge of maintaining older code
+        bases.
+    </p>
+    <p>
+        A quote from Dan Abramov, one of React’s core contributors, addresses this
+        sentiment: “We recognise that React has evolved quickly, but that is partly
+        because the ways we build interfaces keep changing”
+        (<a href="https://overreacted.io/how-does-react-tell-a-class-from-a-function/" target="_blank"
+            rel="noopener noreferrer">Abramov, 2019</a>).
+        While this agility helps React stay relevant, it also means that developers
+        must continually keep pace with new APIs, patterns, and best practices.
+    </p>
+    <p>
+        In many teams, the overhead of constantly updating dependencies and re-factoring
+        code can lead to “React fatigue.” As soon as a project stabilises, a new version
+        might emerge with recommended changes—sometimes small, sometimes large. This
+        continual churn can be advantageous from a cutting-edge standpoint, but it places
+        a strain on teams that just want a stable foundation for the long term.
+    </p>
+    <p>
+        Additionally, the unopinionated nature of React can be both a strength and a
+        weakness. On the one hand, it grants developers considerable freedom to choose
+        their own architecture. On the other hand, teams might end up with widely
+        varying approaches within the same organisation, making it difficult to share
+        components, standardise practices, or onboard new members. In contrast,
+        frameworks like Angular enforce more rigid conventions, which can ironically
+        foster consistency across large codebases.
+    </p>
+    <p>
+        For developers seeking to keep complexity under control, there are a few
+        strategies. Some adopt Next.js, which adds an opinionated structure with built-in
+        routing, server-side rendering, and file-based page organisation. Others rely on
+        TypeScript, using strict typing to reduce runtime errors and provide clarity
+        in large teams. Still others explore alternative frameworks that are more
+        opinionated, such as Angular, or more lightweight, such as Preact. These
+        decisions, however, highlight React’s fundamental puzzle: to build a robust
+        product, one often stitches together an assortment of tools, each with its
+        own learning curve.
+    </p>
+    <p>
+        This tapestry of libraries and best practices changes quickly. RedwoodJS,
+        Remix, and Gatsby are more examples of frameworks built on top of React, each
+        promising an improved developer experience. Yet, each new layer or approach
+        can introduce yet another set of decisions, dependencies, and updates to manage.
+        As a result, the React ecosystem, while vibrant, may feel chaotic for teams
+        seeking a straightforward path.
+    </p>
+    <p>
+        In the end, React’s success has led to a vast community, numerous third-party
+        packages, and frequent core updates. While these factors keep React at the
+        forefront of innovation, they also present a labyrinth for both new and
+        experienced developers. This complexity does not necessarily invalidate React,
+        but it does highlight why some consider it less appealing compared to more
+        integrated or stable alternatives. As we move on to the next section,
+        we’ll look at how state management—one of the trickiest parts of any large
+        application—further complicates the situation.
+    </p>
+    <a href="https://medium.com/@taylorhakes/the-problem-with-react-4820eea21ea4" target="_blank"
+       rel="noopener noreferrer">Taylor Hakes (2020)</a>
+</section>
+
+<!-- SECTION 3 (600–800 words): State Management and Hooks Criticisms -->
+<section id="section-3">
+    <h2>Criticisms Around React’s State Management</h2>
+    <p>
+        State management is central to building interactive interfaces, and React has
+        evolved from class-based components with <code>setState</code> to a more
+        functional paradigm using hooks like <code>useState</code> and
+        <code>useReducer</code>. While hooks are lauded for their elegance and
+        composability, they’ve generated debate. One of the core complaints is the
+        confusion that can arise from deeply nested hooks, dependencies, and closures,
+        making the flow of data difficult to trace in large codebases.
+    </p>
+    <p>
+        Additional complexity comes from the fact that React’s core library does not
+        prescribe how to manage global or shared state. Many teams adopt libraries like
+        Redux, MobX, or Recoil, each with distinct patterns. Though powerful, these
+        libraries can bring another layer of boilerplate and conceptual overhead.
+        Configuring Redux, for instance, involves setting up reducers, actions,
+        dispatchers, and possibly middleware. While these tools solve certain problems
+        elegantly, they can scare off newer developers or those who expected a built-in
+        solution for complex state.
+    </p>
+    <p>
+        Another point of debate centres on the React Context API. Though context can
+        help share global data without drilling props through every component,
+        it can lead to performance pitfalls if used incorrectly. Because updates
+        to context trigger re-renders in all consumers, naive usage can result in
+        large chunks of the UI re-rendering unnecessarily. This is where libraries
+        like <code>useContextSelector</code> or advanced memoisation techniques might
+        step in, but that again introduces new patterns to learn.
+    </p>
+    <p>
+        The switch to hooks was supposed to streamline state management by removing
+        reliance on class components, but critics argue that the new approach merely
+        shifts complexity to other parts of the code. According to
+        <a href="https://kentcdodds.com/blog/how-to-use-react-context-effectively" target="_blank"
+           rel="noopener noreferrer">Kent C. Dodds (2021)</a>,
+        while hooks reduce boilerplate, they require developers to think more carefully
+        about how dependencies are declared and how re-renders propagate. For large
+        teams used to object-oriented patterns, the transition can be jarring and
+        prone to mistakes.
+    </p>
+    <p>
+        One of the subtle challenges is how React manages state updates asynchronously.
+        When a developer calls <code>useState</code>, changes do not take effect
+        immediately but instead schedule a re-render. In complex components, multiple
+        state updates can batch together, leading to unexpected results if the developer
+        assumes each update is synchronous. This is particularly relevant when using
+        functional updates, and it may require an in-depth understanding of React’s
+        rendering cycle to avoid subtle bugs.
+    </p>
+    <p>
+        Beyond local state, advanced scenarios demand more robust solutions. For
+        instance, real-time apps might need streaming data or offline capabilities.
+        Developers often turn to external solutions, such as React Query or SWR, to
+        handle server-side state elegantly. These libraries are effective, but they
+        emphasise the fact that React alone does not provide a complete solution for
+        complex data flows. This modularity is part of React’s philosophy, yet it can
+        catch teams unprepared for the breadth of decisions involved.
+    </p>
+    <p>
+        The end result is that while React’s approach to state management is flexible,
+        it can also feel fragmented. One team might rely heavily on Context, another
+        on Redux, and yet another on a combination of custom hooks and local states.
+        Each pattern has merit, but this variety can slow down new hires, hamper
+        collaboration across teams, and create confusion about best practices.
+    </p>
+    <p>
+        Furthermore, frequent updates and changes in how React recommends handling
+        state compound the issue. Hooks, introduced in React 16.8, were initially
+        pitched as a solution to multiple problems, including large class components
+        and complicated lifecycle methods. Yet, nearly every advanced real-world
+        application still seems to need a global store, advanced libraries, or
+        carefully constructed custom hooks to manage data effectively. This approach
+        works, but it also highlights that React itself is not a silver bullet for
+        every type of state concern.
+    </p>
+    <p>
+        Ultimately, critics argue that React’s minimalism around state management
+        leaves too much to be assembled from outside. Supporters counter that it
+        offers freedom and modularity. Whether this is “wrong” per se depends largely
+        on the team, the project requirements, and their willingness to adopt
+        supplementary tools. But the criticisms remain valid for those seeking
+        simpler, more integrated solutions.
+    </p>
+    <a href="https://www.telerik.com/blogs/reactjs-why-so-popular-drawbacks-limitations" target="_blank"
+       rel="noopener noreferrer">Telerik (2023)</a>
+</section>
+
+<!-- CONCLUSION (300–400 words) -->
+<section id="conclusion">
+    <h2>Conclusion</h2>
+    <p>
+        Throughout this exploration, the question “What is wrong with React?” has
+        revealed a multi-faceted answer. React is undeniably powerful and popular,
+        but its virtual DOM can introduce performance overhead in large, data-intensive
+        applications. Its ecosystem, while vibrant, can overwhelm developers with
+        choices, version updates, and shifting best practices. And React’s approach
+        to state management, despite the elegance of hooks, can become complicated
+        in anything but the simplest scenarios.
+    </p>
+    <p>
+        At the same time, these criticisms do not necessarily overshadow React’s
+        strengths. The library has a massive community, extensive tooling, and a
+        proven track record in production at scale. The key is recognising where
+        React’s limitations lie—and how to mitigate them through careful
+        architecture, performance tuning, and selective adoption of external
+        libraries. For certain projects, React may still be the best solution,
+        particularly when a highly dynamic UI or large talent pool is required.
+    </p>
+    <p>
+        Returning to the original thesis, it’s clear that React’s perceived flaws
+        often arise because of its flexible yet fragmented nature. Performance
+        can be handled with memoisation and code splitting, but those strategies
+        demand expertise. Complexity can be tamed through robust conventions or
+        meta-frameworks, though each one is an additional learning curve. And
+        state management can be effective once the right combination of hooks
+        and external libraries is settled upon, but that can feel like an endless
+        puzzle for some teams.
+    </p>
+    <p>
+        Ultimately, the final stance here is that React is not intrinsically
+        broken; rather, it’s a powerful tool that has grown and evolved rapidly,
+        sometimes outpacing the comfort zone of its users. For developers
+        weighing the pros and cons, the best course of action is to identify
+        whether React’s trade-offs align with the goals of their specific
+        project. If those trade-offs prove too cumbersome, alternative
+        frameworks, such as Vue, Angular, or Svelte, might be more suitable.
+    </p>
+    <p>
+        Moving forward, React will likely continue to innovate, offering
+        new ways to tackle UI challenges. For now, acknowledging what is
+        “wrong” with React isn’t about dismissing the library, but about
+        making more informed decisions—and perhaps, ensuring that the
+        next generation of tools can learn from the limitations we see
+        today.
+    </p>
+</section>
+
+<!-- Social Media Share Bar -->
+<div id="social-share-bar"
+     style="display: flex; justify-content: center; align-items: center; gap: 15px; padding: 20px;">
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://codeology.co.nz/articles/react-what-is-wrong"
+       target="_blank" rel="noopener noreferrer">
+        <img src="https://codeology.co.nz/r/i/social/facebook-icon.png" alt="Share on Facebook"
+             style="width:32px; height:32px;">
+    </a>
+    <!-- Twitter -->
+    <a href="https://twitter.com/intent/tweet?url=https://codeology.co.nz/articles/react-what-is-wrong&text=What Is Wrong with React?"
+       target="_blank" rel="noopener noreferrer">
+        <img src="https://codeology.co.nz/r/i/social/x-icon.png" alt="Share on Twitter"
+             style="width:32px; height:32px;">
+    </a>
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://codeology.co.nz/articles/react-what-is-wrong&title=What Is Wrong with React?"
+       target="_blank" rel="noopener noreferrer">
+        <img src="https://codeology.co.nz/r/i/social/linkedin-icon.png" alt="Share on LinkedIn"
+             style="width:32px; height:32px;">
+    </a>
+    <!-- Reddit -->
+    <a href="https://www.reddit.com/submit?url=https://codeology.co.nz/articles/react-what-is-wrong&title=What Is Wrong with React?"
+       target="_blank" rel="noopener noreferrer">
+        <img src="https://codeology.co.nz/r/i/social/reddit-icon.png" alt="Share on Reddit"
+             style="width:32px; height:32px;">
+    </a>
+
+
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            <a href="https://codeology.co.nz/">© 2024 Codeology Limited. <img src="https://codeology.co.nz/r/i/nz.svg"
+                                                                              width="64" height="64"> All rights
+                reserved.</a>
+        </p>
+    </div>
+</footer>
+
+<!-- SEO Filename: react-what-is-wrong -->
+</body>
+</html>

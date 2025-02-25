@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Minecraft–like Chunk Rendering</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #legend {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            font-family: sans-serif;
+        }
+
+        #legend ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #legend li {
+            margin-bottom: 5px;
+        }
+
+        #legend span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div id="legend">
+    <h3>Block Legend</h3>
+    <ul>
+        <li><span style="background:#222222;"></span>Bedrock</li>
+        <li><span style="background:#808080;"></span>Stone</li>
+        <li><span style="background:#8B4513;"></span>Dirt</li>
+        <li><span style="background:#228B22;"></span>Grass</li>
+    </ul>
+</div>
+<!-- Three.js -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<!-- OrbitControls -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<!-- NoiseJS -->
+<script src="https://cdn.jsdelivr.net/npm/noisejs@2.0.0/index.min.js"></script>
+<script>
+    // Scene setup.
+    var scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xa0a0a0);
+    var camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 3000);
+    // Position the camera so the high chunk is in view.
+    camera.position.set(20, 160, 20);
+    camera.lookAt(new THREE.Vector3(8, 64, 8));
+    var renderer = new THREE.WebGLRenderer({antialias: true});
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    var controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.target.set(8, 64, 8);
+    controls.update();
+
+    // Set up Noise (for height generation).
+    var SEED = 0;
+    var noise = new Noise((SEED % 1000) / 1000);
+
+    // Chunk dimensions.
+    var chunkWidth = 16, chunkDepth = 16, maxHeight = 256;
+    // Build a height map for each (x,z) column.
+    var heightMap = [];
+    for (var x = 0; x < chunkWidth; x++) {
+        heightMap[x] = [];
+        for (var z = 0; z < chunkDepth; z++) {
+            var n = noise.perlin2(x / 8, z / 8);
+            var h = Math.floor((n + 1) / 2 * maxHeight);
+            h = Math.max(2, h); // Ensure at least 2 blocks per column.
+            heightMap[x][z] = h;
+        }
+    }
+
+    // Define block types:
+    // 0: air, 1: bedrock, 2: stone, 3: dirt, 4: grass.
+    function getBlockType(x, y, z) {
+        if (x < 0 || x >= chunkWidth || z < 0 || z >= chunkDepth) return 0;
+        var h = heightMap[x][z];
+        if (y >= h) return 0;
+        if (y === 0) return 1; // bedrock
+        if (h >= 6) {
+            if (y < h - 5) return 2; // stone
+            else if (y < h - 1) return 3; // dirt
+            else return 4; // grass
+        } else {
+            if (y === h - 1) return 4; else return 3;
+        }
+    }
+
+    // Define the six faces of a cube.
+    var faceData = [
+        { // +X face
+            dir: [1, 0, 0],
+            corners: [[1, 0, 0], [1, 1, 0], [1, 1, 1], [1, 0, 1]]
+        },
+        { // -X face
+            dir: [-1, 0, 0],
+            corners: [[0, 0, 1], [0, 1, 1], [0, 1, 0], [0, 0, 0]]
+        },
+        { // +Y face (top)
+            dir: [0, 1, 0],
+            corners: [[0, 1, 0], [1, 1, 0], [1, 1, 1], [0, 1, 1]]
+        },
+        { // -Y face (bottom)
+            dir: [0, -1, 0],
+            corners: [[0, 0, 1], [1, 0, 1], [1, 0, 0], [0, 0, 0]]
+        },
+        { // +Z face (front)
+            dir: [0, 0, 1],
+            corners: [[1, 0, 1], [1, 1, 1], [0, 1, 1], [0, 0, 1]]
+        },
+        { // -Z face (back)
+            dir: [0, 0, -1],
+            corners: [[0, 0, 0], [0, 1, 0], [1, 1, 0], [1, 0, 0]]
+        }
+    ];
+
+    // Colors for each block type.
+    var blockColors = {
+        1: 0x222222, // bedrock
+        2: 0x808080, // stone
+        3: 0x8B4513, // dirt
+        4: 0x228B22  // grass
+    };
+
+    // Prepare arrays to build the merged geometry.
+    var positions = [];
+    var normals = [];
+    var colors = [];
+    var indices = [];
+    var vertexCount = 0;
+
+    // Loop over each block in the chunk.
+    for (var x = 0; x < chunkWidth; x++) {
+        for (var z = 0; z < chunkDepth; z++) {
+            var h = heightMap[x][z];
+            for (var y = 0; y < h; y++) {
+                var blockType = getBlockType(x, y, z);
+                if (blockType === 0) continue; // air
+                // For each of the 6 faces, add it if the neighboring block is air.
+                for (var f = 0; f < faceData.length; f++) {
+                    var face = faceData[f];
+                    var nx = x + face.dir[0];
+                    var ny = y + face.dir[1];
+                    var nz = z + face.dir[2];
+                    if (getBlockType(nx, ny, nz) !== 0) continue; // Skip face if neighbor exists.
+
+                    // Add the 4 vertices for this face.
+                    for (var i = 0; i < 4; i++) {
+                        var corner = face.corners[i];
+                        positions.push(x + corner[0], y + corner[1], z + corner[2]);
+                        normals.push(face.dir[0], face.dir[1], face.dir[2]);
+                        var col = new THREE.Color(blockColors[blockType]);
+                        colors.push(col.r, col.g, col.b);
+                    }
+                    // Add indices for two triangles.
+                    indices.push(vertexCount, vertexCount + 1, vertexCount + 2, vertexCount, vertexCount + 2, vertexCount + 3);
+                    vertexCount += 4;
+                }
+            }
+        }
+    }
+
+    // Create BufferGeometry.
+    var geometry = new THREE.BufferGeometry();
+    geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+    geometry.setAttribute('normal', new THREE.Float32BufferAttribute(normals, 3));
+    geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+    geometry.setIndex(indices);
+    geometry.computeBoundingSphere();
+
+    // Use MeshBasicMaterial so colors show directly.
+    var material = new THREE.MeshBasicMaterial({vertexColors: true, side: THREE.DoubleSide});
+    var chunkMesh = new THREE.Mesh(geometry, material);
+    scene.add(chunkMesh);
+
+    // Optionally add a grid helper.
+    var gridHelper = new THREE.GridHelper(chunkWidth, chunkWidth);
+    scene.add(gridHelper);
+
+    // Animation loop.
+    function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+    }
+
+    animate();
+
+    window.addEventListener('resize', function () {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+</script>
+</body>
+</html>

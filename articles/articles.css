@@ -1,3 +1,98 @@
+/* Define variables for easy tweaks */
+:root {
+
+    --snow: #fefefe;
+    --oxford-blue: #000;
+    --bg-color: var(--snow); /* Light peachy-white */
+    --text-color: var(--oxford-blue); /* Softer dark gray-blue */
+    --heading-color: #0F1C33; /* Slightly darker for headings */
+    --link-color: #2A5DB0; /* Accessible blue for links */
+    --link-hover: #1A3D80; /* Darker hover state */
+}
+
+/* Basic styling */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif; /* Clean, readable font */
+    line-height: 1.6; /* Better readability */
+    margin: 0;
+    padding: 20px; /* Some breathing room */
+}
+
+h1, h2, h3 {
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
 h1 {
-    color: red;
+    font-size: 2.5rem; /* Big but not overwhelming */
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+p {
+    margin-bottom: 1.2rem;
+    max-width: 800px; /* Keeps lines readable */
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+
+section, h1, h2, footer .container {
+
+    max-width: 1000px;
+    margin: 0 auto 2rem;
+    width: 100%;
+
+}
+
+
+footer {
+    content-visibility: auto;
+    padding: max(3vw, 3vh);
+}
+
+footer, footer a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 5vw 0 1vw;
+}
+
+footer p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p img {
+    width: 64px;
+    height: 64px;
+}
+
+footer p {
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 2vh);
+    text-transform: uppercase;
+}
+
+footer {
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
 }
